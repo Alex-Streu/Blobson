@@ -4,7 +4,8 @@
     "mvc": "1.1",
     "name": "b8fefada-ab34-458b-92cf-48838ee8a915",
     "children": [
-        "1d20f327-968a-454f-955a-06f49d6690ee"
+        "1d20f327-968a-454f-955a-06f49d6690ee",
+        "c2a0a025-e865-4c2b-91f0-ff02740c2953"
     ],
     "filterType": "GMSound",
     "folderName": "hit SFX",

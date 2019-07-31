@@ -4607,6 +4607,14 @@
             }
         },
         {
+            "Key": "c2a0a025-e865-4c2b-91f0-ff02740c2953",
+            "Value": {
+                "id": "879cfc2a-fda6-4f87-b590-f56854e2a7aa",
+                "resourcePath": "sounds\\sfx_hit_light1\\sfx_hit_light1.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "c3045d6b-8b26-4a74-8f72-114953fb3402",
             "Value": {
                 "id": "134d1622-0943-4dd6-9c8a-a7649140f737",
