@@ -79,6 +79,8 @@ switch(_hit.invulnerable_type)
 		create_fx(spr_hit_fx_strong_initial_hit,1,0,4,mean(owner.x,_hit.x),mean(owner.y,_hit.y),1.5,irandom(360));
 		with(create_fx(spr_hit_fx_direction_burst,1,0,13,_hit.x,_hit.y,1,_calc_angle)) image_xscale *= choose(-1,1);
 		with(create_fx(spr_hit_fx_strong_hit,1,0,10,_hit.x,_hit.y,3,_calc_angle)) image_xscale *= choose(-1,1);
+		//Audio
+		audio_play_sound(sfx_hit_1, 10, false);
 		//With the target
 		with(_hit)
 			{
