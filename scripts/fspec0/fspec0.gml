@@ -1,0 +1,83 @@
+//Forward Special for character0
+var run=true;
+var _phase = argument_count > 0 ? argument[0] : attack_phase;
+//Timer
+attack_frame=max(--attack_frame,0);
+//Phases
+if (run)
+	{
+	switch(_phase)
+		{
+		case PHASE.start:
+			{
+			//Animation
+			anim_sprite=spr_fspec0;
+			anim_speed=0;
+			anim_frame=0;
+			
+			parry_stun_time=60;
+			set_speed(clamp(hsp,-2,2),clamp(vsp,-2,2),false,false);
+			attack_frame=8;
+			return;
+			}
+		//Startup -> First Hitbox
+		case 0:
+			{
+			//Animation
+			if (attack_frame==4)
+				anim_frame=1;
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=2;
+				
+				set_speed(45*facing,-10,false,false);
+				attack_phase++;
+				attack_frame=5;
+				var _hitbox = create_melee(0,-7,1,0.3,3,10,0.1,8,70,2,HITBOX_SHAPE.rotation,0);
+				set_hitbox_property(_hitbox,HITBOX.sprite_angle,25);
+				}
+			break;
+			}
+		//Second Hitbox
+		case 1:
+			{
+			//Continue speed
+			set_speed(45*facing,-10,false,false);
+			//Move up walls
+			if (place_meeting(x+facing,y,obj_solid))
+				{
+				set_speed(0,-20,true,false);
+				}
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=3;
+				
+				set_speed(0,-1,false,false);
+				attack_phase++;
+				attack_frame=10;
+				create_melee(0,0,0.6,0.6,10,9,1,15,270,2,HITBOX_SHAPE.circle,0);
+				}
+			break;
+			}
+		//Endlag -> Finish
+		case 2:
+			{
+			//Animation
+			if (attack_frame==8)
+				anim_frame=4;
+			if (attack_frame==5)
+				anim_frame=5;
+			if (attack_frame==3)
+				anim_frame=6;
+			if (attack_frame==0)
+				{
+				attack_stop(PLAYER_STATE.helpless);
+				}
+			break;
+			}
+		}
+	}
+//Movement
+move_();
