@@ -332,6 +332,7 @@ enum HITBOX
 	priority,
 	angle,
 	grounded_angle,
+	snd_hit
 	}
 enum HITBOX_SHAPE
 	{
