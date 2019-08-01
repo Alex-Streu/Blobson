@@ -328,7 +328,6 @@ snd_jab1 = sfx_matsu_jab1;
 snd_jab2 = sfx_matsu_jab2;
 snd_jab3 = sfx_matsu_jab3;
 snd_melee_hit = sfx_hit_1;
-snd_special_hit = noone;
 
 //Custom Step Event
 custom_script= scr_matsu_custom();
