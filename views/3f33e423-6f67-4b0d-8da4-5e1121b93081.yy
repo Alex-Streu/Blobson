@@ -5,7 +5,8 @@
     "name": "3f33e423-6f67-4b0d-8da4-5e1121b93081",
     "children": [
         "655450e6-7ed1-4d97-9dfb-459c80405baf",
-        "0cc7de9e-2738-4c1b-90aa-620a591b139a"
+        "0cc7de9e-2738-4c1b-90aa-620a591b139a",
+        "aba774d3-afdf-4b70-ac7f-acbfdb82b3cb"
     ],
     "filterType": "GMSprite",
     "folderName": "Menu_Sprites",
