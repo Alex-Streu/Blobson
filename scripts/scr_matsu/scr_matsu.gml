@@ -325,9 +325,10 @@ snd_grab = sfx_matsu_jab3;
 snd_pummel = sfx_hitgrab1;
 snd_dash = sfx_dash1;
 snd_jab1 = sfx_matsu_jab1;
+snd_jab1_hit = sfx_hit_light1;
 snd_jab2 = sfx_matsu_jab2;
+snd_jab2_hit = sfx_hit_light1b;
 snd_jab3 = sfx_matsu_jab3;
-snd_melee_hit = sfx_hit_1;
 
 //Custom Step Event
 custom_script= scr_matsu_custom();

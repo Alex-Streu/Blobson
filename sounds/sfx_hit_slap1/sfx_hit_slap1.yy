@@ -1,8 +1,8 @@
 {
-    "id": "8c9b3b83-d689-40c9-8e41-987f5db03654",
+    "id": "ef52cd37-81ab-47d7-8415-8c3d64ba2d60",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "sfx_dash1",
+    "name": "sfx_hit_slap1",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
