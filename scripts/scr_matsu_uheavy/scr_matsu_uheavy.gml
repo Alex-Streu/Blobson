@@ -84,8 +84,9 @@ if (run)
 				anim_frame= 3;								
 				attack_phase++;
 				attack_frame=2;
-				var _damage = calculate_smash_damage(6);
-				create_melee(30,-56,0.5,1.2,12,12,1.3,6,80,2,HITBOX_SHAPE.rectangle,0);
+				var _damage = calculate_smash_damage(6);				
+				var _hitbox = create_melee(30,-56,0.5,1.2,12,12,1.3,12,80,2,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_uheavy_hit);			
 				//create_magnetbox(50,-64,0.7,0.6,_damage,5,80,0,5,3,HITBOX_SHAPE.circle,0);
 				}
 			break;
@@ -102,7 +103,8 @@ if (run)
 				attack_phase++;
 				attack_frame=5;
 				var _damage = calculate_smash_damage(8);
-				create_melee(20,-80,0.5,1.2,12,12,1.3,3,80,4,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(20,-80,0.5,1.2,12,12,1.3,12,80,4,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_uheavy_hit);	
 				//create_magnetbox(50,-64,0.7,0.6,_damage,5,80,0,5,3,HITBOX_SHAPE.circle,0);
 				}
 			break;

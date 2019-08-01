@@ -1,8 +1,8 @@
 {
-    "id": "9ed8dc3c-92fc-4734-95a9-6d1ed5e3f761",
+    "id": "d30ceeb9-f220-40cd-a35d-eadca4a8a39c",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "sfx_hit_3",
+    "name": "sfx_hit_med15",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.3
+    "volume": 0.31
 }

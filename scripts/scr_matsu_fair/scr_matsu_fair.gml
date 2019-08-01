@@ -49,9 +49,13 @@ if (run)
 				anim_frame=2;			
 				attack_phase++;
 				attack_frame=4;
-				var _hitbox = create_melee(0,0,1,1,4,4,0.4,6,70,4,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(0,0,1,1,4,4,1,8,70,4,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_matsu_fair_hb;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}	
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fair_hit);
+				
+				
+				
 				}
 			break;
 			}

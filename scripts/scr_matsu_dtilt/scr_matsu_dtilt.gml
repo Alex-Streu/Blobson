@@ -42,8 +42,8 @@ if (run)
 				anim_frame=1;
 				attack_phase++;
 				attack_frame=6;
-
-				create_melee(42,-15,1,0.5,4,4,0.8,8,30,2,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(42,-15,1,0.5,4,4,0.8,12,30,2,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_utilt_hit);
 				}
 			if (attack_frame==0)
 				{
@@ -63,9 +63,9 @@ if (run)
 				//Animation
 				anim_frame=2;
 				attack_phase++;
-				attack_frame=5;
-				create_melee(42,-15,1,0.5,4,4,0.4,8,30,2,HITBOX_SHAPE.rectangle,0);
-
+				attack_frame=5;				
+				var _hitbox = create_melee(42,-15,1,0.5,4,4,0.4,12,30,2,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dtilt_hit);
 				}
 			if (attack_frame==0)
 				{

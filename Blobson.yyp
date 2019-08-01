@@ -2191,6 +2191,14 @@
             }
         },
         {
+            "Key": "57215aef-c274-4a62-b67e-6d0ecf897252",
+            "Value": {
+                "id": "ed3fea24-71c7-4f18-8457-63ab6d5d3944",
+                "resourcePath": "sounds\\sfx_hit_heavy4\\sfx_hit_heavy4.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "57217fd4-93c1-4dbe-8606-ee13b3268fcd",
             "Value": {
                 "id": "c1ef34df-1fad-4b2b-b27b-df0b57748e38",
@@ -3954,7 +3962,7 @@
             "Key": "9ed8dc3c-92fc-4734-95a9-6d1ed5e3f761",
             "Value": {
                 "id": "94b55189-1f25-46c4-8fe4-8b9ca5dfc4bc",
-                "resourcePath": "sounds\\sfx_hit_3\\sfx_hit_3.yy",
+                "resourcePath": "sounds\\sfx_hit_med14\\sfx_hit_med14.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -4218,7 +4226,7 @@
             "Key": "ab380d7d-453a-40c1-b714-e423e95a6806",
             "Value": {
                 "id": "da660726-1abc-4080-a9e6-68764dbefb9e",
-                "resourcePath": "sounds\\sfx_hit_heavy_3\\sfx_hit_heavy_3.yy",
+                "resourcePath": "sounds\\sfx_hit_heavy3\\sfx_hit_heavy3.yy",
                 "resourceType": "GMSound"
             }
         },
@@ -5252,6 +5260,14 @@
                 "id": "d0ce550a-0424-4aae-96c8-bd39fd632f4b",
                 "resourcePath": "scripts\\Attack_Choose_Stick\\Attack_Choose_Stick.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d30ceeb9-f220-40cd-a35d-eadca4a8a39c",
+            "Value": {
+                "id": "b3ff46ed-5d5b-4d60-9227-62f8d6b751ea",
+                "resourcePath": "sounds\\sfx_hit_med15\\sfx_hit_med15.yy",
+                "resourceType": "GMSound"
             }
         },
         {

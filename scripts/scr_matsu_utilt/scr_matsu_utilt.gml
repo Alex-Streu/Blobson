@@ -42,8 +42,9 @@ if (run)
 				{
 				anim_frame= 2;
 				attack_phase++;
-				attack_frame=3;
-				create_melee(36,-80,0.5,.9,5,8,0.6,8,85,6,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				attack_frame=3;				
+				var _hitbox = create_melee(36,-80,0.5,.9,5,8,0.6,8,85,6,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_utilt_hit);
 				}
 			break;
 			}
@@ -79,7 +80,7 @@ if (run)
 				{
 				anim_frame= 5;
 				attack_phase++;
-				attack_frame= attack_has_hit() ? 4 : 8;
+				attack_frame= attack_has_hit() ? 4 : 10;
 				}
 			break;
 			}
