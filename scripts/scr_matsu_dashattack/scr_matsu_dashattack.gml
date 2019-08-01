@@ -31,12 +31,11 @@ if (run)
 				set_speed(9*facing,-3,false,false);
 				//Animation
 				anim_frame=2;
-				
-				
-				
 				attack_phase++;
 				attack_frame=8;
-				create_melee(28,-28,1.5,0.5,7,5,1,9,45,8,HITBOX_SHAPE.circle,0);
+				
+				var _hitbox = create_melee(28,-28,1.5,0.5,7,5,1,14,45,8,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dashattack_hit);
 				}
 			break;
 			}

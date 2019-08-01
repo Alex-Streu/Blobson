@@ -36,7 +36,7 @@ if (run)
 				attack_phase++;
 				attack_frame=5;
 				set_speed(facing*2,0,true,false);
-				var _hitbox = create_melee(38,-72,0.7,0.5,4,5,0.1,3,75,6,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(38,-72,0.7,0.5,4,4,0.1,5,75,5,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_jab1_hit);
 				}
@@ -243,7 +243,7 @@ if (run)
 				attack_frame=3;
 				set_speed(facing*6,0,false,false);								
 				var _hitbox = create_melee(52,-56,0.8,0.5,5,8,0.9,8,45,8,HITBOX_SHAPE.rectangle,2);
-				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_jab1_hit);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_jab3_hit);
 				
 				
 				}

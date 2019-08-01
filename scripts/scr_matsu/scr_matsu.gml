@@ -327,8 +327,15 @@ snd_dash = sfx_dash1;
 snd_jab1 = sfx_matsu_jab1;
 snd_jab1_hit = sfx_hit_light1;
 snd_jab2 = sfx_matsu_jab2;
-snd_jab2_hit = sfx_hit_light1b;
+snd_jab2_hit = sfx_hit_light2;
 snd_jab3 = sfx_matsu_jab3;
+snd_jab3_hit = sfx_hit_med3; // med 2
+snd_dashattack_hit = sfx_hit_med12; // med 2
+snd_nair_hit = sfx_hit_light5; // light5 
+snd_fair_hit = sfx_hit_light5; // light5 
+snd_bair_hit = sfx_hit_light5; // light5 
+snd_dair_hit = sfx_hit_light5; // light5 
+snd_uair_hit = sfx_hit_light5; // light5 
 
 //Custom Step Event
 custom_script= scr_matsu_custom();

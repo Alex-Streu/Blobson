@@ -1,8 +1,8 @@
 {
-    "id": "47b454eb-9cb4-4a95-b5e1-9c8e5e3ea3ce",
+    "id": "af6ce7cd-ab63-4949-9720-5121a8201c24",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "sfx_hit_light1b",
+    "name": "sfx_hit_med6",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
