@@ -53,5 +53,8 @@ with (_hitbox)
 		case HITBOX.grounded_angle:
 			grounded_angle = _value % 360;
 			break;
+		case HITBOX.snd_hit:
+			snd_hit = _value;
+			break;
 		}
 	}

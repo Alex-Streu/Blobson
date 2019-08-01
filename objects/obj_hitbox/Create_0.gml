@@ -11,3 +11,4 @@ overlay_speed=image_speed;
 has_hit=false;
 priority=0;
 list=ds_list_create();
+snd_hit=noone;
