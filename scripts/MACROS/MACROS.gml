@@ -42,6 +42,7 @@
 	#macro number_of_devices 14
 	//Input thresholds
 	#macro stick_check_frames 3	//To check the stick speed, there has to be a value a certain number of frames before to compare with
+	#macro menu_navigation_lag 15
 
 	//Control stick general
 	#macro Lstick 0

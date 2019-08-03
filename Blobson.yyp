@@ -855,6 +855,14 @@
             }
         },
         {
+            "Key": "206faf30-7bfa-488b-8b92-c33be9fa25eb",
+            "Value": {
+                "id": "287e9407-6367-4a8b-87cf-d6e0e08bd170",
+                "resourcePath": "sprites\\spr_otus_portrait\\spr_otus_portrait.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "206fdd3a-dbb3-4ce9-b4e0-7155e51fb1cf",
             "Value": {
                 "id": "6ad485a4-1d6e-4fcb-b1ca-720e2e97cd8f",
@@ -2335,6 +2343,14 @@
             }
         },
         {
+            "Key": "5cfbfc6e-96c6-402d-b30d-c2c3781b758e",
+            "Value": {
+                "id": "669c396b-b672-4fcd-8dec-26714d47ff75",
+                "resourcePath": "scripts\\create_character_select_player\\create_character_select_player.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5d0446fb-a59a-4471-a6a1-575285df11e4",
             "Value": {
                 "id": "93696ad5-32d9-4a1c-8dbd-9bef0e010283",
@@ -2379,14 +2395,6 @@
             "Value": {
                 "id": "ad0c1030-88c7-4f86-9eff-6330e7231d4b",
                 "resourcePath": "sprites\\spr_matsu_fall\\spr_matsu_fall.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "5fde5276-4e35-400f-af58-1ea105c1705e",
-            "Value": {
-                "id": "a0b0343a-5733-4e79-b06b-e9702e3baa46",
-                "resourcePath": "sprites\\spr_icon_select_color\\spr_icon_select_color.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3311,6 +3319,14 @@
             }
         },
         {
+            "Key": "82488e9f-3c0a-43e6-b898-2eb50ef7e4bc",
+            "Value": {
+                "id": "c940da19-0d64-4d91-8c80-82746c47f630",
+                "resourcePath": "sprites\\spr_icon_select\\spr_icon_select.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "826c081e-b846-4222-b588-5fdb96f93707",
             "Value": {
                 "id": "33e439e1-e9dd-46a4-aa0e-6f14cef728aa",
@@ -3810,7 +3826,7 @@
             "Key": "9a176426-af70-4bb6-aa26-b431fedf11ef",
             "Value": {
                 "id": "43130477-50b6-4b79-ba1c-fb7d0aa8b661",
-                "resourcePath": "sprites\\spr_icon_select\\spr_icon_select.yy",
+                "resourcePath": "sprites\\spr_icon_frame\\spr_icon_frame.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -4932,6 +4948,14 @@
                 "id": "1782da6f-6c5f-4e7d-be3c-adb313656f4b",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cd553a24-2a70-49c7-bd9f-6794cf0e75fd",
+            "Value": {
+                "id": "a1c25cb0-c2e2-4863-abfe-f12244d8f8a7",
+                "resourcePath": "objects\\obj_character_select_player\\obj_character_select_player.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -6453,6 +6477,7 @@
         "8de19067-31eb-4460-af67-9b82b0f8ac9f",
         "de3ce213-acdb-40e6-b2ed-1a9b2b098248",
         "aeb33e8d-cf4b-4787-8473-ae8a719d758b",
+        "5cfbfc6e-96c6-402d-b30d-c2c3781b758e",
         "32b6d655-063a-403d-bba0-9f76f2373ca3",
         "66d2bd59-1613-48d7-9170-2367ef042911",
         "d6225ca0-02be-4bd3-a85e-7342fbf4c7f2",

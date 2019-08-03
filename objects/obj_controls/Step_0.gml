@@ -50,7 +50,8 @@ for(var i = 0; i < max_players; i++)
 			{
 			//Save things
 			Custom_Controls_Save(button_array);
-			room_goto_next();
+			//room_goto_next();
+			room_goto(rm_Character_Select);
 			break;
 			}
 			
