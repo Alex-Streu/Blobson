@@ -113,17 +113,7 @@ if (run)
 			
 			if (attack_frame==0)
 				{
-					
-					
-					//enter areial if landed. fall if missed
-				if (attack_has_hit())
-					{
                     attack_stop(PLAYER_STATE.aerial);
-					}
-				else
-					{
-					attack_stop(PLAYER_STATE.helpless);				
-					}
 				}
 			break;
 			}

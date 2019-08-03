@@ -38,7 +38,7 @@ EX_meter_max = 154;
 weight_multiplier=1.1;
 //Gravity
 grav=1;
-hitstun_grav=0.7;
+hitstun_grav=0.6;
 //Falling
 max_fall_speed=11;
 fast_fall_speed=14;

@@ -56,5 +56,8 @@ with (_hitbox)
 		case HITBOX.snd_hit:
 			snd_hit = _value;
 			break;
+			case HITBOX.base_hitstun:
+			stored_hitstun = _value;
+			break;
 		}
 	}

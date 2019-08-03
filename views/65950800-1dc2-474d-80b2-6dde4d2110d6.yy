@@ -14,7 +14,8 @@
         "d08d1db2-7638-4ef0-9265-b6c03f54445c",
         "1e5a82ff-dbaa-408d-8464-7796ea376061",
         "9f801b3d-74a0-4774-bb5c-ec8b300ca4ed",
-        "0636137b-558f-424e-8461-d803b7ed628d"
+        "0636137b-558f-424e-8461-d803b7ed628d",
+        "b5743603-f333-49d6-b85c-927e4e50644b"
     ],
     "filterType": "GMObject",
     "folderName": "Game_Engine_Objects",

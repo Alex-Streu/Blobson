@@ -1530,7 +1530,7 @@
             "Key": "37752472-c9f7-4171-a24b-14538311b298",
             "Value": {
                 "id": "5e38d18a-ba28-41e2-abb6-67907e9b068f",
-                "resourcePath": "objects\\obj_training_stage_bg\\obj_training_stage_bg.yy",
+                "resourcePath": "objects\\obj_stage_music\\obj_stage_music.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -3818,7 +3818,7 @@
             "Key": "9877dc60-be08-4785-a4b9-4eefc0da6797",
             "Value": {
                 "id": "9b7569c6-4a53-400f-aedb-01f0451f6c2a",
-                "resourcePath": "sounds\\sound21\\sound21.yy",
+                "resourcePath": "sounds\\sfx_music_arena1\\sfx_music_arena1.yy",
                 "resourceType": "GMSound"
             }
         },
