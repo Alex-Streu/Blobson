@@ -92,7 +92,7 @@ if (run)
 				attack_phase++;
 				attack_frame=4;
 				//Normal
-				var _hitbox = create_melee(0,0,1,1,8,8,1.1,12,90,4,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(0,0,1,1,8,8,1.1,12,75,4,HITBOX_SHAPE.rectangle,0);
 				_hitbox.sprite_index = spr_matsu_uair_hb;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}				
 				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_uair_hit);

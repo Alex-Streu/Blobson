@@ -127,7 +127,7 @@ if (run)
 				attack_phase++;
 				attack_frame=6;
 				//Normal				
-				var _hitbox = create_melee(32,-22,0.9,0.5,5,4,0.3,11,50,6,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(32,-22,0.9,0.5,5,2,0.1,11,50,6,HITBOX_SHAPE.rectangle,0);
 				 set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dair_hit);
 				}
 			break;

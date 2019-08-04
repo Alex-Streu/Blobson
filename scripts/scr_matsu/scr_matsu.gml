@@ -177,9 +177,9 @@ switch(walljump_type)
 	}
 //*/
 //Rolling
-roll_speed=9;
+roll_speed=7;
 roll_startup=3;
-roll_active=14;
+roll_active=24;
 roll_endlag=8;
 //Teching
 tech_active=14;

@@ -92,7 +92,7 @@ if (run)
 			
 			//var _hitbox = create_targetbox(10,16,0.4,0.4,1,5,0,3,45,1,HITBOX_SHAPE.circle,0,grabbed_id);
 			//set_hitbox_property(_hitbox,HITBOX.knockback_state,PLAYER_STATE.is_grabbed);
-			create_melee(-12,-16,0.6,0.5,7,9,1,10,75,1,HITBOX_SHAPE.rectangle,1);
+			create_melee(-12,-16,0.6,0.5,7,6,1.5,10,75,1,HITBOX_SHAPE.rectangle,1);
 			audio_play_sound(sfx_hit_1,5,false);
 			}
 			break;

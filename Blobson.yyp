@@ -1890,7 +1890,7 @@
             "Key": "48023f11-083a-41df-86a8-b4b8cb2853ea",
             "Value": {
                 "id": "77666a12-1849-41be-9534-d14bb7f87871",
-                "resourcePath": "rooms\\rm_Rivals\\rm_Rivals.yy",
+                "resourcePath": "rooms\\rm_Rivals2\\rm_Rivals2.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -5676,6 +5676,14 @@
                 "id": "8090b22d-8aab-4c65-b640-ee0fe81a996c",
                 "resourcePath": "sprites\\spr_nspec_falcon_punch\\spr_nspec_falcon_punch.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e3ff62f4-9c26-4364-8cb8-3e873ccc1fac",
+            "Value": {
+                "id": "0e21f754-6762-4a0a-97a1-5cec3a0c345f",
+                "resourcePath": "rooms\\rm_Rivals\\rm_Rivals.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

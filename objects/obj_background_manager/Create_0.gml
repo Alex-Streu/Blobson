@@ -30,7 +30,7 @@ if room = rm_Rivals
 background = 
 	[
 	    background_define(back_battlefield_clouds,0,0,1.2,0,0,0.5,0),
-		background_define(spr_backgorund_arena_main,0,0,1,0,0,0,0),
+		background_define(spr_backgorund_arena_main,-320,-240,1,0.3,0.3,0,0),
 		[back_clear],
 	];
 

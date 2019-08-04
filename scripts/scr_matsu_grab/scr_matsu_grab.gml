@@ -18,7 +18,7 @@ if (run)
 			anim_speed=0;
 			anim_frame=0;
 		    audio_play_sound(snd_grab,10,false);
-			attack_frame=3;
+			attack_frame=4;
 			return;
 			}
 		//Startup -> Active
@@ -30,7 +30,7 @@ if (run)
 				anim_frame=1;
 			
 				attack_phase++;
-				attack_frame=2;
+				attack_frame=4;
 				create_grab(46,-50,0.7,1,40,0,3,HITBOX_SHAPE.rectangle);				
 				}
 			break;
@@ -51,7 +51,7 @@ if (run)
 				anim_frame=2;
 			
 				attack_phase++;
-				attack_frame=23;
+				attack_frame=25;
 				}
 			break;
 			}
