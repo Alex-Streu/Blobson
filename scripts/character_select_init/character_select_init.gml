@@ -2,16 +2,37 @@
 player1 = ds_map_create();
 player1[? "Name"] = "Player 1";
 player1[? "Color"] = c_red;
-player1[? "Active"] = true;
+player1[? "IsActive"] = 1;
 
 player2 = ds_map_create();
 player2[? "Name"] = "Player 2";
 player2[? "Color"] = c_blue;
-player2[? "Active"] = true;
+player2[? "IsActive"] = true;
 
-players = ds_map_create();
-players[? "Player1"] = player1;
-players[? "Player2"] = player2;
+players = [];
+players[PLAYER.P1] = player1;
+//players[PLAYER.P2] = player2;
+
+
+// DELETE
+//---------------------------------
+//Setup player indexes
+//var _indexXs = [];
+//var _indexYs = [];
+//_indexXs[PLAYER.P1] = 0;
+//_indexYs[PLAYER.P1] = 0;
+//_indexXs[PLAYER.P2] = 1;
+//_indexYs[PLAYER.P2] = 0;
+
+//pIndexes = ds_map_create();
+//pIndexes[? "X"] = _indexXs;
+//pIndexes[? "Y"] = _indexYs;
+
+
+//------------------------------------
+//Setup player cursors
+cursors = [];
+cursors[PLAYER.P1] = spr_p1_select;
 
 
 //-------------------------------------

@@ -31,5 +31,4 @@ surface_set_target(drawSurface);
 
 surface_reset_target();
 
-show_debug_message(string(x) + ", " + string(y));
 draw_surface(drawSurface, x, y);

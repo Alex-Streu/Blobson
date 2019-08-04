@@ -396,6 +396,18 @@ enum PROFILE
 enum FX
 	{
 	}
+//Enum for player numbers
+enum PLAYER
+{
+	P1 = 0,
+	P2 = 1,
+	P3 = 2,
+	P4 = 3,
+	P5 = 4,
+	P6 = 5,
+	P7 = 6,
+	P8 = 7
+}
 #endregion
 //--> Game_Init
 //--> Player_Init

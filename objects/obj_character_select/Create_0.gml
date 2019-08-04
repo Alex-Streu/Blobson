@@ -1,13 +1,8 @@
 character_select_init();
 
-navTimer = 0;
-
 rowSize = 6;
 rowSizes = ds_list_create();
 csItems = ds_grid_create(rowSize, 5);
-
-indexX = 0;
-indexY = 0;
 
 var _offsetY = y;
 var _offsetX = 50;
@@ -25,10 +20,6 @@ for (var i = 0; i < array_length_1d(characters); i++) {
 	rowSizes[| floor(i/rowSize)] = i%rowSize;
 }
 
-//Select first icon
-var _character = csItems[# indexX, indexY];
-_character.selected = true;
-
 
 //--------------------------
 //Setup players
@@ -37,10 +28,12 @@ _offsetY = 32;
 _offsetX = 50;
 _space = 220;
 
-//Create player slot objects
-var _p = players[? "Player1"];
-var _color = c_gray;
-if (_p[? "Active"]) { _color = _p[? "Color"]; }
+//Create player slot objects and selectors
+for (var i = 0; i < array_length_1d(players); i++)
+{
+	var _p = players[i];
 	
-_p[? "Instance"] = create_character_select_player(_p[? "Name"], _color, _character.portrait,
-											_offsetX, _offsetY);
+	var _slot = create_character_select_player(_p[? "Name"], _p[? "Color"], _p[? "IsActive"],
+											_offsetX + _space*i, _offsetY);
+	create_player_cursor(i, _slot, cursors[i]);
+}

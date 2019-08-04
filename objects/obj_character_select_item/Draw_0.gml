@@ -26,10 +26,9 @@ surface_set_target(drawSurface);
 	gpu_set_blendmode(bm_subtract);
 	draw_sprite(spr_icon_window, 0, 0, 0);
 	
-	//Add frame, checking if selected
+	//Add frame
 	gpu_set_blendmode(bm_normal);
-	if (selected) { draw_sprite(spr_icon_select, 0, 0, 0); }
-	else { draw_sprite(spr_icon_frame, 0, 0, 0); }
+	draw_sprite(spr_icon_frame, 0, 0, 0);
 	
 	//Reset draw
 	draw_set_color(c_white);

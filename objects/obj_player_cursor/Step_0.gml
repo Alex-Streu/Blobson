@@ -1,8 +1,8 @@
-/// @description Handle character selection
-if (navTimer <= 0) 
+/// @description Update cursor position and selection
+
+//if (navTimer <= 0) 
 {
 	var xx, yy;
-	var newIndex = false;
 	for(var i = 0; i < max_players; i++)
 	{
 		//Navigate the menu
@@ -14,29 +14,16 @@ if (navTimer <= 0)
 			//RT=gamepad_button_check_pressed(_controller, gp_shoulderrb)
 			//LT=gamepad_button_check_pressed(_controller, gp_shoulderlb)
 		
-			//Updates the new selected item
-			if (abs(yy)>stick_tilt_amount)
-			{
-				csItems[# indexX, indexY].selected = false;
-				indexY = clamp(indexY + sign(yy), 0, ds_list_size(rowSizes)-1);
-				indexX = clamp(indexX, 0, rowSizes[| indexY]);
-				newIndex = true;
-			}
-			if (abs(xx)>stick_tilt_amount)
-			{
-				csItems[# indexX, indexY].selected = false;
-				indexX = clamp(indexX + sign(xx), 0, rowSizes[| indexY]);
-				newIndex = true;
-			}
 			
-			if (newIndex) 
-			{				
-				csItems[# indexX, indexY].selected = true;
-				
-				var _p = players[? "Player1"];
-				_p[? "Instance"].portrait = csItems[# indexX, indexY].portrait;
-				
-				navTimer = menu_navigation_lag;
+			//Move cursor
+			x += xx*cursorSpeed;
+			y += yy*cursorSpeed;
+			
+			//Check for character collision
+			var _character = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_character_select_item, true, true);
+			if (_character != noone)
+			{
+				slot.portrait = _character.portrait;
 			}
 			
 			////If Select is pressed, reset controls
@@ -64,4 +51,4 @@ if (navTimer <= 0)
 			//}			
 		}
 	}
-} else { navTimer--; }
+} //else { navTimer--; }
