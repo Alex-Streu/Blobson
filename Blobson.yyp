@@ -1887,14 +1887,6 @@
             }
         },
         {
-            "Key": "48023f11-083a-41df-86a8-b4b8cb2853ea",
-            "Value": {
-                "id": "77666a12-1849-41be-9534-d14bb7f87871",
-                "resourcePath": "rooms\\rm_Rivals\\rm_Rivals.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "48b39945-e3e5-4e99-95eb-520bcc8c12f9",
             "Value": {
                 "id": "6573ec11-b77c-4331-9c21-e1d74cbb22a9",
