@@ -8,8 +8,7 @@
         "48b39945-e3e5-4e99-95eb-520bcc8c12f9",
         "f06f631c-a5e4-4d4f-9bdb-c2748fb4f3f3",
         "9cb476d8-a6b0-4c98-a146-4d327b83bb42",
-        "936b1535-f9bc-4358-b90c-c712e9dd5e52",
-        "b5743603-f333-49d6-b85c-927e4e50644b"
+        "936b1535-f9bc-4358-b90c-c712e9dd5e52"
     ],
     "filterType": "GMObject",
     "folderName": "Stage_Objects",

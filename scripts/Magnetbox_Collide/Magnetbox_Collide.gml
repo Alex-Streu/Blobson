@@ -54,6 +54,8 @@ switch(_hit.invulnerable_type)
 				_hit.facing=sign(owner.x-_hit.x);
 				}
 			}
+			//Audio
+		audio_play_sound(snd_hit, 10, false);
 		//Camera shake
 		var _shake=(2 + ((_hit.damage / 20) * _hit.weight_multiplier) div 2);
 		camera_shake(_shake);

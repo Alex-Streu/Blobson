@@ -108,9 +108,10 @@ if (run)
 				var _damage = calculate_smash_damage(6);
 				//create_melee(30,-56,0.5,1.2,12,12,1.3,6,80,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				
-				var _hitbox = create_melee(0,0,1,1,12,12,1.3,6,-80,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(0,0,1,1,12,12,1.3,12,-80,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_matsu_dheavy_hb;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}	
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dheavy_hit);			
 				
 				
 				}
@@ -126,7 +127,11 @@ if (run)
 				attack_phase++;
 				attack_frame=5;	
 				var _damage = calculate_smash_damage(6);
-				create_melee(44,-34,1,1.1,8,8,1.3,6,-80,5,HITBOX_SHAPE.rectangle,0);
+				
+				var _hitbox = create_melee(44,-34,1,1.1,8,8,1.3,12,-80,5,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dheavy_hit);	
+				
+				
 				create_fx(spr_fx_poof1,2,0,27, x +52 * facing,y,1,0);
 				audio_play_sound(sfx_slam1,10,false);
 				}

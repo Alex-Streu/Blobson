@@ -14,8 +14,8 @@
 #macro walljump_type 1
 
 //Camera
-#macro camera_width 1280 //1280
-#macro camera_height 720 //720
+#macro camera_width 960 //1280
+#macro camera_height 540 //720
 #macro camera_boundary 120
 
 //Player status
@@ -66,8 +66,8 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 0.85 //0.85
-	#macro hitstun_base_multiplier 4 //4
+	#macro hitstun_multiplier 0.8 //0.85
+	#macro hitstun_base_multiplier 5 //4
 	#macro hitstun_weight_multiplier 0.6
 	#macro hitstun_damage_multiplier 0.24 //0.24
 	#macro hitstun_knockback_multiplier 4
@@ -138,7 +138,7 @@
 	
 	//Bouncing
 	#macro bounce_minimum_speed 12//characters only bounce while in hitstun if they have enough speed
-	#macro bounce_speed_multiplier 0.6 //0.6
+	#macro bounce_speed_multiplier 0.8 //0.6
 	
 	#endregion
 	#region General
@@ -147,7 +147,7 @@
 	#macro number_of_buttons 13
 
 	//Input buffer length
-	#macro buff 6
+	#macro buff 10
 	#macro max_buffer_length 20
 	#macro tech_buffer_time 20
 	#macro tech_lockout_time 40
@@ -168,7 +168,7 @@
 	#macro parry_grabs true
 	#macro parry_default_stun_time 60
 	#macro parry_hitlag 15
-	#macro parry_invincible_time 30
+	#macro parry_invincible_time 45
 	#macro parry_reflect_speed_multiplier 1.5
 	
 	//Ledges
@@ -333,7 +333,8 @@ enum HITBOX
 	priority,
 	angle,
 	grounded_angle,
-	snd_hit
+	snd_hit,
+	base_hitstun,
 	}
 enum HITBOX_SHAPE
 	{

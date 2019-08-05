@@ -3,7 +3,8 @@
 //If you are pressing a direction and the dodge buttons
 if (button_hold(INPUT.shield,buff))
 	{
-	if (stick_flicked(Lstick,DIR.horizontal))
+	if (stick_tilted(Lstick,DIR.horizontal))
+	if (button(INPUT.shield,buff))
 		{
 		set_state(PLAYER_STATE.rolling);
 		//Facing

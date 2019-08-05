@@ -72,7 +72,9 @@ if (run)
 				attack_phase++;
 				attack_frame=4;
 				var _damage = calculate_smash_damage(4);
-				create_melee(48,-64,0.7,0.6,_damage,3,0,3,20,4,HITBOX_SHAPE.circle,0);
+				
+                var _hitbox = create_melee(48,-64,0.7,0.6,_damage,3,0,3,20,4,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fheavy1_hit);				
 				//create_magnetbox(50,-64,0.7,0.6,_damage,5,80,0,5,3,HITBOX_SHAPE.circle,0);
 				}
 			break;
@@ -87,8 +89,9 @@ if (run)
 				anim_frame=3;								
 				attack_phase++;
 				attack_frame=4;
-				var _damage = calculate_smash_damage(4);
-				create_melee(44,-64,0.7,0.6,_damage,3,0,3,20,4,HITBOX_SHAPE.circle,0);
+				var _damage = calculate_smash_damage(4);				
+				var _hitbox = create_melee(44,-64,0.7,0.6,_damage,3,0,3,20,4,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fheavy2_hit);
 				//create_magnetbox(50,-64,0.7,0.6,_damage,5,80,0,5,3,HITBOX_SHAPE.circle,0);
 				}
 			break;
@@ -139,7 +142,8 @@ if (run)
 				attack_phase++;
 				attack_frame=4;
 				var _damage = calculate_smash_damage(5);
-				create_melee(40,-66,1,0.6,_damage,6,0,3,0,4,HITBOX_SHAPE.rectangle,1);
+				var _hitbox = create_melee(40,-66,1,0.6,_damage,6,0,3,0,4,HITBOX_SHAPE.rectangle,1);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fheavy2_hit);				
 				}
 			break;
 			}
@@ -231,7 +235,9 @@ if (run)
 				attack_phase++;
 				attack_frame=4;
 				var _damage = calculate_smash_damage(8);
-				create_melee(70,-64,0.95,0.6,_damage,9,1.3,20,40,7,HITBOX_SHAPE.rectangle,2);
+                var _hitbox = create_melee(70,-64,0.95,0.6,_damage,9,1.3,20,40,7,HITBOX_SHAPE.rectangle,2);
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fheavy3_hit);	
+
 				}
 			break;
 			}

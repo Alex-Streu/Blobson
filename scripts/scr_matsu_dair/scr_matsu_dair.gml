@@ -107,9 +107,11 @@ if (run)
 				attack_frame=2;
 				
 				//Normal
-				create_melee(26,-66,1.1,1.2,6,6,0.3,9,50,2,HITBOX_SHAPE.rectangle,0);
+				 var _hitbox = create_melee(26,-66,1.1,1.2,6,6,0.3,11,50,2,HITBOX_SHAPE.rectangle,0);
+				 set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dair_hit);
 				//Sweet spot heavy
-				create_melee(43,-12,0.6,0.5,10,14,1,20,-80,2,HITBOX_SHAPE.rectangle,0);
+				 var _hitbox_sweet = create_melee(43,-12,0.6,0.5,10,14,1,20,-80,2,HITBOX_SHAPE.rectangle,0);
+				 set_hitbox_property(_hitbox_sweet,HITBOX.snd_hit,snd_dair_sweetspot_hit);
 				}
 			break;
 			}
@@ -124,8 +126,9 @@ if (run)
 				
 				attack_phase++;
 				attack_frame=6;
-				//Normal
-				create_melee(32,-22,0.9,0.5,5,4,0.3,6,50,6,HITBOX_SHAPE.rectangle,0);
+				//Normal				
+				var _hitbox = create_melee(32,-22,0.9,0.5,5,4,0.3,11,50,6,HITBOX_SHAPE.rectangle,0);
+				 set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dair_hit);
 				}
 			break;
 			}

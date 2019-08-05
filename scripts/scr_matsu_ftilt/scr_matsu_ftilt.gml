@@ -61,7 +61,9 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=4;
-				create_melee(68,-64,0.9,0.5,6,5,0.7,5,30,4,HITBOX_SHAPE.rectangle,0);				
+                var _hitbox = create_melee(68,-64,0.9,0.5,6,5,0.7,10,30,4,HITBOX_SHAPE.rectangle,0);	
+				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_ftilt_hit);
+				
 				}
 			break;
 			}
