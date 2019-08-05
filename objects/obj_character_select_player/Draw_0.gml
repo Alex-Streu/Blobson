@@ -16,24 +16,6 @@ surface_set_target(drawSurface);
 		draw_sprite_ext(character.portrait, 0, 0, 0, _scaleX, _scaleY, 0, c_white, 1);
 	}
 	
-	//Draw fade if unselected
-	if (!isSelected)
-	{
-		draw_set_color(c_black);
-		draw_set_alpha(0.5);
-		draw_rectangle(0, 0, drawW, drawH, false);
-	}
-	
-	//Draw name if active
-	if (isActive)
-	{
-		draw_set_color(c_black);
-		draw_set_alpha(1);
-		draw_rectangle(0, drawH-30, drawW, drawH, false);
-		draw_set_color(c_white);
-		draw_text_transformed(drawW/2, drawH-15, string_upper(name), 0.4, 0.4, 0);
-	}
-	
 	//Reset draw
 	draw_set_color(c_white);
 	draw_set_alpha(1);
@@ -42,6 +24,25 @@ surface_set_target(drawSurface);
 surface_reset_target();
 
 draw_surface(drawSurface, x, y);
+
+//Draw fade if unselected
+if (isActive && !isSelected)
+{
+	gpu_set_blendmode(bm_normal);
+	draw_set_color(c_black);
+	draw_set_alpha(0.25);
+	draw_rectangle(x, y, x+drawW, y+drawH, false);
+}
+	
+//Draw name if active
+if (isActive)
+{
+	draw_set_color(c_black);
+	draw_set_alpha(1);
+	draw_rectangle(x, y+drawH-30, x+drawW, y+drawH, false);
+	draw_set_color(c_white);
+	draw_text_transformed(x+drawW/2, y+drawH-15, string_upper(name), 0.4, 0.4, 0);
+}
 
 
 //Draw marker
