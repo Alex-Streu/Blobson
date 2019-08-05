@@ -1,7 +1,7 @@
 /// @description Handle activity and character selection
 if (!isActive)
 {
-	portrait = noone;
+	character = noone;
 	bg_color = c_gray;
 	return;
 }

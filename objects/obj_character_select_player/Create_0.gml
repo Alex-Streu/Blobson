@@ -1,10 +1,11 @@
 /// @description Initialize properties
 
 name = "";
-//order = 0; DELETE ME
-portrait = noone;
+character = noone;
 bg_color = c_gray;
 isActive = false;
+isSelected = false;
+marker = noone;
 
 
 //Draw properties
