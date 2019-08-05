@@ -65,7 +65,7 @@ if (_controller != -1)
 	//Start the game
 	if (gamepad_button_check_pressed(_controller, gp_start))
 	{
-		room_goto(rm_Training);
+		room_goto(rm_Stage_Select);
 	}
 			
 	//if (RT)
