@@ -1,2 +1,2 @@
 /// @description
-room_goto_next();
+room_goto(rm_Main_Menu);

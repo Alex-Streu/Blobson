@@ -1,5 +1,5 @@
 {
-    "id": "0bec76f3-2c40-4e33-a2e9-7d009d7e1a2d",
+    "id": "1572574c-886a-4ed3-a2d9-1b91b755361f",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_hit_heavy1",
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.25
+    "volume": 1
 }
