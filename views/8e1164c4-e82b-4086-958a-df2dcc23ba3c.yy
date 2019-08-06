@@ -12,8 +12,7 @@
         "2bfa329e-8cf5-4510-891c-651f165fbe08",
         "396221d4-2ad4-46d5-83cc-452a76acc8b3",
         "a4c18f89-ba92-477c-aef9-b67de410f18a",
-        "be98cc7c-15a9-404e-bc43-2eabf7f8a43f",
-        "f63f0a26-6cae-44d0-9cd3-2cb351dbfc3e"
+        "be98cc7c-15a9-404e-bc43-2eabf7f8a43f"
     ],
     "filterType": "GMSprite",
     "folderName": "Training stage",

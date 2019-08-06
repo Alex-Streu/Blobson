@@ -73,7 +73,7 @@ countdown = 240;
 //player_2_pal = 5;
 current_pal = 1;
 
-var _player = instance_find(obj_player, instance_number(obj_player)-1);	
+	var _player = instance_find(obj_player, instance_number(obj_player)-1);	
 
 //if _player.player_number = 0 {current_pal = 2}
 //if _player.player_number = 1 {current_pal = 3}

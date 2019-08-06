@@ -45,27 +45,22 @@ for(var i = 0; i < max_players; i++)
 			//Reset
 			Custom_Controls_Reset(button_array,i);
 			}
-		//Start the game
+		//Start the game on training stage
 		if (gamepad_button_check_pressed(_controller,gp_start) || keyboard_check_pressed(vk_anykey))
 			{
 			//Save things
 			Custom_Controls_Save(button_array);
-			//room_goto_next();
-			room_goto(rm_Character_Select);
+			room_goto(rm_Training);
 			break;
-			}
-			
-			if (RT)
+			}		
+			//Start the game on arena stage
+		if (gamepad_button_check_pressed(_controller,gp_face1) || keyboard_check_pressed(vk_anykey))
 			{
-				pal_select += 1;
-			}
-			
-			if (LT)
-			{
-				pal_select -= 1;
-			}
-			
-			
+			//Save things
+			Custom_Controls_Save(button_array);
+			room_goto(rm_Rivals);
+			break;
+			}	
 		}
 	}
 	

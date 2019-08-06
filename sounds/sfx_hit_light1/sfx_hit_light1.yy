@@ -1,5 +1,5 @@
 {
-    "id": "d1fd40cb-3d4d-447c-a0fa-5d4c3a66b162",
+    "id": "c2a0a025-e865-4c2b-91f0-ff02740c2953",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_hit_light1",
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 1
+    "volume": 0.3
 }
