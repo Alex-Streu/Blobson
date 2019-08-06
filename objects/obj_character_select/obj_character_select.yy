@@ -5,13 +5,13 @@
     "name": "obj_character_select",
     "eventList": [
         {
-            "id": "d06c6177-e09f-4ecb-8c89-b89d0bdddc8c",
+            "id": "518064d2-ac76-408e-895b-0cda14d29056",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 8,
+            "eventtype": 0,
             "m_owner": "44a8c4d6-28db-4500-8abf-e9a41fc75c39"
         }
     ],

@@ -23,12 +23,12 @@ if (run)
 		case 0:
 			{
 			if (attack_frame==6)
-			set_speed(9*facing,-3,false,false);
+			set_speed(8*facing,-3,false,false);
 				anim_frame=1;
 			if (attack_frame==0)
 				{
 					//Speed
-				set_speed(9*facing,-3,false,false);
+				set_speed(8*facing,-3,false,false);
 				//Animation
 				anim_frame=2;
 				attack_phase++;
@@ -66,7 +66,8 @@ if (run)
 					}
 				else
 					{
-					attack_frame=30;
+						friction_gravity(air_friction,grav,max_fall_speed);
+					attack_frame=10;
 					attack_phase=3;					
 					}
 				}

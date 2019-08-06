@@ -36,7 +36,7 @@ if (run)
 				anim_frame=2;			
 				attack_phase++;
 				attack_frame=3;
-				create_melee(0,-100,0.6,0.5,5,4,0.5,1,-45,2,HITBOX_SHAPE.rectangle,0);
+				create_melee(0,-100,0.6,0.5,5,7,1,1,-55,2,HITBOX_SHAPE.rectangle,0);
 				}
 			break;
 			}
