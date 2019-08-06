@@ -87,7 +87,8 @@ if (run)
 			{
 			//Animation
 			anim_speed=0;
-			anim_frame= 6;
+			//anim_frame= 6;
+			
 			//anim_frame=sprite_get_number(my_sprites[?"Rolling"]);
 			//No speed
 			set_speed(0,0,false,false);

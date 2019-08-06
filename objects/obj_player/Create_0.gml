@@ -2,7 +2,7 @@
 //Set up variables
 Player_Init();
 //Set up character specific variables
-scr_matsu();
+scr_rewind();
 
 ///@description color stuff
 
