@@ -320,6 +320,8 @@ ani_speed_parryland = .50;
 ani_speed_uspecial_charge = 1;
 
 frame_final_crouch = 7;
+
+frame_final_run_confirm = false;
 //Sound effects
 snd_grab = sfx_matsu_jab3;
 snd_pummel = sfx_hitgrab1;

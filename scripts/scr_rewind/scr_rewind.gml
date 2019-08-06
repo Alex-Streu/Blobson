@@ -1,15 +1,15 @@
 ///Sets all of the variables for a single character
 name="Rewind";
 //Collision box
-mask_index=spr_matsu_collision_mask;
+mask_index=spr_rewind_collision;
 //Hurtbox
-hurtbox_sprite=spr_matsu_hurbox_normal;
+hurtbox_sprite=spr_rewind_hurtbox;
 hurtbox=create_hurtbox(hurtbox_sprite);
 //Main sizes
 sprite_scale= 1;
 
 //Palettes
-my_pal_sprite= spr_matsu_pal; //fighter palette
+my_pal_sprite= spr_rewind_pal; //fighter palette
 my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 my_current_pallete = 1;
 
@@ -38,7 +38,7 @@ EX_meter_max = 154;
 weight_multiplier=1.1;
 //Gravity
 grav=1;
-hitstun_grav=0.6;
+hitstun_grav=0.7;
 //Falling
 max_fall_speed=11;
 fast_fall_speed=14;
@@ -67,7 +67,7 @@ dash_speed=8;
 dash_time=8;
 dash_accel=4;
 //Running
-run_speed=8;
+run_speed=12;
 run_accel=0.8;
 run_turn_time=10;
 run_turn_accel=0.8;
@@ -177,7 +177,7 @@ switch(walljump_type)
 	}
 //*/
 //Rolling
-roll_speed=7;
+roll_speed=9;
 roll_startup=3;
 roll_active=24;
 roll_endlag=8;
@@ -194,9 +194,9 @@ helpless_max_speed=3;
 //Attacks
 my_attacks[?"Jab"   ]= scr_matsu_jab;
 my_attacks[?"DashA" ]= scr_matsu_dashattack;
-my_attacks[?"Ftilt" ]= scr_matsu_ftilt;
+my_attacks[?"Ftilt" ]= scr_rewind_ftilt;
 my_attacks[?"Utilt" ]= scr_matsu_utilt;
-my_attacks[?"Dtilt" ]= scr_matsu_dtilt;
+my_attacks[?"Dtilt" ]= scr_rewind_dtilt;
 my_attacks[?"Fsmash"]= scr_matsu_fheavy;
 my_attacks[?"Usmash"]= scr_matsu_uheavy;
 my_attacks[?"Dsmash"]= scr_matsu_dheavy;
@@ -223,38 +223,38 @@ my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
 my_attacks[?"Taunt" ]=-1;
 //Animations / Sprites
 
-my_sprites[?"Idle"    ]=spr_matsu_idle;
-my_sprites[?"Crouch"  ]=spr_matsu_crouch;
-my_sprites[?"Walk"    ]=spr_matsu_walk;
-my_sprites[?"Run"     ]=spr_matsu_run;
-my_sprites[?"Run_Stop"]=spr_matsu_runstop;
-my_sprites[?"JumpS"   ]=spr_matsu_jumpsquat;
-my_sprites[?"Jump"    ]=spr_matsu_jump;
-my_sprites[?"Doublejump"]=spr_matsu_doublejump;
-my_sprites[?"Doublejumpfall"]=spr_matsu_doublejump;
-my_sprites[?"Doublejumpair"] = spr_matsu_doublejump_airborne
-my_sprites[?"Midair"  ]=spr_matsu_airborne;
-my_sprites[?"Fall"    ]=spr_matsu_fall;
-my_sprites[?"Fastfall"]=spr_matsu_fastfall;
-my_sprites[?"Airdodge"]=spr_matsu_airdodge;
-my_sprites[?"Waveland"]=spr_matsu_waveland;
-my_sprites[?"Rolling" ]=spr_matsu_roll; 
-my_sprites[?"Techroll"]=spr_matsu_roll; 
-my_sprites[?"Teching" ]=spr_matsu_idle;
-my_sprites[?"Hitlag"  ]=spr_matsu_hitlag1;
-my_sprites[?"Hitlag2"  ]=spr_matsu_hitlag2;
-my_sprites[?"Hitlag3"  ]=spr_matsu_hitlag3;
-my_sprites[?"Hitlag4"  ]=spr_matsu_hitlag4;
-my_sprites[?"Hitstun" ]=spr_matsu_hitstun;
-my_sprites[?"Hitstun2" ]=spr_matsu_hitstun2;
-my_sprites[?"Hitstun3" ]=spr_matsu_hitstun3;
-my_sprites[?"Hitstun4" ]=spr_matsu_hitstun4;
-my_sprites[?"Hitstunheavy" ]=spr_matsu_hitstun_heavy;
-my_sprites[?"Tumble"  ]=spr_matsu_tumble;
-my_sprites[?"Helpless"]=spr_matsu_freefall;
-my_sprites[?"Landlag"]=spr_matsu_landlag;
-my_sprites[?"Lag"     ]=spr_matsu_lag;
-my_sprites[?"Grabbed"]=spr_matsu_grabbed; //being grabbed by an enemy
+my_sprites[?"Idle"    ]=spr_rewind_idle;
+my_sprites[?"Crouch"  ]=spr_rewind_crouch;
+my_sprites[?"Walk"    ]=spr_rewind_walk;
+my_sprites[?"Run"     ]=spr_rewind_run;
+my_sprites[?"Run_Stop"]=spr_rewind_runstop;
+my_sprites[?"JumpS"   ]=spr_rewind_jumpsquat;
+my_sprites[?"Jump"    ]=spr_rewind_jump;
+my_sprites[?"Doublejump"]=spr_rewind_doublejump;
+my_sprites[?"Doublejumpfall"]=spr_rewind_doublejump;
+my_sprites[?"Doublejumpair"] = spr_rewind_airborne
+my_sprites[?"Midair"  ]=spr_rewind_airborne;
+my_sprites[?"Fall"    ]=spr_rewind_fall;
+my_sprites[?"Fastfall"]=spr_rewind_fall;
+my_sprites[?"Airdodge"]=spr_rewind_airdodge;
+my_sprites[?"Waveland"]=spr_rewind_landlag;
+my_sprites[?"Rolling" ]=spr_rewind_dodgeroll; 
+my_sprites[?"Techroll"]=spr_rewind_dodgeroll; 
+my_sprites[?"Teching" ]=spr_rewind_idle;
+my_sprites[?"Hitlag"  ]=spr_rewind_hitlag1;
+my_sprites[?"Hitlag2"  ]=spr_rewind_hitlag1;
+my_sprites[?"Hitlag3"  ]=spr_rewind_hitlag1;
+my_sprites[?"Hitlag4"  ]=spr_rewind_hitlag1;
+my_sprites[?"Hitstun" ]=spr_rewind_hitstun1;
+my_sprites[?"Hitstun2" ]=spr_rewind_hitstun1;
+my_sprites[?"Hitstun3" ]=spr_rewind_hitstun1;
+my_sprites[?"Hitstun4" ]=spr_rewind_hitstun1;
+my_sprites[?"Hitstunheavy" ]=spr_rewind_hitstun1;
+my_sprites[?"Tumble"  ]=spr_rewind_hitstun1;
+my_sprites[?"Helpless"]=spr_rewind_hitstun1;
+my_sprites[?"Landlag"]=spr_rewind_landlag;
+my_sprites[?"Lag"     ]=spr_rewind_landlag;
+my_sprites[?"Grabbed"]=spr_rewind_hitlag1; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
 my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
 my_sprites[?"Tech" ]=spr_matsu_tech;
@@ -270,7 +270,7 @@ my_sprites[?"LedgeR"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeA"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeT"  ]=spr_ledge_tether0;
 my_sprites[?"Grabbing"]=spr_matsu_grab;
-my_sprites[?"Entrance"]=spr_matsu_intro;
+my_sprites[?"Entrance"]=spr_rewind_entrance;
 //Animations for attacks
 my_sprites[?"Dashattack" ]=spr_matsu_dashattack
 my_sprites[?"Grab" ]=spr_matsu_grab;
@@ -283,8 +283,8 @@ my_sprites[?"Pummel"] = spr_matsu_pummel;
 my_sprites[?"Jab1" ]=spr_matsu_jab1;
 my_sprites[?"Jab2" ]=spr_matsu_jab2;
 my_sprites[?"Jab3" ]=spr_matsu_jab3;
-my_sprites[?"Ftilt" ]=spr_matsu_ftilt;
-my_sprites[?"Dtilt" ]=spr_matsu_dtilt;
+my_sprites[?"Ftilt" ]=spr_rewind_ftilt;
+my_sprites[?"Dtilt" ]=spr_rewind_dtilt;
 my_sprites[?"Utilt" ]=spr_matsu_utilt;
 my_sprites[?"Nair" ]=spr_matsu_nair;
 my_sprites[?"Bair" ]=spr_matsu_bair;
@@ -302,7 +302,7 @@ my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
 ani_speed_intro = .6;
 ani_speed_idle = .2;
 ani_speed_crouch = 1;
-ani_speed_walk = .8;
+ani_speed_walk = 1.3;
 ani_speed_run = .7;
 ani_speed_runstop = .7;
 ani_speed_jump = .8;
@@ -312,14 +312,16 @@ ani_speed_tech = .75;
 ani_speed_techroll = .9;
 ani_speed_getup = .85;
 ani_speed_ledge_jump = .75;
-ani_speed_dodgeroll = .9;
+ani_speed_dodgeroll = 1;
 ani_speed_tumble = 1;
 ani_speed_hitstun = 1;
 ani_speed_parryland = .50;
 
 ani_speed_uspecial_charge = 1;
 
-frame_final_crouch = 7;
+frame_final_crouch = 2;
+frame_final_run_confirm = true;
+frame_final_run = 2;
 //Sound effects
 snd_grab = sfx_matsu_jab3;
 snd_pummel = sfx_hitgrab1;
@@ -338,7 +340,7 @@ snd_dair_hit = sfx_hit_med8; // light5
 snd_dair_sweetspot_hit = sfx_hit_heavy1; // light5 
 snd_uair_hit = sfx_hit_med4; // light5 
 snd_ftilt_hit = sfx_hit_med15; // light5 
-snd_dtilt_hit = sfx_hit_light4; // light5 
+snd_dtilt_hit = sfx_rewind_hit1; // light5 
 snd_utilt_hit = sfx_hit_light5; // light5 
 snd_fheavy1_hit = sfx_hit_light1; // light5 
 snd_fheavy2_hit = sfx_hit_light2; // light5 
@@ -346,4 +348,4 @@ snd_fheavy3_hit = sfx_hit_heavy4; // light5
 snd_uheavy_hit = sfx_hit_heavy3; // light5 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
 //Custom Step Event
-custom_script= scr_matsu_custom();
+custom_script= scr_rewind_custom();

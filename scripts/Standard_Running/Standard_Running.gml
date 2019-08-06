@@ -5,7 +5,11 @@ var run=true;
 dash_frame=max(--dash_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"Run"];
-anim_speed=anim_speed_normal;
+anim_speed= ani_speed_run;
+
+if anim_frame >= frame_final_run  
+if frame_final_run_confirm = true
+{anim_frame = frame_final_run;}
 #endregion
 #region Running
 //Accelerate in one direction

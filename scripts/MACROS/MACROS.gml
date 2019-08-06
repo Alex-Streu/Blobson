@@ -66,9 +66,9 @@
 	
 	//Hitstun / Hitlag
 	#macro hitstun_multiplier 0.8 //0.85
-	#macro hitstun_base_multiplier 5 //4
+	#macro hitstun_base_multiplier 4 //4
 	#macro hitstun_weight_multiplier 0.6
-	#macro hitstun_damage_multiplier 0.24 //0.24
+	#macro hitstun_damage_multiplier 0.2 //0.24
 	#macro hitstun_knockback_multiplier 4
 	#macro hitlag_multiplier 1 //0.7
 	#macro maximum_hitlag 120
