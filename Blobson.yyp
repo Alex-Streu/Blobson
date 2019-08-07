@@ -1023,14 +1023,6 @@
             }
         },
         {
-            "Key": "224a2e48-c05b-440d-b9c3-864c46dd8a2c",
-            "Value": {
-                "id": "94acf4d6-ec93-41dd-acfc-d80846beb57a",
-                "resourcePath": "views\\224a2e48-c05b-440d-b9c3-864c46dd8a2c.yy",
-                "resourceType": "GMFolder"
-            }
-        },
-        {
             "Key": "2270bcac-48de-4820-960e-f2c705ee568e",
             "Value": {
                 "id": "7470856b-f8fd-4dab-b641-86c6b4afd722",
@@ -6324,14 +6316,6 @@
                 "id": "8090b22d-8aab-4c65-b640-ee0fe81a996c",
                 "resourcePath": "sprites\\spr_nspec_falcon_punch\\spr_nspec_falcon_punch.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "e3ff62f4-9c26-4364-8cb8-3e873ccc1fac",
-            "Value": {
-                "id": "0e21f754-6762-4a0a-97a1-5cec3a0c345f",
-                "resourcePath": "rooms\\rm_Rivals\\rm_Rivals.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
