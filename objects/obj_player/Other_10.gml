@@ -71,8 +71,11 @@ if (!frozen)
 		default: show_debug_message("FATAL ERROR - Player object has a state that is not tied to a standard script."); break;
 		}
 	}
-//Custom script
+	
+//Custom script____________________________________________________________________________________________________________________________________________
 Standard_Custom();
+
+
 //Update the controllers variables to calculate stick speeds on the next step
 //Update_Sticks_Previous(uses_keyboard);
 //Animate sprite
