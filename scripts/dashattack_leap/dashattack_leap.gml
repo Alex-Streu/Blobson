@@ -1,8 +1,12 @@
 //Dash Attack
-var run=true;
+/*
+- Hold the button to delay the attack
+- You can airdodge out of the attack
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
-attack_frame=max(--attack_frame,0);
+attack_frame = max(--attack_frame, 0);
 //Phases
 if (run)
 	{
@@ -12,27 +16,27 @@ if (run)
 			{
 			//Startup
 			//Animation
-			anim_sprite=spr_dashattack_leap;
-			anim_speed=0;
-			anim_frame=0;
+			anim_sprite = spr_dashattack_leap;
+			anim_speed = 0;
+			anim_frame = 0;
 			
-			attack_frame=22;
-			set_speed(8*facing,-5.5,false,false);
-			smash_charge=0;
+			attack_frame = 22;
+			set_speed(8 * facing, -5.5, false, false);
+			charge = 0;
 			return;
 			}
 		//Startup -> Active
 		case 0:
 			{
 			//Animation
-			if (attack_frame==18)
-				anim_frame=1;
-			if (attack_frame==15)
-				anim_frame=2;
-			if (attack_frame==10)
-				anim_frame=3;
-			if (attack_frame==5)
-				anim_frame=4;
+			if (attack_frame == 18)
+				anim_frame = 1;
+			if (attack_frame == 15)
+				anim_frame = 2;
+			if (attack_frame == 10)
+				anim_frame = 3;
+			if (attack_frame == 5)
+				anim_frame = 4;
 				
 			//Friction and gravity
 			if (on_ground())
@@ -41,58 +45,60 @@ if (run)
 				}
 			else
 				{
-				friction_gravity(air_friction,grav,max_fall_speed);
+				friction_gravity(air_friction, grav, max_fall_speed);
 				}
 			
 			//Cancel with waveland
-			if cancel_airdodge_check() return;
+			if (cancel_airdodge_check()) return;
 			
-			if (attack_frame==0 && button_hold(INPUT.attack,1))
+			if (attack_frame == 0 && button_hold(INPUT.attack, 1))
 				{
-				smash_charge++;
+				charge++;
 				}
-			if (attack_frame==0 && (!button_hold(INPUT.attack,1) || smash_charge>=15))
+			if (attack_frame == 0 && (!button_hold(INPUT.attack, 1) || charge >= 15))
 				{
-				//Animation
-				anim_frame=5;
-			
 				attack_phase++;
-				attack_frame=15;
-				
-				var _hitbox = create_melee(4,8,0.3,0.7,9,5,1,10,315,2,HITBOX_SHAPE.rotation,0);
-				set_hitbox_property(_hitbox,HITBOX.sprite_angle,25);
-				set_speed(-6*facing,-7,false,false);
+				attack_frame = 13;
 				}
 			break;
 			}
 		//Active -> Endlag
 		case 1:
 			{
-			//Animation
-			if (attack_frame==11)
-				{
-				anim_frame=6;
-				}
-			if (attack_frame==5)
-				anim_frame=7;
-
-			friction_gravity(air_friction,grav,max_fall_speed);
-			
-			if (attack_frame==0)
+			if (attack_frame == 11)
 				{
 				//Animation
-				anim_frame=8;
+				anim_frame = 5;
+				
+				var _hitbox = create_melee(4, 8, 0.3, 0.7, 9, 5, 1, 10, 315, 2, HITBOX_SHAPE.rotation, 0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.sprite_angle, 25);
+				set_speed(-6 * facing, -7, false, false);
+				}
+			//Animation
+			if (attack_frame == 7)
+				{
+				anim_frame = 6;
+				}
+			if (attack_frame == 5)
+				anim_frame = 7;
+
+			friction_gravity(air_friction, grav, max_fall_speed);
+			
+			if (attack_frame == 0)
+				{
+				//Animation
+				anim_frame = 8;
 			
 				attack_phase++;
-				attack_frame = (15 - (smash_charge div 2));
+				attack_frame = (15 - (charge div 2));
 				}
 			break;
 			}
 		//Finish
 		case 2:
 			{
-			friction_gravity(air_friction,grav,max_fall_speed);
-			if (attack_frame==0)
+			friction_gravity(air_friction, grav, max_fall_speed);
+			if (attack_frame == 0)
 				{
 				attack_stop(PLAYER_STATE.aerial);
 				}

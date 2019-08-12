@@ -1,14 +1,14 @@
 ///Standard_Ledge_Getup
 //Contains the standard actions for the ledge getup state.
-var run=true;
+var run = true;
 //Timer
 ledge_getup_frame=max(--ledge_getup_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"LedgeG"];
-anim_speed= ani_speed_getup;
+anim_speed=anim_speed_normal;
 #endregion
 #region Invincible
-set_invulnerable(INV.type_invincible,1);
+set_invulnerable(INV.invincible,1);
 #endregion
 #region No speed
 set_speed(0,0,false,false);

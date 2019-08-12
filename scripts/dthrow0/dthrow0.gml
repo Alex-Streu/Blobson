@@ -1,5 +1,5 @@
 //Downward Throw for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -41,7 +41,7 @@ if (run)
 				attack_phase++;
 				attack_frame=15;
 				var _hitbox = create_targetbox(10,16,0.4,0.4,1,5,0,3,45,1,HITBOX_SHAPE.circle,0,grabbed_id);
-				set_hitbox_property(_hitbox,HITBOX.knockback_state,PLAYER_STATE.is_grabbed);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.is_grabbed);
 				}
 			break;
 			}
@@ -54,9 +54,10 @@ if (run)
 				//Animation
 				anim_frame++;
 				
-				reset_hitbox_groups(collided);
+				reset_hitbox_groups();
 				var _hitbox = create_targetbox(10,16,0.4,0.4,1,5,0,5,irandom(360),1,HITBOX_SHAPE.circle,0,grabbed_id);
-				set_hitbox_property(_hitbox,HITBOX.knockback_state,PLAYER_STATE.is_grabbed);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.is_grabbed);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_fx_style,HIT_FX.normal_strong);
 				}
 			//Final Blow
 			if (attack_frame==0)
@@ -66,7 +67,8 @@ if (run)
 				
 				attack_phase++;
 				attack_frame=15;
-				create_melee(10,16,0.4,0.4,7,15,0.3,10,75,1,HITBOX_SHAPE.circle,1);
+				var _hitbox = create_melee(10,16,0.4,0.4,5,16,0.3,10,75,1,HITBOX_SHAPE.circle,1);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				}
 			break;
 			}

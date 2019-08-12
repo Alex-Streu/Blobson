@@ -12,8 +12,7 @@
         "5fef9539-df8e-486d-ad9a-0bc29f159d2f",
         "e203baf4-efae-443c-b448-5391017ddcf7",
         "a0f623cc-10dd-41b2-b3f2-5e2f80270d89",
-        "99e6934b-5bc7-44a2-b344-89b4dc6267ad",
-        "d2e63c46-089f-4b39-972a-3da13c714b22"
+        "99e6934b-5bc7-44a2-b344-89b4dc6267ad"
     ],
     "filterType": "GMScript",
     "folderName": "Check_for_Attacks",

@@ -4,11 +4,11 @@ with(obj_player)
 	{
 	if (controller >= 0)
 		{
-		Custom_Controls_Load(cc,player_number);
+		Custom_Controls_Load(cc, player_number);
 		}
 	else
 		{
-		Custom_Controls_Load(cc,0);
+		Custom_Controls_Load(cc, 0);
 		is_AI = true;
 		}
 	}

@@ -1,32 +1,34 @@
 ///Checks for throws
-//If the control stick was tilted in a direction
-if (stick_tilted(Lstick))
+var _stick = Lstick;
+//Up Throw
+if (stick_flicked(_stick, DIR.up, throw_flick_buff))
 	{
-	var _stick = Lstick;
-	//Up Throw
-	if (stick_tilted(_stick,DIR.up))
+	attack_start(my_attacks[?"UThrow"]);
+	return true;
+	}
+else
+//Down Throw
+if (stick_flicked(_stick, DIR.down, throw_flick_buff))
+	{
+	attack_start(my_attacks[?"DThrow"]);
+	return true;
+	}
+else
+//Forward Throw / Backward Throw
+	{
+	//Is the control stick in the direction the player is facing?
+	if (stick_flicked(_stick, DIR.horizontal, throw_flick_buff))
 		{
-		attack_start(my_attacks[?"UThrow"]);
-		}
-	else
-	//Down Throw
-	if (stick_tilted(_stick,DIR.down))
-		{
-		attack_start(my_attacks[?"DThrow"]);
-		}
-	else
-	//Forward Throw / Backward Throw
-		{
-		//Is the control stick in the direction the player is facing?
-		if (sign(stick_value(_stick,DIR.horizontal))==sign(facing))
+		if (sign(stick_get_value(_stick, DIR.horizontal)) == sign(facing))
 			{
 			attack_start(my_attacks[?"FThrow"]);
+			return true;
 			}
 		else
 			{
 			attack_start(my_attacks[?"BThrow"]);
+			return true;
 			}
 		}
-	return true;
 	}
 return false;

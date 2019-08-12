@@ -1,6 +1,6 @@
 ///Checks for grounded attacks (Jab, Tilts, Taunt)
 //If one stick is set to attack it overrides the direction of the other stick
-var _stick=Attack_Choose_Stick(INPUT.attack);
+var _stick=Choose_Stick_By_Input(INPUT.attack);
 //If the player is on the ground
 if (on_ground())
 	{

@@ -22,7 +22,7 @@ with(_newhitbox)
 	magnet_goal_y=other.y+argument[7]
 	magnet_frame=argument[8];
 	lifetime=argument[9];
-	set_hitbox_property(id,HITBOX.shape,argument[10]);
+	set_hitbox_property(id,HITBOX_PROPERTY.shape,argument[10]);
 	owner=other.id;
 	owner_xstart=other.x;
 	owner_ystart=other.y;

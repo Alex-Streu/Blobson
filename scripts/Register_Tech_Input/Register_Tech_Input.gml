@@ -7,7 +7,7 @@ if (tech_buffer >= tech_lockout_time)
 		state == PLAYER_STATE.in_hitstun || 
 		state == PLAYER_STATE.in_tumble)
 		{
-		if (button(INPUT.shield,buff))
+		if (button(INPUT.shield, buff))
 			{
 			tech_buffer = 0;
 			}

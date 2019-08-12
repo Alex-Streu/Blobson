@@ -1,14 +1,14 @@
 ///Standard_Ledge_Attack
 //Contains the standard actions for the ledge attack state.
-var run=true;
+var run = true;
 //Timer
 ledge_attack_frame=max(--ledge_attack_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"LedgeA"];
-anim_speed= ani_speed_getup;;
+anim_speed=anim_speed_normal;
 #endregion
 #region Invincible
-set_invulnerable(INV.type_invincible,1);
+set_invulnerable(INV.invincible,1);
 #endregion
 #region No speed
 set_speed(0,0,false,false);

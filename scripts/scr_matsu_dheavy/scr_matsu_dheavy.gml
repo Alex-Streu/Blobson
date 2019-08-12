@@ -132,7 +132,7 @@ if (run)
 				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dheavy_hit);	
 				
 				
-				create_fx(spr_fx_poof1,2,0,27, x +52 * facing,y,1,0);
+				//create_fx(spr_fx_poof1,2,0,27, x +52 * facing,y,1,0);
 				audio_play_sound(sfx_slam1,10,false);
 				}
 			break;

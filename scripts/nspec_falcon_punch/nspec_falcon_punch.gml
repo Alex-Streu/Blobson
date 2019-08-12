@@ -1,5 +1,8 @@
 //Neutral Special
-var run=true;
+/*
+- You can reverse the attack on the frame it comes out. This increases its power
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -55,7 +58,8 @@ if (run)
 					set_speed(0,-1,true,false);
 					}
 				
-				create_melee(15,-2,1,0.6,20,_attack_power,1,20,35,4,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(15,-2,1,0.6,20,_attack_power,1,20,35,4,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_explosion);
 				attack_frame=4;
 				attack_phase++;
 				}

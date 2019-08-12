@@ -1,9 +1,9 @@
-///@func on_plat(x,y);
-///@param x
-///@param y
+///@func on_plat([x],[y]);
+///@param [x]
+///@param [y]
 var _x,_y;
-_x=argument0;
-_y=argument1;
+_x = argument_count > 0 ? argument[0] : x;
+_y = argument_count > 1 ? argument[1] : y;
 
 //Direct collision checking - fast
 if (platform_check_type==0)

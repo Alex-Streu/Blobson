@@ -1,11 +1,11 @@
 //Forward Tilt for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
 //Canceling
-if run && cancel_air_check() run=false;
+if run && cancel_air_check() run = false;
 //Phases
 if (run)
 	{
@@ -31,7 +31,7 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=6;
-				create_melee(35,2,1.1,0.6,5,7,1,5,45,3,HITBOX_SHAPE.circle,0,FLIPPER.sakurai);
+				create_melee(35,2,1.1,0.6,6,8,0.8,5,45,3,HITBOX_SHAPE.circle,0,FLIPPER.sakurai);
 				}
 			break;
 			}

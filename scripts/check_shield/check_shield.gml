@@ -3,31 +3,25 @@
 //If you are holding the shield button
 switch(shield_type)
 	{
-	case 0:
+	case SHIELD.melee:
 		{
 		if (button_hold(INPUT.shield))
 			{
 			//Change to shielding state
 			set_state(PLAYER_STATE.shielding);
-			shield_frame=shield_min_time;
+			shield_frame = shield_min_time;
 			return true;
 			}
 		break;
 		}
-	case 1:
+	case SHIELD.rivals:
 		{
-		if (button(INPUT.shield,buff))
+		if (button(INPUT.shield, buff))
 			{
 			//Change to parrying state
 			set_state(PLAYER_STATE.parrying);
-			parry_frame=parry_startup;
+			parry_frame = parry_startup;
 			return true;
-			
-			if ((sign(stick_value(Lstick,DIR.horizontal))==sign(hsp) || sign(hsp)==0) && stick_tilted(Lstick,DIR.horizontal))
-			{
-			}
-			
-			
 			}
 		break;
 		}

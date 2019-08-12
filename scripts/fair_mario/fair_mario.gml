@@ -1,16 +1,15 @@
 //Forward Aerial
-//Logic Control Variable
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 //Actions
 friction_gravity(air_friction,grav,max_fall_speed);
 fastfall_attack_try();
-hitfall_try();
+allow_hitfall();
 aerial_drift();
 //Cancels
-if run && cancel_ground_check()	run=false;
+if run && cancel_ground_check()	run = false;
 //Main Phases
 if (run)
 	{
@@ -43,7 +42,8 @@ if (run)
 				//Animation
 				anim_frame = 4;
 				//Creates both the spiking sweetspot and the sourspot
-				create_melee(26,6,0.5,0.4,13,7.5,0.75,15,300,6,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(26,6,0.5,0.4,13,7.5,0.75,15,300,6,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				create_melee(0,-20,0.2,0.2,6,12,0.4,5,60,6,HITBOX_SHAPE.circle,0);
 				create_melee(20,-4,0.6,0.8,10,12,0.3,6,45,6,HITBOX_SHAPE.circle,0);
 				//Next phase

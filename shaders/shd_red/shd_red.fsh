@@ -7,9 +7,11 @@ uniform float fade_amount;
 
 void main()
 {
+	/*
     gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 	gl_FragColor.r +=fade_amount;
 	gl_FragColor.g -=fade_amount;
 	gl_FragColor.b -=fade_amount;
 	gl_FragColor.a =1.0;
+	//*/
 }

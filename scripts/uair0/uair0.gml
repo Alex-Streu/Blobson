@@ -1,5 +1,5 @@
 //Up Aerial for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -8,13 +8,12 @@ fastfall_attack_try();
 allow_hitfall();
 aerial_drift();
 //Canceling
-if run && cancel_ground_check() run=false;
+if run && cancel_ground_check() run = false;
 //Phases
 if (run)
 	{
 	switch(_phase)
 		{
-		//Add startup frames
 		case PHASE.start:
 			{
 			//Animation
@@ -42,7 +41,8 @@ if (run)
 				attack_phase++;
 				attack_frame=19;
 				//Initial hit
-				create_melee(30,-28,1,0.9,11,7,0.9,10,82,2,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(30,-28,1,0.9,10,7,0.9,10,82,2,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_weak2);
 				}
 			break;
 			}
@@ -53,7 +53,7 @@ if (run)
 				{
 				anim_frame=3;
 				//Initial hit
-				create_melee(30,-36,1.2,0.5,11,7,0.9,8,82,2,HITBOX_SHAPE.rectangle,0);
+				create_melee(30,-36,1.2,0.5,10,7,0.9,8,82,2,HITBOX_SHAPE.rectangle,0);
 				}
 			if (attack_frame==16)
 				{

@@ -41,7 +41,7 @@ if (run)
 				parry_phase++;
 				parry_frame=parry_active;
 				//Invulnerability
-				set_invulnerable(INV.type_parry,parry_active);
+				set_invulnerable(INV.parry,parry_active);
 				}
 			break;
 			}
@@ -81,7 +81,7 @@ if (run)
 		case PHASE.parry:
 			{
 			/*Parry has been triggered by a hitbox*/
-			set_invulnerable(INV.type_invincible,parry_invincible_time);
+			set_invulnerable(INV.invincible,parry_invincible_time);
 			if (parry_frame>14)
 				anim_frame=6;
 			if (parry_frame==13)

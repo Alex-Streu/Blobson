@@ -1,6 +1,6 @@
 /// @description
 event_inherited();
-overlay_sprite=spr_fspec_projectile1;
+overlay_sprite=spr_fspec_missile_projectile;
 overlay_speed=0.3;
 instructions=[];
 current_inst=0;

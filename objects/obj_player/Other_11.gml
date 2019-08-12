@@ -1,9 +1,22 @@
 /// @description <Run by obj_game>
-if (!is_AI)
+//Input buffer
+if (!global.replay_mode)
 	{
-	Update_Input_Buffer(input_buffer,uses_keyboard,false);
+	if (!is_AI)
+		{
+		Update_Input_Buffer(input_buffer, uses_keyboard, false);
+		}
+	else
+		{
+		AI_Input(false);
+		}
+	if (global.replay_record)
+		{
+		Input_Replay_Convert(global.game_replay[| player_number], input_buffer);
+		}
+	Register_Tech_Input(true);
 	}
 else
 	{
-	AI_Input();
+	//Update_Input_Buffer_Replay(input_buffer, false);
 	}

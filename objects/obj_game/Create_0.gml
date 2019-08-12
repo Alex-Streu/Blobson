@@ -48,43 +48,47 @@ draw = true;
 
 //Cache some values
 number_of_players = instance_number(obj_player);
-status_bar_space =  64 + (camera_width div (number_of_players + 1));
-player_status_x = -300;
-player_status_y = (camera_height - player_status_padding_bottom - 64);
+status_bar_space = (camera_width div (number_of_players + 1));
+player_status_y = (camera_height - player_status_padding_bottom);
 
 //Shader uniforms
 uni_s = shader_get_uniform(shd_palette, "sample");
 uni_r = shader_get_uniform(shd_palette, "replace");
 
-if (day_night_cycle_enable)
+if (daynight_cycle_enable)
 	{
 	uni_red = shader_get_uniform(shd_daynight, "red");
-	uni_blue = shader_get_uniform(shd_daynight, "blue");
 	uni_green = shader_get_uniform(shd_daynight, "green");
+	uni_blue = shader_get_uniform(shd_daynight, "blue");
+
+	daynight_r = 0;
+	daynight_g = 0;
+	daynight_b = 0;
 	}
 
 //Startup counter
-countdown = 240;
+countdown = count_time * 4;
 
-//portrait palettes
+//Replays
+global.replay_data[? "SEED"] = random_get_seed();
 
-//player_1_pal = 3;
-//player_3_pal = 4;
-//player_2_pal = 5;
-current_pal = 1;
-
-var _player = instance_find(obj_player, instance_number(obj_player)-1);	
-
-//if _player.player_number = 0 {current_pal = 2}
-//if _player.player_number = 1 {current_pal = 3}
-//if _player.player_number = 2 {current_pal = 3}
-
-my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
-
-//current_pal = 1
-
-///Override stuff.
-override_surface=noone;
-override_pal_index=1;
-
-ex_meter_ui_x = 154;
+//Clear buffer for each player
+if (!global.replay_mode)
+	{
+	for(var i = 0; i < max_players; i++)
+		{
+		var _buffer = global.game_replay[| i];
+		buffer_reset(_buffer);
+		}
+	}	
+	
+//Load replay for playback
+if (global.replay_mode)
+	{
+	//Players must start at the beginning of their buffers
+	with(obj_player)
+		{
+		var _buffer = global.game_replay[| player_number];
+		buffer_seek(_buffer, buffer_seek_start, 0);
+		}
+	}

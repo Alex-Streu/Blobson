@@ -19,8 +19,8 @@ if (instance_number(obj_ledge) > 0)
 			bbox_bottom > _nearest.y &&
 			distance_to_point(_nearest.x,_nearest.y) < ledge_grab_distance &&
 			not stick_tilted(Lstick,DIR.down) &&
-			(abs(stick_value(Lstick,DIR.horizontal)) < stick_tilt_amount ||
-			sign(stick_value(Lstick,DIR.horizontal)) != -_nearest.ledge_direction))
+			(abs(stick_get_value(Lstick,DIR.horizontal)) < stick_tilt_amount ||
+			sign(stick_get_value(Lstick,DIR.horizontal)) != -_nearest.ledge_direction))
 			{
 			set_state(PLAYER_STATE.ledge_snap);
 			ledge_id = _nearest;

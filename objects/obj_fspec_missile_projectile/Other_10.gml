@@ -1,5 +1,5 @@
 /// @description
-create_fx(spr_projectile_trail,1,0,28,x,y,2,irandom(360),"FX_Layer_Below");
+fx_create(spr_projectile_trail,1,0,28,x,y,2,irandom(360),"FX_Layer_Below");
 
 //Turning
 var _cx = owner.control_xvalue_l;

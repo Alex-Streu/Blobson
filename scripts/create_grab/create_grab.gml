@@ -15,7 +15,7 @@ with(_newhitbox)
 	grab_destination_x=argument[4]*other.facing;
 	grab_destination_y=argument[5];
 	lifetime=argument[6];
-	set_hitbox_property(id,HITBOX.shape,argument[7]);
+	set_hitbox_property(id,HITBOX_PROPERTY.shape,argument[7]);
 	owner=other.id;
 	owner_xstart=other.x;
 	owner_ystart=other.y;

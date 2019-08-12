@@ -1,19 +1,10 @@
-///@func button_reset(input_index)
+///@func button_reset(input_index,[value])
 ///@param input_index
-///@desc Reset the input buffer in all indexes that are mapped to the input
-var ar,in;
-ar=cc;
-in=argument[0];
+///@param [value]
+///@desc Reset the input buffer for the given input
+var _ar, _in, _val;
+_ar = input_buffer;
+_in = argument[0];
+_val = argument_count > 1 ? argument[1] : max_buffer_length;
 
-//Checks each button in the array
-for(var i=0;i<array_length_1d(ar);i++)
-	{
-	//See if the button's action matches with the input_index
-	if (ar[@ i]==in)
-		{
-		//Set the buffer frame to the max amount (for both the pressed & held versions)
-		input_buffer[| (i*2)]=max_buffer_length;
-		input_buffer[| (i*2)+1]=max_buffer_length;
-		}
-	}
-return;
+_ar[| _in] = _val;

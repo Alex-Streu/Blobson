@@ -11,6 +11,7 @@ uniform float time;
 
 void main()
 	{
+	/*
 	//Find the closest node
 	int closest = 0;
 	float least = 1000.;
@@ -25,4 +26,5 @@ void main()
 		}
 	float alpha = clamp(sin((float(point_x[closest] + point_y[closest]) + time) / 200.),0.0,0.75);
 	gl_FragColor = vec4(point_r[closest],point_g[closest],point_b[closest],alpha);
+	//*/
 	}

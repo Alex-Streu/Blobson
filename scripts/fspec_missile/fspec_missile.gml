@@ -1,5 +1,9 @@
 //Forward Special
-var run=true;
+/*
+- Fires a controllable missile
+- Hold the button to extend the attack (making it easier to control the missile without self destructing)
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -16,7 +20,6 @@ if (run)
 	{
 	switch(_phase)
 		{
-		//Add startup frames
 		case PHASE.start:
 			{
 			//Animation

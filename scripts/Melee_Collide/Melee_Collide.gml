@@ -24,7 +24,7 @@ for(var i=0;i<ds_list_size(_col_list);i++)
 //Check invulnerability
 switch(_hit.invulnerable_type)
 	{
-	case INV.type_normal:
+	case INV.normal:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -46,9 +46,13 @@ switch(_hit.invulnerable_type)
 			//Calculate angle based on flipper
 			var _calc_angle = 90;
 			if (on_ground())
+				{
 				_calc_angle=apply_angle_flipper(other.grounded_angle,other.angle_flipper,other.owner,id,_total_kb);
+				}
 			else
+				{
 				_calc_angle=apply_angle_flipper(other.angle,other.angle_flipper,other.owner,id,_total_kb);
+				}
 			}
 		//Knockback is applied, unless there is zero knockback
 		if (base_knockback!=0)
@@ -73,33 +77,9 @@ switch(_hit.invulnerable_type)
 			}
 		//Attacking player gets the same hitlag
 		owner.self_hitlag_frame=_total_hl;
-		//Visuals
-		part_type_direction(global.p1,_calc_angle-15,_calc_angle+15,0,0); //Change the particle direction
-		part_type_speed(global.p1,max(7,base_knockback),max(10,base_knockback+3),0,0);
-		create_fx(spr_hit_fx_strong_initial_hit,1,0,4,mean(owner.x,_hit.x),mean(owner.y,_hit.y),1.5,irandom(360));
-		with(create_fx(spr_hit_fx_direction_burst,1,0,13,_hit.x,_hit.y,1,_calc_angle)) image_xscale *= choose(-1,1);
-		with(create_fx(spr_hit_fx_strong_hit,1,0,10,_hit.x,_hit.y,3,_calc_angle)) image_xscale *= choose(-1,1);
-		//Audio
-		audio_play_sound(snd_hit, 10, false);
-		//With the target
-		with(_hit)
-			{
-			//Make hit fx particles
-			part_particles_create(global.part_sys,x+(sprite_get_width(anim_sprite)/2),y+(sprite_get_height(anim_sprite)/2),global.p1,max(other.base_knockback div 5,10));
-			//If the knockback is strong enough
-			if (_total_kb>15)
-				{
-				//Make more effects
-				create_fx(spr_hit_fx_screen_lines,0,0,15,x,y,2,0);
-				create_fx(spr_hit_fx_strong_lightning,1,0,7,x,y,2,_calc_angle);
-				create_fx(spr_hit_fx_circle,1,0,17,x,y,1,irandom(360));
-				}
-			}
-		//Camera shake
-		var _shake=(calculate_knockback(_hit.damage,damage,_hit.weight_multiplier,knockback_scaling,base_knockback) div 2);
-		camera_shake(_shake);
-		//Normal Hit fade
-		_hit.fade_value=0.3;
+		//Effects
+		hit_fx_style_create(hit_fx_style,_calc_angle,_hit,_total_kb);
+		hit_sfx_play(hit_sfx);
 		//Final Hit fade
 		if (is_finishing_blow(_total_kb,_hit.x,_hit.y,_calc_angle,_hit.stored_hitstun,_hit))
 			{
@@ -107,14 +87,14 @@ switch(_hit.invulnerable_type)
 			}
 		break;
 		}
-	case INV.type_invincible:
+	case INV.invincible:
 		{
 		//No knockback or damage or hitlag
 		//Do not add the player to the collided list
 		//This is because the opponent should be hit even if their invincibility runs out mid-attack
 		break;
 		}
-	case INV.type_superarmor:
+	case INV.superarmor:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -126,7 +106,7 @@ switch(_hit.invulnerable_type)
 		_hit.self_hitlag_frame=base_hitlag;
 		break;
 		}
-	case INV.type_shielding:
+	case INV.shielding:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -135,11 +115,12 @@ switch(_hit.invulnerable_type)
 		_hit.shield_stun+=calculate_shieldstun(damage,1);
 		//Hitlag
 		owner.self_hitlag_frame=base_hitlag;
-		//Hit effects
-		create_fx(spr_hit_fx_shield,1,0,11,mean(owner.x,_hit.x),mean(owner.y,_hit.y),1,irandom(360));
+		//Effects
+		hit_fx_style_create(HIT_FX.shield,0,_hit,0);
+		hit_sfx_play(hit_sfx);
 		break;
 		}
-	case INV.type_parry:
+	case INV.parry:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);

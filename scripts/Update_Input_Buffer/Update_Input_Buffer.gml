@@ -3,75 +3,78 @@
 ///@param keyboard
 ///@param count
 ///Can only be called by players
-var b;
-b=argument[0];
+var _buffer, _cc, _keyboard, _count;
+_buffer = argument[0];
+_cc = cc;
+_keyboard = argument[1];
+_count = argument[2];
 //Update input buffer
 #region Input Buffer Count
-if (argument[2])
+if (_count)
 	{
 	//Counts for each input
-	for(var i=0;i<(number_of_buttons*2);i++)
+	for(var i = 0; i < (INPUT.length * 2); i++)
 		{
-		b[| i]=min(++b[| i],max_buffer_length);
+		_buffer[| i] = min(++_buffer[| i], max_buffer_length);
 		}
 	}
 #endregion
 #region Keyboard
-if (argument[1])
+if (_keyboard)
 	{
 	//Buttons
-	if keyboard_check_pressed(ord("S")) b[| 0]=0;
-	if keyboard_check(ord("S")) b[| 1]=0;
-	if keyboard_check_pressed(ord("A")) b[| 2]=0;
-	if keyboard_check(ord("A")) b[| 3]=0;
-	if keyboard_check_pressed(ord("D")) b[| 4]=0;
-	if keyboard_check(ord("D")) b[| 5]=0;
-	if keyboard_check_pressed(ord("F")) b[| 6]=0;
-	if keyboard_check(ord("F")) b[| 7]=0;
-	//Back buttons
-	if keyboard_check_pressed(ord("Z")) b[| 8]=0;
-	if keyboard_check(ord("Z")) b[| 9]=0;
-	if keyboard_check_pressed(ord("X")) b[| 10]=0;
-	if keyboard_check(ord("X")) b[| 11]=0;
-	if keyboard_check_pressed(ord("C")) b[| 12]=0;
-	if keyboard_check(ord("C")) b[| 13]=0;
-	if keyboard_check_pressed(ord("V")) b[| 14]=0;
-	if keyboard_check(ord("V")) b[| 15]=0;
-	//Pausing
-	if keyboard_check_pressed(vk_enter) b[| 16]=0;
-	if keyboard_check(vk_enter) b[| 17]=0;
-	if keyboard_check_pressed(vk_shift) b[| 18]=0;
-	if keyboard_check(vk_shift) b[| 19]=0;
-	//Dpad
-	if keyboard_check_pressed(ord("G")) b[| 20]=0;
-	if keyboard_check(ord("G")) b[| 21]=0;
+	if keyboard_check_pressed(ord("S")) _buffer[| _cc[0]] = 0;
+	if keyboard_check(ord("S")) _buffer[| _cc[0] + INPUT.length] = 0;   
+	if keyboard_check_pressed(ord("A")) _buffer[| _cc[1]] = 0;
+	if keyboard_check(ord("A")) _buffer[| _cc[1] + INPUT.length] = 0;	   
+	if keyboard_check_pressed(ord("D")) _buffer[| _cc[2]] = 0;
+	if keyboard_check(ord("D")) _buffer[| _cc[2] + INPUT.length] = 0;		   
+	if keyboard_check_pressed(ord("F")) _buffer[| _cc[3]] = 0;
+	if keyboard_check(ord("F")) _buffer[| _cc[3] + INPUT.length] = 0;		   
+	//Back buttons									   
+	if keyboard_check_pressed(ord("Z")) _buffer[| _cc[4]] = 0;
+	if keyboard_check(ord("Z")) _buffer[| _cc[4] + INPUT.length] = 0;
+	if keyboard_check_pressed(ord("X")) _buffer[| _cc[5]] = 0;
+	if keyboard_check(ord("X")) _buffer[| _cc[5] + INPUT.length] = 0;   
+	if keyboard_check_pressed(ord("C")) _buffer[| _cc[6]] = 0;
+	if keyboard_check(ord("C")) _buffer[| _cc[6] + INPUT.length] = 0;    
+	if keyboard_check_pressed(ord("V")) _buffer[| _cc[7]] = 0;
+	if keyboard_check(ord("V")) _buffer[| _cc[7] + INPUT.length] = 0;   
+	//Pausing										    
+	if keyboard_check_pressed(vk_enter) _buffer[| _cc[8]] = 0;
+	if keyboard_check(vk_enter) _buffer[| _cc[8] + INPUT.length] = 0;	    
+	if keyboard_check_pressed(vk_shift) _buffer[| _cc[9]] = 0;
+	if keyboard_check(vk_shift) _buffer[| _cc[9] + INPUT.length] = 0;    
+	//Dpad											    
+	if keyboard_check_pressed(ord("G")) _buffer[| _cc[10]] = 0;
+	if keyboard_check(ord("G")) _buffer[| _cc[10] + INPUT.length] = 0;
 	//Rstick - replicate a "pressed" function
 	//Cache Stick Values
-	Stick_Cache_Values(Rstick,keyboard_check(ord("L"))-keyboard_check(ord("J")),keyboard_check(ord("K"))-keyboard_check(ord("I")));
-	var cxr=control_xprevious_r[stick_check_frames-1];
-	var cyr=control_yprevious_r[stick_check_frames-1];
-	if ((point_distance(0,0,control_xvalue_r,control_yvalue_r)>rstick_flick_amount) &&
-		point_distance(cxr,cyr,control_xvalue_r,control_yvalue_r)>rstick_flick_speed)
+	Stick_Cache_Values(Rstick, keyboard_check(ord("L")) - keyboard_check(ord("J")), keyboard_check(ord("K")) - keyboard_check(ord("I")), _count);
+	var _dist = stick_get_distance(Rstick);
+	if (_dist > rstick_flick_amount &&
+		stick_get_speed(Rstick) > rstick_flick_speed)
 		{
-		b[| 22]=0;
+		_buffer[| _cc[11]] = 0;
+		control_flicked_r = 0;
 		}
-	if (point_distance(0,0,control_xvalue_r,control_yvalue_r)>rstick_tilt_amount)
+	if (_dist > rstick_tilt_amount)
 		{
-		b[| 23]=0;
+		_buffer[| _cc[11] + INPUT.length] = 0;
+		control_tilted_r = 0;
 		}
 	//Lstick - same as rstick
 	//Cache Stick Values
-	Stick_Cache_Values(Lstick,keyboard_check(vk_right)-keyboard_check(vk_left),keyboard_check(vk_down)-keyboard_check(vk_up));
-	var cxl=control_xprevious_l[stick_check_frames-1];
-	var cyl=control_yprevious_l[stick_check_frames-1];
-	if ((point_distance(0,0,control_xvalue_l,control_yvalue_l)>stick_flick_amount) &&
-		point_distance(cxl,cyl,control_xvalue_l,control_yvalue_l)>stick_flick_speed)
+	Stick_Cache_Values(Lstick, keyboard_check(vk_right) - keyboard_check(vk_left), keyboard_check(vk_down) - keyboard_check(vk_up), _count);
+	var _dist = stick_get_distance(Lstick);
+	if (_dist > stick_flick_amount &&
+		stick_get_speed(Lstick) > stick_flick_speed)
 		{
-		b[| 24]=0;
+		control_flicked_l = 0;
 		}
-	if (point_distance(0,0,control_xvalue_l,control_yvalue_l)>stick_tilt_amount)
+	if (_dist > stick_tilt_amount)
 		{
-		b[| 25]=0;
+		control_tilted_l = 0;
 		}
 	}
 #endregion 
@@ -79,62 +82,63 @@ if (argument[1])
 else
 	{
 	//Buttons
-	if (gamepad_button_check_pressed(controller,gp_face1)) b[| 0]=0;
-	if (gamepad_button_check(controller,gp_face1)) b[| 1]=0;
-	if (gamepad_button_check_pressed(controller,gp_face2)) b[| 2]=0;
-	if (gamepad_button_check(controller,gp_face2)) b[| 3]=0;
-	if (gamepad_button_check_pressed(controller,gp_face3)) b[| 4]=0;
-	if (gamepad_button_check(controller,gp_face3)) b[| 5]=0;
-	if (gamepad_button_check_pressed(controller,gp_face4)) b[| 6]=0;
-	if (gamepad_button_check(controller,gp_face4)) b[| 7]=0;
+	if (gamepad_button_check_pressed(controller, gp_face1)) _buffer[| _cc[0]] = 0;
+	if (gamepad_button_check(controller, gp_face1)) _buffer[| _cc[0] + INPUT.length] = 0;
+	if (gamepad_button_check_pressed(controller, gp_face2)) _buffer[| _cc[1]] = 0;
+	if (gamepad_button_check(controller, gp_face2)) _buffer[| _cc[1] + INPUT.length] = 0;	      
+	if (gamepad_button_check_pressed(controller, gp_face3)) _buffer[| _cc[2]] = 0;
+	if (gamepad_button_check(controller, gp_face3)) _buffer[| _cc[2] + INPUT.length] = 0;	      
+	if (gamepad_button_check_pressed(controller, gp_face4)) _buffer[| _cc[3]] = 0;
+	if (gamepad_button_check(controller, gp_face4)) _buffer[| _cc[3] + INPUT.length] = 0;
+	
 	//Back buttons
-	if (gamepad_button_check_pressed(controller,gp_shoulderl)) b[| 8]=0;
-	if (gamepad_button_check(controller,gp_shoulderl)) b[| 9]=0;
-	if (gamepad_button_check_pressed(controller,gp_shoulderr)) b[| 10]=0;
-	if (gamepad_button_check(controller,gp_shoulderr)) b[| 11]=0;
-	if (gamepad_button_check_pressed(controller,gp_shoulderlb)) b[| 12]=0;
-	if (gamepad_button_check(controller,gp_shoulderlb)) b[| 13]=0;
-	if (gamepad_button_check_pressed(controller,gp_shoulderrb)) b[| 14]=0;
-	if (gamepad_button_check(controller,gp_shoulderrb)) b[| 15]=0;
+	if (gamepad_button_check_pressed(controller, gp_shoulderl)) _buffer[| _cc[4]] = 0;
+	if (gamepad_button_check(controller, gp_shoulderl)) _buffer[| _cc[4] + INPUT.length] = 0;
+	if (gamepad_button_check_pressed(controller, gp_shoulderr)) _buffer[| _cc[5]] = 0;
+	if (gamepad_button_check(controller, gp_shoulderr)) _buffer[| _cc[5] + INPUT.length] = 0;
+	if (gamepad_button_check_pressed(controller, gp_shoulderlb)) _buffer[| _cc[6]] = 0;
+	if (gamepad_button_check(controller, gp_shoulderlb)) _buffer[| _cc[6] + INPUT.length] = 0;
+	if (gamepad_button_check_pressed(controller, gp_shoulderrb)) _buffer[| _cc[7]] = 0;
+	if (gamepad_button_check(controller, gp_shoulderrb)) _buffer[| _cc[7] + INPUT.length] = 0;
+	
 	//Pausing
-	if (gamepad_button_check_pressed(controller,gp_start)) b[| 16]=0;
-	if (gamepad_button_check(controller,gp_start)) b[| 17]=0;
-	if (gamepad_button_check_pressed(controller,gp_select)) b[| 18]=0;
-	if (gamepad_button_check(controller,gp_select)) b[| 19]=0;
+	if (gamepad_button_check_pressed(controller, gp_start)) _buffer[| _cc[8]] = 0;
+	if (gamepad_button_check(controller, gp_start)) _buffer[| _cc[8] + INPUT.length] = 0;
+	if (gamepad_button_check_pressed(controller, gp_select)) _buffer[| _cc[9]] = 0;
+	if (gamepad_button_check(controller, gp_select)) _buffer[| _cc[9] + INPUT.length] = 0;
+	
 	//Dpad
-	if (gamepad_button_check_pressed(controller,gp_padd)) b[| 20]=0;
-	if (gamepad_button_check(controller,gp_padd)) b[| 21]=0;
+	if (gamepad_button_check_pressed(controller, gp_padd)) _buffer[| _cc[10]] = 0;
+	if (gamepad_button_check(controller, gp_padd)) _buffer[| _cc[10] + INPUT.length] = 0;
 	
 	//Rstick - replicate a "pressed" function
 	//Cache Stick Values
-	Stick_Cache_Values(Rstick,gamepad_axis_value(controller,gp_axisrh),gamepad_axis_value(controller,gp_axisrv));
-	var cxr=control_xprevious_r[stick_check_frames-1];
-	var cyr=control_yprevious_r[stick_check_frames-1];
-	if ((point_distance(0,0,control_xvalue_r,control_yvalue_r)>rstick_flick_amount) &&
-		point_distance(cxr,cyr,control_xvalue_r,control_yvalue_r)>rstick_flick_speed)
+	Stick_Cache_Values(Rstick, gamepad_axis_rounded(controller, gp_axisrh), gamepad_axis_rounded(controller, gp_axisrv), _count);
+	var _dist = stick_get_distance(Rstick);
+	if (_dist > rstick_flick_amount &&
+		stick_get_speed(Rstick) > rstick_flick_speed)
 		{
-		b[| 22]=0;
+		_buffer[| _cc[11]] = 0;
+		control_flicked_r = 0;
 		}
-	if (point_distance(0,0,control_xvalue_r,control_yvalue_r)>rstick_tilt_amount)
+	if (_dist > rstick_tilt_amount)
 		{
-		b[| 23]=0;
+		_buffer[| _cc[11] + INPUT.length] = 0;
+		control_tilted_r = 0;
 		}
 	
 	//Lstick - same as rstick
 	//Cache Stick Values
-	Stick_Cache_Values(Lstick,gamepad_axis_value(controller,gp_axislh),gamepad_axis_value(controller,gp_axislv));
-	var cxl=control_xprevious_l[stick_check_frames-1];
-	var cyl=control_yprevious_l[stick_check_frames-1];
-	if ((point_distance(0,0,control_xvalue_l,control_yvalue_l)>stick_flick_amount) &&
-		point_distance(cxl,cyl,control_xvalue_l,control_yvalue_l)>stick_flick_speed)
+	Stick_Cache_Values(Lstick, gamepad_axis_rounded(controller, gp_axislh), gamepad_axis_rounded(controller, gp_axislv), _count);
+	var _dist = stick_get_distance(Lstick);
+	if (_dist > stick_flick_amount &&
+		stick_get_speed(Lstick) > stick_flick_speed)
 		{
-		b[| 24]=0;
+		control_flicked_l = 0;
 		}
-	if (point_distance(0,0,control_xvalue_l,control_yvalue_l)>stick_tilt_amount)
+	if (_dist > stick_tilt_amount)
 		{
-		b[| 25]=0;
+		control_tilted_l = 0;
 		}
 	}
 #endregion
-//Tech Input
-Register_Tech_Input(argument[2]);

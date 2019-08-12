@@ -15,7 +15,7 @@ if (run)
 			anim_speed= ani_speed_uspecial_charge;
 			anim_frame=0;
 			landing_lag = 15;
-			create_fx(spr_fx_energy1,1,0,27, x +0 * facing,y-48,1,0,5);			
+			//create_fx(spr_fx_energy1,1,0,27, x +0 * facing,y-48,1,0,5);			
 			set_speed(0,0.5,false,false);
 			attack_frame=25;
 			return;
@@ -34,7 +34,7 @@ if (run)
 				{
 				//Point in the correct direction
 				anim_sprite = my_sprites[?"Uspecial2" ]
-				create_fx(spr_fx_sparks1,1,0,27, x +0 * facing,y-48,1,0,5);
+				//create_fx(spr_fx_sparks1,1,0,27, x +0 * facing,y-48,1,0,5);
 				var _dir=(stick_tilted(Lstick)) ? stick_get_direction(Lstick) : 90;
 				var _spd=15;
 				set_speed(lengthdir_x(_spd,_dir),lengthdir_y(_spd,_dir),false,false);

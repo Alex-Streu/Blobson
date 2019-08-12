@@ -4,7 +4,7 @@
 ///@param [attacking_player]
 ///@param [target_player]
 ///@param [knockback]
-///Assumed to be run by a hitbox object
+///Assumed to be run by the hit player
 ///Base angles should default to facing right
 var _angle = argument[0];
 var _flipper = argument[1];
@@ -56,9 +56,9 @@ switch(_flipper)
 		break;
 	case FLIPPER.from_hitbox_center:
 		//Hits away from the center of the hitbox
-		if (x != _target.x || y != _target.y)
+		if (other.x != _target.x || other.y != _target.y)
 			{
-			_angle = point_direction(x, y, _target.x, _target.y);
+			_angle = point_direction(other.x, other.y, _target.x, _target.y);
 			}
 		else
 			{
@@ -67,9 +67,9 @@ switch(_flipper)
 		break;
 	case FLIPPER.toward_hitbox_center:
 		//Hits toward the center of the hitbox
-		if (x != _target.x || y != _target.y)
+		if (other.x != _target.x || other.y != _target.y)
 			{
-			_angle = point_direction(_target.x, _target.y, x, y);
+			_angle = point_direction(_target.x, _target.y, other.x, other.y);
 			}
 		else
 			{
@@ -78,14 +78,14 @@ switch(_flipper)
 		break;
 	case FLIPPER.from_hitbox_center_horizontal:
 		//Flips based on the target's position relative to the player
-		if (_target.x < x)
+		if (_target.x < other.x)
 			{
 			_angle = 180 - _angle;
 			}
 		break;
 	case FLIPPER.toward_hitbox_center_horizontal:
 		//Flips based on the target's position relative to the player
-		if (_target.x >= x)
+		if (_target.x >= other.x)
 			{
 			_angle = 180 - _angle;
 			}

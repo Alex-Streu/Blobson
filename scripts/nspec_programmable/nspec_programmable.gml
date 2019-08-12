@@ -1,5 +1,9 @@
 //Neutral Special
-var run=true;
+/*
+- Hold the button and move the control stick to plot points for the projectile
+- Release the button to shoot off the projectile
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -20,7 +24,7 @@ if (run)
 			attack_frame=10;
 			//Special instance variable
 			program=[];
-			smash_charge=0;
+			charge=0;
 			return;
 			}
 		//Startup -> Programming
@@ -52,37 +56,37 @@ if (run)
 				var _proj = custom_projectile(obj_nspec_programmable,0,0,0.4,0.4,6,5,0.7,30,(array_length_1d(program)+1)*20,HITBOX_SHAPE.circle,4,0);
 				_proj.instructions = program;
 				}
-			else if (--smash_charge<=0)
+			else if (--charge<=0)
 				{
 				if (stick_tilted(Lstick,DIR.up))
 					{
 					anim_frame=5;
-					smash_charge=15;
+					charge=15;
 					program[array_length_1d(program)]=90;
 					}
 				else
 				if (stick_tilted(Lstick,DIR.down))
 					{
 					anim_frame=7;
-					smash_charge=15;
+					charge=15;
 					program[array_length_1d(program)]=270;
 					}
 				else
 				if (stick_tilted(Lstick,DIR.right))
 					{
 					anim_frame = facing==1 ? 4 : 6;
-					smash_charge=15;
+					charge=15;
 					program[array_length_1d(program)]=0;
 					}
 				else
 				if (stick_tilted(Lstick,DIR.left))
 					{
 					anim_frame = facing==1 ? 6 : 4;
-					smash_charge=15;
+					charge=15;
 					program[array_length_1d(program)]=180;
 					}
 				}
-			else if (smash_charge < 5)
+			else if (charge < 5)
 				{
 				anim_frame=3;
 				}

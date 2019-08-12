@@ -24,7 +24,7 @@ for(var i=0;i<ds_list_size(_col_list);i++)
 //Check invulnerability
 switch(_hit.invulnerable_type)
 	{
-	case INV.type_normal:
+	case INV.normal:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -35,11 +35,6 @@ switch(_hit.invulnerable_type)
 		with(_hit)
 			{
 			set_state(PLAYER_STATE.magnetized);
-			//Particle Effects
-			//Make hit fx particles
-			part_type_direction(global.p1,0,360,0,0); //Change the particle direction
-			part_type_speed(global.p1,2,6,0,0);
-			part_particles_create(global.part_sys,x+(sprite_get_width(anim_sprite)/2),y+(sprite_get_height(anim_sprite)/2),global.p1,15);
 			}
 		_hit.magnet_goal_x=magnet_goal_x;
 		_hit.magnet_goal_y=magnet_goal_y;
@@ -54,21 +49,19 @@ switch(_hit.invulnerable_type)
 				_hit.facing=sign(owner.x-_hit.x);
 				}
 			}
-			//Audio
-		audio_play_sound(snd_hit, 10, false);
-		//Camera shake
-		var _shake=(2 + ((_hit.damage / 20) * _hit.weight_multiplier) div 2);
-		camera_shake(_shake);
+		//Effects
+		hit_fx_style_create(hit_fx_style, point_direction(_hit.x, _hit.y, magnet_goal_x, magnet_goal_y), _hit, damage);
+		hit_sfx_play(hit_sfx);
 		break;
 		}
-	case INV.type_invincible:
+	case INV.invincible:
 		{
 		//No knockback or damage or hitlag
 		//Do not add the player to the collided list
 		//This is because the opponent should be hit even if their invincibility runs out mid-attack
 		break;
 		}
-	case INV.type_superarmor:
+	case INV.superarmor:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -80,7 +73,7 @@ switch(_hit.invulnerable_type)
 		_hit.self_hitlag_frame=base_hitlag;
 		break;
 		}
-	case INV.type_shielding:
+	case INV.shielding:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -89,11 +82,12 @@ switch(_hit.invulnerable_type)
 		_hit.shield_stun+=calculate_shieldstun(damage,1);
 		//Hitlag
 		owner.self_hitlag_frame=base_hitlag;
-		//Hit effects
-		create_fx(spr_hit_fx_shield,1,0,11,mean(owner.x,_hit.x),mean(owner.y,_hit.y),1,irandom(360));
+		//Effects
+		hit_fx_style_create(HIT_FX.shield,0,_hit,0);
+		hit_sfx_play(hit_sfx);
 		break;
 		}
-	case INV.type_parry:
+	case INV.parry:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);

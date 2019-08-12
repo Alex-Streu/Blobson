@@ -1,6 +1,6 @@
 ///Standard_Spot_Dodge
 //Contains the standard actions for the spot dodge state.
-var run=true;
+var run = true;
 //Timer
 spot_dodge_frame=max(--spot_dodge_frame,0);
 //Animation is done in the phase switch
@@ -8,7 +8,7 @@ spot_dodge_frame=max(--spot_dodge_frame,0);
 if (run && !on_ground())
 	{
 	set_state(PLAYER_STATE.aerial);
-	run=false;
+	run = false;
 	}
 #endregion
 #region Transition through phases of spot dodging
@@ -30,7 +30,7 @@ if (run)
 				spot_dodge_phase++;
 				spot_dodge_frame=spot_dodge_active;
 				//Invulnerability
-				set_invulnerable(INV.type_invincible,spot_dodge_active);
+				set_invulnerable(INV.invincible,spot_dodge_active);
 				}
 			break;
 			}

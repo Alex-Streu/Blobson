@@ -1,18 +1,18 @@
 ///Standard_Grabbing
 //Contains the standard actions for the grabbing state.
 //"Grabbing" refers to the state when a player is holding an opponent after connecting a grab hitbox
-var run=true;
+var run = true;
 //Timer
-grab_frame=max(--grab_frame,0);
+grab_frame = max(--grab_frame, 0);
 #region Animation
-anim_sprite=my_sprites[?"Grabbing"];
-anim_speed=anim_speed_normal;
+anim_sprite = my_sprites[?"Grabbing"];
+anim_speed = anim_speed_normal;
 #endregion
 #region Friction & Gravity
-friction_gravity(ground_friction,grav,max_fall_speed);
+friction_gravity(ground_friction, grav, max_fall_speed);
 #endregion
 #region Change to Aerial State
-if run && check_aerial() run=false;
+if run && check_aerial() run = false;
 #endregion
 #region Attacking
 /*
@@ -25,10 +25,10 @@ if ((grabbed_id.state == PLAYER_STATE.is_grabbed || grabbed_id.state == PLAYER_S
 	(grabbed_id.x == (grabbed_id.grab_hold_x + x) && grabbed_id.y == (grabbed_id.grab_hold_y + y)))
 	{
 	#region Throw
-	if run && check_throws() run=false;
+	if run && check_throws() run = false;
 	#endregion
 	#region Pummel
-	if run && check_pummel() run=false;
+	if run && check_pummel() run = false;
 	#endregion
 	}
 #endregion
@@ -41,7 +41,7 @@ if (grabbed_id.state != PLAYER_STATE.is_grabbed && grabbed_id.state != PLAYER_ST
 #endregion
 #region Grab Release
 //Grabs end automatically when the grab frame times out without a throw
-if (grab_frame==0)
+if (grab_frame == 0)
 	{
 	grab_release();
 	}

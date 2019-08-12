@@ -1,5 +1,5 @@
 //Up Special for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -8,7 +8,6 @@ if (run)
 	{
 	switch(_phase)
 		{
-		//Add startup frames
 		case PHASE.start:
 			{
 			//Animation
@@ -37,8 +36,9 @@ if (run)
 				set_speed(4*facing,-18,false,false);
 				attack_phase++;
 				attack_frame=8;
-				create_magnetbox(20,0,0.6,0.6,5,8,32,-72,8,1,HITBOX_SHAPE.circle,0);
-				set_invulnerable(INV.type_superarmor,8);
+				var _hitbox = create_magnetbox(20,0,0.6,0.6,5,4,32,-72,8,1,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.normal_weak);
+				set_invulnerable(INV.superarmor,8);
 				}
 			break;
 			}
@@ -55,7 +55,7 @@ if (run)
 			//Drift while rising
 			if (stick_tilted(Lstick,DIR.horizontal))
 				{
-				hsp += 1 * stick_value(Lstick,DIR.horizontal);
+				hsp += 1 * stick_get_value(Lstick,DIR.horizontal);
 				}
 			if (facing == 1)
 				{
@@ -69,7 +69,8 @@ if (run)
 			if (attack_frame % 2 == 0)
 				{
 				reset_hitbox_group(collided,1);
-				create_magnetbox(10,-10,0.6,0.6,1,4,32,-72,8,2,HITBOX_SHAPE.circle,1);
+				var _hitbox = create_magnetbox(10,-10,0.6,0.6,1,4,32,-72,8,2,HITBOX_SHAPE.circle,1);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.normal_weak);
 				}
 			//Final hitbox
 			if (attack_frame==0)
@@ -83,7 +84,9 @@ if (run)
 					}
 				attack_phase++;
 				attack_frame=15;
-				create_melee(10,-20,0.4,0.4,3,13.5,0.6,20,55,3,HITBOX_SHAPE.circle,2);
+				var _hitbox = create_melee(10,-20,0.4,0.4,3,13.5,0.6,20,55,3,HITBOX_SHAPE.circle,2);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.normal_strong);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				}
 			break;
 			}
@@ -93,7 +96,7 @@ if (run)
 			//Gravity
 			friction_gravity(air_friction,grav,max_fall_speed);
 			//Grab ledges
-			if !stick_tilted(Lstick,DIR.up) && check_ledge_grab() return;
+			if (!stick_tilted(Lstick,DIR.up) && check_ledge_grab()) return;
 			//Animation
 			if (attack_frame==8)
 				anim_frame=6;

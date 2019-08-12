@@ -1,6 +1,6 @@
 //Up Aerial
 //Logic Control Variable
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame, 0);
@@ -8,7 +8,7 @@ attack_frame=max(--attack_frame, 0);
 //Actions
 friction_gravity(air_friction, grav, max_fall_speed);
 fastfall_attack_try();
-hitfall_try();
+allow_hitfall();
 aerial_drift();
 
 //Cancels
@@ -43,7 +43,8 @@ if (run)
 				//Animation
 				anim_frame = 2;
 				
-				create_melee(26, 0, 0.4, 0.4, 7, 6, 0.6, 8, 75, 2, HITBOX_SHAPE.circle, 0);
+				var _hitbox = create_melee(26, 0, 0.4, 0.4, 7, 6, 0.6, 8, 75, 2, HITBOX_SHAPE.circle, 0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_weak2);
 				
 				//Next phase
 				attack_phase++;

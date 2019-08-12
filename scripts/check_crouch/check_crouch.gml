@@ -4,7 +4,6 @@
 if (stick_tilted(Lstick,DIR.down))
 	{
 	//Set the state to crouching and stop the script.
-	anim_frame = 0
 	set_state(PLAYER_STATE.crouching);
 	return true;
 	}

@@ -1,18 +1,20 @@
 //Aerial Tether for character0
-var run=true;
+/*
+- Grabs ledges when the ledge tether conditions are met
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 friction_gravity(air_friction,grav,max_fall_speed);
 aerial_drift();
 //Canceling
-if run && cancel_ground_check() run=false;
+if run && cancel_ground_check() run = false;
 //Phases
 if (run)
 	{
 	switch(_phase)
 		{
-		//Add startup frames
 		case PHASE.start:
 			{
 			//Animation
@@ -65,7 +67,7 @@ if (run)
 				
 				attack_phase++;
 				//Whiff lag
-				attack_frame = attack_has_hit() ? 6 : 12;
+				attack_frame = attack_has_hit() ? 6 : 18;
 				}
 			break;
 			}

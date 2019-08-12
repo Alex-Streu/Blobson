@@ -1,6 +1,6 @@
 ///Standard_Techrolling
 //Contains the standard actions for the tech rolling state.
-var run=true;
+var run = true;
 //Timer
 techrolling_frame=max(--techrolling_frame,0);
 //Animation is in the phases
@@ -15,7 +15,7 @@ switch(techrolling_phase)
 		anim_frame=0;
 		//No speed
 		set_speed(0,0,false,false);
-		set_invulnerable(INV.type_invincible,techroll_active+1);
+		set_invulnerable(INV.invincible,techroll_active+1);
 		if (techrolling_frame==0)
 			{
 			//Next phase
@@ -27,7 +27,7 @@ switch(techrolling_phase)
 	case 1:
 		{
 		//Animation
-		anim_speed = ani_speed_techroll;
+		anim_speed=anim_speed_normal;
 		//No speed
 		set_speed(0,0,false,false);
 		roll_move(32,techroll_speed,techrolling_direction);
@@ -52,7 +52,7 @@ switch(techrolling_phase)
 			techrolling_phase=0;
 			//Back to Idle State
 			set_state(PLAYER_STATE.idle);
-			run=false;
+			run = false;
 			}
 		break;
 		}

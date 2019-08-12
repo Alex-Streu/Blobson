@@ -4,7 +4,7 @@
 set_speed(0,0,false,false);
 x=room_width/2;
 y=room_height/2;
-set_invulnerable(INV.type_invincible,1);
+set_invulnerable(INV.invincible,1);
 #region Share Stock
 #endregion
 //No movement

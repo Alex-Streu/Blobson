@@ -1,5 +1,5 @@
 //Backward Aerial for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -8,14 +8,13 @@ fastfall_attack_try();
 allow_hitfall();
 aerial_drift();
 //Canceling
-if run && cancel_ground_check() run=false;
+if run && cancel_ground_check() run = false;
 
 //Phases
 if (run)
 	{
 	switch(_phase)
 		{
-		//Add startup frames
 		case PHASE.start:
 			{
 			//Animation
@@ -38,7 +37,8 @@ if (run)
 				//Animation
 				anim_frame=2;
 				
-				create_melee(-16,0,0.5,0.7,8,11,0.55,8,40,3,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(-16,0,0.5,0.7,8,11,0.6,8,40,3,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				}
 			if (attack_frame==0)
 				{
@@ -78,7 +78,7 @@ if (run)
 			if (attack_frame==0)
 				{
 				attack_stop(PLAYER_STATE.aerial);
-				run=false;
+				run = false;
 				}
 			break;
 			}

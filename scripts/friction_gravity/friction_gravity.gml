@@ -6,7 +6,6 @@
 var _fric = argument_count>0 ? argument[0] : fric;
 //Apply friction
 hsp=approach(hsp,0,_fric);
-
 //Apply gravity
 if (argument_count>1)
 	{

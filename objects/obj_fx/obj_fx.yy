@@ -85,6 +85,20 @@
             "varType": 0
         },
         {
+            "id": "80a0ecb1-01d1-454a-a496-8524597a9f81",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "False",
+            "varName": "fade",
+            "varType": 3
+        },
+        {
             "id": "7d19f772-2d92-4419-bd23-4d3284fa7d0a",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -195,6 +209,20 @@
             "value": "0",
             "varName": "fx_ang",
             "varType": 0
+        },
+        {
+            "id": "8e8fa898-2819-43df-8744-5eeb9c412eb3",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "total_life",
+            "varType": 1
         }
     ],
     "solid": false,

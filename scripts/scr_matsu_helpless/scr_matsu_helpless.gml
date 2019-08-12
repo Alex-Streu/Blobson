@@ -15,10 +15,10 @@ if run && check_ledge_grab() run=false;
 //If stick is past threshold
 if (stick_tilted(Lstick))
 	{
-	//Drift DI cannot be used to speed up knockback to high speeds
-	var _val=sign(stick_value(Lstick,DIR.horizontal));
-	if (_val==sign(hsp))
-		{
+//Drift DI cannot be used to speed up knockback to high speeds
+	var _val = sign(stick_get_value(Lstick, DIR.horizontal));
+	if (_val == sign(hsp))
+        {
 		if (abs(hsp+helpless_accel*_val)<helpless_max_speed)
 			hsp+=helpless_accel*_val;
 		}

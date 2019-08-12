@@ -1,5 +1,8 @@
 //Neutral Special
-var run=true;
+/*
+- Tilt the left stick to change the trajectory
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -49,11 +52,11 @@ if (run)
 				var _dir = 60;
 				if (facing == 1)
 					{
-					_dir += ((stick_value(Lstick,DIR.horizontal)) *-20);
+					_dir += ((stick_get_value(Lstick,DIR.horizontal)) *-20);
 					}
 				else
 					{
-					_dir += ((stick_value(Lstick,DIR.horizontal)) * 20);
+					_dir += ((stick_get_value(Lstick,DIR.horizontal)) * 20);
 					}
 				var proj=custom_projectile(obj_nspec_shot_put_projectile,30,-22,0.4,0.4,5,10,0.6,80,300,HITBOX_SHAPE.circle,lengthdir_x(_len,_dir),lengthdir_y(_len,_dir));
 				proj.grav=0.5;

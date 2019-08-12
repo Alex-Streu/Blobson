@@ -1,5 +1,5 @@
 //Backward Aerial
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -7,7 +7,7 @@ friction_gravity(air_friction,grav,max_fall_speed);
 fastfall_attack_try();
 aerial_drift();
 //Canceling
-if run && cancel_ground_check() run=false;
+if run && cancel_ground_check() run = false;
 //Phases
 if (run)
 	{

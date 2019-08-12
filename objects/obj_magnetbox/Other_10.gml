@@ -2,28 +2,18 @@
 //Nothing happens if the owner is somehow destroyed
 if (instance_exists(owner))
 	{
-	//Sprite
-	switch(shape)
-		{
-		case HITBOX_SHAPE.rectangle:
-			sprite_index=spr_hitbox_rectangle;
-			break;
-		case HITBOX_SHAPE.circle:
-			sprite_index=spr_hitbox_circle;
-			break;
-		}
 	//Move with the player
-	x=xstart+(owner.x-owner_xstart);
-	y=ystart+(owner.y-owner_ystart);
+	x = xstart + (owner.x - owner_xstart);
+	y = ystart + (owner.y - owner_ystart);
 
 	//Collisions
 	
 	//Check for sprite collision
-	var _num=instance_place_list(x,y,obj_hurtbox,list,false);
-	if (_num>0)
+	var _num = instance_place_list(x, y, obj_hurtbox, list, false);
+	if (_num > 0)
 		{
 		//Loop through all hit players, an execute a script for each
-		for(var i=0;i<_num;i++)
+		for(var i = 0; i < _num; i++)
 			{
 			Magnetbox_Collide(list[| i]);
 			}
@@ -33,10 +23,10 @@ if (instance_exists(owner))
 	}
 //Timer
 //When the user is in hitlag, the time on the hitboxes doesn't count
-if (owner.self_hitlag_frame<=0)
+if (owner.self_hitlag_frame <= 0)
 	{
-	lifetime=max(--lifetime,0);
-	if (lifetime==0)
+	lifetime--;
+	if (lifetime < 0)
 		{
 		instance_destroy();
 		exit;

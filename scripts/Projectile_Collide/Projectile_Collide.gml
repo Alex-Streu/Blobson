@@ -23,7 +23,7 @@ for(var i=0;i<ds_list_size(_col_list);i++)
 //Check invulnerability
 switch(_hit.invulnerable_type)
 	{
-	case INV.type_normal:
+	case INV.normal:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -68,33 +68,9 @@ switch(_hit.invulnerable_type)
 				}
 			}
 		//Projectiles do not give any hitlag to the owner
-		//Visuals
-		part_type_direction(global.p1,_calc_angle-15,_calc_angle+15,0,0); //Change the particle direction
-		part_type_speed(global.p1,max(7,base_knockback),max(10,base_knockback+3),0,0);
-		create_fx(spr_hit_fx_explosion,1,0,18,mean(x,_hit.x),mean(y,_hit.y),3,irandom(360));
-		create_fx(spr_hit_fx_direction,0.4,0,9,_hit.x,_hit.y,1.3,_calc_angle);
-		create_fx(spr_hit_fx_direction_large,0,irandom(sprite_get_number(spr_hit_fx_direction_large)),15,_hit.x,_hit.y,1,_calc_angle);
-		//With the target
-		with(_hit)
-			{
-			//Make hit fx particles
-			part_particles_create(global.part_sys,x+(sprite_get_width(anim_sprite)/2),y+(sprite_get_height(anim_sprite)/2),global.p1,max(other.base_knockback div 5,10));
-			//If the knockback is strong enough
-			if (_total_kb>15)
-				{
-				//Make more effects!
-				with(other)
-					{
-					create_fx(spr_hit_fx_lines,0,0,15,mean(x,_hit.x),mean(y,_hit.y),1,irandom(360));
-					}
-				}
-			}
-		//Camera shake!
-		var _shake=(calculate_knockback(_hit.damage,damage,_hit.weight_multiplier,knockback_scaling,base_knockback) div 2);
-		camera_shake(_shake);
-		fade_value=0.5;
-		//Normal Hit fade
-		_hit.fade_value=0;
+		//Effects
+		hit_fx_style_create(hit_fx_style,_calc_angle,_hit,_total_kb);
+		hit_sfx_play(hit_sfx);
 		//Final Hit fade
 		if (is_finishing_blow(_total_kb,_hit.x,_hit.y,_calc_angle,_hit.stored_hitstun,_hit))
 			{
@@ -104,14 +80,14 @@ switch(_hit.invulnerable_type)
 		destroy=true;
 		break;
 		}
-	case INV.type_invincible:
+	case INV.invincible:
 		{
 		//No knockback or damage or hitlag
 		//Do not add the player to the collided list
 		//This is because the opponent should be hit even if their invincibility runs out mid-attack
 		break;
 		}
-	case INV.type_superarmor:
+	case INV.superarmor:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -124,7 +100,7 @@ switch(_hit.invulnerable_type)
 		destroy=true;
 		break;
 		}
-	case INV.type_shielding:
+	case INV.shielding:
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
@@ -133,9 +109,12 @@ switch(_hit.invulnerable_type)
 		_hit.shield_stun+=calculate_shieldstun(damage,1);
 		//Projectiles destroy on contact
 		destroy=true;
+		//Effects
+		hit_fx_style_create(HIT_FX.shield,0,_hit,0);
+		hit_sfx_play(hit_sfx);
 		break;
 		}
-	case INV.type_parry:
+	case INV.parry:
 		{
 		//Change ownership and reflect
 		owner=_hit;

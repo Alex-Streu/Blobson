@@ -1,5 +1,5 @@
 /// @description
-create_fx(spr_fspec_projectile_trail1,1,0,28,x,y,2,irandom(360),"FX_Layer_Below");
+fx_create(spr_fspec_projectile_trail1,1,0,28,x,y,2,irandom(360),"FX_Layer_Below");
 event_inherited();
 //Follow instructions
 if (current_inst<=array_length_1d(instructions)-1)

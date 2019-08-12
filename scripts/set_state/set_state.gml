@@ -1,57 +1,83 @@
 ///@func set_state(state)
 ///@param state
 ///@desc Sets the state of the player and then performs initializing actions
-state=argument[0];
+state = argument[0];
 switch(state)
 	{
 	case PLAYER_STATE.aerial:
 		//Animation
 		anim_speed=anim_speed_normal;
-		//Peak of jump
-		if (abs(vsp)<1)
+		if (!jump_is_midair_jump)
 			{
-			anim_sprite=my_sprites[?"Midair"];
+			//Peak of jump
+			if (abs(vsp) < 1)
+				{
+				anim_sprite = my_sprites[?"Midair"];
+				}
+			//Falling
+			else if (vsp >= 1)
+				{
+				anim_sprite = my_sprites[?"Fall"];
+				}
+			//Rising
+			else if (vsp <= 1)
+				{
+				anim_sprite = my_sprites[?"Jump"];
+				}
+			//Fastfalling
+			if (vsp >= fast_fall_speed)
+				{
+				anim_sprite = my_sprites[?"Fastfall"];
+				}
 			}
-		//Falling
-		else if (vsp>=1)
+		else
 			{
-			anim_sprite=my_sprites[?"Fall"];
-			}
-		//Rising
-		else if (vsp<=1)
-			{
-			anim_sprite=my_sprites[?"Jump"];
-			}
-		//Fastfalling
-		if (vsp>=fast_fall_speed)
-			{
-			anim_sprite=my_sprites[?"Fastfall"];
+			//Peak of jump
+			if (abs(vsp) < 1)
+				{
+				anim_sprite = my_sprites[?"Midair"];
+				}
+			//Falling
+			else if (vsp >= 1)
+				{
+				anim_sprite = my_sprites[?"Fall"];
+				}
+			//Rising
+			else if (vsp <= 1)
+				{
+				anim_sprite = my_sprites[?"JumpMid"];
+				}
+			//Fastfalling
+			if (vsp >= fast_fall_speed)
+				{
+				anim_sprite = my_sprites[?"Fastfall"];
+				}
 			}
 		break;
 	case PLAYER_STATE.airdodging:
 		//Animation
-		anim_sprite=my_sprites[?"Airdodge"];
-		anim_speed=anim_speed_normal;
-		anim_frame=0;
+		anim_sprite = my_sprites[?"Airdodge"];
+		anim_speed = anim_speed_normal;
+		anim_frame = 0;
 		//Speeds
-		var spd,dir;
+		var spd, dir;
 		//Choose a control stick to use
-		var _stick=Attack_Choose_Stick(INPUT.shield);
+		var _stick = Choose_Stick_By_Input(INPUT.shield);
 		//Default direction is straight upwards
 		if (stick_tilted(_stick))
 			{
-			spd=(air_dodge_speed);
-			dir=stick_get_direction(_stick);
+			spd = air_dodge_speed;
+			dir = stick_get_direction(_stick);
 			}
 		else
 			{
-			spd=0;
-			dir=90;
+			spd = 0;
+			dir = 90;
 			}
-		set_speed(lengthdir_x(spd,dir),lengthdir_y(spd,dir),false,false);
+		set_speed(lengthdir_x(spd, dir), lengthdir_y(spd, dir), false, false);
 		//Timers
-		air_dodge_frame=air_dodge_startup;
-		air_dodge_phase=0;
+		air_dodge_frame = air_dodge_startup;
+		air_dodge_phase = 0;
 		break;
 	case PLAYER_STATE.attacking:
 		break;
@@ -101,20 +127,18 @@ switch(state)
 		break;
 	case PLAYER_STATE.in_hitlag:
 		//Animation
-		//Animation		
-		anim_sprite= choose(  my_sprites[?"Hitlag"],my_sprites[?"Hitlag2"], my_sprites[?"Hitlag3"], my_sprites[?"Hitlag4"]);   
+		anim_sprite=my_sprites[?"Hitlag"];
 		anim_speed=anim_speed_normal;
 		break;
 	case PLAYER_STATE.in_hitstun:
 		//Animation
-		//anim_sprite= choose(  my_sprites[?"Hitstun" ],my_sprites[?"Hitstun2" ], my_sprites[?"Hitstun3" ], my_sprites[?"Hitstun4" ]);   
-		anim_sprite= my_sprites[?"Hitstun" ];  
-		anim_speed=ani_speed_hitstun;
+		anim_sprite=my_sprites[?"Hitstun"];
+		anim_speed=anim_speed_normal;;
 		anim_frame=0;
 		break;
 	case PLAYER_STATE.in_lag:
 		//Animation
-		anim_sprite=my_sprites[?"Landlag"];
+		anim_sprite=my_sprites[?"Lag"];
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		break;
@@ -152,7 +176,7 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Invincible
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		//Timer
 		ledge_attack_frame=ledge_attack_time;
 		break;
@@ -162,7 +186,7 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Invincible
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		//Timer
 		ledge_getup_frame=ledge_getup_time;
 		break;
@@ -174,7 +198,7 @@ switch(state)
 		//No speeds
 		set_speed(0,0,false,false);
 		//Invincible
-		set_invulnerable(INV.type_invincible,ledge_invincible_time);
+		set_invulnerable(INV.invincible,ledge_invincible_time);
 		break;
 	case PLAYER_STATE.ledge_jump:
 		//Animation
@@ -182,7 +206,7 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Invincible
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		//Timer
 		ledge_jump_frame=ledge_jump_time;
 		break;
@@ -192,7 +216,7 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Invincible
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		//Timer
 		ledge_roll_frame=ledge_roll_time;
 		break;
@@ -202,18 +226,24 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Allow for "2 frame" punish
-		set_invulnerable(INV.type_normal,0);
+		set_invulnerable(INV.normal,0);
 		break;
 	case PLAYER_STATE.ledge_tether:
 		//Animation
 		anim_sprite=my_sprites[?"LedgeT"];
 		anim_speed=anim_speed_normal;
 		//Superarmor!
-		set_invulnerable(INV.type_superarmor,1);
+		set_invulnerable(INV.superarmor,1);
+		break;
+	case PLAYER_STATE.ledge_trump:
+		//Animation
+		anim_sprite=my_sprites[?"LedgeTr"];
+		anim_speed=anim_speed_normal;
+		anim_frame=0;
 		break;
 	case PLAYER_STATE.lost:
 		//Invulnerability
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		break;
 	case PLAYER_STATE.magnetized:
 		//Animation
@@ -241,7 +271,7 @@ switch(state)
 		anim_sprite=my_sprites[?"Idle"];
 		anim_speed=1;
 		//Invulnerability
-		set_invulnerable(INV.type_invincible,respawning_invulnerable_time);
+		set_invulnerable(INV.invincible,respawning_invulnerable_time);
 		//Timer
 		respawn_frame=max_respawn_platform_time;
 		break;
@@ -259,18 +289,18 @@ switch(state)
 	case PLAYER_STATE.run_stop:
 		//Animation
 		anim_sprite=my_sprites[?"Run_Stop"];
-		anim_speed= ani_speed_runstop;
+		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		break;
 	case PLAYER_STATE.run_turnaround:
 		//Animation
 		anim_sprite=my_sprites[?"Run"];
-		anim_speed= ani_speed_run;
+		anim_speed=anim_speed_normal;
 		break;
 	case PLAYER_STATE.running:
 		//Animation
 		anim_sprite=my_sprites[?"Run"];
-		anim_speed= ani_speed_run;
+		anim_speed=anim_speed_normal;
 		break;
 	case PLAYER_STATE.shielding:
 		//Animation
@@ -280,9 +310,9 @@ switch(state)
 		//Shield type
 		switch(shield_type)
 			{
-			case 0:
+			case SHIELD.melee:
 				{
-				set_invulnerable(INV.type_shielding,1);
+				set_invulnerable(INV.shielding,1);
 				break;
 				}
 			}
@@ -290,10 +320,10 @@ switch(state)
 	case PLAYER_STATE.shield_break:
 		//Animation
 		anim_sprite=my_sprites[?"Tumble"];
-		anim_speed= ani_speed_tumble;
+		anim_speed=anim_speed_normal;
 		anim_frame=0;
 		//Invulnerable
-		set_invulnerable(INV.type_invincible,1);
+		set_invulnerable(INV.invincible,1);
 		break;
 	case PLAYER_STATE.spot_dodging:
 		//Animation
@@ -301,7 +331,7 @@ switch(state)
 		anim_speed=0;
 		anim_frame=0;
 		//No invulnerability
-		set_invulnerable(INV.type_normal,0);
+		set_invulnerable(INV.normal,0);
 		break;
 	case PLAYER_STATE.teching:
 		break;
@@ -322,6 +352,19 @@ switch(state)
 		anim_speed=anim_speed_normal;
 		//Dash Cancel Frame
 		walk_to_dash_frame=dash_buffer;
+		break;
+	case PLAYER_STATE.wall_cling:
+		//Animation
+		anim_sprite=my_sprites[?"WallC"];
+		anim_speed=anim_speed_normal;
+		break;
+	case PLAYER_STATE.wall_jump:
+		//Animation
+		anim_sprite=my_sprites[?"WallJ"];
+		anim_speed=0;
+		anim_frame=0;
+		//Phase
+		wall_jump_phase = 0;
 		break;
 	case PLAYER_STATE.wavelanding:
 		//Animation

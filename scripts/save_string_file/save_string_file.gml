@@ -1,15 +1,20 @@
 ///@func save_string_file(filename,string)
 ///@param filename
 ///@param string
-var filename,str,buffer;
-filename=argument[0];
-str=argument[1];
+var _filename, _str, _buffer;
+_filename = argument[0];
+_str = argument[1];
+
 //Delete the existing file
-if (file_exists(filename))
-	file_delete(filename);
+if (file_exists(_filename))
+	{
+	file_delete(_filename);
+	}
+	
 //Make a buffer with enough space to fit the string
-buffer=(buffer_create(string_byte_length(str)+1,buffer_fixed,1));
+_buffer = (buffer_create(string_byte_length(_str) + 1, buffer_fixed, 1));
+
 //Write the string into the buffer and export to the file
-buffer_write(buffer,buffer_string,str);
-buffer_save(buffer,filename);
-buffer_delete(buffer);
+buffer_write(_buffer, buffer_string, _str);
+buffer_save(_buffer, _filename);
+buffer_delete(_buffer);

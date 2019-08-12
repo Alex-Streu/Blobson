@@ -1,8 +1,8 @@
 ///Standard_Is_Grabbed
 //Contains the standard actions for the is_grabbed state.
-var run=true;
+var run = true;
 #region Animation
-anim_sprite = my_sprites[?"Grabbed"];
+anim_sprite=my_sprites[?"Hitstun"];
 anim_speed=anim_speed_normal;
 #endregion
 #region Snap to the grabbing player's position

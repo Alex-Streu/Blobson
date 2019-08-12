@@ -1,40 +1,60 @@
 ///MACROS
+#macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
 #macro show_hitboxes		true
-#macro show_hurtboxes		false
+#macro show_hurtboxes		true
 #macro show_collision_boxes	false
 
 //Max Number of Players
 #macro max_players 8
 
 //Game Types
-#macro airdodge_type 0
-#macro shield_type 1
-#macro walljump_type 1
+#macro airdodge_type	AIRDODGE.melee
+#macro shield_type		SHIELD.rivals
+#macro walljump_type	WALLJUMP.rivals
 
 //Camera
-#macro camera_width 960 //1280
-#macro camera_height 540 //720
+#macro camera_width 960 //960
+#macro camera_height 540 //540
 #macro camera_boundary 120
+#macro camera_move_speed 0.1
+
+//Camera Zoom
+#macro camera_enable_zoom false
+#macro camera_ratio (camera_width / camera_height)
+#macro camera_zoom_pad_scale 1.7
+#macro camera_zoom_pad_yscale 0.1
+#macro camera_zoom_pad_xscale 0.0
+#macro camera_max_width room_width
+#macro camera_max_height (room_width / camera_ratio)
+#macro camera_min_width 480
+#macro camera_min_height 272
+#macro camera_zoom_speed 0.05
+
+//Finishing Blow Zoom
+#macro camera_enable_special_zoom false
+#macro camera_special_zoom_width 480
+#macro camera_special_zoom_height 272
 
 //Player status
 #macro player_status_padding_bottom 54
 
 //Game surface
-#macro game_surface_enable false
-#macro day_night_cycle_enable false //requires the game surface
-
-//Special Zoom
-#macro camera_enable_zoom false
-#macro camera_zoom_width 480
-#macro camera_zoom_height 272
+#macro game_surface_enable true
+#macro daynight_cycle_enable true //requires the game surface
 
 //Backgrounds
 #macro back_clear -1
 
 //Savefiles
 #macro profiles_save "Player_Profiles.sav"
+
+//Countdown Time
+#macro count_time 50
+
+//VFX
+#macro knockback_cloud_trails_enable true
 #endregion
 #region Player Macros
 	#region Control Stick + Input
@@ -42,21 +62,19 @@
 	#macro number_of_devices 14
 	//Input thresholds
 	#macro stick_check_frames 3	//To check the stick speed, there has to be a value a certain number of frames before to compare with
-	#macro menu_navigation_lag 15
 
 	//Control stick general
 	#macro Lstick 0
 	#macro Rstick 1
 	#macro stick_tilt_amount 0.4
-	#macro stick_flick_speed 0.7
+	#macro stick_flick_speed 0.55
 	#macro stick_flick_amount 0.8
 	#macro stick_flick_buff 6
-	#macro stick_direction_sensitivity 67.5//22.5	//65 //45-90
-	#macro stick_vertical_zone_sensitivity 67.5
+	#macro stick_direction_sensitivity 65//67.5
 	
 	//Right stick
 	#macro rstick_tilt_amount 0.4
-	#macro rstick_flick_speed 0.3
+	#macro rstick_flick_speed 0.4
 	#macro rstick_flick_amount 0.7
 
 	#endregion
@@ -66,12 +84,12 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 0.8 //0.85
-	#macro hitstun_base_multiplier 4 //4
+	#macro hitstun_multiplier 0.85
+	#macro hitstun_base_multiplier 4
 	#macro hitstun_weight_multiplier 0.6
-	#macro hitstun_damage_multiplier 0.2 //0.24
+	#macro hitstun_damage_multiplier 0.24 //0.12
 	#macro hitstun_knockback_multiplier 4
-	#macro hitlag_multiplier 1 //0.7
+	#macro hitlag_multiplier 0.7
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
 	#macro base_shieldstun 5
@@ -119,13 +137,18 @@
 	//Grabbing
 	#macro base_grab_time 30
 	#macro grab_time_multiplier 0.7
-	#macro grab_snap_speed 70 //20
+	#macro grab_snap_speed 20
+	#macro throw_flick_buff 20
 	
 	//Grab releases
 	#macro grab_release_hsp 4
 	#macro grab_release_vsp -8
 	#macro grab_release_hitstun 20
 	#macro grab_release_damage 3
+	
+	//Sounds
+	#macro hit_sound_default snd_hit_weak
+	#macro hit_sound_pitch_variance 0.2
 	
 	#endregion
 	#region Collisions
@@ -138,20 +161,20 @@
 	
 	//Bouncing
 	#macro bounce_minimum_speed 12//characters only bounce while in hitstun if they have enough speed
-	#macro bounce_speed_multiplier 0.8 //0.6
+	#macro bounce_speed_multiplier 0.6
 	
 	#endregion
 	#region General
 	
 	//Custom Controls
-	#macro number_of_buttons 13
+	#macro number_of_buttons 12
 
 	//Input buffer length
-	#macro buff 10
-	#macro max_buffer_length 20
+	#macro buff 6
+	#macro max_buffer_length 60
 	#macro tech_buffer_time 20
 	#macro tech_lockout_time 40
-	#macro tap buff-1
+	#macro tap (buff - 1)
 
 	//Dashing
 	#macro dash_buffer 4 //After the player enters the walk state, there are this many frames to transition to dash
@@ -163,24 +186,35 @@
 	#macro shield_into_wavedash true //QoL; allows you to wavedash out of shield startup frames
 	#macro shield_break_base_time 300
 	#macro shield_break_multiplier 0.2
+	#macro shield_plat_drop_speed 0.3
+	#macro shield_plat_drop_amount 0.7
 	
 	//Parrying
 	#macro parry_grabs true
-	#macro parry_default_stun_time 60
-	#macro parry_hitlag 15
-	#macro parry_invincible_time 45
+	#macro parry_default_stun_time 40
+	#macro parry_hitlag 10
+	#macro parry_invincible_time 30
 	#macro parry_reflect_speed_multiplier 1.5
 	
 	//Ledges
 	#macro ledge_grab_timeout_standard 60
-	#macro ledge_snap_speed 14
+	#macro ledge_snap_speed 16
 	#macro ledge_grab_distance 28 //24
-	#macro ledge_snap_time 4
+	#macro ledge_snap_time 3
 	#macro ledge_hang_min_time 10
 	#macro ledge_hang_max_time 180
 	#macro ledge_invincible_time 60
 	#macro ledge_tether_snap_speed 15
 	#macro ledge_tether_snap_time 20
+	#macro ledge_trump_enable true
+	#macro ledge_trump_stun_time 25
+	#macro ledge_trump_hsp -6
+	#macro ledge_trump_vsp -11
+	
+	//Wall Jumps
+	#macro wall_cling_max_time 60
+	#macro wall_cling_normal_timeout 120
+	#macro wall_jump_normal_timeout 15
 
 	//Knockouts
 	#macro ko_base_time 90
@@ -188,7 +222,7 @@
 	#macro respawning_invulnerable_time 90
 	
 	//Hitbox drawing
-	#macro hitbox_draw_color c_red
+	#macro melee_draw_color c_red
 	#macro magnetbox_draw_color c_blue
 	#macro projectile_draw_color c_yellow
 	#macro hurtbox_draw_color c_lime
@@ -207,6 +241,7 @@
 	//Events
 	#macro event_step	ev_user0
 	#macro event_paused ev_user1
+	#macro event_draw	ev_user2
 	
 	#endregion
 #endregion
@@ -215,9 +250,9 @@
 if (!variable_global_exists("timerstack")) {\
 	global.timerstack = ds_stack_create();\
 }\
-ds_stack_push(global.timerstack,get_timer())
+ds_stack_push(global.timerstack,get_timer());
 #macro TIMER_END \
-show_debug_message("Time: " + string((get_timer() - ds_stack_pop(global.timerstack)) / 1000))
+show_debug_message("Time: " + string((get_timer() - ds_stack_pop(global.timerstack))));// / 1000))
 #endregion
 #region Enums
 enum GAME_STATE
@@ -265,6 +300,9 @@ enum PLAYER_STATE
 	ledge_roll,
 	ledge_jump,
 	ledge_tether,
+	ledge_trump,
+	wall_cling,
+	wall_jump,
 	knocked_out,
 	respawning,
 	attacking,
@@ -286,8 +324,8 @@ enum INPUT
 	smash,
 	taunt,
 	pause,
-	move,
 	none,
+	length,
 	}
 //Enum for directions
 enum DIR
@@ -306,19 +344,40 @@ enum DIR
 	horizontal,
 	vertical,
 	any,
+	none,
 	}
 //Enum for invulnerability
 enum INV
 	{
-	type_normal,
-	type_invincible,
-	type_superarmor,
-	type_shielding,
-	type_parry,
-	type_counter,
+	normal,
+	invincible,
+	superarmor,
+	shielding,
+	parry,
+	counter,
+	}
+//Enum for air dodge type
+enum AIRDODGE
+	{
+	melee,
+	smash4,
+	ultimate,
+	}
+//Enum for wall jump type
+enum WALLJUMP
+	{
+	rivals,
+	smash,
+	}
+//Enum for shield
+enum SHIELD
+	{
+	melee,
+	ultimate,
+	rivals,
 	}
 //Enums for hitbox properties
-enum HITBOX
+enum HITBOX_PROPERTY
 	{
 	shape,
 	sprite_angle,
@@ -333,15 +392,14 @@ enum HITBOX
 	priority,
 	angle,
 	grounded_angle,
-	snd_hit,
-	base_hitstun,
+	hit_fx_style,
+	hit_sfx,
 	}
 enum HITBOX_SHAPE
 	{
-	rectangle,
-	circle,
-	rotation,
-	sprite,
+	rectangle = -1,
+	circle = -2,
+	rotation = -3,
 	}
 //Enum for angle flippers --> apply_angle_flipper()
 enum FLIPPER
@@ -394,8 +452,49 @@ enum PROFILE
 	color,
 	}
 //Enum for on-hit effects
-enum FX
+enum HIT_FX
 	{
+	//Hit FX
+	normal_weak,
+	normal_strong,
+	grab,
+	lightning_strong,
+	explosion,
+	shield,
+	//Enum end
+	length,
+	}
+//Enum for AI types
+enum AI_TYPE
+	{
+	idle,
+	rush,
+	}
+//Enum for player data
+enum PLAYER_DATA
+	{
+	character,
+	color,
+	profile,
+	controller,
+	render,
+	palettes,
+	}
+//Enum for control stick
+enum CONTROL_STICK
+	{
+	xval,
+	yval,
+	dir,
+	spd,
+	dist,
+	}
+//Enum for replay data categories
+enum REPLAY_DATA_TYPE
+	{
+	meta,
+	player,
+	none,
 	}
 //Enum for player numbers
 enum PLAYER

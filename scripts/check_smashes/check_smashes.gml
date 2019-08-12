@@ -1,6 +1,6 @@
 ///Checks for smash attacks or aerials
 //If one stick is set to attack it overrides the direction of the other stick
-var _stick=Attack_Choose_Stick(INPUT.smash);
+var _stick=Choose_Stick_By_Input(INPUT.smash);
 //If the smash button was pressed
 //Also checks the Special Control Setting A+B Smash
 if (button(INPUT.smash,buff) ||
@@ -58,7 +58,7 @@ if (button(INPUT.smash,buff) ||
 		if (stick_tilted(_stick,DIR.horizontal))
 			{
 			//Is the control stick in the direction the player is facing?
-			if (sign(stick_value(_stick,DIR.horizontal))==sign(facing))
+			if (sign(stick_get_value(_stick,DIR.horizontal))==sign(facing))
 				{
 				attack_start(my_attacks[?"Fair"]);
 				}

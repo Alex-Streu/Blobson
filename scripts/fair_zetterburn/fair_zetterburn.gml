@@ -1,10 +1,10 @@
 //Forward Aerial
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 //Actions / Cancels
-if run && cancel_ground_check() run=false;
+if run && cancel_ground_check() run = false;
 fastfall_attack_try();
 aerial_drift();
 friction_gravity(air_friction,grav,max_fall_speed);

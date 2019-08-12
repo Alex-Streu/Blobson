@@ -1,6 +1,6 @@
 //Down Special
 //Logic Control Variable
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -16,7 +16,7 @@ else
 	aerial_drift();
 	}
 //Cancels
-if run && cancel_jump_check() run=false;
+if run && cancel_jump_check() run = false;
 //Main Phases
 if (run)
 	{
@@ -43,7 +43,7 @@ if (run)
 		//Endlag
 		case 1:
 			{
-			move_attached_hitbox_group(0,my_hitboxes,1,8);
+			move_attached_hitbox_group(0,1,8);
 			if (attack_frame==0)
 				{
 				//Whiff Lag

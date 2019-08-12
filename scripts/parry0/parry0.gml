@@ -1,5 +1,5 @@
 ///Parry for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : parry_phase;
 //Timer
 parry_frame=max(--parry_frame,0);
@@ -8,7 +8,7 @@ friction_gravity(slide_friction);
 if (run && !on_ground())
 	{
 	set_state(PLAYER_STATE.aerial);
-	run=false;
+	run = false;
 	}
 #region Transition through phases of parrying
 if (run)
@@ -40,7 +40,7 @@ if (run)
 				parry_phase++;
 				parry_frame=parry_active;
 				//Invulnerability
-				set_invulnerable(INV.type_parry,parry_active);
+				set_invulnerable(INV.parry,parry_active);
 				}
 			break;
 			}
@@ -80,7 +80,7 @@ if (run)
 		case PHASE.parry:
 			{
 			/*Parry has been triggered by a hitbox*/
-			set_invulnerable(INV.type_invincible,parry_invincible_time);
+			set_invulnerable(INV.invincible,parry_invincible_time);
 			if (parry_frame>14)
 				anim_frame=6;
 			if (parry_frame==13)

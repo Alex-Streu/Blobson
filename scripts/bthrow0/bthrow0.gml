@@ -1,5 +1,5 @@
 //Backward Throw for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -34,7 +34,8 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=15;
-				create_melee(-10,-2,1.5,0.8,9,7,1.1,20,140,4,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(-32,-2,1,0.6,9,7,1.1,15,140,4,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong2);
 				}
 			break;
 			}

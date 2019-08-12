@@ -1,6 +1,6 @@
 /// @description
 event_inherited();
-image_blend=grab_draw_color;
+image_blend=melee_draw_color;
 /*TARGETBOX VARIABLES*/
 target = noone;
 /*MELEE VARIBLES*/

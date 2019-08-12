@@ -1,6 +1,6 @@
 ///Checks for special attacks
 //If one stick is set to attack it overrides the direction of the other stick
-var _stick=Attack_Choose_Stick(INPUT.special);
+var _stick=Choose_Stick_By_Input(INPUT.special);
 //Special Attacks (ground or aerial)
 if (button(INPUT.special,buff))
 	{

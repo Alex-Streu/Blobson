@@ -1,5 +1,11 @@
 //Down Special
-var run=true;
+/*
+- Falls quickly and spikes opponents
+- The grounded version jumps up into the air first
+- Has a hitbox when touching the ground
+- You can jump cancel the fall, provided you have midair jumps left
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -59,7 +65,7 @@ if (run)
 					}
 				}
 			//Jump Cancel
-			if cancel_jump_check() return;
+			if (cancel_jump_check()) return;
 			//Speed Values
 			set_speed(6*facing,16,false,false);
 			//Hitting the ground causes a ground pound

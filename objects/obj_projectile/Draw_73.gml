@@ -2,7 +2,7 @@
 if (surface_exists(obj_game.game_surface))
 	{
 	if (game_surface_enable) surface_set_target(obj_game.game_surface);
-	draw_sprite_ext(overlay_sprite,overlay_frame,x,y,2,2,0,c_white,1);
+	draw_sprite_ext(overlay_sprite,overlay_frame,x,y,overlay_scale,overlay_scale,0,c_white,1);
 	if (show_hitboxes)
 		{
 		draw_self();

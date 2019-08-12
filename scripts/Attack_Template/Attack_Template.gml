@@ -1,6 +1,6 @@
 //<Attack Name> for <Character Name>
 //Logic Control Variable
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -16,9 +16,9 @@ else
 	aerial_drift();
 	}
 //Cancels
-if run && cancel_air_check()	run=false;
-if run && cancel_ground_check()	run=false;
-if run && cancel_jump_check()	run=false;
+if run && cancel_air_check()	run = false;
+if run && cancel_ground_check()	run = false;
+if run && cancel_jump_check()	run = false;
 //Main Phases
 if (run)
 	{

@@ -1,6 +1,6 @@
 ///Standard_Parry_Stun
 //Contains the standard actions for the parry stun state.
-var run=true;
+var run = true;
 //Timer
 parry_stun_frame=max(--parry_stun_frame,0);
 #region Friction and Gravity
@@ -29,7 +29,7 @@ if (run && parry_stun_frame==0)
 	{
 	//Return to idle state
 	set_state(PLAYER_STATE.idle);
-	run=false;
+	run = false;
 	}
 #endregion
 #region Friction / Gravity

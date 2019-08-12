@@ -1,12 +1,12 @@
-///@func move_attached_hitbox_group(group_number,hitbox_list,relative_x,relative_y)
+///@func move_attached_hitbox_group(group_number,relative_x,relative_y,[hitbox_list])
 ///@param group_number
-///@param hitbox_list
 ///@param relative_x
 ///@param relative_y
+///@param [hitbox_list]
 //Moves all hitboxes within the given group relative to their positions.
 //It also moves the hitboxes' "my_xstart" and "my_ystart" so the hitboxes don't snap back to the player
 //Loop through all hitbox instances
-var _list = argument[1];
+var _list = argument_count > 3 ? argument[3] : my_hitboxes;
 for(var i = 0; i < ds_list_size(_list); i++)
 	{
 	var _hitbox = _list[|i];
@@ -14,10 +14,10 @@ for(var i = 0; i < ds_list_size(_list); i++)
 		{
 		with(_hitbox)
 			{
-			x += argument[2];
-			y += argument[3];
-			owner_xstart -= argument[2];
-			owner_ystart -= argument[3];
+			x += argument[1];
+			y += argument[2];
+			owner_xstart -= argument[1];
+			owner_ystart -= argument[2];
 			}
 		}
 	}

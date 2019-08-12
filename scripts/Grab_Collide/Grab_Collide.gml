@@ -13,16 +13,9 @@ owner.any_hitbox_has_hit=true;
 switch(_hit.invulnerable_type)
 	{
 	//Grabs hit through armor, shields, and normal state
-	case INV.type_shielding:
-	case INV.type_superarmor:
-	case INV.type_parry:
-		if (parry_grabs)
-			{
-			//Activate the other player's parry
-			parry_trigger(owner,_hit);
-			break;
-			}
-	case INV.type_normal:
+	case INV.shielding:
+	case INV.superarmor:
+	case INV.normal:
 		{
 		//Change state of target
 		with(_hit)
@@ -35,11 +28,6 @@ switch(_hit.invulnerable_type)
 			//Set grab hold position
 			grab_hold_x = other.grab_destination_x;
 			grab_hold_y = other.grab_destination_y;
-			//Particle Effects
-			//Make hit fx particles
-			part_type_direction(global.p1,0,360,0,0);
-			part_type_speed(global.p1,2,6,0,0);
-			part_particles_create(global.part_sys,x+(sprite_get_width(anim_sprite)/2),y+(sprite_get_height(anim_sprite)/2),global.p1,15);
 			}
 		//Change state of player
 		with(owner)
@@ -49,16 +37,28 @@ switch(_hit.invulnerable_type)
 			//Set the grab timer
 			grab_frame=calculate_grab_time(_hit.damage);
 			}
+		//Effects
+		hit_fx_style_create(hit_fx_style,point_direction(_hit.x,_hit.y,owner.x,owner.y),_hit,0);
+		hit_sfx_play(hit_sfx);
+		//Acknowledge the grab
 		return true;
-		//*/
 		break;
 		}
-	case INV.type_invincible:
+	case INV.invincible:
 		{
 		//No knockback or damage or hitlag
 		//Do not add the player to the collided list
 		//This is because the opponent should be hit even if their invincibility runs out mid-attack
 		break;
+		}
+	case INV.parry:
+		{
+		if (parry_grabs)
+			{
+			//Activate the other player's parry
+			parry_trigger(owner,_hit);
+			break;
+			}
 		}
 	default: break;
 	}

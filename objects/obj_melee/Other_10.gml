@@ -3,16 +3,16 @@
 if (instance_exists(owner))
 	{
 	//Move with the player
-	x=xstart+(owner.x-owner_xstart);
-	y=ystart+(owner.y-owner_ystart);
+	x = xstart + (owner.x - owner_xstart);
+	y = ystart + (owner.y - owner_ystart);
 	//Collisions
 	
 	//Check for a collision with any hurtboxes
-	var _num=instance_place_list(x,y,obj_hurtbox,list,false);
-	if (_num>0)
+	var _num = instance_place_list(x, y, obj_hurtbox, list, false);
+	if (_num > 0)
 		{
 		//Loop through all hit hurtboxes, an execute a script for each
-		for(var i=0;i<_num;i++)
+		for(var i = 0; i < _num; i++)
 			{
 			Melee_Collide(list[| i]);
 			}
@@ -22,17 +22,17 @@ if (instance_exists(owner))
 	}
 //Timer
 //When the user is in hitlag, the time on the hitboxes doesn't count down
-if (owner.self_hitlag_frame<=0)
+if (owner.self_hitlag_frame <= 0)
 	{
-	lifetime-=1;
-	if (lifetime<0)
+	lifetime--;
+	if (lifetime < 0)
 		{
 		instance_destroy();
 		exit;
 		}
 	}
 //Destroy if the player was hit
-if (owner.state!=PLAYER_STATE.attacking)
+if (owner.state != PLAYER_STATE.attacking)
 	{
 	instance_destroy();
 	exit;

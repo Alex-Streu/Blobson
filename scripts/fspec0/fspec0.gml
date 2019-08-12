@@ -1,5 +1,5 @@
 //Forward Special for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -35,7 +35,7 @@ if (run)
 				attack_phase++;
 				attack_frame=5;
 				var _hitbox = create_melee(0,-7,1,0.3,3,10,0.1,8,70,2,HITBOX_SHAPE.rotation,0);
-				set_hitbox_property(_hitbox,HITBOX.sprite_angle,25);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.sprite_angle,25);
 				}
 			break;
 			}
@@ -57,7 +57,8 @@ if (run)
 				set_speed(0,-1,false,false);
 				attack_phase++;
 				attack_frame=10;
-				create_melee(0,0,0.6,0.6,10,9,1,15,270,2,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(0,0,0.6,0.6,10,9,1,15,270,2,HITBOX_SHAPE.circle,0);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				}
 			break;
 			}
@@ -81,3 +82,9 @@ if (run)
 	}
 //Movement
 move_();
+
+//Hurtbox matching
+if (run)
+	{
+	hurtbox_match_animation();
+	}

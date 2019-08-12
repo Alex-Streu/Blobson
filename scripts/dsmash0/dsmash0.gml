@@ -1,11 +1,11 @@
 //Down Smash for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 friction_gravity(slide_friction,grav,max_fall_speed);
 //Canceling
-if run && cancel_air_check() run=false;
+if run && cancel_air_check() run = false;
 
 //Phases
 if (run)
@@ -19,16 +19,16 @@ if (run)
 			anim_frame=0;
 			anim_speed=0;
 		
-			smash_charge=0;
+			charge=0;
 		
-			attack_frame=smash_attack_max_charge;
+			attack_frame=8;
 			return;
 			}
 		//Charging -> Startup
 		case 0:
 			{
 			//Animation (every 8 frames switch the sprite)
-			if (smash_charge % 8 == 0)
+			if (charge % 8 == 0)
 				{
 				if (anim_frame==0)
 					{
@@ -40,11 +40,11 @@ if (run)
 					}
 				}
 			
-			smash_charge++;
-			if (smash_charge>=smash_attack_max_charge || attack_frame==0 || !button_hold(INPUT.smash,1))
+			charge++;
+			if ((charge>=smash_attack_max_charge || !button_hold(INPUT.smash,1)) && attack_frame==0)
 				{
 				attack_phase++;
-				attack_frame=10;
+				attack_frame=2;
 				}
 			break;
 			}
@@ -59,9 +59,11 @@ if (run)
 		
 			if (attack_frame==0)
 				{
+				anim_frame=4;
+				
 				attack_phase++;
 				attack_frame=3;
-				create_magnetbox(-15,16,1,0.2,4,10,40+hsp,-5,30,5,HITBOX_SHAPE.rectangle,0);
+				create_magnetbox(-32,16,0.5,0.2,4,10,40+hsp,-5,30,5,HITBOX_SHAPE.rectangle,0);
 				}
 			break;
 			}
@@ -70,8 +72,6 @@ if (run)
 			{
 			//Animation
 			if (attack_frame==2)
-				anim_frame=4;
-			if (attack_frame==1)
 				anim_frame=5;
 			
 			if (attack_frame==0)
@@ -89,19 +89,21 @@ if (run)
 		
 			if (attack_frame==0)
 				{
+				//Animation
+				anim_frame=7;
+				
 				attack_phase++;
 				attack_frame=6;
 				var _damage = calculate_smash_damage(11);
-				create_melee(15,16,1.1,0.2,_damage,7,1.2,30,45,6,HITBOX_SHAPE.rectangle,1);
+				var _hitbox = create_melee(15,20,1.1,0.4,_damage,7,1.2,30,45,6,HITBOX_SHAPE.rectangle,1);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.normal_strong);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong);
 				}
 			break;
 			}
 		//Attack -> Endlag
 		case 4:
 			{
-			//Animation
-			anim_frame=7;
-		
 			if (attack_frame==0)
 				{
 				set_speed(0,0,false,false);

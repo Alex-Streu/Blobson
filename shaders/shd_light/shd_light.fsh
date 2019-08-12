@@ -8,9 +8,11 @@ uniform float alpha_value;
 
 void main()
 {
+	/*
     gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
 	gl_FragColor.r+=light_value;
 	gl_FragColor.g+=light_value;
 	gl_FragColor.b+=light_value;
 	gl_FragColor.a*=alpha_value;
+	//*/
 }

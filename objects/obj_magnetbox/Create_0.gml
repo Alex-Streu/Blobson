@@ -1,6 +1,7 @@
 /// @description
 event_inherited();
 image_blend=magnetbox_draw_color;
+hit_fx_style=HIT_FX.grab;
 /*MAGNETBOX VARIBLES*/
 damage=10;
 owner_xstart=0;

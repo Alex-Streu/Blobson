@@ -16,8 +16,8 @@ if (tech_buffer < tech_buffer_time)
 			set_state(PLAYER_STATE.techrolling);
 			techrolling_phase=0;
 			techrolling_frame=techroll_startup;
-			techrolling_direction=sign(stick_value(Lstick,DIR.horizontal));
-			set_invulnerable(INV.type_invincible,techroll_startup);
+			techrolling_direction=sign(stick_get_value(Lstick,DIR.horizontal));
+			set_invulnerable(INV.invincible,techroll_startup);
 			return true;
 			}
 		else
@@ -27,7 +27,7 @@ if (tech_buffer < tech_buffer_time)
 			set_state(PLAYER_STATE.teching);
 			teching_phase=0;
 			teching_frame=tech_active;
-			set_invulnerable(INV.type_invincible,tech_active);
+			set_invulnerable(INV.invincible,tech_active);
 			return true;
 			}
 		}
@@ -38,7 +38,7 @@ if (tech_buffer < tech_buffer_time)
 		set_state(PLAYER_STATE.teching);
 		teching_phase=0;
 		teching_frame=tech_active;
-		set_invulnerable(INV.type_invincible,tech_active);
+		set_invulnerable(INV.invincible,tech_active);
 		return true;
 		}
 	}

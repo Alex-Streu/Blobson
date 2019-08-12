@@ -53,17 +53,6 @@ if (state == GAME_STATE.normal || state == GAME_STATE.startup || (state == GAME_
 	
 	/*CAMERA*/
 	Camera_Average();
-	//Slowly move camera to position inside the room
-	cam_x = clamp(round(lerp(cam_x, cam_x_goal, 0.1)), 0, room_width - cam_w);
-	cam_y = clamp(round(lerp(cam_y, cam_y_goal, 0.1)), 0, room_height - 0); //cam_h
-	//Apply Camera Shake
-	cam_x += choose(-cam_shake_h, cam_shake_h);
-	cam_y += choose(-cam_shake_v, cam_shake_v);
-	//Gradually lower the camera shake amount
-	cam_shake_h = approach(cam_shake_h, 0, 1);
-	cam_shake_v = approach(cam_shake_v, 0, 1);
-	//Set the camera position
-	camera_set_view_pos(cam, cam_x, cam_y);
 	
 	/*BACKGROUND FADE*/
 	with(obj_background_manager)
@@ -119,17 +108,18 @@ if (_start)
 	{
 	if (state == GAME_STATE.normal)
 		{
-			alarm_set(0,3)		
+		part_particles_clear(global.part_sys);
+		room_goto(rm_Custom_Controls);
 		}
 	}
 #endregion
-/*/*----------------------------------------------------------------*/
+/*----------------------------------------------------------------*/
 #region Startup countdown
 countdown = max(--countdown, 0);
 if (state == GAME_STATE.startup)
 	{
 	//Timer until the start
-	if (countdown <= 60)
+	if (countdown <= count_time)
 		{
 		state = GAME_STATE.normal;
 		with(obj_player)
@@ -139,16 +129,39 @@ if (state == GAME_STATE.startup)
 		}
 	}
 #endregion
-
-if (countdown = 239)   {audio_play_sound(sfx_announcer_3,5,false)}
-if (countdown = 185)   {audio_play_sound(sfx_announcer_2,5,false)}
-if (countdown = 135)   {audio_play_sound(sfx_announcer_1,5,false)}
-if (countdown = 70)   {audio_play_sound(sfx_announcer_go,5,false)}
-
-// PALETTE CODE
-current_pal=wrap(current_pal,0,pal_swap_get_pal_count(my_portrait_pal_sprite)-1);
-
-if(keyboard_check_pressed(vk_up))
-    current_pal++;
-if(keyboard_check_pressed(vk_down))
-    current_pal--;
+/*----------------------------------------------------------------*/
+#region Daynight Cycle Values
+//Calculate the RGB values for Day / Night
+var _time = (current_time / 1000) % 100;
+//Normal
+if (_time < 30)
+	{
+	daynight_r = 0;
+	daynight_g = 0;
+	daynight_b = 0;
+	}
+//Dusk
+else if (_time < 50)
+	{
+	var _amt = (_time - 30) / 20;
+	daynight_r = lerp(0, 0.15, _amt);
+	daynight_g = lerp(0, -0.1, _amt);
+	daynight_b = lerp(0, 0.1, _amt);
+	}
+//Night
+else if (_time < 80)
+	{
+	var _amt = (_time - 50) / 30;
+	daynight_r = lerp(0.15, -0.4, _amt);
+	daynight_g = lerp(-0.1,-0.3,_amt);
+	daynight_b = lerp(0.1, -0.1, _amt);
+	}
+//Dawn
+else if (_time < 100)
+	{
+	var _amt = (_time - 80) / 20;
+	daynight_r = lerp(-0.4, 0, _amt);
+	daynight_g = lerp(-0.3, 0, _amt);
+	daynight_b = lerp(-0.1, 0, _amt);
+	}
+#endregion

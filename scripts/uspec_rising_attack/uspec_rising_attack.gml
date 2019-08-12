@@ -1,5 +1,10 @@
 //Up Special
-var run=true;
+/*
+- Moves upwards quickly. You can drift left or right
+- You can change the direction you are facing right after the first hitbox comes out
+- Hold down on the left stick and press the special button again to use the "falling attack"
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -17,18 +22,18 @@ if (run)
 			
 			landing_lag=15;
 			set_speed(0,0,false,false);
-			attack_frame=15;
+			attack_frame=4;
 			return;
 			}
 		//Startup -> Active
 		case 0:
 			{
 			//Animation
-			if (attack_frame==9)
-				anim_frame=1;
-			if (attack_frame==6)
-				anim_frame=2;
 			if (attack_frame==3)
+				anim_frame=1;
+			if (attack_frame==2)
+				anim_frame=2;
+			if (attack_frame==1)
 				anim_frame=3;
 				
 			if (attack_frame==0)

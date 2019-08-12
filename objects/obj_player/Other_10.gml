@@ -1,25 +1,41 @@
 /// @description <Run by obj_game>
-var frozen;
-frozen=false;
+var frozen = false;
+
 //Input buffer
-if (!is_AI)
+if (!global.replay_mode)
 	{
-	Update_Input_Buffer(input_buffer,uses_keyboard,true);
+	if (!is_AI)
+		{
+		Update_Input_Buffer(input_buffer, uses_keyboard, true);
+		}
+	else
+		{
+		AI_Input(true);
+		}
+	if (global.replay_record)
+		{
+		Input_Replay_Convert(global.game_replay[| player_number], input_buffer);
+		}
 	}
-//AI Input buffer
 else
 	{
-	AI_Input();
+	Update_Input_Buffer_Replay(input_buffer, true);
 	}
+	
+//Teching
+Register_Tech_Input(true);
+
 //If in attacking hitlag (not defending), players are 'frozen'
-if (self_hitlag_frame>0)
+if (self_hitlag_frame > 0)
 	{
 	self_hitlag_frame--;
 	hitfall_try();
-	frozen=true;
+	frozen = true;
 	}
+	
 //Actions that happen regardless of state and/or being frozen
 Standard_Extra();
+
 //State Machine
 if (!frozen)
 	{
@@ -60,6 +76,9 @@ if (!frozen)
 		case PLAYER_STATE.ledge_roll:		Standard_Ledge_Roll();		break;
 		case PLAYER_STATE.ledge_attack:		Standard_Ledge_Attack();	break;
 		case PLAYER_STATE.ledge_tether:		Standard_Ledge_Tether();	break;
+		case PLAYER_STATE.ledge_trump:		Standard_Ledge_Trump();		break;
+		case PLAYER_STATE.wall_cling:		Standard_Wall_Cling();		break;
+		case PLAYER_STATE.wall_jump:		Standard_Wall_Jump();		break;
 		case PLAYER_STATE.knocked_out:		Standard_Knocked_Out();		break;
 		case PLAYER_STATE.respawning:		Standard_Respawning();		break;
 		case PLAYER_STATE.attacking:		Standard_Attacking();		break;
@@ -72,37 +91,36 @@ if (!frozen)
 		}
 	}
 	
-//Custom script____________________________________________________________________________________________________________________________________________
+//Custom script
 Standard_Custom();
 
-
-//Update the controllers variables to calculate stick speeds on the next step
-//Update_Sticks_Previous(uses_keyboard);
 //Animate sprite
-anim_frame+=anim_speed*anim_multiplier;
-if (anim_frame>sprite_get_number(anim_sprite))
+anim_frame += anim_speed * anim_multiplier;
+if (anim_frame > sprite_get_number(anim_sprite))
 	{
-	anim_frame=0;
+	anim_frame = 0;
 	}
+	
 //Visual Effects
 damage_text_random *= 0.9;
-damage_text_x = irandom_range(-damage_text_random,damage_text_random);
-damage_text_y = irandom_range(-damage_text_random,damage_text_random);
+damage_text_x = irandom_range(-damage_text_random, damage_text_random);
+damage_text_y = irandom_range(-damage_text_random, damage_text_random);
 if (!obj_background_manager.background_clear_amount > 0)
 	{
-	fade_value=min(fade_value+0.1,1);
+	fade_value = min(fade_value + 0.1, 1);
 	}
+	
 /* DEBUG */
 if (debug)
 	{
 	//Add states
-	if (state_log[| ds_list_size(state_log)-1]!=state)
+	if (state_log[| ds_list_size(state_log) - 1] != state)
 		{
-		ds_list_add(state_log,state);
+		ds_list_add(state_log, state);
 		}
 	//Manage previous states - only 10 states
-	while(ds_list_size(state_log)>10)
+	while(ds_list_size(state_log) > 10)
 		{
-		ds_list_delete(state_log,0);
+		ds_list_delete(state_log, 0);
 		}
 	}

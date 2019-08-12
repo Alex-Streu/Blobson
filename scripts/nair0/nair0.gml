@@ -1,6 +1,6 @@
 //Neutral Aerial for character0
 //Logic Control Variable
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -10,7 +10,7 @@ fastfall_attack_try();
 aerial_drift();
 allow_hitfall();
 //Cancels
-if run && cancel_ground_check()	run=false;
+if run && cancel_ground_check()	run = false;
 //Main Phases
 if (run)
 	{
@@ -96,7 +96,7 @@ if (run)
 				anim_frame=9;
 				}
 			//Jump cancel out of lag
-			if run && cancel_jump_check()	run=false;
+			if run && cancel_jump_check()	run = false;
 			if (attack_frame==0)
 				{
 				//Revert back to the original state - may be idle, aerial, crouching, etc.

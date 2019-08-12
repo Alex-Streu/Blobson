@@ -1,53 +1,55 @@
 ///Standard_Tumble
 //Contains the standard actions for the tumble state.
-var run=true;
+var run = true;
 #region Animation
-anim_sprite=my_sprites[?"Tumble"];
-anim_speed=anim_speed_normal;
+anim_sprite = my_sprites[?"Tumble"];
+anim_speed = anim_speed_normal;
 #endregion
 #region Friction / Gravity
-friction_gravity(air_friction,grav,max_fall_speed);
+friction_gravity(air_friction, grav, max_fall_speed);
 #endregion
 #region Ledge
-if run && check_ledge_grab_falling() run=false;
+if run && check_ledge_grab_falling() run = false;
 #endregion
 #region Drift DI
 //If stick is past threshold
-if (stick_tilted(Lstick,DIR.horizontal))
+if (stick_tilted(Lstick, DIR.horizontal))
 	{
 	//Drift DI cannot be used to speed up knockback to high speeds
-	if (sign(stick_value(Lstick,DIR.horizontal))==sign(hsp))
+	if (sign(stick_get_value(Lstick, DIR.horizontal)) == sign(hsp))
 		{
-		if (abs(hsp+drift_DI_accel*sign(stick_value(Lstick,DIR.horizontal)))<drift_DI_max)
-			hsp+=drift_DI_accel*sign(stick_value(Lstick,DIR.horizontal));
+		if (abs(hsp + drift_DI_accel * sign(stick_get_value(Lstick, DIR.horizontal))) < drift_DI_max)
+			{
+			hsp += drift_DI_accel * sign(stick_get_value(Lstick, DIR.horizontal));
+			}
 		}
 	else
 		{
-		hsp+=drift_DI_accel*sign(stick_value(Lstick,DIR.horizontal));
+		hsp += drift_DI_accel * sign(stick_get_value(Lstick, DIR.horizontal));
 		}
 	}
 #endregion
 #region Attack Cancel
-if run && check_smashes() run=false;
-if run && check_aerials() run=false;
-if run && check_specials() run=false;
+if run && check_smashes() run = false;
+if run && check_aerials() run = false;
+if run && check_specials() run = false;
 #endregion
 #region Airdodge Cancel
-if run && check_airdodge() run=false;
+if run && check_airdodge() run = false;
 #endregion
 #region Jump Cancel (not a normal double jump)
-if (run && button(INPUT.jump,buff))
+if (run && button(INPUT.jump, buff))
 	{
-	if (double_jumps>0)
+	if (double_jumps > 0)
 		{
 		double_jumps--;
-		vsp=-double_jump_speed;
-		vsp_frac=0;
+		vsp = -double_jump_speed;
+		vsp_frac = 0;
 		/*No horizontal speed change*/
 		//VFX
-		create_fx(spr_dust_air_jump,1,0,18,x,y,2,0);
+		fx_create(spr_dust_air_jump, 1, 0, 18, x, y, 2, 0);
 		set_state(PLAYER_STATE.aerial);
-		run=false;
+		run = false;
 		}
 	}
 #endregion
@@ -55,8 +57,8 @@ if (run && button(INPUT.jump,buff))
 if (run && on_ground())
 	{
 	set_state(PLAYER_STATE.in_lag);
-	lag_frame=hard_landing_lag;
-	run=false;
+	lag_frame = hard_landing_lag;
+	run = false;
 	}
 #endregion
 move_bounce_();

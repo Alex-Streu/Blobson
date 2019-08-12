@@ -1,10 +1,10 @@
 //Dash Attack for character0
-var run=true;
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 //Canceling
-if run && cancel_air_check() run=false;
+if run && cancel_air_check() run = false;
 //Phases
 if (run)
 	{
@@ -70,7 +70,7 @@ if (run)
 				attack_phase++;
 				attack_frame=8;
 				//Final hit
-				create_melee(0,0,0.7,0.45,2,10,0.2,8,45,2,HITBOX_SHAPE.circle,1);
+				create_melee(0,0,0.7,0.45,6,10,0.6,8,45,2,HITBOX_SHAPE.circle,1);
 				}
 			break;
 			}

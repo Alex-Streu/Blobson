@@ -1,5 +1,9 @@
 //Up Special
-var run=true;
+/*
+- Control the player with the left stick
+- The move lasts longer at higher damage
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);

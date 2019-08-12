@@ -1,6 +1,6 @@
 ///Standard_Magnetized
 //Contains the standard actions for the magnetized state.
-var run=true;
+var run = true;
 //Timer
 magnet_frame=max(--magnet_frame,0);
 #region Animation
@@ -11,7 +11,7 @@ anim_speed=anim_speed_normal;
 if (magnet_frame==0)
 	{
 	set_state(PLAYER_STATE.aerial);
-	run=false;
+	run = false;
 	}
 #endregion
 #region Move toward magnet goal

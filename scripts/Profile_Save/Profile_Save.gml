@@ -6,7 +6,7 @@ var _profile_map = argument[0],
 	_name = argument[1],
 	_file = file_exists(profiles_save) ? profiles_save : "default_profile.sav";
 	
-var _save_map = load_string_file(_file);
+var _save_map = json_decode(load_string_file(_file));
 if (ds_map_exists(_save_map,_name))
 	{
 	//Replace the old profile map with the newer one

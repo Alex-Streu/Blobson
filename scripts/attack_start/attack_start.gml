@@ -35,7 +35,7 @@ if (_exists)
 
 	//Reset the hitboxes
 	destroy_all_attached_hitboxes(my_hitboxes);
-	reset_hitbox_groups(collided);
+	reset_hitbox_groups();
 	any_hitbox_has_hit=false;
 
 	//Reset the hurtbox
@@ -44,3 +44,6 @@ if (_exists)
 	//Execute the first frame (the special start phase)
 	script_execute(attack_script,PHASE.start);
 	}
+	
+//Move to front
+Player_Move_To_Front();

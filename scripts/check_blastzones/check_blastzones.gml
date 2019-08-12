@@ -8,13 +8,15 @@ if (rectangle_in_rectangle(x,y,x+sprite_width,y+sprite_height,argument0,argument
 	{
 	//Exceptions for upper blastline
 	//If in hitstun, you are KO'ed no matter what
-	if (state==PLAYER_STATE.in_hitstun)
+	if (state == PLAYER_STATE.in_hitstun)
+		{
 		return true;
+		}
 	else
 	//If not in hitstun, check if you are below the upper line before being KO'ed
 	//If you above the upper line but not in hitstun, you are safe!
 		{
-		if (y>argument1)
+		if (y > argument1)
 			return true;
 		}
 	}

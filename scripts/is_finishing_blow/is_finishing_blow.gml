@@ -37,7 +37,7 @@ for(var t = 0; t < 3; t++)
 		//"Movement"
 		_tx += _hsp;
 		_ty += _vsp;
-		//Collisions with blocks
+		//Collide with blocks
 		if (collision_point(_tx, _ty, obj_solid, false, true))
 			{
 			return false;

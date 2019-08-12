@@ -1,5 +1,5 @@
 {
-    "id": "3731698a-e103-4d09-82a3-1c35bb752028",
+    "id": "f2ae9865-c100-4273-bd8b-7813f4db5dda",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "Retro Palette Swapper Manual v1.0.pdf",

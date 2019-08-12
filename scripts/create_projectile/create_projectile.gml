@@ -23,7 +23,7 @@ with(_newhitbox)
 	angle=argument[7];
 	grounded_angle=angle;
 	lifetime=argument[8];
-	set_hitbox_property(id,HITBOX.shape,argument[9]);
+	set_hitbox_property(id,HITBOX_PROPERTY.shape,argument[9]);
 	owner=other.id;
 	owner_xstart=other.x;
 	owner_ystart=other.y;

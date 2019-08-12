@@ -23,7 +23,7 @@ if (surface_exists(obj_game.game_surface))
 			if (_fade && !_shader)
 				{
 				_shader = true;
-				shader_set(shd_black);
+				shader_set(shd_fade);
 				shader_set_uniform_f(uni_black,1-background_clear_amount);
 				}
 		

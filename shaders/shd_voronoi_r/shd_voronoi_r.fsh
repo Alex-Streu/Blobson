@@ -12,6 +12,7 @@ uniform float fade;
 
 void main()
 	{
+	/*
 	//Find the closest node
 	int closest = 0;
 	float least = 1000.;
@@ -30,4 +31,5 @@ void main()
 	//gl_FragColor.rgb += vec3(point_r[closest],point_g[closest],point_b[closest]);
 	//gl_FragColor.a *= (alpha + fade);
 	gl_FragColor = vec4(point_r[closest],point_g[closest],point_b[closest],alpha+fade);
+	//*/
 	}

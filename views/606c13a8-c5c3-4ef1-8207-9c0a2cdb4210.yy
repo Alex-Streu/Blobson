@@ -6,11 +6,14 @@
     "children": [
         "4eb905ff-8d64-4e36-94ed-0c936bfa315c",
         "92eee6b5-f66a-48a3-99ae-b54bea40e38f",
-        "cd681d97-1a8f-46e8-8574-cd2588da3cfc",
         "c7f54eca-2994-4a99-ad17-ac67a36cc88f",
-        "a0fc2935-d9b4-4e76-948f-4234dd7199f5",
         "9d157489-6a5b-4c2e-9aff-443844dbd945",
-        "2ad5be51-04c5-4e3a-9030-4f70b1ee44de"
+        "873b8d0c-3885-4a97-b001-4a28f42f5692",
+        "cd681d97-1a8f-46e8-8574-cd2588da3cfc",
+        "2ad5be51-04c5-4e3a-9030-4f70b1ee44de",
+        "942884c9-d5d8-41d9-893a-6a559b313aee",
+        "cbde1cd7-9fe6-43bd-bf3d-502cac90eef1",
+        "192d1fd9-d849-4e48-ab60-5d5927fc8ef0"
     ],
     "filterType": "GMScript",
     "folderName": "Control_Stick_Functions",

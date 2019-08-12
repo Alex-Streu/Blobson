@@ -1,6 +1,9 @@
 //Neutral Special for character0
-//Logic Control Variable
-var run=true;
+/*
+- Hold the button to charge the attack
+- The attack's movement angle changes the more you charge it
+*/
+var run = true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
@@ -16,8 +19,9 @@ if (run)
 			anim_speed=0;
 			anim_frame=0;
 			
+			landing_lag = 20;
 			attack_frame=10;
-			smash_charge=0;
+			charge=0;
 			set_speed(0,-1,false,false);
 			return;
 			}
@@ -56,8 +60,8 @@ if (run)
 			if (attack_frame==0)
 				anim_frame=2;
 			
-			smash_charge++;
-			if (!button_hold(INPUT.special,1) || smash_charge > 60)
+			charge++;
+			if (!button_hold(INPUT.special,1) || charge > 60)
 				{
 				attack_phase=2;
 				attack_frame=22;
@@ -65,11 +69,11 @@ if (run)
 				anim_frame=3;
 				//Lunge
 				change_facing();
-				set_speed(clamp(smash_charge/3,10,18)*facing,-12+clamp(smash_charge/12,0,5),false,false);
+				set_speed(clamp(charge/3,10,18)*facing,-12+clamp(charge/12,0,5),false,false);
 				}
 			else
 			//Opt out
-			if smash_charge>10 && check_airdodge() run = false;
+			if charge>10 && check_airdodge() run = false;
 			break;
 			}
 		//Lunge
@@ -93,7 +97,7 @@ if (run)
 			if (attack_frame % 3 == 0 && attack_frame != 0)
 				{
 				reset_hitbox_group(collided,0);
-				create_magnetbox(0,0,0.8,0.8,1,5,abs(hsp)*4,vsp*3,7,3,HITBOX_SHAPE.circle,0);
+				create_magnetbox(0,0,0.8,0.8,1,5,abs(hsp)*4,vsp*3,7,2,HITBOX_SHAPE.circle,0);
 				}
 			
 			if (attack_frame==0)
@@ -104,7 +108,8 @@ if (run)
 				anim_frame=10;
 				set_speed(3*facing,-2,false,true);
 				//Hitbox
-				create_melee(35,0,0.6,0.7,10,9,0.8,15,65,20,HITBOX_SHAPE.circle,1);
+				var _hitbox = create_melee(35,0,0.6,0.7,10,9,0.8,15,65,20,HITBOX_SHAPE.circle,1);
+				set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_sfx, snd_hit_strong2);
 				}
 			break;
 			}
