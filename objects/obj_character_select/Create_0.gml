@@ -32,6 +32,5 @@ for (var i = 0; i < array_length_1d(players); i++)
 	var _slot = create_character_select_player(_p[? "Name"], _p[? "Color"], _p[? "IsActive"],
 											_offsetX + _space*i, _offsetY, _p[? "Marker"]);
 											
-	show_debug_message(string(_p[? "IsActive"]))
 	if (_p[? "IsActive"]) { create_player_cursor(i, _slot, cursors[i]); }
 }

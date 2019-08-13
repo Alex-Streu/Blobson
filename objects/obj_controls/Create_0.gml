@@ -3,12 +3,14 @@
 alarm[0] = 1;
 number_of_connections = 0;
 button_array = [];
+button_names_by_device = ds_map_create();
+var button_name = [];
 
 #region Buttom names (Nintendo)
-/*
-button_name[0]="B";
-button_name[1]="A";
-button_name[2]="Y";
+
+button_name[0]="Y";
+button_name[1]="B";
+button_name[2]="A";
 button_name[3]="X";
 button_name[4]="L";
 button_name[5]="R";
@@ -18,7 +20,9 @@ button_name[8]="+";
 button_name[9]="-";
 button_name[10]="DPad";
 button_name[11]="Rstick";
-//*/
+
+button_names_by_device[? "Nintendo"] = button_name;
+
 #endregion
 #region Button names (Xbox)
 //*
@@ -34,6 +38,8 @@ button_name[8] = "Start";
 button_name[9] = "Back";
 button_name[10] = "DPad";
 button_name[11] = "Rstick";
+
+button_names_by_device[? "Xbox"] = button_name;
 //*/
 #endregion
 
