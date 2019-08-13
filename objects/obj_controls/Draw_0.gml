@@ -24,9 +24,7 @@ for(var i = 0; i < max_players; i++)
 			draw_set_alpha(1);
 			}
 		//Draw the button
-		var desc = _controller > -1 ? string_lower(gamepad_get_description(_controller)) : "xbox";
-		var button_name = button_names_by_device[? "Xbox"];
-		if (string_count("nintendo", desc) > 0) { button_name = button_names_by_device[? "Nintendo"]; }
+		var button_name = get_button_names(_controller);
 		col = make_color_hsv((m / array_height_2d(button_array)) * 255, 255, 255);
 		draw_text_color(x + 8 + (i * 200), y + m * 16, string(button_name[m]), col, col, col, col, 1);
 		col = make_color_hsv((button_array[m, i + 1] / 8) * 255, 230, 255);

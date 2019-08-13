@@ -31,10 +31,11 @@ draw_set_alpha(1);
 
 //Extra Text
 if (global.replay_record)
-	{
+{
+	var btn_names = get_button_names(global.device_number[0]);
 	draw_set_font(fnt_consolas);
 	draw_set_color(c_black);
 	draw_set_halign(fa_right);
 	draw_set_valign(fa_top);
-	draw_text(room_width - 8, 8, "Press X to save a replay");
-	}
+	draw_text(room_width - 8, 8, stringify("Press {0} to save a replay", btn_names[2]));
+}
