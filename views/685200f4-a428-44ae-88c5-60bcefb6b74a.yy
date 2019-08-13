@@ -13,9 +13,7 @@
         "2615baa8-e96f-4b1b-8f39-910b27a14838",
         "48e0ee4e-dc85-4bd2-a2c0-edf77d4e81e3",
         "de51b510-7528-41e5-9bb4-f30c28b67354",
-        "20eda2ae-1ce7-4338-b4b6-d2d0fd65311e",
-        "ea50148c-aec8-477d-ace7-22215f4e09e8",
-        "2c3b3f38-1c82-44c9-94f3-8b203954ce56"
+        "20eda2ae-1ce7-4338-b4b6-d2d0fd65311e"
     ],
     "filterType": "GMScript",
     "folderName": "Game_Engine_Scripts",

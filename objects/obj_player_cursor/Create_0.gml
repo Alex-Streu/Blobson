@@ -1,5 +1,5 @@
 /// @description Setup properties
 player = PLAYER_DATA.controller;
 slot = noone;
-cursorSpeed = 5;
+cursorSpeed = 9;
 character = noone;
