@@ -8,6 +8,7 @@ if (_controller != -1)
 {
 	xx=gamepad_axis_value(_controller,gp_axislh);
 	yy=gamepad_axis_value(_controller,gp_axislv);
+	gamepad_set_axis_deadzone(_controller,.25)
 	//RT=gamepad_button_check_pressed(_controller, gp_shoulderrb)
 	//LT=gamepad_button_check_pressed(_controller, gp_shoulderlb)
 		
