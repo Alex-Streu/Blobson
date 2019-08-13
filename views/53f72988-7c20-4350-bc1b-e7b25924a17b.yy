@@ -46,7 +46,8 @@
         "e733ba43-2a21-4b7a-9556-12daf52956c5",
         "f309cd43-fa1e-44a3-a4d7-ca00b5453686",
         "f59657be-c0ac-4925-af79-fdefb80ccbd4",
-        "fc19ba6f-de25-4a7c-81c5-49047960391b"
+        "fc19ba6f-de25-4a7c-81c5-49047960391b",
+        "79365daf-d66f-47f9-8ec5-88d28ea7d390"
     ],
     "filterType": "GMSprite",
     "folderName": "Fighter - Rewind",
