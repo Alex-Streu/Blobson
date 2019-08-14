@@ -72,6 +72,23 @@ countdown = count_time * 4;
 
 current_pal = 1;
 
+ex_meter_ui_x = 154;
+
+//portrait palettes
+
+//player_1_pal = 3;
+//player_3_pal = 4;
+//player_2_pal = 5;
+current_pal = 1;
+
+	var _player = instance_find(obj_player, instance_number(obj_player)-1);	
+
+//if _player.player_number = 0 {current_pal = 2}
+//if _player.player_number = 1 {current_pal = 3}
+//if _player.player_number = 2 {current_pal = 3}
+
+my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
+
 
 //Replays
 global.replay_data[? "SEED"] = random_get_seed();

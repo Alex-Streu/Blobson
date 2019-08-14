@@ -1,4 +1,5 @@
 /// @description Status / Frame Advance
+
 //Draw player status
 var _fade = (1 - obj_background_manager.background_clear_amount);
 for(var i = 0; i < number_of_players; i++)
@@ -7,35 +8,33 @@ for(var i = 0; i < number_of_players; i++)
 	var _accent = c_white;
 	var _player = instance_find(obj_player, instance_number(obj_player)-1 - i);
 	_accent = palette_get_color(_player.palettes[_player.player_color], 0);
-	//Character profile sprite
-	draw_sprite_ext
-		(
-		spr_player_status,
-		0,
-		status_bar_space * (i + 1),
-		player_status_y,
-		1,
-		1,
-		0,
-		_accent,
-		_fade
-		);
-	shader_set(shd_palette);
-	shader_set_uniform_f_array(uni_s, _player.palettes[0]);
-	shader_set_uniform_f_array(uni_r, _player.palettes[_player.player_color]);
-	draw_sprite_ext
-		(
-		_player.portrait,
-		0,
-		status_bar_space * (i + 1),
-		player_status_y,
-		1,
-		1,
-		0,
-		c_white,
-		round(_fade) //round so the replacement shader still works
-					//alternate way would be to draw to surfaces and then draw the surfaces with alpha
-		);
+//Character profile sprite
+	draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //color beneath
+	
+		//EX METER
+	draw_rectangle_colour(
+	status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
+	player_status_y + 88, //y1
+	status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
+	player_status_y + 110, //y2
+	c_white, 
+	c_white, 
+	c_white, 
+	c_white,
+	false 
+	); //EX METER
+	
+	draw_sprite_ext(spr_player_status,0,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //boarder
+		
+	//shader_set(shd_palette);
+	//shader_set_uniform_f_array(uni_s, _player.palettes[0]);
+	//shader_set_uniform_f_array(uni_r, _player.palettes[_player.player_color]);
+	
+	pal_swap_set(my_portrait_pal_sprite,_player.current_pal,false); //remove if new palette system is odd or doesnt work
+	draw_sprite_ext(_player.portrait,0,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,c_white,round(_fade));
+		
+		//round so the replacement shader still works		
+		//alternate way would be to draw to surfaces and then draw the surfaces with alpha
 	for(var m = 0; m < _player.stock; m++)
 		{
 		draw_sprite_ext
@@ -52,18 +51,7 @@ for(var i = 0; i < number_of_players; i++)
 			);
 		}
 	shader_reset();
-	draw_sprite_ext
-		(
-		spr_player_status,
-		1,
-		status_bar_space * (i + 1),
-		player_status_y,
-		1,
-		1,
-		0,
-		_accent,
-		_fade
-		);
+	draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + (m * 32) + 184 + player_status_x,player_status_y,1,1,0,_accent,_fade);
 	//Damage
 	draw_text_sprite
 		(

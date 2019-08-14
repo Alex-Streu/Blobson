@@ -2183,6 +2183,14 @@
             }
         },
         {
+            "Key": "4a47704d-4ea0-4956-a695-a39527ea2630",
+            "Value": {
+                "id": "391b8d8a-0928-41eb-a408-480198628146",
+                "resourcePath": "scripts\\Fighter_palettes\\Fighter_palettes.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "4a8a79e4-0572-442a-ab23-174af388f43d",
             "Value": {
                 "id": "dbca5462-7b6f-4a39-8e7a-6f5c25a0c932",
@@ -7697,6 +7705,7 @@
     ],
     "script_order": [
         "dc45e509-3a09-41d5-8af6-cad782e86ca2",
+        "4a47704d-4ea0-4956-a695-a39527ea2630",
         "6503fc29-3e3f-4a53-923a-7e7bf8359c15",
         "fddd2bf2-5dc8-4fec-a8ff-c07b60f12786",
         "f465e3e5-cae6-4884-a1a5-56f5e7de4089",
