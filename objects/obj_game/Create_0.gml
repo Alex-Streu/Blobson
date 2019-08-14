@@ -1,9 +1,9 @@
 /// @description Initialize
 //Gives each player a controller (must be created after the players)
-Assign_Controllers();
+//Assign_Controllers();
 
 //Load controls for each player
-Assign_Custom_Controls();
+//Assign_Custom_Controls();
 
 //Set the state
 state = GAME_STATE.startup;

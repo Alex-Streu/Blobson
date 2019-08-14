@@ -1,5 +1,6 @@
 /// @description Initialize properties
 
+player = PLAYER.P1;
 name = "";
 character = noone;
 bg_color = c_gray;

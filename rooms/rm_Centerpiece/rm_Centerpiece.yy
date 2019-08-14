@@ -3,7 +3,7 @@
     "name": "rm_Centerpiece",
     "id": "48023f11-083a-41df-86a8-b4b8cb2853ea",
     "creationCodeFile": "",
-    "inheritCode": false,
+    "inheritCode": true,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
@@ -276,7 +276,7 @@
         }
     ],
     "modelName": "GMRoom",
-    "parentId": "00000000-0000-0000-0000-000000000000",
+    "parentId": "6a9c4f2f-d521-4795-b966-23438de31734",
     "physicsSettings":     {
         "id": "84ba9496-3963-45e9-a462-378f2cc0cda8",
         "inheritPhysicsSettings": false,

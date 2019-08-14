@@ -3,7 +3,7 @@
     "name": "rm_Dreamland",
     "id": "3b3f3f5f-42e6-466b-b124-ab41bb39e15e",
     "creationCodeFile": "RoomCreationCode.gml",
-    "inheritCode": false,
+    "inheritCode": true,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
@@ -248,7 +248,7 @@
         }
     ],
     "modelName": "GMRoom",
-    "parentId": "00000000-0000-0000-0000-000000000000",
+    "parentId": "6a9c4f2f-d521-4795-b966-23438de31734",
     "physicsSettings":     {
         "id": "32e4bfae-ff5b-46aa-8ab7-21f635216d17",
         "inheritPhysicsSettings": false,

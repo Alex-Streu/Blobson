@@ -63,12 +63,6 @@ if (_controller != -1)
 	//	Custom_Controls_Reset(button_array,i);
 	//}
 			
-	//Start the game
-	if (gamepad_button_check_pressed(_controller, gp_start))
-	{
-		room_goto(rm_Stage_Select);
-	}
-			
 	//if (RT)
 	//{
 	//	pal_select += 1;

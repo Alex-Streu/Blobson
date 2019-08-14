@@ -3,7 +3,7 @@
     "name": "rm_Driller",
     "id": "d89eb83a-fd38-4521-ac21-6c555420f92b",
     "creationCodeFile": "",
-    "inheritCode": false,
+    "inheritCode": true,
     "inheritCreationOrder": false,
     "inheritLayers": false,
     "instanceCreationOrderIDs": [
@@ -279,7 +279,7 @@
         }
     ],
     "modelName": "GMRoom",
-    "parentId": "00000000-0000-0000-0000-000000000000",
+    "parentId": "6a9c4f2f-d521-4795-b966-23438de31734",
     "physicsSettings":     {
         "id": "6bfb57ba-c21d-4a7c-b705-fe83605a309e",
         "inheritPhysicsSettings": false,

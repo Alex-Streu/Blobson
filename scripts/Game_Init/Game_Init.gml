@@ -2,6 +2,9 @@
 show_debug_overlay(debug);
 randomize();
 
+//Global check if players should be loaded
+global.load_players = false;
+
 //Global list for collision checking
 global.col_list = ds_list_create();
 
