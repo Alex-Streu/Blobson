@@ -49,10 +49,27 @@ shorthop_speed= 9;
 double_jump_speed=16;
 max_double_jumps=1;
 land_time=3;
+
+//Walljump Values
+switch(walljump_type)
+	{
+	//Rivals of Aether
+	case WALLJUMP.rivals:
+		{
+		wall_jump_startup = 2;
+		wall_jump_time = 12;
+		wall_jump_hsp = 7;
+		wall_jump_vsp = -13;
+		max_wall_jumps = 1;
+		can_wall_cling = false;
+		}
+	default: break;
+	}
+
 //Aerial Movment
 air_accel=0.5;
 max_air_speed=5;
-max_air_speed_dash = 6.5;
+max_air_speed_dash = 8.5;
 air_friction=0.04;
 //Ground Movement
 ground_friction= 1;
@@ -178,21 +195,7 @@ switch(walljump_type)
 	}
 //*/
 
-//Walljump Values
-switch(walljump_type)
-	{
-	//Rivals of Aether
-	case WALLJUMP.rivals:
-		{
-		wall_jump_startup = 2;
-		wall_jump_time = 12;
-		wall_jump_hsp = 7;
-		wall_jump_vsp = -8;
-		max_wall_jumps = 1;
-		can_wall_cling = false;
-		}
-	default: break;
-	}
+
 
 //Rolling
 roll_speed=9;

@@ -7,6 +7,7 @@ hitlag_frame = max(--hitlag_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Hitlag"];
 anim_speed = 1;
+hurtbox.sprite_index = hurtbox_sprite;
 #endregion
 #region End Hitlag
 if (run && hitlag_frame == 0)

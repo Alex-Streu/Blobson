@@ -71,7 +71,9 @@ if (surface_exists(obj_game.game_surface))
 		shader_set_uniform_f(uni_f, fade_value);
 		//shader_set_uniform_f_array(uni_s, palettes[0]);
 		//shader_set_uniform_f_array(uni_r, palettes[player_color]);
+		pal_swap_set(my_pal_sprite,current_pal,false); //remove if new palette system is odd or doesnt work		
 		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1] + magnifier_y, sprite_scale * (_scale / 2));
+		pal_swap_reset(); //remove if new palette system is odd or doesnt work
 		shader_reset();
 		}
 		
