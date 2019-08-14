@@ -128,6 +128,13 @@ if (state == GAME_STATE.startup)
 			}
 		}
 	}
+	
+if (countdown = 239)   {audio_play_sound(sfx_announcer_3,5,false)}
+if (countdown = 185)   {audio_play_sound(sfx_announcer_2,5,false)}
+if (countdown = 135)   {audio_play_sound(sfx_announcer_1,5,false)}
+if (countdown = 70)   {audio_play_sound(sfx_announcer_go,5,false)}
+	
+	
 #endregion
 /*----------------------------------------------------------------*/
 #region Daynight Cycle Values

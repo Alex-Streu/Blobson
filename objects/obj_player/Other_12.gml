@@ -62,14 +62,14 @@ if (surface_exists(obj_game.game_surface))
 		var _scale = clamp(2 - ((point_distance(_coords[0], _coords[1], x, y) / camera_boundary)), 0.1, 2);
 		var _dis = 20 * _scale;
 		draw_sprite_ext(spr_offscreen_pointer, 0, _coords[0] + lengthdir_x(_dis, _dir), _coords[1] + lengthdir_y(_dis, _dir), _scale, _scale, _dir, c_white, 1);
-		draw_sprite_ext(spr_offscreen_view, 0, _coords[0], _coords[1], _scale, _scale, 0, c_white, 1);
+		draw_sprite_ext(spr_offscreen_view, 0, _coords[0], _coords[1], 1, 1, 0, c_white, 1);
 		shader_set(shd_player);
 		shader_set_uniform_f(uni_l, _light);
 		shader_set_uniform_f(uni_a, _alpha);
 		shader_set_uniform_f(uni_f, fade_value);
 		shader_set_uniform_f_array(uni_s, palettes[0]);
 		shader_set_uniform_f_array(uni_r, palettes[player_color]);
-		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1], sprite_scale * (_scale / 2));
+		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1] + magnifier_y, sprite_scale * (_scale / 2));
 		shader_reset();
 		}
 		

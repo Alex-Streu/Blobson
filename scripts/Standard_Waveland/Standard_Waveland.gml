@@ -5,7 +5,7 @@ var run = true;
 waveland_frame = max(--waveland_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Waveland"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_waveland;
 #endregion
 #region Sliding Friction and gravity
 friction_gravity(waveland_friction, grav, max_fall_speed);

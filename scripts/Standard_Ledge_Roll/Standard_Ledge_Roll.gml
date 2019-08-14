@@ -5,7 +5,7 @@ var run = true;
 ledge_roll_frame=max(--ledge_roll_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"LedgeR"];
-anim_speed=anim_speed_normal;
+anim_speed= ani_speed_dodgeroll;
 #endregion
 #region Invincible
 //Set the invincibility to last through the roll's startup so it is completely safe

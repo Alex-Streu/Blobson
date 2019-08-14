@@ -3,7 +3,7 @@
 var run = true;
 #region Animation
 anim_sprite = my_sprites[?"Idle"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_idle;
 #endregion
 #region Friction & Gravity
 friction_gravity(ground_friction, grav, max_fall_speed);

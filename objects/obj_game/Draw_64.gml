@@ -14,8 +14,8 @@ for(var i = 0; i < number_of_players; i++)
 		0,
 		status_bar_space * (i + 1),
 		player_status_y,
-		2,
-		2,
+		1,
+		1,
 		0,
 		_accent,
 		_fade
@@ -29,8 +29,8 @@ for(var i = 0; i < number_of_players; i++)
 		0,
 		status_bar_space * (i + 1),
 		player_status_y,
-		2,
-		2,
+		1,
+		1,
 		0,
 		c_white,
 		round(_fade) //round so the replacement shader still works
@@ -44,8 +44,8 @@ for(var i = 0; i < number_of_players; i++)
 			0,
 			status_bar_space * (i + 1) + (m * 18) + 48,
 			player_status_y - 48,
-			2,
-			2,
+			1,
+			1,
 			0,
 			c_white,
 			round(_fade) 
@@ -58,8 +58,8 @@ for(var i = 0; i < number_of_players; i++)
 		1,
 		status_bar_space * (i + 1),
 		player_status_y,
-		2,
-		2,
+		1,
+		1,
 		0,
 		_accent,
 		_fade
@@ -74,7 +74,7 @@ for(var i = 0; i < number_of_players; i++)
 		34, //38
 		_player.damage_text_x,
 		_player.damage_text_y,
-		2,
+		1,
 		calculate_damage_color(_player.damage),
 		_fade
 		);

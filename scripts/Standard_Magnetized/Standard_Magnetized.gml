@@ -5,7 +5,7 @@ var run = true;
 magnet_frame=max(--magnet_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"Hitstun"];
-anim_speed=anim_speed_normal;
+anim_speed=ani_speed_hitstun;
 #endregion
 #region End Phase
 if (magnet_frame==0)

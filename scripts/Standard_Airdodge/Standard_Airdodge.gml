@@ -5,7 +5,7 @@ var run = true;
 air_dodge_frame = max(--air_dodge_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Airdodge"];
-anim_speed = anim_speed_normal;;
+anim_speed = ani_speed_airdodge;
 anim_frame = 0;
 #endregion
 #region Transition through phases

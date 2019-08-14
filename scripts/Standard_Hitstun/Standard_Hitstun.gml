@@ -5,7 +5,7 @@ var run = true;
 hitstun_frame = max(--hitstun_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Hitstun"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_hitstun;
 #endregion
 #region Friction / Gravity
 if (!on_ground())

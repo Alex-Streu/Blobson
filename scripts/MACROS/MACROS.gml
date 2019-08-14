@@ -41,8 +41,8 @@
 #macro player_status_padding_bottom 54
 
 //Game surface
-#macro game_surface_enable true
-#macro daynight_cycle_enable true //requires the game surface
+#macro game_surface_enable false
+#macro daynight_cycle_enable false //requires the game surface
 
 //Backgrounds
 #macro back_clear -1

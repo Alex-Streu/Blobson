@@ -16,7 +16,7 @@ if (run && !on_ground())
 #endregion
 #region Animation
 anim_sprite = my_sprites[?"Lag"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_lag;
 #endregion
 #region When the lag is done
 if (run && flinch_frame == 0)

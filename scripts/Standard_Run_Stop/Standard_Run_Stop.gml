@@ -5,7 +5,7 @@ var run = true;
 run_stop_frame=max(--run_stop_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"Run_Stop"];
-anim_speed=anim_speed_normal;
+anim_speed=ani_speed_runstop;
 #endregion
 #region Friction
 friction_gravity(ground_friction,grav,max_fall_speed);

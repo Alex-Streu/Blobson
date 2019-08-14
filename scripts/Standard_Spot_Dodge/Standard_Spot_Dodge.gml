@@ -37,7 +37,7 @@ if (run)
 		case 1:
 			{
 			//Animation
-			anim_speed=anim_speed_normal;
+			anim_speed=ani_speed_dodgeroll;
 			if (spot_dodge_frame==0)
 				{
 				spot_dodge_phase++;

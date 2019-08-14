@@ -6,7 +6,7 @@ var run = true;
 grab_frame = max(--grab_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Grabbing"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_grabhold;
 #endregion
 #region Friction & Gravity
 friction_gravity(ground_friction, grav, max_fall_speed);

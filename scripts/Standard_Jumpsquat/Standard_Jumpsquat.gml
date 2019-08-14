@@ -6,7 +6,7 @@ var run = true;
 jumpsquat_frame = approach(jumpsquat_frame, 0, 1);
 #region Animation
 anim_sprite = my_sprites[?"JumpS"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_jump;
 #endregion
 #region Gravity
 friction_gravity(0, grav, max_fall_speed);

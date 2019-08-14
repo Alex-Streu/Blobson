@@ -5,7 +5,7 @@ var run = true;
 respawn_frame=max(--respawn_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"Idle"];
-anim_speed=anim_speed_normal;
+anim_speed= ani_speed_idle;
 #endregion
 #region Renew resources
 double_jumps=max_double_jumps;

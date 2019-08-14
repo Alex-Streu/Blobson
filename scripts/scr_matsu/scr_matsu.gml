@@ -5,14 +5,14 @@ mask_index=spr_matsu_collision_mask;
 //Hurtbox
 hurtbox_sprite=spr_matsu_hurbox_normal;
 hurtbox=create_hurtbox(hurtbox_sprite);
+hurtbox_crouch_sprite = spr_hurtbox_small_crouch;
 //Main sizes
 sprite_scale= 1;
-
+magnifier_y = 30;
 //Palettes
 my_pal_sprite= spr_matsu_pal; //fighter palette
 my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 my_current_pallete = 1;
-
 //Color Palettes
 palettes= 
 	[
@@ -29,7 +29,7 @@ palettes=
 	];
 portrait= spr_matsu_portrait;
 stock_sprite= spr_matsu_stock;
-
+render = spr_render0;
 
 //Ex meter
 EX_meter = 0;
@@ -52,6 +52,7 @@ land_time=3;
 //Aerial Movment
 air_accel=0.5;
 max_air_speed=5;
+max_air_speed_dash = 6.5;
 air_friction=0.04;
 //Ground Movement
 ground_friction= 1;
@@ -96,7 +97,7 @@ ledge_hang_relative_y= 126;
 switch(airdodge_type)
 	{
 	//Good Air Dodge
-	case 0:
+	case AIRDODGE.melee:
 		{
 		air_dodge_speed=10;
 		air_dodge_startup=2;
@@ -125,7 +126,7 @@ switch(airdodge_type)
 switch(shield_type)
 	{
 	//Smash 4 Shield
-	case 0:
+	case SHIELD.melee:
 		{
 		shield_hp=100;
 		shield_recover_rate=0.5;
@@ -138,7 +139,7 @@ switch(shield_type)
 		break;
 		}
 	//Rivals Parry
-	case 1:
+	case SHIELD.rivals:
 		{
 		parry_startup=2;
 		parry_active=8;
@@ -176,6 +177,23 @@ switch(walljump_type)
 	default: break;
 	}
 //*/
+
+//Walljump Values
+switch(walljump_type)
+	{
+	//Rivals of Aether
+	case WALLJUMP.rivals:
+		{
+		wall_jump_startup = 2;
+		wall_jump_time = 12;
+		wall_jump_hsp = 7;
+		wall_jump_vsp = -8;
+		max_wall_jumps = 1;
+		can_wall_cling = false;
+		}
+	default: break;
+	}
+
 //Rolling
 roll_speed=9;
 roll_startup=3;
@@ -222,7 +240,6 @@ my_attacks[?"DThrow"]= scr_matsu_dthrow;
 my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
 my_attacks[?"Taunt" ]=-1;
 //Animations / Sprites
-
 my_sprites[?"Idle"    ]=spr_matsu_idle;
 my_sprites[?"Crouch"  ]=spr_matsu_crouch;
 my_sprites[?"Walk"    ]=spr_matsu_walk;
@@ -230,7 +247,7 @@ my_sprites[?"Run"     ]=spr_matsu_run;
 my_sprites[?"Run_Stop"]=spr_matsu_runstop;
 my_sprites[?"JumpS"   ]=spr_matsu_jumpsquat;
 my_sprites[?"Jump"    ]=spr_matsu_jump;
-my_sprites[?"Doublejump"]=spr_matsu_doublejump;
+my_sprites[?"JumpMid"	] =spr_matsu_doublejump;
 my_sprites[?"Doublejumpfall"]=spr_matsu_doublejump;
 my_sprites[?"Doublejumpair"] = spr_matsu_doublejump_airborne
 my_sprites[?"Midair"  ]=spr_matsu_airborne;
@@ -269,6 +286,9 @@ my_sprites[?"LedgeJ"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeR"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeA"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeT"  ]=spr_ledge_tether0;
+my_sprites[?"LedgeTr"	] = spr_ledge_trump0;
+my_sprites[?"WallC"		] = spr_wall_cling0;
+my_sprites[?"WallJ"		] = spr_matsu_walljump;
 my_sprites[?"Grabbing"]=spr_matsu_grab;
 my_sprites[?"Entrance"]=spr_matsu_intro;
 //Animations for attacks
@@ -299,23 +319,32 @@ my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
 //Animation speed (non attacks)
-ani_speed_intro = .6;
+ani_speed_intro = .5;
 ani_speed_idle = .2;
 ani_speed_crouch = 1;
 ani_speed_walk = .8;
 ani_speed_run = .7;
 ani_speed_runstop = .7;
 ani_speed_jump = .8;
+ani_speed_jumpdouble = .7
+ani_speed_walljump = .75;
 ani_speed_airborne = .8;
 ani_speed_airdodge = .8;
+ani_speed_waveland = .7
 ani_speed_tech = .75;
 ani_speed_techroll = .9;
-ani_speed_getup = .85;
+ani_speed_ledgegetup = .85;
+ani_speed_ledgesnap = .75;
+ani_speed_ledgehang = .7;
 ani_speed_ledge_jump = .75;
 ani_speed_dodgeroll = .9;
 ani_speed_tumble = 1;
 ani_speed_hitstun = 1;
 ani_speed_parryland = .50;
+ani_speed_lag = .7
+ani_speed_helpless = 0.75
+ani_speed_grabhold = 0.75
+ani_speed_grabbed = 0.75
 
 ani_speed_uspecial_charge = 1;
 

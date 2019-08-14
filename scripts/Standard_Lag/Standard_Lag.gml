@@ -9,7 +9,7 @@ vsp_frac = 0;
 #endregion
 #region Animation
 anim_sprite = my_sprites[?"Lag"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_lag;
 #endregion
 #region Aerial
 if run && check_aerial() run = false;

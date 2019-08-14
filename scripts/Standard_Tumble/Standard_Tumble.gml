@@ -3,7 +3,7 @@
 var run = true;
 #region Animation
 anim_sprite = my_sprites[?"Tumble"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_tumble;
 #endregion
 #region Friction / Gravity
 friction_gravity(air_friction, grav, max_fall_speed);

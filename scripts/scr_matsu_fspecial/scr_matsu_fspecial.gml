@@ -56,7 +56,7 @@ if (run)
 				attack_phase++;
 				attack_frame=7;
 				var _magnetbox = create_magnetbox(42,-48,0.7,0.5,7,20,44,-16,20,8,HITBOX_SHAPE.rectangle,1);
-				set_hitbox_property(_magnetbox,HITBOX.base_hitlag,20);	
+				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.base_hitlag,20);	
 				}
 			break;
 			}

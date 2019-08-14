@@ -3,7 +3,7 @@
 var run = true;
 #region Animation
 anim_sprite=my_sprites[?"Crouch"];
-anim_speed=anim_speed_normal;
+anim_speed= ani_speed_crouch;
 hurtbox.sprite_index = hurtbox_crouch_sprite;
 hurtbox.image_index = anim_frame;
 hurtbox.image_speed = 0;
