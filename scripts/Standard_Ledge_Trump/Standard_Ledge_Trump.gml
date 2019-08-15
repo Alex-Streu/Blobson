@@ -8,7 +8,7 @@ friction_gravity(air_friction, grav, max_fall_speed);
 #endregion
 #region Animation
 anim_sprite = my_sprites[?"LedgeTr"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_hitstun;
 #endregion
 #region When the lag is done
 if (run && ledge_trump_frame == 0)

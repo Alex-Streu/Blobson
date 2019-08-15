@@ -1,9 +1,9 @@
 /// @description Initialize
 //Gives each player a controller (must be created after the players)
-//Assign_Controllers();
+Assign_Controllers();
 
 //Load controls for each player
-//Assign_Custom_Controls();
+Assign_Custom_Controls();
 
 //Set the state
 state = GAME_STATE.startup;
@@ -48,8 +48,9 @@ draw = true;
 
 //Cache some values
 number_of_players = instance_number(obj_player);
-status_bar_space = (camera_width div (number_of_players + 1));
-player_status_y = (camera_height - player_status_padding_bottom);
+status_bar_space =  - 48 + (camera_width div (number_of_players + 1));
+player_status_x = -0;
+player_status_y = (camera_height - player_status_padding_bottom + 20);
 
 //Shader uniforms
 uni_s = shader_get_uniform(shd_palette, "sample");
@@ -68,6 +69,26 @@ if (daynight_cycle_enable)
 
 //Startup counter
 countdown = count_time * 4;
+
+current_pal = 1;
+
+ex_meter_ui_x = 154;
+
+//portrait palettes
+
+//player_1_pal = 3;
+//player_3_pal = 4;
+//player_2_pal = 5;
+current_pal = 1;
+
+	var _player = instance_find(obj_player, instance_number(obj_player)-1);	
+
+//if _player.player_number = 0 {current_pal = 2}
+//if _player.player_number = 1 {current_pal = 3}
+//if _player.player_number = 2 {current_pal = 3}
+
+my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
+
 
 //Replays
 global.replay_data[? "SEED"] = random_get_seed();

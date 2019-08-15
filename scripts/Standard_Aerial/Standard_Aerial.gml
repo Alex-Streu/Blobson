@@ -2,51 +2,58 @@
 //Contains the standard actions for the aerial state.
 var run = true;
 #region Animation
-anim_speed = anim_speed_normal;
 if (!jump_is_midair_jump)
 	{
 	//Peak of jump
 	if (abs(vsp) < 1)
 		{
+			anim_speed = ani_speed_jump
 		anim_sprite = my_sprites[?"Midair"];
 		}
 	//Falling
 	else if (vsp >= 1)
 		{
+			anim_speed = ani_speed_jump
 		anim_sprite = my_sprites[?"Fall"];
 		}
 	//Rising
 	else if (vsp <= 1)
 		{
+		anim_speed = ani_speed_jump
 		anim_sprite = my_sprites[?"Jump"];
 		}
 	//Fastfalling
 	if (vsp >= fast_fall_speed)
 		{
+			anim_speed = ani_speed_jump
 		anim_sprite = my_sprites[?"Fastfall"];
 		}
 	}
 else
-	{
+	{		
 	//Peak of jump
 	if (abs(vsp) < 1)
 		{
-		anim_sprite = my_sprites[?"Midair"];
+			anim_speed = ani_speed_jumpdouble
+		anim_sprite = my_sprites[?"Doublejumpair"	]
 		}
 	//Falling
 	else if (vsp >= 1)
 		{
+			anim_speed = ani_speed_jumpdouble
 		anim_sprite = my_sprites[?"Fall"];
 		}
 	//Rising
 	else if (vsp <= 1)
 		{
-		anim_sprite = my_sprites[?"JumpMid"];
+		anim_sprite = my_sprites[?"JumpMid"	]
+		anim_speed = ani_speed_jumpdouble
 		}
 	//Fastfalling
 	if (vsp >= fast_fall_speed)
 		{
-		anim_sprite = my_sprites[?"Fastfall"];
+			anim_speed = ani_speed_jumpdouble
+		anim_sprite = my_sprites[?"Doublejumpfall"]
 		}
 	}
 #endregion

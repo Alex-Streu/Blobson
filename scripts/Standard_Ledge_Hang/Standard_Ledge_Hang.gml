@@ -5,7 +5,7 @@ var run = true;
 ledge_hang_frame = min(++ledge_hang_frame, ledge_hang_max_time);
 #region Animation
 anim_sprite = my_sprites[?"Ledge"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_ledgehang;
 #endregion
 #region Renew resources
 double_jumps = max_double_jumps;

@@ -5,7 +5,7 @@ var run = true;
 ledge_snap_frame = max(--ledge_snap_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"LedgeS"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_ledgesnap;
 #endregion
 #region Move toward the ledge
 if (run)

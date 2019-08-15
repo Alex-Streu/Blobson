@@ -55,7 +55,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				var _hitbox = create_melee(80,-37,1.4,0.6,6,8,1.2,12,70,3,HITBOX_SHAPE.rectangle,0);
-				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dtilt_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dtilt_hit);
 				}
 			break;
 			}
@@ -69,7 +69,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;				
 				var _hitbox = create_melee(76,-37,1.4,0.6,6,8,1.2,12,70,3,HITBOX_SHAPE.rectangle,0);
-				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_dtilt_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dtilt_hit);
 				}
 			break;
 			}

@@ -128,6 +128,13 @@ if (state == GAME_STATE.startup)
 			}
 		}
 	}
+	
+if (countdown = 239)   {audio_play_sound(sfx_announcer_3,5,false)}
+if (countdown = 185)   {audio_play_sound(sfx_announcer_2,5,false)}
+if (countdown = 135)   {audio_play_sound(sfx_announcer_1,5,false)}
+if (countdown = 70)   {audio_play_sound(sfx_announcer_go,5,false)}
+	
+	
 #endregion
 /*----------------------------------------------------------------*/
 #region Daynight Cycle Values
@@ -165,3 +172,11 @@ else if (_time < 100)
 	daynight_b = lerp(-0.1, 0, _amt);
 	}
 #endregion
+
+// PALETTE CODE
+current_pal=wrap(current_pal,0,pal_swap_get_pal_count(my_portrait_pal_sprite)-1);
+
+if(keyboard_check_pressed(vk_up))
+    current_pal++;
+if(keyboard_check_pressed(vk_down))
+    current_pal--;

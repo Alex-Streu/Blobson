@@ -3,7 +3,7 @@
 var run = true;
 #region Animation
 anim_sprite=my_sprites[?"Hitstun"];
-anim_speed=anim_speed_normal;
+anim_speed=ani_speed_grabbed;
 #endregion
 #region Snap to the grabbing player's position
 if (run)

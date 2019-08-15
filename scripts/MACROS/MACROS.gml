@@ -28,21 +28,21 @@
 #macro camera_zoom_pad_xscale 0.0
 #macro camera_max_width room_width
 #macro camera_max_height (room_width / camera_ratio)
-#macro camera_min_width 480
-#macro camera_min_height 272
-#macro camera_zoom_speed 0.05
+#macro camera_min_width 720
+#macro camera_min_height 405
+#macro camera_zoom_speed 0.02 //0.05
 
 //Finishing Blow Zoom
 #macro camera_enable_special_zoom false
 #macro camera_special_zoom_width 480
-#macro camera_special_zoom_height 272
+#macro camera_special_zoom_height 270
 
 //Player status
 #macro player_status_padding_bottom 54
 
 //Game surface
-#macro game_surface_enable true
-#macro daynight_cycle_enable true //requires the game surface
+#macro game_surface_enable false
+#macro daynight_cycle_enable false //requires the game surface
 
 //Backgrounds
 #macro back_clear -1

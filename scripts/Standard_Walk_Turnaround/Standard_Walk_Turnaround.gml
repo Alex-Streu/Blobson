@@ -21,7 +21,7 @@ if (run && stick_flicked(Lstick))
 #endregion
 #region Animation
 anim_sprite=my_sprites[?"Walk"];
-anim_speed=anim_speed_normal;
+anim_speed=ani_speed_walk;
 #endregion
 #region Facing
 facing=walk_turnaround_direction;

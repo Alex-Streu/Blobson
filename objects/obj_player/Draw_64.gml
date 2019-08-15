@@ -1,7 +1,7 @@
 /// @description
 //Input Buffer DEBUG
 if (debug)
-	{
+{
 	var start_x = player_number * (ds_list_size(input_buffer) * 5);
 	var c = c_white;
 	for(var i = 0; i < (INPUT.length * 2); i++)
@@ -11,4 +11,4 @@ if (debug)
 		draw_rectangle_color(start_x + i * 5, input_buffer[| i] * 2, start_x + 4 + i * 5, 3 + input_buffer[| i] * 2, c_black, c_black, c_black, c_black, false);
 		} 
 	//draw_text(128 * controller, 48, "Fade:" + string(fade_value));
-	}
+}

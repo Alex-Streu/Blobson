@@ -5,7 +5,7 @@ var run = true;
 ledge_attack_frame=max(--ledge_attack_frame,0);
 #region Animation
 anim_sprite=my_sprites[?"LedgeA"];
-anim_speed=anim_speed_normal;
+anim_speed=ani_speed_ledgegetup;
 #endregion
 #region Invincible
 set_invulnerable(INV.invincible,1);

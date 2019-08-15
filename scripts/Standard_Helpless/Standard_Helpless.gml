@@ -3,7 +3,7 @@
 var run = true;
 #region Animation
 anim_sprite = my_sprites[?"Helpless"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_helpless;
 #endregion
 #region Friction / Gravity
 friction_gravity(air_friction, grav, max_fall_speed);

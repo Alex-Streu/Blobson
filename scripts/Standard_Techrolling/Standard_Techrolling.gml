@@ -27,7 +27,7 @@ switch(techrolling_phase)
 	case 1:
 		{
 		//Animation
-		anim_speed=anim_speed_normal;
+		anim_speed=ani_speed_dodgeroll;
 		//No speed
 		set_speed(0,0,false,false);
 		roll_move(32,techroll_speed,techrolling_direction);

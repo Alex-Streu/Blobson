@@ -52,7 +52,7 @@ if (run)
 				var _hitbox = create_melee(0,0,1,1,4,6,0.8,8,45,4,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_matsu_fair_hb;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}	
-				set_hitbox_property(_hitbox,HITBOX.snd_hit,snd_fair_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);
 				
 				
 				

@@ -33,7 +33,7 @@ if (run)
 			friction_gravity(air_friction, grav, max_fall_speed);
 		
 			//Animation
-			anim_speed = anim_speed_normal;
+			anim_speed = ani_speed_walljump;
 		
 			if (run && wall_jump_frame == 0)
 				{

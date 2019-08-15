@@ -1,15 +1,13 @@
 /// @description <Run by obj_player_renderer>
 if (surface_exists(obj_game.game_surface))
 	{
-	if (game_surface_enable) surface_set_target(obj_game.game_surface);
-	
+	if (game_surface_enable) surface_set_target(obj_game.game_surface);	
 	//Tethering
 	if (state == PLAYER_STATE.ledge_tether)
 		{
 		var _accent = palette_get_color(palettes[player_color], 1);
 		draw_line_width_color(x, y, ledge_id.x,ledge_id.y, 2, _accent, _accent);
-		}
-		
+		}		
 	//Shader for player graphics
 	var _light = 0.0, _alpha = 1.0;
 	if (invulnerable_type == INV.invincible)
@@ -21,11 +19,15 @@ if (surface_exists(obj_game.game_surface))
 	shader_set_uniform_f(uni_l, _light);
 	shader_set_uniform_f(uni_a, _alpha);
 	shader_set_uniform_f(uni_f, fade_value);
-	shader_set_uniform_f_array(uni_s, palettes[0]);
-	shader_set_uniform_f_array(uni_r, palettes[player_color]);
+	
+	//shader_set_uniform_f_array(uni_s, palettes[0]);
+	//shader_set_uniform_f_array(uni_r, palettes[player_color]);
+	
 	if (anim_sprite != -1)
 		{
+		pal_swap_set(my_pal_sprite,current_pal,false); //remove if new palette system is odd or doesnt work
 		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, x, y, sprite_scale);
+		pal_swap_reset(); //remove if new palette system is odd or doesnt work
 		}
 	shader_reset();
 	
@@ -62,14 +64,16 @@ if (surface_exists(obj_game.game_surface))
 		var _scale = clamp(2 - ((point_distance(_coords[0], _coords[1], x, y) / camera_boundary)), 0.1, 2);
 		var _dis = 20 * _scale;
 		draw_sprite_ext(spr_offscreen_pointer, 0, _coords[0] + lengthdir_x(_dis, _dir), _coords[1] + lengthdir_y(_dis, _dir), _scale, _scale, _dir, c_white, 1);
-		draw_sprite_ext(spr_offscreen_view, 0, _coords[0], _coords[1], _scale, _scale, 0, c_white, 1);
+		draw_sprite_ext(spr_offscreen_view, 0, _coords[0], _coords[1], 1, 1, 0, c_white, 1);
 		shader_set(shd_player);
 		shader_set_uniform_f(uni_l, _light);
 		shader_set_uniform_f(uni_a, _alpha);
 		shader_set_uniform_f(uni_f, fade_value);
-		shader_set_uniform_f_array(uni_s, palettes[0]);
-		shader_set_uniform_f_array(uni_r, palettes[player_color]);
-		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1], sprite_scale * (_scale / 2));
+		//shader_set_uniform_f_array(uni_s, palettes[0]);
+		//shader_set_uniform_f_array(uni_r, palettes[player_color]);
+		pal_swap_set(my_pal_sprite,current_pal,false); //remove if new palette system is odd or doesnt work		
+		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1] + magnifier_y, sprite_scale * (_scale / 2));
+		pal_swap_reset(); //remove if new palette system is odd or doesnt work
 		shader_reset();
 		}
 		

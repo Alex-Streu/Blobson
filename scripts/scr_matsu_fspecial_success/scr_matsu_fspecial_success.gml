@@ -23,7 +23,7 @@ if (run)
 			landing_lag=10;
 			attack_frame=5;
 			var _magnetbox = create_magnetbox(32,-32,0.3,0.6,3,5,0,-64,6,1,HITBOX_SHAPE.rectangle,1);
-				set_hitbox_property(_magnetbox,HITBOX.base_hitlag,20);	
+				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.base_hitlag,20);	
 			return;
 			}
 			

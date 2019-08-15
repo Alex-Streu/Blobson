@@ -18,11 +18,8 @@ if (global.load_players)
 				var _obj = instance_create_layer(x, y, "GameLayer", obj_player);
 				with (_obj)
 				{
-					controller = global.device_number[_num];
-					player_number = _num;
-					player_color = _num + 1;
-					//script_execute(_p[? "Character"]);
-					script_execute(character0);
+					script_execute(_p[? "Character"]);
+					//loaded = true;
 				}
 			}
 		}
@@ -36,10 +33,15 @@ if (global.load_players)
 			var _obj = instance_create_layer(x, y, "GameLayer", obj_player);
 			with (_obj)
 			{
-				script_execute(character0);
+				script_execute(scr_matsu);
+				loaded = true;
 			}
 		}
 	}
 	
-	Assign_Custom_Controls();
+	instance_create_layer(0, 0, "GameLayer", obj_game);
+	instance_create_layer(0, 0, "GameLayer", obj_player_renderer);
+	
+	//Assign_Controllers();
+	//Assign_Custom_Controls();
 }

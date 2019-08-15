@@ -5,7 +5,7 @@ var run = true;
 walk_to_dash_frame = max(--walk_to_dash_frame, 0);
 #region Animation
 anim_sprite = my_sprites[?"Walk"];
-anim_speed = anim_speed_normal;
+anim_speed = ani_speed_walk;
 #endregion
 #region Walking
 //Move based on input
