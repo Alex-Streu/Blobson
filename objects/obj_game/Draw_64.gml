@@ -5,7 +5,8 @@ var _fade = (1 - obj_background_manager.background_clear_amount);
 for(var i = 0; i < number_of_players; i++)
 {
 	//Skip if player doesn't exist	
-	var _player = instance_find(obj_player, instance_number(obj_player)-1 - i);
+	//var _player = instance_find(obj_player, instance_number(obj_player)-1 - i);
+	var _player = players[i];
 	if (_player == noone) { continue; }
 	
 	//Get accent color
