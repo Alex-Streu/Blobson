@@ -1,4 +1,7 @@
 /// @description Update cursor position and selection
+isActive = slot.state == SLOT_STATE.CURSOR;
+
+if (!isActive) { return; }
 
 var xx, yy;
 

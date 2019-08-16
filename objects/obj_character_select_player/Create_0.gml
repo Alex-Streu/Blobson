@@ -1,4 +1,8 @@
 /// @description Initialize properties
+enum SLOT_STATE {
+	CURSOR,
+	MENU
+}
 
 player = PLAYER.P1;
 name = "";
@@ -11,6 +15,7 @@ isSelected = false;
 marker = noone;
 profile = noone;
 profiles = noone;
+state = SLOT_STATE.CURSOR;
 
 
 //Draw properties

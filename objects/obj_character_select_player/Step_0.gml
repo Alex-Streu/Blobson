@@ -25,6 +25,7 @@ if (profile == noone)
 		ds_list_insert(profiles, 1, _manage);		
 		var _profiles = profiles;
 		
+		var _slot = self;
 		var _player = player;
 		
 		with (_p)
@@ -32,6 +33,7 @@ if (profile == noone)
 			profiles = _profiles;
 			selected = _default;
 			player = _player;
+			slot = _slot;
 		}
 		
 		profile = _p;

@@ -11,3 +11,6 @@ clicked = false;
 state = DDSTATE.CLOSED;
 items = noone;
 player = PLAYER.P1;
+slot = noone;
+yPress = false;
+selectedIndex = 0;
