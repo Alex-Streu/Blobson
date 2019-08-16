@@ -19,11 +19,20 @@ if (_controller != -1)
 	
 	//Clamp cursor into room
 	clamp_object_in_room(self);
+	
+	//Check for profile selector collision	
+	var _profile_selector = instance_place(x, y, slot.profile);
+	if (_profile_selector != noone && _profile_selector.state == DDSTATE.OPEN) { _profile_selector = noone; }
+	
+	//Check for profile collision	
+	var _profile = instance_place(x, y, obj_profile_selector_item);
+	if (_profile != noone && _profile.player != player) { _profile = noone; }
+	
 			
 	//Check for character collision if not selected
 	if (!slot.isSelected)
 	{
-		var _character = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, obj_character_select_item, true, true);
+		var _character = instance_place(x, y, obj_character_select_item);
 		if (_character != noone)
 		{
 			character = _character;
@@ -36,13 +45,27 @@ if (_controller != -1)
 		}
 	}
 		
-	//Select character
+	//Select item
 	if (gamepad_button_check_pressed(_controller, gp_face1))
-	{
+	{		
 		if (character != noone) 
 		{
 			slot.isSelected = true;
+		}		
+		
+		if (_profile_selector != noone)
+		{
+			_profile_selector.clicked = true;
 		}
+		else if (_profile != noone)
+		{
+			_profile.isSelected = true;
+		}
+		else if (slot.profile.state == DDSTATE.OPEN)
+		{
+			slot.profile.clicked = true;
+		}
+		
 	}
 		
 	//Deselect character

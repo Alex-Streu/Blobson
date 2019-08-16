@@ -20,7 +20,8 @@ surface_set_target(drawSurface);
 	draw_rectangle(0, iconH-30, iconW, iconH, false);
 	draw_set_alpha(1);
 	draw_set_color(c_white);
-	draw_text_transformed(iconW/2, iconH-20, string_upper(name), 0.3, 0.3, 0);
+	draw_set_font(global.base_font);
+	draw_text_transformed(iconW/2, iconH-20, string_upper(name), 0.1, 0.1, 0);
 	
 	//Subtract window
 	gpu_set_blendmode(bm_subtract);

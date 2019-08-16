@@ -3,13 +3,17 @@
 player = PLAYER.P1;
 name = "";
 character = noone;
-bg_color = c_gray;
+color = c_gray;
+sprite = sprite_index;
+inactiveSprite = spr_pEmpty_holder;
 isActive = false;
 isSelected = false;
 marker = noone;
+profile = noone;
+profiles = noone;
 
 
 //Draw properties
-drawH = 200;
-drawW = 160;
+//drawH = 200;
+//drawW = 160;
 drawSurface = noone;

@@ -2,6 +2,9 @@
 show_debug_overlay(debug);
 randomize();
 
+//Load base font
+global.base_font = font_add_sprite(spr_base_font, ord("!"), true, 2);
+
 //Global check if players should be loaded
 global.load_players = false;
 

@@ -20,6 +20,11 @@ for (var i = 0; i < array_length_1d(characters); i++) {
 												_offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
 }
 
+//---------------------------
+//Setup profiles
+profiles = file_exists("PlayerProfiles.sav") ? json_decode(load_string_file("PlayerProfiles.sav")) : ds_list_create();
+
+
 
 //--------------------------
 //Setup players
@@ -33,8 +38,8 @@ for (var i = 0; i < array_length_1d(players); i++)
 {
 	var _p = players[i];
 	
-	var _slot = create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], _p[? "IsActive"],
-											_offsetX + _space*i, _offsetY, _p[? "Marker"]);
+	var _slot = create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], 
+												_p[? "IsActive"], _p[? "Marker"], _p[? "SlotSprite"]);
 											
 	if (_p[? "IsActive"]) { create_player_cursor(_p[? "Number"], _slot, cursors[i]); }
 	
