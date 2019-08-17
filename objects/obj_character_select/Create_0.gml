@@ -41,7 +41,11 @@ for (var i = 0; i < array_length_1d(players); i++)
 	var _slot = create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], 
 												_p[? "IsActive"], _p[? "Marker"], _p[? "SlotSprite"]);
 											
-	if (_p[? "IsActive"]) { create_player_cursor(_p[? "Number"], _slot, cursors[i]); }
+	if (_p[? "IsActive"]) 
+	{ 
+		var _cursor = create_player_cursor(_slot, cursors[i]); 
+		_slot.cursor = _cursor;
+	}
 	
 	pm_add_player(_p);
 }
