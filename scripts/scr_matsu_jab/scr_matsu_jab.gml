@@ -17,7 +17,6 @@ if (run)
 		{
 		case PHASE.start:
 			{
-			EX_meter += 3;
 			//Animation
 			anim_sprite=my_sprites[?"Jab1"];
 			anim_speed=0;
@@ -41,6 +40,7 @@ if (run)
 				var _hitbox = create_melee(38,-72,0.7,0.5,4,4,0.1,7,75,5,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);
+				
 				}
 			break;
 			}

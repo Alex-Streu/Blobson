@@ -75,7 +75,7 @@ countdown = count_time * 4;
 
 current_pal = 1;
 
-ex_meter_ui_x = 154;
+ex_meter_ui_x = 96;
 
 //portrait palettes
 

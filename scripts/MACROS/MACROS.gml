@@ -394,6 +394,7 @@ enum HITBOX_PROPERTY
 	grounded_angle,
 	hit_fx_style,
 	hit_sfx,
+	EX_meter,
 	}
 enum HITBOX_SHAPE
 	{

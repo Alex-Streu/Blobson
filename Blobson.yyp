@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "004d40ad-b2fe-40f7-ad24-ba8c0f8343d4",
+            "Value": {
+                "id": "3eddee79-78fe-4fd9-9f13-1635c4416c00",
+                "resourcePath": "rooms\\rm_Dreamland\\rm_Dreamland.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "004f1f52-d002-4407-a9f2-c4c31a27b56d",
             "Value": {
                 "id": "67fcee4e-9efe-4635-b21f-445140bb2fd4",
@@ -1908,14 +1916,6 @@
                 "id": "a1f44013-fb74-4320-b998-28f57a81ddd0",
                 "resourcePath": "scripts\\hurtbox_match_animation\\hurtbox_match_animation.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "3b3f3f5f-42e6-466b-b124-ab41bb39e15e",
-            "Value": {
-                "id": "4dee64ac-51d7-451f-9b51-3dd098993224",
-                "resourcePath": "rooms\\rm_Dreamland\\rm_Dreamland.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
