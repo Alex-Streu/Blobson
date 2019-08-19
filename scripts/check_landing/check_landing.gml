@@ -10,7 +10,7 @@ if (!stick_tilted(Lstick, DIR.down))
 		vsp = 0;
 		vsp_frac = 0;
 		set_state(PLAYER_STATE.in_lag);
-		lag_frame = land_time;
+		lag_frame = land_time;		
 		//VFX
 		fx_create(spr_dust_land, 1, 0, 25, x, bbox_bottom - 1, 2, 0, "FX_Layer_Below");
 		return true;

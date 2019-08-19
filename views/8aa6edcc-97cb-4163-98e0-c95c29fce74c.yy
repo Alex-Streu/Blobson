@@ -13,7 +13,7 @@
         "74662878-27d7-45c4-8629-a6ff949da5e3"
     ],
     "filterType": "GMSound",
-    "folderName": "hit DFX dragonball",
+    "folderName": "SFX dragonball",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

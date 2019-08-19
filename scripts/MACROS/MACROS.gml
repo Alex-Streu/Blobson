@@ -2,7 +2,7 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		false
+#macro show_hitboxes		true
 #macro show_hurtboxes		false
 #macro show_collision_boxes	false
 
@@ -84,8 +84,8 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 0.85
-	#macro hitstun_base_multiplier 4
+	#macro hitstun_multiplier 1.1 //0.85
+	#macro hitstun_base_multiplier 4.5 //4
 	#macro hitstun_weight_multiplier 0.6
 	#macro hitstun_damage_multiplier 0.24 //0.12
 	#macro hitstun_knockback_multiplier 4

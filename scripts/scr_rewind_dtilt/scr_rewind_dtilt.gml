@@ -116,9 +116,3 @@ if (run)
 	}
 //Movement
 move_grounded_();
-
-//Hurtbox matching
-if (run)
-	{
-	hurtbox_match_animation();
-	}

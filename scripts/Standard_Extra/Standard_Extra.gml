@@ -3,6 +3,7 @@
 if (on_ground())
 	{
 	double_jumps = max_double_jumps;
+	if name = "Goku" {rewind_teleport_ready = true;}
 	air_dodges = 1;
 	if (walljump_type == WALLJUMP.rivals)
 		{

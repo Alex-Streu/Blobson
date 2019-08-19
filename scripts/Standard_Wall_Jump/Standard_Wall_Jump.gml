@@ -24,6 +24,7 @@ if (run)
 				wall_jump_phase++;
 				wall_jump_frame = wall_jump_time;
 				set_speed(wall_jump_hsp * facing, wall_jump_vsp, false, false);
+				if name = "Goku" {rewind_teleport_ready = true;}
 				}
 			break;
 			}

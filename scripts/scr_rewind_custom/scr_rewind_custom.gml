@@ -1,8 +1,13 @@
 ///The custom script for character0
 return;
 
+
+
+if (on_ground())    {rewind_teleport_ready = true;}
+
+
 if anim_sprite = spr_rewind_run
-if anim_frame >= 2
+if anim_frame >= 1.90
 {
 	anim_frame = 2;
 }

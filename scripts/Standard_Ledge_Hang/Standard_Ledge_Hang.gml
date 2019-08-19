@@ -8,6 +8,7 @@ anim_sprite = my_sprites[?"Ledge"];
 anim_speed = ani_speed_ledgehang;
 #endregion
 #region Renew resources
+if name = "Goku" {rewind_teleport_ready = true;}
 double_jumps = max_double_jumps;
 air_dodges = 1;
 #endregion
