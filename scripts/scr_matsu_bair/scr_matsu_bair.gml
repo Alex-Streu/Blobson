@@ -72,8 +72,13 @@ if (run)
 				anim_frame= 3;
 				attack_phase++;
 				attack_frame=2;
-                var _hitbox = create_melee(-45,-30,1.2,.7,10,10,1,12,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				
+				
+				var _hitbox = create_melee(-70,-30,0.4,.5,10,10,1,12,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_bair_hit);
+				
+                var _hitbox = create_melee(-35,-35,0.7,.5,5,5,1,8,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);
 				}
 			break;
 			}
@@ -85,8 +90,12 @@ if (run)
 				anim_frame= 4;
 				attack_phase++;
 				attack_frame=5;
-				 var _hitbox = create_melee(-42,-30,1,.7,7,8,1,12,50,5,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				
+				var _hitbox = create_melee(-70,-25,0.4,.5,10,10,1,12,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_bair_hit);
+				
+                var _hitbox = create_melee(-35,-30,0.7,.5,5,5,1,8,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);
 				}
 			break;
 			}

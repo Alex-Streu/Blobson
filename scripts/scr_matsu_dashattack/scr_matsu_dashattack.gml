@@ -34,7 +34,7 @@ if (run)
 				attack_phase++;
 				attack_frame=8;
 				
-				var _hitbox = create_melee(28,-28,1.5,0.5,7,5,1,14,45,8,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(28,-28,1.5,0.5,7,5,1,14,40,8,HITBOX_SHAPE.circle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dashattack_hit);
 				}
 			break;
