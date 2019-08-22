@@ -2439,6 +2439,14 @@
             }
         },
         {
+            "Key": "4f916776-eaf6-473e-834c-fbb7ed877634",
+            "Value": {
+                "id": "55048576-0445-4404-9a8b-b025ea204767",
+                "resourcePath": "sprites\\spr_p3_marker\\spr_p3_marker.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "50cf8de4-6f78-49bd-9410-c537fdf68555",
             "Value": {
                 "id": "ce536170-be84-4ed1-b321-8d11356b6808",
@@ -4548,6 +4556,14 @@
                 "id": "23e98e94-42c6-421d-b8e3-a09515b8dfeb",
                 "resourcePath": "scripts\\Custom_Controls_Load_New\\Custom_Controls_Load_New.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8dd05c5b-6d56-40fd-b7f7-c0b48c2423ae",
+            "Value": {
+                "id": "af80f355-b059-410e-a592-fcd86726d1ea",
+                "resourcePath": "sprites\\spr_p4_marker\\spr_p4_marker.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -7143,6 +7159,14 @@
             }
         },
         {
+            "Key": "e21ac7a0-10fb-4e8f-9d33-ce817d1fa702",
+            "Value": {
+                "id": "8bb40c95-0f25-4031-96e0-99624c61795e",
+                "resourcePath": "sprites\\spr_p4_select\\spr_p4_select.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e3116185-1d38-4365-a4f7-5b060c1af362",
             "Value": {
                 "id": "20278e61-367d-47e8-bb9a-4c5a5e0cbfe4",
@@ -7228,6 +7252,14 @@
                 "id": "9101c22c-238f-465c-a610-8351132a33fe",
                 "resourcePath": "sounds\\sfx_hit_med10\\sfx_hit_med10.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "e646ee3f-ac83-4055-909c-abf1c2c2e4e0",
+            "Value": {
+                "id": "2081a497-5dd2-48e5-82d8-4ffb8bee9f5f",
+                "resourcePath": "sprites\\spr_p3_select\\spr_p3_select.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
