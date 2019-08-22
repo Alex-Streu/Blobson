@@ -2,7 +2,7 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		true
+#macro show_hitboxes		false
 #macro show_hurtboxes		false
 #macro show_collision_boxes	false
 

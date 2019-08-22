@@ -3,16 +3,19 @@ name="Sarina";
 //Collision box
 mask_index=spr_matsu_collision_mask;
 //Hurtbox
-hurtbox_sprite=spr_matsu_hurbox_normal;
+hurtbox_sprite=spr_sarina_hurtbox;
 hurtbox=create_hurtbox(hurtbox_sprite);
-hurtbox_crouch_sprite = spr_hurtbox_small_crouch;
+hurtbox_crouch_sprite = spr_sarina_hurtbox_crouch;
 //Main sizes
 sprite_scale= 1;
 magnifier_y = 30;
-//Palettes
+//portraits, renders, palettes
 my_pal_sprite= spr_matsu_pal; //fighter palette
 my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 my_current_pallete = 1;
+portrait= spr_sarina_hud1;
+stock_sprite= spr_matsu_stock;
+render = spr_sarina_render;
 //Color Palettes
 palettes= 
 	[
@@ -27,9 +30,7 @@ palettes=
 	create_palette_rgb($dc5be5,$8554d8,$e89be4),
 	create_palette_rgb($826844,$db7f00,$493211),
 	];
-portrait= spr_matsu_portrait;
-stock_sprite= spr_matsu_stock;
-render = spr_render0;
+
 
 //Ex meter
 EX_meter = 0;

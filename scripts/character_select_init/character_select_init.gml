@@ -46,7 +46,5 @@ rewind[? "Script"] = scr_rewind;
 
 characters = [
 	matsu,
-	sarina,
 	rewind
-	
 ];

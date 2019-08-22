@@ -871,6 +871,14 @@
             }
         },
         {
+            "Key": "1c8b8fac-6855-44b0-92ca-87c636e3a23f",
+            "Value": {
+                "id": "32370786-9930-49c5-908b-9caab347efd4",
+                "resourcePath": "sprites\\spr_sarina_render\\spr_sarina_render.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1ca30ae5-8baf-49a1-ba6f-ff6c54baf188",
             "Value": {
                 "id": "d98befc9-acda-4b5c-8cd8-1167211682cb",
@@ -1988,6 +1996,14 @@
                 "id": "a1f44013-fb74-4320-b998-28f57a81ddd0",
                 "resourcePath": "scripts\\hurtbox_match_animation\\hurtbox_match_animation.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3ad0491d-4107-4c38-b55b-03ce264a6555",
+            "Value": {
+                "id": "3dabc3bf-c33b-4c83-a4d8-fc022858dcd0",
+                "resourcePath": "sprites\\spr_sarina_hud1\\spr_sarina_hud1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3988,6 +4004,14 @@
                 "id": "ddb746f2-2319-4209-b2a5-e7370ba2d09e",
                 "resourcePath": "sprites\\spr_rolling0\\spr_rolling0.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "780885ff-28e6-46ad-87e9-587ee241e09a",
+            "Value": {
+                "id": "3022ba7a-bceb-4f33-ba7e-a74ead0ced3f",
+                "resourcePath": "views\\780885ff-28e6-46ad-87e9-587ee241e09a.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
