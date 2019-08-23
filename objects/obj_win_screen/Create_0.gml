@@ -1,7 +1,7 @@
 /// @description
 clear = true;
 
-offset = 100;
+offset = 256;
 
 winner = global.win_screen_data_temp;
 

@@ -29,7 +29,7 @@ palettes=
 	];
 portrait= spr_matsu_portrait;
 stock_sprite= spr_matsu_stock;
-render = spr_render0;
+render = spr_sarina_render;
 
 //Ex meter
 EX_meter = 0;
@@ -59,7 +59,7 @@ switch(walljump_type)
 		wall_jump_startup = 2;
 		wall_jump_time = 12;
 		wall_jump_hsp = 7;
-		wall_jump_vsp = -13;
+		wall_jump_vsp = -14;
 		max_wall_jumps = 1;
 		can_wall_cling = false;
 		}
@@ -198,7 +198,7 @@ switch(walljump_type)
 
 
 //Rolling
-roll_speed=9;
+roll_speed=12;
 roll_startup=3;
 roll_active=14;
 roll_endlag=8;
@@ -227,7 +227,7 @@ my_attacks[?"Bair"  ]= scr_matsu_bair;
 my_attacks[?"Uair"  ]= scr_matsu_uair;
 my_attacks[?"Uair_success"  ]= scr_matsu_uair_success;
 my_attacks[?"Dair"  ]= scr_matsu_dair;
-my_attacks[?"Nspec" ]= scr_matsu_nspecial;
+my_attacks[?"Nspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
 my_attacks[?"Uspec" ]= scr_matsu_uspecial;
@@ -261,7 +261,7 @@ my_sprites[?"Airdodge"]=spr_matsu_airdodge;
 my_sprites[?"Waveland"]=spr_matsu_waveland;
 my_sprites[?"Rolling" ]=spr_matsu_roll; 
 my_sprites[?"Techroll"]=spr_matsu_roll; 
-my_sprites[?"Teching" ]=spr_matsu_idle;
+my_sprites[?"Teching" ]=spr_matsu_tech;
 my_sprites[?"Hitlag"  ]=spr_matsu_hitlag1;
 my_sprites[?"Hitlag2"  ]=spr_matsu_hitlag2;
 my_sprites[?"Hitlag3"  ]=spr_matsu_hitlag3;
@@ -337,7 +337,7 @@ ani_speed_walljump = .75;
 ani_speed_airborne = .8;
 ani_speed_airdodge = .8;
 ani_speed_waveland = .7
-ani_speed_tech = .75;
+ani_speed_tech = .4;
 ani_speed_techroll = .9;
 ani_speed_ledgegetup = .85;
 ani_speed_ledgesnap = .75;

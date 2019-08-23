@@ -8,6 +8,10 @@ switch(teching_phase)
 	{
 	case 0:
 		{
+			//Animation
+		anim_sprite=my_sprites[?"Teching" ];
+		anim_speed= ani_speed_tech;
+		//anim_frame=0;
 		//No speed
 		set_speed(0,0,false,false);
 		set_invulnerable(INV.invincible,teching_frame);
