@@ -17,7 +17,7 @@
 //Camera
 #macro camera_width 960 //960
 #macro camera_height 540 //540
-#macro camera_boundary 120
+#macro camera_boundary 256 //120
 #macro camera_move_speed 0.1
 
 //Camera Zoom
@@ -84,12 +84,12 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 0.85
-	#macro hitstun_base_multiplier 4
+	#macro hitstun_multiplier 1.1 //0.85
+	#macro hitstun_base_multiplier 4 //4
 	#macro hitstun_weight_multiplier 0.6
 	#macro hitstun_damage_multiplier 0.24 //0.12
-	#macro hitstun_knockback_multiplier 4
-	#macro hitlag_multiplier 0.7
+	#macro hitstun_knockback_multiplier 6
+	#macro hitlag_multiplier 0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
 	#macro base_shieldstun 5
@@ -191,8 +191,8 @@
 	
 	//Parrying
 	#macro parry_grabs true
-	#macro parry_default_stun_time 40
-	#macro parry_hitlag 10
+	#macro parry_default_stun_time 90
+	#macro parry_hitlag 15
 	#macro parry_invincible_time 30
 	#macro parry_reflect_speed_multiplier 1.5
 	
@@ -394,6 +394,7 @@ enum HITBOX_PROPERTY
 	grounded_angle,
 	hit_fx_style,
 	hit_sfx,
+	EX_meter,
 	}
 enum HITBOX_SHAPE
 	{

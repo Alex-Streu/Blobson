@@ -18,7 +18,7 @@ if (run)
 			anim_speed=0;
 			anim_frame=0;
 		    audio_play_sound(snd_grab,10,false);
-			attack_frame=3;
+			attack_frame=5;
 			return;
 			}
 		//Startup -> Active

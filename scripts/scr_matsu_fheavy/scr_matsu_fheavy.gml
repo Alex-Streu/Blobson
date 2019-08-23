@@ -235,7 +235,7 @@ if (run)
 				attack_phase++;
 				attack_frame=4;
 				var _damage = calculate_smash_damage(8);
-                var _hitbox = create_melee(70,-64,0.95,0.6,_damage,9,1.3,20,40,7,HITBOX_SHAPE.rectangle,2);
+                var _hitbox = create_melee(70,-64,0.95,0.6,_damage,9,1.3,20,40,4,HITBOX_SHAPE.rectangle,2);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fheavy3_hit);	
 
 				}

@@ -15,6 +15,23 @@ for(var i = 0; i < number_of_players; i++)
 	
 	//Character profile sprite
 	draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //color beneath	
+	
+			//EX METER
+	draw_rectangle_colour(
+		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
+		player_status_y + 16, //y1
+		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
+		player_status_y + 110, //y2
+		c_white, 
+		c_white, 
+		c_white, 
+		c_white,
+		false 
+	); //EX METER
+
+
+	
+	
 	draw_sprite_ext(spr_player_status,0,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //boarder
 		
 	//shader_set(shd_palette);
@@ -33,24 +50,11 @@ for(var i = 0; i < number_of_players; i++)
 	shader_reset();
 	//draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + (m * 32) + 184 + player_status_x,player_status_y,1,1,0,_accent,_fade)
 	//Lives counter
-	draw_text_ext_transformed_color(208 + status_bar_space * (i + 1), player_status_y - 18, string(_player.stock), 32,32,1,1,0,c_white,c_white,c_white,c_white,1);
+	draw_text_ext_transformed_color(208 + status_bar_space * (i + 1), player_status_y - 18, string(_player.stock), 32,32,1,1,0,c_white,c_white,c_white,c_white,_fade);
 	//
 	//Damage	
 	draw_text_sprite(108 + status_bar_space * (i + 1),player_status_y - 12,string(_player.damage),spr_damage_font,22, _player.damage_text_x,_player.damage_text_y,1,calculate_damage_color(_player.damage),_fade);
-	
-	//EX METER
-	draw_rectangle_colour(
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
-		player_status_y + 88, //y1
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
-		player_status_y + 110, //y2
-		c_white, 
-		c_white, 
-		c_white, 
-		c_white,
-		false 
-	); //EX METER
-}
+
 	
 	
 
@@ -75,3 +79,4 @@ if (state == GAME_STATE.paused)
 	draw_text(32, 32, "Total Frames: " + string(current_frame));
 	draw_text(32, 48, "Frame Number: " + string(frames_advanced));
 	}
+}

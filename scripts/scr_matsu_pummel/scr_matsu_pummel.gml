@@ -80,7 +80,7 @@ if (run)
 				attack_frame=2;
 				audio_play_sound(snd_pummel,5,false)
 				var _hitbox = create_targetbox(20,5,0.5,0.3,2,5,0.1,8,75,3,HITBOX_SHAPE.circle,0,grabbed_id);
-				set_hitbox_property(_hitbox,HITBOX.knockback_state,PLAYER_STATE.is_grabbed);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.is_grabbed);
 				}
 			break;
 			}
