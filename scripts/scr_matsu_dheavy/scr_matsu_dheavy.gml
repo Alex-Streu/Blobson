@@ -128,11 +128,10 @@ if (run)
 				attack_frame=5;	
 				var _damage = calculate_smash_damage(6);
 				
-				var _hitbox = create_melee(44,-34,1,1.1,8,8,1.3,12,-80,5,HITBOX_SHAPE.rectangle,0);
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dheavy_hit);	
+				var _hitbox = create_melee(44,-34,1,1.1,8,8,1.3,12,80,5,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dheavy_hit);								
+				fx_create(spr_fx_poof1,2,0,27, x +52 * facing,y,1,0)
 				
-				
-				//create_fx(spr_fx_poof1,2,0,27, x +52 * facing,y,1,0);
 				audio_play_sound(sfx_slam1,10,false);
 				}
 			break;

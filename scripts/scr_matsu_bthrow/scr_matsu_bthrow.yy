@@ -1,5 +1,5 @@
 {
-    "id": "e1bab594-0509-45d3-af7f-53382ee49d39",
+    "id": "3f18c8f3-a004-42aa-afce-ab51ae805289",
     "modelName": "GMScript",
     "mvc": "1.0",
     "name": "scr_matsu_bthrow",

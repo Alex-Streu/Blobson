@@ -106,7 +106,7 @@ if (run)
 			//Animation
 			anim_frame=5;
 		
-			attack_frame=9;						
+			attack_frame=15;						
 			//Move the grabbed player below
 			grabbed_id.grab_hold_x = 0 * facing;
 			grabbed_id.grab_hold_y = - 0;
@@ -123,7 +123,7 @@ if (run)
 			//Animation
 			anim_frame=6;
 		
-			attack_frame=3;						
+			attack_frame=6;						
 			//Move the grabbed player below
 			grabbed_id.grab_hold_x = 0 * facing;
 			grabbed_id.grab_hold_y = - 0;

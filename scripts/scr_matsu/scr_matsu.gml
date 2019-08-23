@@ -319,6 +319,7 @@ my_sprites[?"Uairb" ]=spr_matsu_uairb;
 my_sprites[?"Fheavy" ]=spr_matsu_fheavy;
 my_sprites[?"Dheavy" ]=spr_matsu_dheavy;
 my_sprites[?"Uheavy" ]=spr_matsu_uheavy;
+my_sprites[?"Nspecial" ]=spr_matsu_nspecial;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
