@@ -3,11 +3,11 @@
 draw_set_alpha((100 - offset) / 100);
 
 	//Player render
-	shader_set(shd_palette);
-	shader_set_uniform_f_array(uni_s, palettes[0]);
-	shader_set_uniform_f_array(uni_r, palettes[color_index]);
+	//shader_set(shd_palette);
+	//shader_set_uniform_f_array(uni_s, palettes[0]);
+	//shader_set_uniform_f_array(uni_r, palettes[color_index]);
 	
-	draw_sprite_ext(render, 0, -offset + (room_width / 1.5) -360, room_height / 2 - 240, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(render, 0, -offset + (room_width / 1.5) -360, room_height / 2 - 270, 1, 1, 0, c_white, 1);
 	
 	shader_reset();
 

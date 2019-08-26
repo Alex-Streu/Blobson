@@ -6,7 +6,8 @@
     "children": [
         "d454bde2-0388-4bb2-a6bc-48b5910ca082",
         "3377f562-9ed9-4794-a3fc-91985002eaeb",
-        "9877dc60-be08-4785-a4b9-4eefc0da6797"
+        "9877dc60-be08-4785-a4b9-4eefc0da6797",
+        "e8469edd-518f-4ee0-8522-20276ec9c5f0"
     ],
     "filterType": "GMSound",
     "folderName": "MUSIC",

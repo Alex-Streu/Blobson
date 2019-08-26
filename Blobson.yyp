@@ -7567,6 +7567,14 @@
             }
         },
         {
+            "Key": "e8469edd-518f-4ee0-8522-20276ec9c5f0",
+            "Value": {
+                "id": "299a2670-8be5-462d-a951-2f667cc15170",
+                "resourcePath": "sounds\\sfx_victory_sarina\\sfx_victory_sarina.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "e85e77e7-e4ff-44a2-8792-65c98c53cb3b",
             "Value": {
                 "id": "be19132f-248f-48a4-9f6d-5df23a12a7a7",
