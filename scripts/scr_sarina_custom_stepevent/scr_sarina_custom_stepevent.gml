@@ -7,7 +7,7 @@ if anim_frame >= 5.8
 {anim_frame = 6}
 
 if anim_sprite = my_sprites[?"Lag"  ]
-if anim_frame >= 3.5    
+if anim_frame >= 3    
 {anim_frame = 4}
 
 
