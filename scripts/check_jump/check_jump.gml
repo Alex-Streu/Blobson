@@ -7,6 +7,7 @@ if (on_ground())
 	if (button(INPUT.jump, buff) || _tap)
 		{
 		//Change state to jump state, set jumpsquat, and exit the script.
+		anim_frame = 0;
 		set_state(PLAYER_STATE.jumpsquat);
 		jumpsquat_frame = jumpsquat_time;
 		jump_is_midair_jump = false;

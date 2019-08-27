@@ -252,6 +252,7 @@ my_sprites[?"Run_Stop"]=spr_rewind_runstop;
 my_sprites[?"JumpS"   ]=spr_rewind_jumpsquat;
 my_sprites[?"Jump"    ]=spr_rewind_jump;
 my_sprites[?"JumpMid"	] =spr_rewind_doublejump;
+my_sprites[?"Doublejump"] = spr_rewind_doublejump;
 my_sprites[?"Doublejumpfall"]=spr_rewind_doublejump;
 my_sprites[?"Doublejumpair"] = spr_matsu_doublejump_airborne
 my_sprites[?"Midair"  ]=spr_rewind_airborne;

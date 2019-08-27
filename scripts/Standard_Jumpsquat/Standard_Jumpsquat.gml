@@ -3,10 +3,10 @@
 /* NOTE - If you fall off a ledge while in jumpsquat, you will still jump.*/
 var run = true;
 //Timer
-jumpsquat_frame = approach(jumpsquat_frame, 0, 1);
+jumpsquat_frame = approach(jumpsquat_frame, 0, 2);
 #region Animation
 anim_sprite = my_sprites[?"JumpS"];
-anim_speed = ani_speed_jump;
+anim_speed = ani_speed_jumpsquat;
 #endregion
 #region Gravity
 friction_gravity(0, grav, max_fall_speed);

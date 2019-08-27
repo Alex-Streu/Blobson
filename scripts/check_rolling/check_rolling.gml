@@ -5,6 +5,7 @@ if (button_hold(INPUT.shield, buff))
 	{
 	if (stick_flicked(Lstick, DIR.horizontal))
 		{
+		anim_frame = 0;
 		set_state(PLAYER_STATE.rolling);
 		//Facing
 		change_facing();

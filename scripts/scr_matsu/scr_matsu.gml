@@ -253,6 +253,7 @@ my_sprites[?"Run_Stop"]=spr_matsu_runstop;
 my_sprites[?"JumpS"   ]=spr_matsu_jumpsquat;
 my_sprites[?"Jump"    ]=spr_matsu_jump;
 my_sprites[?"JumpMid"	] =spr_matsu_doublejump;
+my_sprites[?"Doublejump"] = spr_matsu_doublejump;
 my_sprites[?"Doublejumpfall"]=spr_matsu_doublejump;
 my_sprites[?"Doublejumpair"] = spr_matsu_doublejump_airborne
 my_sprites[?"Midair"  ]=spr_matsu_airborne;
@@ -385,3 +386,4 @@ snd_uheavy_hit = sfx_hit_heavy3; // light5
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
 //Custom Step Event
 custom_script= scr_matsu_custom();
+custom_step_script = scr_matsu_custom_stepevent();

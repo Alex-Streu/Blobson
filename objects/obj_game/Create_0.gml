@@ -90,7 +90,10 @@ current_pal = 1;
 //if _player.player_number = 1 {current_pal = 3}
 //if _player.player_number = 2 {current_pal = 3}
 
-my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
+//Portrait box palette sprite
+
+my_portrait_pal_sprite = spr_sarina_pal
+//my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 
 
 //Replays

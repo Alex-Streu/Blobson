@@ -9,6 +9,7 @@ if (!stick_tilted(Lstick, DIR.down))
 		//Stop speed and change state
 		vsp = 0;
 		vsp_frac = 0;
+		anim_frame = 0;
 		set_state(PLAYER_STATE.in_lag);
 		lag_frame = land_time;		
 		//VFX

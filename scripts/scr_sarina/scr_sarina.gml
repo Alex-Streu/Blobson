@@ -10,12 +10,16 @@ hurtbox_crouch_sprite = spr_sarina_hurtbox_crouch;
 sprite_scale= 1;
 magnifier_y = 30;
 //portraits, renders, palettes
-my_pal_sprite= spr_matsu_pal; //fighter palette
+my_pal_sprite= spr_sarina_pal; //fighter palette
 my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 my_current_pallete = 1;
 portrait= spr_sarina_hud1;
 stock_sprite= spr_matsu_stock;
 render = spr_sarina_render;
+victory_theme = sfx_victory_sarina;
+
+
+
 //Color Palettes
 palettes= 
 	[
@@ -214,7 +218,7 @@ techroll_endlag=14;
 helpless_accel=0.4;
 helpless_max_speed=3;
 //Attacks
-my_attacks[?"Jab"   ]= scr_matsu_jab;
+my_attacks[?"Jab"   ]= scr_sarina_jab;
 my_attacks[?"DashA" ]= scr_matsu_dashattack;
 my_attacks[?"Ftilt" ]= scr_matsu_ftilt;
 my_attacks[?"Utilt" ]= scr_matsu_utilt;
@@ -242,7 +246,7 @@ my_attacks[?"BThrow"]=scr_matsu_bthrow;
 my_attacks[?"UThrow"]=scr_matsu_uthrow;
 my_attacks[?"DThrow"]= scr_matsu_dthrow;
 my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
-my_attacks[?"Taunt" ]=-1;
+my_attacks[?"Taunt" ]= scr_sarina_taunt;
 //Animations / Sprites
 my_sprites[?"Idle"    ]=spr_sarina_idle;
 my_sprites[?"Crouch"  ]=spr_sarina_crouch;
@@ -252,9 +256,10 @@ my_sprites[?"Run"     ]=spr_sarina_run;
 my_sprites[?"Run_Stop"]=spr_sarina_runstop;
 my_sprites[?"JumpS"   ]=spr_sarina_jumpsquat;
 my_sprites[?"Jump"    ]=spr_sarina_jumpup;
-my_sprites[?"JumpMid"	] =spr_sarina_doublejump;
-my_sprites[?"Doublejumpfall"]=spr_sarina_doublejump;
-my_sprites[?"Doublejumpair"] = spr_sarina_midair;
+my_sprites[?"JumpMid"	] =spr_sarina_midair;
+my_sprites[?"Doublejump"] = spr_sarina_doublejump;
+my_sprites[?"Doublejumpfall"]=spr_sarina_fall;
+my_sprites[?"Doublejumpair"] = spr_sarina_doublejump;
 my_sprites[?"Midair"  ]=spr_sarina_midair;
 my_sprites[?"Fall"    ]=spr_sarina_fall;
 my_sprites[?"Fastfall"]=spr_sarina_fall;
@@ -275,7 +280,7 @@ my_sprites[?"Hitstunheavy" ]=spr_matsu_hitstun_heavy;
 my_sprites[?"Tumble"  ]=spr_matsu_tumble;
 my_sprites[?"Helpless"]=spr_matsu_freefall;
 my_sprites[?"Landlag"]=spr_matsu_landlag;
-my_sprites[?"Lag"     ]=spr_matsu_lag;
+my_sprites[?"Lag"     ]=spr_sarina_landlag;
 my_sprites[?"Grabbed"]=spr_matsu_grabbed; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
 my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
@@ -293,9 +298,10 @@ my_sprites[?"LedgeA"  ]=spr_matsu_ledge_getup;
 my_sprites[?"LedgeT"  ]=spr_ledge_tether0;
 my_sprites[?"LedgeTr"	] = spr_ledge_trump0;
 my_sprites[?"WallC"		] = spr_wall_cling0;
-my_sprites[?"WallJ"		] = spr_matsu_walljump;
+my_sprites[?"WallJ"		] = spr_sarina_walljump;
 my_sprites[?"Grabbing"]=spr_matsu_grab;
-my_sprites[?"Entrance"]=spr_matsu_intro;
+my_sprites[?"Entrance"]=spr_sarina_entrance;
+my_sprites[?"Taunt"]=spr_sarina_taunt;
 //Animations for attacks
 my_sprites[?"Dashattack" ]=spr_matsu_dashattack
 my_sprites[?"Grab" ]=spr_matsu_grab;
@@ -305,7 +311,7 @@ my_sprites[?"Fthrow" ]=spr_matsu_fthrow;
 my_sprites[?"Uthrow" ]=spr_matsu_uthrow;
 my_sprites[?"Dthrow" ]=spr_matsu_dthrow;
 my_sprites[?"Pummel"] = spr_matsu_pummel;
-my_sprites[?"Jab1" ]=spr_matsu_jab1;
+my_sprites[?"Jab1" ]=spr_sarina_jab1;
 my_sprites[?"Jab2" ]=spr_matsu_jab2;
 my_sprites[?"Jab3" ]=spr_matsu_jab3;
 my_sprites[?"Ftilt" ]=spr_matsu_ftilt;
@@ -324,15 +330,16 @@ my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
 //Animation speed (non attacks)
-ani_speed_intro = .5;
-ani_speed_idle = .2;
+ani_speed_intro = .75;
+ani_speed_idle = 1;
 ani_speed_crouch = 1;
-ani_speed_walk = .8;
+ani_speed_walk = 1;
 ani_speed_dash = .6
-ani_speed_run = .7;
+ani_speed_run = 1.2;
 ani_speed_runstop = .7;
 ani_speed_jump = .8;
-ani_speed_jumpdouble = .7
+ani_speed_jumpsquat = 1;
+ani_speed_jumpdouble = 1.2
 ani_speed_walljump = .75;
 ani_speed_airborne = .8;
 ani_speed_airdodge = .8;
@@ -347,7 +354,7 @@ ani_speed_dodgeroll = .9;
 ani_speed_tumble = 1;
 ani_speed_hitstun = 1;
 ani_speed_parryland = .50;
-ani_speed_lag = .7
+ani_speed_lag = 1.4
 ani_speed_helpless = 0.75
 ani_speed_grabhold = 0.75
 ani_speed_grabbed = 0.75
@@ -384,3 +391,4 @@ snd_uheavy_hit = sfx_hit_heavy3; // light5
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
 //Custom Step Event
 custom_script= scr_matsu_custom();
+custom_step_script = scr_sarina_custom_stepevent();
