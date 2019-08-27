@@ -509,6 +509,13 @@ enum PLAYER
 	P7 = 6,
 	P8 = 7
 }
+	#region //Menus
+	enum MENU_ITEM_TYPE {
+		TEXT,
+		SPRITE,
+		OBJECT
+	}
+	#endregion
 #endregion
 //--> Game_Init
 //--> Player_Init

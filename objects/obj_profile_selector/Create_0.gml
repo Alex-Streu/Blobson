@@ -5,10 +5,10 @@ enum DDSTATE {
 }
 
 profiles = [];
-isActive = false;
 selected = noone;
 clicked = false;
 state = DDSTATE.CLOSED;
 items = noone;
 yPress = false;
 selectedIndex = 0;
+key = -1;

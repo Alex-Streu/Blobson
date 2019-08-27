@@ -15,7 +15,6 @@ var _marker = argument[4];
 var _sprite = argument[5];
 
 var _item = noone;
-var _profiles = profiles;
 
 with (obj_character_select_player)
 {
@@ -26,7 +25,6 @@ with (obj_character_select_player)
 		isActive = _isActive;
 		marker = _marker;
 		sprite = _sprite;
-		profiles = _profiles;
 		_item = self;
 		break;
 	}
