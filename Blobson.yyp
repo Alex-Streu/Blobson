@@ -263,6 +263,14 @@
             }
         },
         {
+            "Key": "05fb0b53-0fae-4d58-95e0-68864444a795",
+            "Value": {
+                "id": "5cd11ed4-b686-4a52-bb63-aa072cffa316",
+                "resourcePath": "sounds\\sfx_music_menu2\\sfx_music_menu2.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "061b0526-f1d0-4612-8a56-f3261d1b1f87",
             "Value": {
                 "id": "af3f28e5-493f-4b60-9b87-de7cbd1320a7",
@@ -5279,6 +5287,14 @@
             }
         },
         {
+            "Key": "a0faf5bc-e5cd-43ff-97a3-ab69c2016898",
+            "Value": {
+                "id": "93c0184c-bfe0-4f2b-b4b2-6d69f977f668",
+                "resourcePath": "sounds\\sound68\\sound68.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "a10907b5-f620-4d5c-ae03-2a621834efc3",
             "Value": {
                 "id": "995ab872-04cb-4de7-8bc3-1461732e1ebc",
@@ -6452,6 +6468,14 @@
                 "id": "041b4f8a-253f-48c4-b2da-5008e95889ec",
                 "resourcePath": "sprites\\spr_matsu_roll\\spr_matsu_roll.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c6afb5f7-881d-49c0-bc31-eebf7e284be0",
+            "Value": {
+                "id": "bedebfab-46a5-47ac-ad6f-e484a542e32c",
+                "resourcePath": "sounds\\sfx_music_blobson_theme\\sfx_music_blobson_theme.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -7980,6 +8004,14 @@
                 "id": "87e26f33-f958-4467-ac83-90fb2126f3f6",
                 "resourcePath": "sprites\\spr_fspec_missile\\spr_fspec_missile.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f57f95f0-412c-416d-bd86-f0dc99892539",
+            "Value": {
+                "id": "0444ed2b-edd8-4cd1-9500-384b2f1eedc1",
+                "resourcePath": "sounds\\sfx_music_results\\sfx_music_results.yy",
+                "resourceType": "GMSound"
             }
         },
         {

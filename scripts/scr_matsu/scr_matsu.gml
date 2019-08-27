@@ -30,7 +30,7 @@ palettes=
 portrait= spr_matsu_portrait;
 stock_sprite= spr_matsu_stock;
 render = spr_sarina_render;
-victory = sfx_victory_sarina;
+victory_theme = sfx_victory_sarina;
 
 //Ex meter
 EX_meter = 0;

@@ -480,6 +480,7 @@ enum PLAYER_DATA
 	controller,
 	render,
 	palettes,
+	victory_theme
 	}
 //Enum for control stick
 enum CONTROL_STICK

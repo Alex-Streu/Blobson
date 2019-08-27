@@ -12,4 +12,5 @@ _new[PLAYER_DATA.controller	] = argument[2];
 _new[PLAYER_DATA.profile	] = argument[3];
 _new[PLAYER_DATA.render		] = argument[4];
 _new[PLAYER_DATA.palettes	] = argument[5];
+_new[PLAYER_DATA.victory_theme	] = argument[6];
 return _new;
