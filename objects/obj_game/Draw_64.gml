@@ -53,7 +53,7 @@ for(var i = 0; i < number_of_players; i++)
 	draw_text_ext_transformed_color(208 + status_bar_space * (i + 1), player_status_y - 18, string(_player.stock), 32,32,1,1,0,c_white,c_white,c_white,c_white,_fade);
 	//
 	//Damage	
-	draw_text_sprite(108 + status_bar_space * (i + 1),player_status_y - 12,string(_player.damage),spr_damage_font,22, _player.damage_text_x,_player.damage_text_y,1,calculate_damage_color(_player.damage),_fade);
+	draw_text_sprite(40 + status_bar_space * (i + 1) + player_status_x,player_status_y - 14,string(_player.damage),spr_damage_font,16, _player.damage_text_x,_player.damage_text_y,.8,calculate_damage_color(_player.damage),_fade);
 
 	
 	

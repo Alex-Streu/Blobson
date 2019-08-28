@@ -51,9 +51,9 @@ draw = true;
 
 //Cache some values
 number_of_players = instance_number(obj_player);
-status_bar_space =  - 48 + (camera_width div (number_of_players + 1));
-player_status_x = -0;
-player_status_y = (camera_height - player_status_padding_bottom + 20);
+status_bar_space =  - 96 + (camera_width div (number_of_players + 1));
+player_status_x = +80;
+player_status_y = (camera_height - player_status_padding_bottom + 24);
 
 //Shader uniforms
 uni_s = shader_get_uniform(shd_palette, "sample");

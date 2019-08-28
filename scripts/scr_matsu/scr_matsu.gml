@@ -334,6 +334,7 @@ ani_speed_dash = .6
 ani_speed_run = .7;
 ani_speed_runstop = .7;
 ani_speed_jump = .8;
+ani_speed_jumpsquat = .8;
 ani_speed_jumpdouble = .7
 ani_speed_walljump = .75;
 ani_speed_airborne = .8;

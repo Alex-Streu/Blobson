@@ -2647,6 +2647,14 @@
             }
         },
         {
+            "Key": "51ed1971-84cc-4baf-b6f0-cf3c643e575b",
+            "Value": {
+                "id": "512768eb-8173-4bf3-8961-047883921b4a",
+                "resourcePath": "objects\\obj_shade\\obj_shade.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "51fdf1fc-4c10-4cbc-836f-d19e36f2142e",
             "Value": {
                 "id": "7572d008-4823-4650-83e5-bbdc5f4883ba",
