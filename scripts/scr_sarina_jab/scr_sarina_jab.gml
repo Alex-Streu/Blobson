@@ -20,9 +20,8 @@ if (run)
 			//Animation
 			anim_sprite=my_sprites[?"Jab1"];
 			anim_speed=0;
-			anim_frame=0;
-			audio_play_sound(snd_jab1,10,false);
-			attack_frame=4;
+			anim_frame=0;			
+			attack_frame=3;
 			return;
 			}
 			
@@ -47,7 +46,7 @@ if (run)
 				{
 				//Animation
 				anim_frame=2;
-			
+			audio_play_sound(snd_jab1,10,false);
 				attack_phase++;
 				attack_frame=3;
 				}
@@ -64,7 +63,7 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=3;
-				set_speed(facing*2,0,true,false);
+				set_speed(facing*3,0,true,false);
 				var _hitbox = create_melee(38,-72,0.7,0.5,4,4,0.1,7,75,6,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);

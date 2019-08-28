@@ -61,8 +61,8 @@ switch(walljump_type)
 	//Rivals of Aether
 	case WALLJUMP.rivals:
 		{
-		wall_jump_startup = 2;
-		wall_jump_time = 12;
+		wall_jump_startup = 10;
+		wall_jump_time = 7;
 		wall_jump_hsp = 7;
 		wall_jump_vsp = -13;
 		max_wall_jumps = 1;
@@ -164,10 +164,10 @@ switch(shield_type)
 	case SHIELD.rivals:
 		{
 		parry_startup=2;
-		parry_active=8;
+		parry_active=12;
 		parry_endlag=20;
 		parry_trigger_time=15;
-		parry_script= scr_matsu_parry;
+		parry_script= scr_sarina_parry;
 		break;
 		}
 	/*
@@ -203,9 +203,9 @@ switch(walljump_type)
 
 
 //Rolling
-roll_speed=9;
+roll_speed=11;
 roll_startup=3;
-roll_active=14;
+roll_active=20;
 roll_endlag=8;
 //Teching
 tech_active=14;
@@ -217,7 +217,8 @@ techroll_endlag=14;
 //Helpless
 helpless_accel=0.4;
 helpless_max_speed=3;
-//Attacks
+//Character scripts________________________________________________________________________________
+#region Attack scripts
 my_attacks[?"Jab"   ]= scr_sarina_jab;
 my_attacks[?"DashA" ]= scr_matsu_dashattack;
 my_attacks[?"Ftilt" ]= scr_matsu_ftilt;
@@ -246,8 +247,11 @@ my_attacks[?"BThrow"]=scr_matsu_bthrow;
 my_attacks[?"UThrow"]=scr_matsu_uthrow;
 my_attacks[?"DThrow"]= scr_matsu_dthrow;
 my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
+#endregion
 my_attacks[?"Taunt" ]= scr_sarina_taunt;
-//Animations / Sprites
+//Animations______________________________________________________________________________________
+//Animation sprites
+#region Animations - main
 my_sprites[?"Idle"    ]=spr_sarina_idle;
 my_sprites[?"Crouch"  ]=spr_sarina_crouch;
 my_sprites[?"Walk"    ]=spr_sarina_walk;
@@ -264,9 +268,9 @@ my_sprites[?"Midair"  ]=spr_sarina_midair;
 my_sprites[?"Fall"    ]=spr_sarina_fall;
 my_sprites[?"Fastfall"]=spr_sarina_fall;
 my_sprites[?"Airdodge"]=spr_matsu_airdodge;
-my_sprites[?"Waveland"]=spr_matsu_waveland;
-my_sprites[?"Rolling" ]=spr_matsu_roll; 
-my_sprites[?"Techroll"]=spr_matsu_roll; 
+my_sprites[?"Waveland"]=spr_sarina_landlag;
+my_sprites[?"Rolling" ]=spr_sarina_roll; 
+my_sprites[?"Techroll"]=spr_sarina_roll; 
 my_sprites[?"Teching" ]=spr_matsu_idle;
 my_sprites[?"Hitlag"  ]=spr_matsu_hitlag1;
 my_sprites[?"Hitlag2"  ]=spr_matsu_hitlag2;
@@ -279,7 +283,7 @@ my_sprites[?"Hitstun4" ]=spr_matsu_hitstun4;
 my_sprites[?"Hitstunheavy" ]=spr_matsu_hitstun_heavy;
 my_sprites[?"Tumble"  ]=spr_matsu_tumble;
 my_sprites[?"Helpless"]=spr_matsu_freefall;
-my_sprites[?"Landlag"]=spr_matsu_landlag;
+my_sprites[?"Landlag"]=spr_sarina_landlag;
 my_sprites[?"Lag"     ]=spr_sarina_landlag;
 my_sprites[?"Grabbed"]=spr_matsu_grabbed; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
@@ -302,7 +306,8 @@ my_sprites[?"WallJ"		] = spr_sarina_walljump;
 my_sprites[?"Grabbing"]=spr_matsu_grab;
 my_sprites[?"Entrance"]=spr_sarina_entrance;
 my_sprites[?"Taunt"]=spr_sarina_taunt;
-//Animations for attacks
+#endregion
+#region Animations - Attacks
 my_sprites[?"Dashattack" ]=spr_matsu_dashattack
 my_sprites[?"Grab" ]=spr_matsu_grab;
 my_sprites[?"Grabbing" ]=spr_matsu_grabbing;
@@ -329,7 +334,8 @@ my_sprites[?"Uheavy" ]=spr_matsu_uheavy;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
-//Animation speed (non attacks)
+#endregion
+#region Animation speeds (for non attacks
 ani_speed_intro = .75;
 ani_speed_idle = 1;
 ani_speed_crouch = 1;
@@ -340,7 +346,7 @@ ani_speed_runstop = .7;
 ani_speed_jump = .8;
 ani_speed_jumpsquat = 1;
 ani_speed_jumpdouble = 1.2
-ani_speed_walljump = .75;
+ani_speed_walljump = 1;
 ani_speed_airborne = .8;
 ani_speed_airdodge = .8;
 ani_speed_waveland = .7
@@ -358,16 +364,18 @@ ani_speed_lag = 1.4
 ani_speed_helpless = 0.75
 ani_speed_grabhold = 0.75
 ani_speed_grabbed = 0.75
-
 ani_speed_uspecial_charge = 1;
 
 frame_final_crouch = 7;
-
 frame_final_run_confirm = false;
-//Sound effects
+#endregion
+//Sound effects____________________________________________________________________________________
+#region Sounds for everything besides attacks
+snd_dash = sfx_dash1;
+#endregion
+#region Sounds for attacks and effects
 snd_grab = sfx_matsu_jab3;
 snd_pummel = sfx_hitgrab1;
-snd_dash = sfx_dash1;
 snd_jab1 = sfx_matsu_jab1;
 snd_jab1_hit = sfx_hit_light1;
 snd_jab2 = sfx_matsu_jab2;
@@ -389,6 +397,7 @@ snd_fheavy2_hit = sfx_hit_light2; // light5
 snd_fheavy3_hit = sfx_hit_heavy4; // light5 
 snd_uheavy_hit = sfx_hit_heavy3; // light5 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
+#endregion
 //Custom Step Event
 custom_script= scr_matsu_custom();
 custom_step_script = scr_sarina_custom_stepevent();

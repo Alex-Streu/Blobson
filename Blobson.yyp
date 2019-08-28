@@ -471,6 +471,14 @@
             }
         },
         {
+            "Key": "0d1ca83b-b159-458a-9f96-9bb90c2b3ca4",
+            "Value": {
+                "id": "f5a3cbbd-36e4-4d9a-ada8-b02edd65fa2b",
+                "resourcePath": "rooms\\rm_Centerpiece\\rm_Centerpiece.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "0d39b4f9-a29d-4826-913c-ff52c7492d2a",
             "Value": {
                 "id": "5199587b-7a4f-4313-8600-ee1b3e18d10d",
@@ -1258,7 +1266,7 @@
             "Key": "248f82a3-e3e5-4109-b676-b5315420fcdd",
             "Value": {
                 "id": "1178b5ad-e2b1-48c8-a3c3-86703c398688",
-                "resourcePath": "sprites\\sprite356\\sprite356.yy",
+                "resourcePath": "sprites\\spr_sarina_roll\\spr_sarina_roll.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2364,14 +2372,6 @@
                 "id": "c890a6a8-1884-458d-be37-bc403ea43caf",
                 "resourcePath": "sounds\\sfx_hit_light2\\sfx_hit_light2.yy",
                 "resourceType": "GMSound"
-            }
-        },
-        {
-            "Key": "48023f11-083a-41df-86a8-b4b8cb2853ea",
-            "Value": {
-                "id": "77666a12-1849-41be-9534-d14bb7f87871",
-                "resourcePath": "rooms\\rm_Centerpiece\\rm_Centerpiece.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -5543,6 +5543,14 @@
             }
         },
         {
+            "Key": "a673f086-9370-4d79-98f0-3b4386953830",
+            "Value": {
+                "id": "820f6e1a-c9a3-48c9-90a0-4172b8d5ff6d",
+                "resourcePath": "sprites\\sprite374\\sprite374.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a6b6534e-b4a1-4ea8-b1d9-270a0c9ac956",
             "Value": {
                 "id": "0f76da13-8a36-4270-95b5-041f5dd7d34f",
@@ -7047,6 +7055,14 @@
             }
         },
         {
+            "Key": "d3ffaf80-8bb0-437d-8949-01a2842cab2a",
+            "Value": {
+                "id": "146bf821-ea63-4cfb-8daf-fa58d49ced03",
+                "resourcePath": "scripts\\scr_sarina_parry\\scr_sarina_parry.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d43b27d7-ee01-46f4-9b34-83f2ef746338",
             "Value": {
                 "id": "6fc69bc0-82d8-4a1d-b191-af7d48245011",
@@ -7236,6 +7252,14 @@
                 "id": "a543d1fb-fa8c-44da-ae4d-a8f8fe847bf0",
                 "resourcePath": "scripts\\nair_toon_link\\nair_toon_link.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d99d835d-d270-4230-8f9a-3c9d836bf411",
+            "Value": {
+                "id": "aff31c62-a8f4-48a5-a9cf-86285fa80d4d",
+                "resourcePath": "objects\\obj_arcade\\obj_arcade.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -8526,6 +8550,7 @@
         "031baebc-75d0-4513-a52f-85a36284de92",
         "d04d4d80-b878-4ce8-9e87-5d8c95c69bd5",
         "5157acc4-47d4-4239-a49d-731be2879e35",
+        "d3ffaf80-8bb0-437d-8949-01a2842cab2a",
         "320cce8b-7afe-49be-a4d1-d1bef87333e8",
         "d3c4fadd-5b61-43d6-9631-994e66001962",
         "3bc2a94f-3b1f-4654-aa46-0905d9c2e725",
