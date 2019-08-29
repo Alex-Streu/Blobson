@@ -1,9 +1,9 @@
 ///@func check_rolling()
 ///@desc Transition to roll state if you are holding shield and flick the control stick left or right
 //If you are pressing a direction and the dodge buttons
-if (button_hold(INPUT.shield, buff))
+if (button(INPUT.shield, buff))
 	{
-	if (stick_flicked(Lstick, DIR.horizontal))
+	if (stick_tilted(Lstick, DIR.horizontal))
 		{
 		anim_frame = 0;
 		set_state(PLAYER_STATE.rolling);

@@ -19,7 +19,7 @@ if (run)
 			{
 			//Animation
 			anim_sprite = my_sprites[?"Parry" ]
-			fx_create(spr_fx_parry,1.5,0,18, x +19 * facing,y - 62,1,0);
+			
 			anim_speed=0;
 			anim_frame=0;
 			return;
@@ -82,6 +82,7 @@ if (run)
 			{
 			/*Parry has been triggered by a hitbox*/
 			set_invulnerable(INV.invincible,parry_invincible_time);
+			fx_create(spr_fx_parry,1.5,0,18, x +19 * facing,y - 62,1,0);
 			if (parry_frame>14)
 				anim_frame=6;
 			if (parry_frame==13)

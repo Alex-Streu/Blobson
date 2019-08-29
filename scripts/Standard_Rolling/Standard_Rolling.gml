@@ -74,7 +74,7 @@ if (run)
 		case 1:
 			{
 			//Animation
-			anim_speed = anim_speed_normal;
+			anim_speed = ani_speed_dodgeroll;
 
 			if (rolling_frame == 0)
 				{
@@ -94,11 +94,13 @@ if (run)
 			if (run && rolling_frame == 0)
 				{
 				rolling_phase = 0;
+				
 				//Position the player to be backwards
 				if (rolling_direction != 0)
 					{
 					facing = -sign(rolling_direction);
 					}
+					
 				//Back to Idle State, unless Shield is being held down
 				if ((shield_type == SHIELD.melee || shield_type == SHIELD.ultimate) && check_shield())
 					{}

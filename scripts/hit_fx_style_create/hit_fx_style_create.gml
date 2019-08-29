@@ -41,6 +41,37 @@ switch(_style)
 		_hit.fade_value = 0.3;
 		break;
 	#endregion
+	
+		#region Hit1
+	case HIT_FX.hit1:
+		//Direction Burst
+		var _fx = fx_create(spr_fx_hit1, 1, 0, 13, _hit.x, _hit.y - 70, 1, _angle, _layer);
+		_fx.image_xscale *= choose(-1, 1);
+
+		//With the target
+		with(_hit)
+			{
+			//Particle Effects
+			part_type_direction(global.p1, _angle - 15, _angle + 15, 0, 0);
+			part_type_speed(global.p1, max(7, _knock), max(10, _knock + 3), 0, 0);
+			part_particles_create(global.part_sys, x + (sprite_get_width(anim_sprite) / 2), y + (sprite_get_height(anim_sprite) / 2), global.p1, max(_knock / 5, 10));
+			
+			//Powerful Knockback
+			if (_knock > 16)
+				{
+				//Make more effects
+				fx_create(spr_hit_fx_screen_lines, 0, 0, 15, x, y, 2, 0, _layer);
+				}
+			}
+
+		//Camera shake
+		camera_shake(_knock div 2);
+		
+		//Hit fade
+		_hit.fade_value = 0.3;
+		break;
+	#endregion
+	
 	#region Normal Strong
 	case HIT_FX.normal_strong:
 		//Direction Burst

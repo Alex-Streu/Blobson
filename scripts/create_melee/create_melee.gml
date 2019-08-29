@@ -12,6 +12,7 @@
 ///@param shape
 ///@param hitbox_group
 ///@param [flipper]
+///@param [EX_meter]
 var _newhitbox=instance_create_layer(x + argument[0] * facing, y + argument[1], layer, obj_melee);
 with(_newhitbox)
 	{

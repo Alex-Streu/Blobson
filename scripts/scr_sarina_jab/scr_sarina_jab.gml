@@ -67,6 +67,9 @@ if (run)
 				var _hitbox = create_melee(38,-72,0.7,0.5,4,4,0.1,7,75,6,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);
+				//EX_meter += 3;
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_fx_style,HIT_FX.hit1);
+				//fx_create(spr_fx_parry,1.5,0,18, x +19 * facing,y - 62,1,0);
 				}
 			break;
 			}
@@ -94,7 +97,7 @@ if (run)
 				anim_frame=5
 			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=6;
 				}
 			break;
 			}		
@@ -316,7 +319,7 @@ if (run)
 				{
 				anim_frame= 6;
 				attack_phase++;
-				attack_frame=5;
+				attack_frame=8;
 				}
 			break;
 			}

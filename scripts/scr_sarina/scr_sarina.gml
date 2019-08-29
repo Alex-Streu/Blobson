@@ -1,15 +1,23 @@
 ///Sets all of the variables for a single character
-name="Sarina";
+
+
+name="Sarina";//Fighter name
+
+#region Masks
 //Collision box
 mask_index=spr_matsu_collision_mask;
 //Hurtbox
 hurtbox_sprite=spr_sarina_hurtbox;
 hurtbox=create_hurtbox(hurtbox_sprite);
 hurtbox_crouch_sprite = spr_sarina_hurtbox_crouch;
+#endregion
+
 //Main sizes
 sprite_scale= 1;
+
 magnifier_y = 30;
-//portraits, renders, palettes
+
+#region portraits, renders, palettes
 my_pal_sprite= spr_sarina_pal; //fighter palette
 my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 my_current_pallete = 1;
@@ -17,10 +25,9 @@ portrait= spr_sarina_hud1;
 stock_sprite= spr_matsu_stock;
 render = spr_sarina_render;
 victory_theme = sfx_victory_sarina;
+#endregion
 
-
-
-//Color Palettes
+#region Color Palettes
 palettes= 
 	[
 	create_palette_rgb($FFFFFF,$00FF00,$000000),
@@ -34,16 +41,20 @@ palettes=
 	create_palette_rgb($dc5be5,$8554d8,$e89be4),
 	create_palette_rgb($826844,$db7f00,$493211),
 	];
-
+#endregion
 
 //Ex meter
 EX_meter = 0;
-EX_meter_max = 154;
+EX_meter_max = 100;
+
+#region Weight and Gravity
 //Weight
 weight_multiplier=1.1;
 //Gravity
 grav=1;
 hitstun_grav=0.6;
+#endregion
+#region Jumping and Falling
 //Falling
 max_fall_speed=11;
 fast_fall_speed=14;
@@ -55,6 +66,8 @@ double_jump_speed=16;
 max_double_jumps=1;
 land_time=3;
 
+#endregion
+#region Wall Jump
 //Walljump Values
 switch(walljump_type)
 	{
@@ -70,12 +83,18 @@ switch(walljump_type)
 		}
 	default: break;
 	}
-
-//Aerial Movment
+#endregion
+#region Aerial Movment
+//Air control
 air_accel=0.5;
 max_air_speed=5;
 max_air_speed_dash = 8.5;
 air_friction=0.04;
+//Helpless
+helpless_accel=0.4;
+helpless_max_speed=3;
+#endregion
+#region Ground movement
 //Ground Movement
 ground_friction= 1;
 crouch_friction=1;
@@ -95,7 +114,13 @@ run_accel=0.8;
 run_turn_time=10;
 run_turn_accel=0.8;
 run_stop_time=8;
-//Ledges
+//Rolling
+roll_speed=11;
+roll_startup=3;
+roll_active=20;
+roll_endlag=8;
+#endregion
+#region Ledges
 ledge_jump_vsp=17;
 ledge_jump_hsp=3.5;
 ledge_jump_time=16;
@@ -115,6 +140,8 @@ ledge_attack_finish_y=-127;
 //variables allow you to add an offset.
 ledge_hang_relative_x=-22;
 ledge_hang_relative_y= 126;
+#endregion
+#region Airdodge
 //Air Dodge Values
 switch(airdodge_type)
 	{
@@ -144,6 +171,8 @@ switch(airdodge_type)
 	//*/
 	default: break;
 	}
+#endregion
+#region Shield/Parry
 //Shield Values
 switch(shield_type)
 	{
@@ -187,6 +216,16 @@ switch(shield_type)
 	//*/
 	default: break;
 	}
+#endregion
+#region Teching
+tech_active=14;
+tech_endlag=4;
+techroll_speed=10;
+techroll_startup=8;
+techroll_active=12;
+techroll_endlag=14;
+#endregion
+#region UNUSED
 //Walljump Values
 /*
 switch(walljump_type)
@@ -199,24 +238,8 @@ switch(walljump_type)
 	default: break;
 	}
 //*/
+#endregion
 
-
-
-//Rolling
-roll_speed=11;
-roll_startup=3;
-roll_active=20;
-roll_endlag=8;
-//Teching
-tech_active=14;
-tech_endlag=4;
-techroll_speed=10;
-techroll_startup=8;
-techroll_active=12;
-techroll_endlag=14;
-//Helpless
-helpless_accel=0.4;
-helpless_max_speed=3;
 //Character scripts________________________________________________________________________________
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_sarina_jab;
@@ -356,7 +379,7 @@ ani_speed_ledgegetup = .85;
 ani_speed_ledgesnap = .75;
 ani_speed_ledgehang = .7;
 ani_speed_ledge_jump = .75;
-ani_speed_dodgeroll = .9;
+ani_speed_dodgeroll = 1.2;
 ani_speed_tumble = 1;
 ani_speed_hitstun = 1;
 ani_speed_parryland = .50;

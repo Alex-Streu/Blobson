@@ -462,6 +462,7 @@ enum HIT_FX
 	lightning_strong,
 	explosion,
 	shield,
+	hit1,
 	//Enum end
 	length,
 	}

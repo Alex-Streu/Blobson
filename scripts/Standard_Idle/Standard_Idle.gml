@@ -32,6 +32,7 @@ if (run && check_walk()) run = false;
 #region Shielding
 if (run && !stick_tilted(Lstick,DIR.horizontal) && check_shield()) run = false;
 #endregion
+
 #region Attacking
 if run && check_smashes() run = false;
 if run && check_grounds() run = false;

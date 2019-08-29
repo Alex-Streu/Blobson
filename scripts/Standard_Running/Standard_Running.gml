@@ -22,9 +22,11 @@ if run && check_aerial() run = false;
 #region Crouching
 if run && check_crouch() run = false;
 #endregion
-#region Shielding
-if run && check_shield() run = false;
-#endregion
+
+//#region Shielding
+//if run && check_shield() run = false;
+//#endregion
+
 #region Jumping
 if (run && check_jump()) 
 	{
@@ -35,9 +37,11 @@ if (run && check_jump())
 #region Stopping
 if run && check_run_stop() run = false;
 #endregion
+
 #region Rolling
 if run && check_rolling() run = false;
 #endregion
+
 #region Attacking
 if run && check_smashes() run = false;
 if run && check_dash_attack() run = false;
