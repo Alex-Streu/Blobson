@@ -6,6 +6,7 @@ gamepad_set_axis_deadzone(0,menu_p1_cursor_deadzone);
 gamepad_set_button_threshold(0,menu_p1_cursor_thresh);
 menu_p1_cursor_x = -32 + gamepad_axis_value(0,gp_axislh) * menu_p1_cursor_x_distance + 480;
 menu_p1_cursor_y = -32 + gamepad_axis_value(0,gp_axislv) * menu_p1_cursor_y_distance + 270;
+menu_p1_confirm = gamepad_button_check_pressed(0,gp_face1) or gamepad_button_check_pressed(0,gp_start);
 
 
 #region Phase 1
@@ -74,8 +75,6 @@ else
 {
 	tab6_sound_refreshed = true;
 }
-#endregion
-
 #endregion
 
 #region Change Singleplayer tab color/alpha/animation
@@ -204,3 +203,38 @@ if tab6_alpha < 0    {tab6_alpha = 0;}//make sure glow stays at minvalue
 icon_exit_x += (icon_exit_x_spawn - icon_exit_x) / 4
 }
 #endregion
+
+#region Confirm seleted tab
+if menu_p1_cursor_active = 1
+if menu_p1_confirm = 1
+{
+	     //If the multiplayer tab was selected
+	     if menu_highlight = 2   if menu_selected = 0  
+	    {
+		menu_selected = 1;   
+		menu_transition_timer = menu_transition_timer_max;    
+		audio_play_sound(sfx_menu_select1,10,false);   
+		menu_tab_selected = 2;
+		menu_p1_cursor_active = 0;
+		}
+
+}
+
+ if menu_selected = 1    if menu_transition_timer > 0
+ {
+ menu_transition_timer -= 1;
+ //Slide in the icon
+menu_phase1_scale_x += (3 - menu_phase1_scale_x) / 4
+ }
+ 
+ if menu_selected = 1    if menu_transition_timer <= 0
+ {
+ menu_p1_cursor_active = 1;
+ menu_selected = 0;  
+ menu_transition_timer = menu_transition_timer_max;
+ }
+
+#endregion
+
+#endregion
+

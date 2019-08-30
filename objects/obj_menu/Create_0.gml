@@ -4,9 +4,17 @@
 menu_phase = 1;
 menu_highlight = 1; //the current menu tab highlighted
 menu_select_pause = false; //While selecting a menu. Pause the ability to control it while it moves.
-menu_selected = 0;
+menu_selected = 0; //confirms a tab was selected
+menu_tab_selected = 0; //confirms the exact tab number selected
+menu_transition = false; //confirm that the menu is in transition
+menu_transition_timer_max = 100; //the max timer amount for the wait time
+menu_transition_timer = menu_transition_timer_max;
 #endregion
 #region menu phase 1 variables
+
+menu_phase1_scale_x = 1;
+menu_phase1_scale_y = 1;
+
 
 #region singleplayer tab/icon/etc
 icon_solo_x_destination = 152;
@@ -96,15 +104,13 @@ menu_select_pause = false; //While selecting a menu. Pause the ability to contro
 menu_selected = 0;
 #endregion
 
-#region p1 control stick /dpad
+#region p1 control stick /dpad/buttons
 //Stick
 menu_p1_cursor_x = 480;
 menu_p1_cursor_y = 270;
 menu_p1_cursor_x_distance = 420;
 menu_p1_cursor_y_distance = 240;
 menu_p1_cursor_active = true;
-menu_p1_cursor_confirm = false;
-menu_p1_cursor_return = false;
 menu_p1_cursor_deadzone = 0;
 menu_p1_cursor_thresh = 0.5;
 //dpad
@@ -112,6 +118,9 @@ menu_dpad_right = false;
 menu_dpad_left = false;
 menu_dpad_down= false;
 menu_dpad_up= false;
+//buttons
+menu_p1_confirm = false;
+menu_p1_return = false;
 #endregion
 
 tab1_sound_refreshed = true;
@@ -120,7 +129,5 @@ tab3_sound_refreshed = true;
 tab4_sound_refreshed = true;
 tab5_sound_refreshed = true;
 tab6_sound_refreshed = true;
-
-menu_stick_right_returned = true;
 
 

@@ -4,6 +4,7 @@
     "mvc": "1.1",
     "name": "9953f27f-73a3-48eb-98b9-8bae43cca50d",
     "children": [
+        "343370f9-9815-418d-981b-9fcd6d0e7251",
         "2488d4d2-9608-4c24-8537-fe8da994ad81",
         "14ce1341-070e-4a01-abfb-d22e110032b3",
         "ff81fc9e-3b3c-4325-baec-59d5748277a5",
@@ -56,8 +57,7 @@
         "fc91c4f7-85e0-4fd9-9466-5a0321396180",
         "d1fd40cb-3d4d-447c-a0fa-5d4c3a66b162",
         "1572574c-886a-4ed3-a2d9-1b91b755361f",
-        "8aa6edcc-97cb-4163-98e0-c95c29fce74c",
-        "9fb732b8-9810-41ef-99db-47f8e7d6a0bd"
+        "8aa6edcc-97cb-4163-98e0-c95c29fce74c"
     ],
     "filterType": "GMSound",
     "folderName": "sounds",
