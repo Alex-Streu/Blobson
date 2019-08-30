@@ -7,10 +7,11 @@
         "c9dc69e2-4fbf-47ed-8f36-87e7c95d124e",
         "a385bb8d-bcaa-42b2-bc33-50c94112052c",
         "ba1df506-bc65-447c-951c-ec4afb6418bc",
-        "2070eafe-58ed-46ef-beea-cb7385bf956d"
+        "2070eafe-58ed-46ef-beea-cb7385bf956d",
+        "10370b5f-2702-4718-959f-d4c50cf49751"
     ],
     "filterType": "GMSprite",
-    "folderName": "menu phase 1",
+    "folderName": "menu",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
