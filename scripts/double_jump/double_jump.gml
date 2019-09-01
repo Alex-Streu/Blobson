@@ -14,4 +14,4 @@ if (stick_tilted(Lstick))
 //State
 set_state(PLAYER_STATE.aerial);
 //VFX
-fx_create(spr_dust_air_jump, 1, 0, 14, x, y, 2, 0);
+fx_create(spr_dust_air_jump, 1, 0, 14, x, y - 48, 2, 0);

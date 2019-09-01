@@ -37,7 +37,8 @@ if (_win_count == 1)
 		_w.controller, 
 		0, 
 		_w.render, 
-		_w.palettes
+		_w.palettes,
+		_w.victory_theme
 		);
 		
 	//Back to character select screen

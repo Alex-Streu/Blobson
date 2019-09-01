@@ -10,6 +10,19 @@ background =
 		[back_clear],
 	];
 }
+
+if room = rm_Training
+{
+background = 
+	[
+		background_define(spr_bg_trainingA, 0, 0, 1, .1, .1, 0, 0),
+		background_define(spr_bg_trainingB, 0, 0, 1, .1, .1, 0, 0),
+		background_define(spr_bg_trainingC, 0, 0, 1, .1, .1, 0, 0),
+		//background_define(back_battlefield_clouds, 0, 0, 1.2, 0, 0, 0.5, 0),
+		[back_clear],
+	];
+}
+
 half_room_width = room_width / 2;
 half_room_height = room_height/ 2;
 

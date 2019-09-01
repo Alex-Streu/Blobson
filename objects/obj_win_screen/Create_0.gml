@@ -1,7 +1,7 @@
 /// @description
 clear = true;
 
-offset = 100;
+offset = 256;
 
 winner = global.win_screen_data_temp;
 
@@ -10,6 +10,10 @@ palettes = winner[PLAYER_DATA.palettes];
 color_index = winner[PLAYER_DATA.color];
 color = palette_get_color(palettes[color_index], 0);
 render = winner[PLAYER_DATA.render];
+victory_theme = winner[PLAYER_DATA.victory_theme];
+
+//Play winning theme of the charcater.
+audio_play_sound(victory_theme,10,false); 
 
 //Replays
 can_save_replay = global.replay_record;

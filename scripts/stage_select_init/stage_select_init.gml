@@ -22,10 +22,10 @@ dreamland[? "Room"] = rm_Dreamland;
 
 //EIGHT
 eight = ds_map_create();
-eight[? "Name"] = "Eight";
+eight[? "Name"] = "Training";
 eight[? "IsUnlocked"] = true;
 eight[? "Icon"] = spr_icon_rivals;
-eight[? "Room"] = rm_Eight;
+eight[? "Room"] = rm_Training;
 
 //CENTERPIECE
 centerpiece = ds_map_create();

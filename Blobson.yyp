@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "IsDnDProject": false,
     "configs": [
-        
+
     ],
     "option_ecma": false,
     "parentProject": {
@@ -25,7 +25,7 @@
             }
         ],
         "hiddenResources": [
-            
+
         ],
         "projectPath": "${base_project}"
     },
@@ -276,6 +276,14 @@
                 "id": "9218e1db-2746-42b3-a04c-03a5c249578b",
                 "resourcePath": "views\\05cbb33b-b6d9-4921-b805-08b42521f373.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "05fb0b53-0fae-4d58-95e0-68864444a795",
+            "Value": {
+                "id": "5cd11ed4-b686-4a52-bb63-aa072cffa316",
+                "resourcePath": "sounds\\sfx_music_menu2\\sfx_music_menu2.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -2228,6 +2236,14 @@
                 "id": "ea4a8d83-0016-4788-8c32-47da23dfae44",
                 "resourcePath": "views\\41447ebb-7ff4-44d8-aab8-e138dd20e8f0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "41732d1b-588a-4579-b8b8-66d0f1bdcc05",
+            "Value": {
+                "id": "678a2121-6fac-4248-b21d-5b7b9653c8fa",
+                "resourcePath": "rooms\\rm_Training\\rm_Training.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
@@ -5319,6 +5335,14 @@
             }
         },
         {
+            "Key": "a0faf5bc-e5cd-43ff-97a3-ab69c2016898",
+            "Value": {
+                "id": "93c0184c-bfe0-4f2b-b4b2-6d69f977f668",
+                "resourcePath": "sounds\\sound68\\sound68.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "a10907b5-f620-4d5c-ae03-2a621834efc3",
             "Value": {
                 "id": "995ab872-04cb-4de7-8bc3-1461732e1ebc",
@@ -6535,6 +6559,14 @@
             }
         },
         {
+            "Key": "c6afb5f7-881d-49c0-bc31-eebf7e284be0",
+            "Value": {
+                "id": "bedebfab-46a5-47ac-ad6f-e484a542e32c",
+                "resourcePath": "sounds\\sfx_music_blobson_theme\\sfx_music_blobson_theme.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "c6bc3f59-9b6c-40de-9235-4c03ae27b9c4",
             "Value": {
                 "id": "7a30a60e-4449-4868-b1a3-63f980a84533",
@@ -7647,6 +7679,14 @@
             }
         },
         {
+            "Key": "e8469edd-518f-4ee0-8522-20276ec9c5f0",
+            "Value": {
+                "id": "299a2670-8be5-462d-a951-2f667cc15170",
+                "resourcePath": "sounds\\sfx_victory_sarina\\sfx_victory_sarina.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "e85e77e7-e4ff-44a2-8792-65c98c53cb3b",
             "Value": {
                 "id": "be19132f-248f-48a4-9f6d-5df23a12a7a7",
@@ -8060,6 +8100,14 @@
                 "id": "87e26f33-f958-4467-ac83-90fb2126f3f6",
                 "resourcePath": "sprites\\spr_fspec_missile\\spr_fspec_missile.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f57f95f0-412c-416d-bd86-f0dc99892539",
+            "Value": {
+                "id": "0444ed2b-edd8-4cd1-9500-384b2f1eedc1",
+                "resourcePath": "sounds\\sfx_music_results\\sfx_music_results.yy",
+                "resourceType": "GMSound"
             }
         },
         {

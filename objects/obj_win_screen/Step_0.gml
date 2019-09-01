@@ -11,6 +11,14 @@ for(var i = 0; i < number_of_devices; i++)
 	}
 #endregion	
 
+#region music and theme
+if !audio_is_playing(victory_theme)
+if !audio_is_playing(sfx_music_results)
+     {
+	  audio_play_sound(sfx_music_results,10,true)
+     }
+#endregion	
+
 if (_start || _button) room_goto(rm_Custom_Controls);
 
 //Offset
