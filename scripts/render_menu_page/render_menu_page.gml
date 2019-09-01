@@ -67,7 +67,9 @@ for (var i = 0; i < ds_list_size(_items); i++)
 				|| _item[? "Position"] == undefined)
 			{ break; }
 			
-			//Add code
+			var _p = _item[? "Position"];
+			
+			instance_create_layer(_startX + _p[0], _startY + _p[1], _item[? "Layer"], _item[? "Obj"]);
 			break;
 	}
 }

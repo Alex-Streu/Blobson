@@ -42,7 +42,7 @@ for (var i = 0; i < array_length_1d(players); i++)
 												_p[? "IsActive"], _p[? "Marker"], _p[? "SlotSprite"]);
 											
 	//Create menu
-	var _menu = instance_create_layer(0, 0, "MenuLayer", obj_menu);
+	var _menu = instance_create_layer(0, 0, "MenuLayer", obj_menu_cs_base);
 	with (_menu)
 	{		
 		owner = _slot;
