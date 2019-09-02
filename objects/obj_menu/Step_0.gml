@@ -4,12 +4,62 @@
 gamepad_set_axis_deadzone(0,menu_p1_cursor_deadzone);
 
 gamepad_set_button_threshold(0,menu_p1_cursor_thresh);
-menu_p1_cursor_x = -32 + gamepad_axis_value(0,gp_axislh) * menu_p1_cursor_x_distance + 480;
-menu_p1_cursor_y = -32 + gamepad_axis_value(0,gp_axislv) * menu_p1_cursor_y_distance + 270;
 menu_p1_confirm = gamepad_button_check_pressed(0,gp_face1) or gamepad_button_check_pressed(0,gp_start);
 
+#region if the stick is being used in menu
+if menu_p1_stick = true
+{
+menu_p1_cursor_x = -32 + gamepad_axis_value(0,gp_axislh) * menu_p1_cursor_x_distance + 480;
+menu_p1_cursor_y = -32 + gamepad_axis_value(0,gp_axislv) * menu_p1_cursor_y_distance + 270;
+}
+#endregion
+#region if D-pad is being used in menu
 
-#region Phase 1
+//p1 controlling
+menu_dpad_left = gamepad_button_check(0,gp_padl); 
+menu_dpad_right = gamepad_button_check(0,gp_padr);
+menu_dpad_up = gamepad_button_check(0,gp_padu); 
+menu_dpad_down = gamepad_button_check(0,gp_padd);
+#endregion
+#region Switch to D-pad or Stick
+//Change to D-pad mode if D-pad is pressed
+if gamepad_button_check_pressed(0,gp_padl)         if menu_p1_dpad = false       {menu_p1_stick = false;  menu_p1_dpad = true;}
+if gamepad_button_check_pressed(0,gp_padr)         if menu_p1_dpad = false       {menu_p1_stick = false;  menu_p1_dpad = true;}
+if gamepad_button_check_pressed(0,gp_padu)         if menu_p1_dpad = false       {menu_p1_stick = false;  menu_p1_dpad = true;}
+if gamepad_button_check_pressed(0,gp_padd)         if menu_p1_dpad = false       {menu_p1_stick = false;  menu_p1_dpad = true;}
+//Change to stick if stick direction is held
+if gamepad_axis_value(0,gp_axislh) != 0   or   gamepad_axis_value(0,gp_axislv) != 0   and    menu_p1_stick = false       {menu_p1_stick = true;  menu_p1_dpad = false;}
+
+if menu_p1_dpad = true
+{
+menu_p1_cursor_x = 480;
+menu_p1_cursor_y = 270;
+}
+#endregion
+
+#region Phase 1 
+#region P1 control
+if menu_p1_cursor_active = 1
+{
+	glow_color = glow_color_p1;
+	
+#region   D-pad control
+	 
+	//highlighting single player
+	if menu_dpad_up = true and menu_dpad_left = true   {menu_p1_cursor_x = 64;   menu_p1_cursor_y = 50;}
+	//highlighting multiplayer
+	if menu_dpad_up = true and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 50;}
+	//highlighting customization
+	if menu_dpad_up = false  and menu_dpad_down = false  and menu_dpad_left = true   {menu_p1_cursor_x = 64;   menu_p1_cursor_y = 240;}
+	//highlighting extras
+	if menu_dpad_up = false  and menu_dpad_down = false  and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 240;}
+	//highlighting exit
+	if menu_dpad_down = true and menu_dpad_left = true   {menu_p1_cursor_x = 256;   menu_p1_cursor_y = 460;}
+	//highlighting settings
+	if menu_dpad_down = true and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 500;}
+	
+	#endregion
+	
 #region highlighting Tab 1 single player
 if menu_p1_cursor_x > 50 and menu_p1_cursor_x < 350 and menu_p1_cursor_y < 120
 {
@@ -76,6 +126,9 @@ else
 	tab6_sound_refreshed = true;
 }
 #endregion
+}
+#endregion
+
 
 #region Change Singleplayer tab color/alpha/animation
 //Update alpha and color on singleplayer tab
@@ -208,7 +261,7 @@ icon_exit_x += (icon_exit_x_spawn - icon_exit_x) / 4
 if menu_p1_cursor_active = 1
 if menu_p1_confirm = 1
 {
-	     //If the multiplayer tab was selected
+	     #region    If the multiplayer tab was selected	    
 	     if menu_highlight = 2   if menu_selected = 0  
 	    {
 		menu_selected = 1;   
@@ -217,22 +270,35 @@ if menu_p1_confirm = 1
 		menu_tab_selected = 2;
 		menu_p1_cursor_active = 0;
 		}
+		#endregion
 
 }
 
- if menu_selected = 1    if menu_transition_timer > 0
- {
- menu_transition_timer -= 1;
- //Slide in the icon
-menu_phase1_scale_x += (3 - menu_phase1_scale_x) / 4
- }
- 
+//lower the timer once selected
+ if menu_selected = 1    if menu_transition_timer > 0   {menu_transition_timer -= 1;}
+//if timer is or lower than 0, start the transisition
  if menu_selected = 1    if menu_transition_timer <= 0
  {
- menu_p1_cursor_active = 1;
+ menu_transition = true;
  menu_selected = 0;  
  menu_transition_timer = menu_transition_timer_max;
  }
+ #region scale the first menu and disable the alpha for some of it to hide it
+if  menu_transition = true
+{
+	icon_alpha = 0;
+	tab1_alpha = 0;
+	tab2_alpha = 0;
+	tab3_alpha = 0;
+	tab4_alpha = 0;
+	tab5_alpha = 0;
+	tab6_alpha = 0;
+   //transition
+if menu_phase1_scale_x < 6 {menu_phase1_scale_x = menu_phase1_scale_x * 1.15;}
+if menu_phase1_scale_y < 6 {menu_phase1_scale_y = menu_phase1_scale_y * 1.15;}
+if menu_phase1_scale_x > 6 {menu_phase1_scale_x = 6;   menu_phase1_scale_y = 6;   menu_transition = false;}
+}
+#endregion
 
 #endregion
 

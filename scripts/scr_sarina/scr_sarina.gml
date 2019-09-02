@@ -271,7 +271,7 @@ my_attacks[?"UThrow"]=scr_matsu_uthrow;
 my_attacks[?"DThrow"]= scr_matsu_dthrow;
 my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
 #endregion
-my_attacks[?"Taunt" ]= scr_sarina_taunt;
+my_attacks[?"Taunt" ]= scr_sarina_taunt1;
 //Animations______________________________________________________________________________________
 //Animation sprites
 #region Animations - main
@@ -340,8 +340,8 @@ my_sprites[?"Uthrow" ]=spr_matsu_uthrow;
 my_sprites[?"Dthrow" ]=spr_matsu_dthrow;
 my_sprites[?"Pummel"] = spr_matsu_pummel;
 my_sprites[?"Jab1" ]=spr_sarina_jab1;
-my_sprites[?"Jab2" ]=spr_matsu_jab2;
-my_sprites[?"Jab3" ]=spr_matsu_jab3;
+my_sprites[?"Jab2" ]=spr_sarina_jab2;
+my_sprites[?"Jab3" ]=spr_sarina_jab3;
 my_sprites[?"Ftilt" ]=spr_matsu_ftilt;
 my_sprites[?"Dtilt" ]=spr_matsu_dtilt;
 my_sprites[?"Utilt" ]=spr_matsu_utilt;

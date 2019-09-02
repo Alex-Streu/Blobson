@@ -1,4 +1,7 @@
 /// @description main variables
+map_string = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,!?';:|%()_/+-*=#$@";
+special_font = font_add_sprite_ext(spr_font1, map_string, true, -0);
+draw_set_font(special_font);
 
 #region menu variables
 menu_phase = 1;
@@ -7,13 +10,17 @@ menu_select_pause = false; //While selecting a menu. Pause the ability to contro
 menu_selected = 0; //confirms a tab was selected
 menu_tab_selected = 0; //confirms the exact tab number selected
 menu_transition = false; //confirm that the menu is in transition
-menu_transition_timer_max = 100; //the max timer amount for the wait time
+menu_transition_timer_max = 50; //the max timer amount for the wait time
 menu_transition_timer = menu_transition_timer_max;
 #endregion
 #region menu phase 1 variables
 
 menu_phase1_scale_x = 1;
 menu_phase1_scale_y = 1;
+
+#region menu_phase1_dpad
+
+#endregion
 
 
 #region singleplayer tab/icon/etc
@@ -90,7 +97,8 @@ tab_exit_color_yes = make_colour_hsv(200, 220, 220);//when highlighted
 tab_exit_color = tab_exit_color_no;
 #endregion
 
-//Tab glower
+#region   Tab glower
+
 tab1_alpha = 1;
 tab2_alpha = 0;
 tab3_alpha = 0;
@@ -98,6 +106,15 @@ tab4_alpha = 0;
 tab5_alpha = 0;
 tab6_alpha = 0;
 
+glow_color = make_colour_hsv(0, 0, 255);
+glow_color_p1 = make_colour_hsv(0, 255, 255);
+glow_color_p2 = make_colour_hsv(150, 175, 255);
+glow_color_p3 = make_colour_hsv(30, 175, 255);
+glow_color_p4 = make_colour_hsv(70, 175, 255);
+
+#endregion
+
+icon_alpha = 1;
 
 menu_highlight = 1; //the current menu tab highlighted
 menu_select_pause = false; //While selecting a menu. Pause the ability to control it while it moves.
@@ -105,13 +122,17 @@ menu_selected = 0;
 #endregion
 
 #region p1 control stick /dpad/buttons
+
+menu_p1_dpad = false;
+menu_p1_stick = true;
+
 //Stick
 menu_p1_cursor_x = 480;
 menu_p1_cursor_y = 270;
 menu_p1_cursor_x_distance = 420;
-menu_p1_cursor_y_distance = 240;
+menu_p1_cursor_y_distance = 270;
 menu_p1_cursor_active = true;
-menu_p1_cursor_deadzone = 0;
+menu_p1_cursor_deadzone = 0.3;
 menu_p1_cursor_thresh = 0.5;
 //dpad
 menu_dpad_right = false;

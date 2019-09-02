@@ -170,7 +170,7 @@ if (run)
 				attack_phase++;
 				attack_frame=5;
 				set_speed(facing*4,0,false,false);
-				var _magnetbox = create_magnetbox(28,-68,1,0.45,3,5,55,5,22,5,HITBOX_SHAPE.rectangle,1);	
+				var _magnetbox = create_magnetbox(44,-58,1.1,0.45,3,5,75,5,22,5,HITBOX_SHAPE.rectangle,1);	
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				//set_hitbox_property(_magnetbox,HITBOX.base_hitlag,5);
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
@@ -280,7 +280,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				set_speed(facing*6,0,false,false);								
-				var _hitbox = create_melee(52,-56,0.8,0.5,5,8,0.9,8,45,8,HITBOX_SHAPE.rectangle,2);
+				var _hitbox = create_melee(110,-56,1.4,1,5,8,0.9,8,45,8,HITBOX_SHAPE.rectangle,2);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
 				
 				
