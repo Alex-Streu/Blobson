@@ -1,9 +1,8 @@
 /// @description Draw and animate menus
 // You can write your code in this editor
 
-#region menu 1 phase
-if menu_phase = 1
-{
+#region menu 1 phase - Main Menu
+
 #region menu drawing tabs/glow/icons
 draw_sprite_ext(spr_menu1_color_boxes,0,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,tab_solo_color,1) //draw color in single player tab
 draw_sprite_ext(spr_menu1_color_boxes,0,480,270,.2,.2,0,c_white,1) //draw color in single player tab
@@ -35,17 +34,51 @@ draw_sprite_ext(spr_menu1_glow,5,480,270,menu_phase1_scale_x,menu_phase1_scale_y
 
 
 #endregion
+draw_set_halign(fa_center);
+draw_text_transformed_color(156, 4, string("Singleplayer"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(800, 4, string("Multiplayer"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(132, 148, string("Customization"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(832, 148, string("Extras"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(132, 408, string("Exit"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(832, 408, string("Settings"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
 
-draw_sprite_ext(spr_menu1_main,1,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,c_black,1) //blackness
+draw_sprite_ext(spr_menu1_main,1,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,c_black,menu_phase1_blackness) //blackness
 draw_sprite_ext(spr_menu1_main,0,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,c_white,1)
-}
+
+#endregion
+#region menu 2 phase - Multiplayer
+
+#region menu drawing tabs/glow/icons
+draw_sprite_ext(spr_menu1_color_boxes,0,480,270,menu_phase2_scale_x,menu_phase2_scale_y,0,tab_solo_color,1) //draw color in single player tab
+draw_sprite_ext(spr_menu1_color_boxes,0,480,270,.2,.2,0,c_white,1) //draw color in single player tab
+draw_sprite_ext(spr_menu1_icons,0,icon_solo_x,icon_solo_y,menu_phase1_scale_x,1,0,icon_solo_color,icon_alpha) //draw singleplayer icon
+draw_sprite_ext(spr_menu1_glow,0,480,270,menu_phase1_scale_x,1,0,glow_color,tab1_alpha) //draw tab 1's glow
+
+draw_sprite_ext(spr_menu1_color_boxes,1,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,tab_multiplayer_color,1) //draw color in multiplayer tab
+draw_sprite_ext(spr_menu1_icons,1,icon_multiplayer_x,icon_multiplayer_y,menu_phase1_scale_x,menu_phase1_scale_y,0,icon_multiplayer_color,icon_alpha) //draw multiplayer icon - controllers
+draw_sprite_ext(spr_menu1_icons,2,icon_multiplayer_x + 128,icon_multiplayer_y,menu_phase1_scale_x - .1 ,menu_phase1_scale_y - .1,0,icon_multiplayer_color,icon_alpha) //draw multiplayer icon - globe
+draw_sprite_ext(spr_menu1_glow,1,480,270,menu_phase1_scale_x,1,0,glow_color,tab2_alpha) //draw tab 2's glow
+
+
+#endregion
+draw_set_halign(fa_center);
+draw_text_transformed_color(156, 4, string("Singleplayer"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(800, 4, string("Multiplayer"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(132, 148, string("Customization"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(832, 148, string("Extras"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(132, 408, string("Exit"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+draw_text_transformed_color(832, 408, string("Settings"), menu_phase1_scale_x * .3, menu_phase1_scale_y * .3, 0,c_white,c_white,c_white,c_white,menu_phase1_font);
+
+draw_sprite_ext(spr_menu1_main,1,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,c_black,menu_phase1_blackness) //blackness
+draw_sprite_ext(spr_menu1_main,0,480,270,menu_phase1_scale_x,menu_phase1_scale_y,0,c_white,1)
+
 #endregion
 
 //cursor
 draw_sprite_ext(spr_menu_cursor,0,menu_p1_cursor_x,menu_p1_cursor_y,1,1,0,c_red,1)
 
 //testing debug
-
+draw_set_halign(fa_left);
 draw_text_transformed(32, 300, string("menu_transition ") + string(menu_transition), .2, .2, 0);
 draw_text_transformed(32, 340, string("menu phase1 scale x ") + string(menu_phase1_scale_x), .2, .2, 0);
 draw_text_transformed(32, 360, string("stick_x ") + string(gamepad_axis_value(0,gp_axislh)), .2, .2, 0);

@@ -83,7 +83,7 @@ if (run)
 				anim_frame=4;
 			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=4;
 				}
 			break;
 			}
@@ -97,7 +97,7 @@ if (run)
 				anim_frame=5
 			
 				attack_phase++;
-				attack_frame=6;
+				attack_frame=4;
 				}
 			break;
 			}		
@@ -118,7 +118,7 @@ if (run)
 			if (button(INPUT.attack,12))
 				{
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=4;
 				}
 			//Auto end
 			else if (attack_frame==0)
@@ -168,9 +168,9 @@ if (run)
 				//Continue jab combo				
 				anim_frame= 2;
 				attack_phase++;
-				attack_frame=5;
+				attack_frame=4;
 				set_speed(facing*4,0,false,false);
-				var _magnetbox = create_magnetbox(44,-58,1.1,0.45,3,5,75,5,22,5,HITBOX_SHAPE.rectangle,1);	
+				var _magnetbox = create_magnetbox(52,-60,1.1,0.45,3,5,90,5,20,4,HITBOX_SHAPE.rectangle,1);	
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				//set_hitbox_property(_magnetbox,HITBOX.base_hitlag,5);
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
@@ -204,11 +204,36 @@ if (run)
 			break;
 			}
 			
+			//2nd jab - 6th frame kicked leg bent
+			case 11:
+			{			
+			if (attack_frame==0)
+				{
+				anim_frame= 5;
+				attack_phase++;
+				attack_frame=3;
+				}
+			break;
+			}
+			
+			//2nd jab - 6th frame kicked leg bent
+			case 12:
+			{			
+			if (attack_frame==0)
+				{
+				anim_frame= 6;
+				attack_phase++;
+				attack_frame=3;
+				}
+			break;
+			}
+			
+			
 		//Second Jab Endlag
-		case 11:
+		case 13:
 			{
 			//Animation
-			anim_frame= 5;
+			anim_frame= 7;
 			
 			//Cancel into tilts from the second jab
 			if (stick_tilted(Lstick) && check_grounds())
@@ -231,7 +256,7 @@ if (run)
 			}
 			
 						//3rd jab - first frame
-			case 12:
+			case 14:
 			{			
 			if (attack_frame==0)
 				{
@@ -245,7 +270,7 @@ if (run)
 			}
 			
 									//3rd jab - second frame
-			case 13:
+			case 15:
 			{			
 			if (attack_frame==0)
 				{
@@ -257,7 +282,7 @@ if (run)
 			}
 			
 												//3rd jab - third frame
-			case 14:
+			case 16:
 			{			
 			if (attack_frame==0)
 				{
@@ -269,7 +294,7 @@ if (run)
 			}
 			
 		//Third Jab - forth frame HITBOX
-		case 15:
+		case 17:
 			{
 			//Animation
 			if (attack_frame==0)
@@ -289,7 +314,7 @@ if (run)
 			}
 			
 			//3rd jab - fith frame
-			case 16:
+			case 18:
 			{			
 			if (attack_frame==0)
 				{
@@ -301,7 +326,7 @@ if (run)
 			}
 			
 						//3rd jab - sixth frame
-			case 17:
+			case 19:
 			{			
 			if (attack_frame==0)
 				{
@@ -313,7 +338,7 @@ if (run)
 			}
 			
 						//3rd jab - seventh frame
-			case 18:
+			case 20:
 			{			
 			if (attack_frame==0)
 				{
@@ -326,7 +351,7 @@ if (run)
 			
 
 		//Third Jab Endlag
-		case 19:
+		case 21:
 			{
 			if (attack_frame==0)
 				{

@@ -38,8 +38,10 @@ menu_p1_cursor_y = 270;
 #endregion
 
 #region Phase 1 
+if menu_phase = 1
+{
 #region P1 control
-if menu_p1_cursor_active = 1
+if menu_p1_cursor_active = 1   if menu_select_pause = false
 {
 	glow_color = glow_color_p1;
 	
@@ -128,7 +130,6 @@ else
 #endregion
 }
 #endregion
-
 
 #region Change Singleplayer tab color/alpha/animation
 //Update alpha and color on singleplayer tab
@@ -284,8 +285,10 @@ if menu_p1_confirm = 1
  menu_transition_timer = menu_transition_timer_max;
  }
  #region scale the first menu and disable the alpha for some of it to hide it
-if  menu_transition = true
+if  menu_transition = true   if menu_phase = 1
 {
+	menu_select_pause = true;
+#region disable alphas on tabs and icons
 	icon_alpha = 0;
 	tab1_alpha = 0;
 	tab2_alpha = 0;
@@ -293,14 +296,93 @@ if  menu_transition = true
 	tab4_alpha = 0;
 	tab5_alpha = 0;
 	tab6_alpha = 0;
-   //transition
+	#endregion
+#region transition
 if menu_phase1_scale_x < 6 {menu_phase1_scale_x = menu_phase1_scale_x * 1.15;}
 if menu_phase1_scale_y < 6 {menu_phase1_scale_y = menu_phase1_scale_y * 1.15;}
-if menu_phase1_scale_x > 6 {menu_phase1_scale_x = 6;   menu_phase1_scale_y = 6;   menu_transition = false;}
+if menu_phase1_scale_x > 6 {menu_phase1_scale_x = 6;   menu_phase1_scale_y = 6;   menu_transition = false;   menu_phase = 2;}
+if menu_phase1_blackness > 0   {menu_phase1_blackness -= .05}
+#endregion
+   menu_phase1_font = 0;
+
 }
 #endregion
 
 #endregion
-
+}
 #endregion
 
+#region Phase 2
+if menu_phase = 2
+{
+#region P1 control
+if menu_p1_cursor_active = 1   if menu_select_pause = false
+{
+	glow_color = glow_color_p1;
+	
+#region   D-pad control
+	 
+	//highlighting single player
+	if menu_dpad_up = true and menu_dpad_left = true   {menu_p1_cursor_x = 64;   menu_p1_cursor_y = 50;}
+	//highlighting multiplayer
+	if menu_dpad_up = true and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 50;}
+	//highlighting customization
+	if menu_dpad_up = false  and menu_dpad_down = false  and menu_dpad_left = true   {menu_p1_cursor_x = 64;   menu_p1_cursor_y = 240;}
+	//highlighting extras
+	if menu_dpad_up = false  and menu_dpad_down = false  and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 240;}
+	//highlighting exit
+	if menu_dpad_down = true and menu_dpad_left = true   {menu_p1_cursor_x = 256;   menu_p1_cursor_y = 460;}
+	//highlighting settings
+	if menu_dpad_down = true and menu_dpad_right = true   {menu_p1_cursor_x = 700;   menu_p1_cursor_y = 500;}
+	
+	#endregion
+	
+#region highlighting Tab 1 single player
+if menu_p1_cursor_x > 50 and menu_p1_cursor_x < 350 and menu_p1_cursor_y < 120
+{
+	menu_highlight = 1;
+	if tab1_sound_refreshed = true   {audio_play_sound(sfx_menu_highlight1,10,false)     tab1_sound_refreshed = false;}
+}
+else
+{
+	tab1_sound_refreshed = true;
+}
+#endregion
+#region highlighting Tab 2 multiplayer
+if menu_p1_cursor_x < 860 and menu_p1_cursor_x > 500 and menu_p1_cursor_y < 120
+{
+	menu_highlight = 2;
+	if tab2_sound_refreshed = true   {audio_emitter_pitch(sfx_menu_highlight1,1.5) audio_play_sound(sfx_menu_highlight1,10,false)     tab2_sound_refreshed = false;}
+}
+else
+{
+	tab2_sound_refreshed = true;
+}
+#endregion
+#region highlighting Tab 3 customize
+if menu_p1_cursor_x < 280 and menu_p1_cursor_y > 140 and menu_p1_cursor_y < 390
+{
+	menu_highlight = 3;
+	if tab3_sound_refreshed = true   {audio_play_sound(sfx_menu_highlight1,10,false)     tab3_sound_refreshed = false;}
+}
+else
+{
+	tab3_sound_refreshed = true;
+}
+#endregion
+#region highlighting Tab 4 extras
+if menu_p1_cursor_x > 660 and menu_p1_cursor_y > 140 and menu_p1_cursor_y < 390
+{
+	menu_highlight = 4;
+	if tab4_sound_refreshed = true   {audio_play_sound(sfx_menu_highlight1,10,false)     tab4_sound_refreshed = false;}
+}
+else
+{
+	tab4_sound_refreshed = true;
+}
+#endregion
+
+}
+#endregion
+}
+#endregion

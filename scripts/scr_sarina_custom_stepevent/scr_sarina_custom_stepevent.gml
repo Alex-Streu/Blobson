@@ -11,6 +11,11 @@ if anim_frame >= 3
 {anim_frame = 4}
 
 
+if gamepad_button_check_pressed(controller,gp_stickl)
+{
+	current_pal--;
+}
+
 if gamepad_button_check_pressed(controller,gp_stickr)
 {
 	current_pal++;

@@ -17,6 +17,8 @@ menu_transition_timer = menu_transition_timer_max;
 
 menu_phase1_scale_x = 1;
 menu_phase1_scale_y = 1;
+menu_phase1_blackness = 1; // the alpha of the black bg in the middle
+menu_phase1_font = 1; //the alpha of the font
 
 #region menu_phase1_dpad
 
@@ -120,6 +122,14 @@ menu_highlight = 1; //the current menu tab highlighted
 menu_select_pause = false; //While selecting a menu. Pause the ability to control it while it moves.
 menu_selected = 0;
 #endregion
+
+#region menu phase 2 variables
+menu_phase2_scale_x = 0;
+menu_phase2_scale_y = 0;
+menu_phase2_blackness = 1; // the alpha of the black bg in the middle
+menu_phase2_font = 1; //the alpha of the font
+#endregion
+
 
 #region p1 control stick /dpad/buttons
 

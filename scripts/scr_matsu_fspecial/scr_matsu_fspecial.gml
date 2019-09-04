@@ -69,7 +69,10 @@ if (run)
 				//Animate
 				
 				if (attack_has_hit())   
-				{attack_start(my_attacks[?"Fspec_success"]);}
+				{
+					attack_stop(PLAYER_STATE.helpless);
+					attack_start(my_attacks[?"Fspec_success"]);
+					}
 				else
 					{					
 					attack_frame=4;
