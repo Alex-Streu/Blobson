@@ -1,4 +1,2 @@
 /// @description Handle menu creation
-if (pages[| pageIndex] == undefined) { return; }
-
-render_menu_page(pages, pageIndex, owner, false);
+if (!isInitialized && owner != noone) { event_user(MENU_EVENT.INIT); }

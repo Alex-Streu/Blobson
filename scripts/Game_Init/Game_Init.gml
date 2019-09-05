@@ -8,6 +8,9 @@ global.base_font = font_add_sprite(spr_base_font, ord("!"), true, 2);
 //Global check if players should be loaded
 global.load_players = false;
 
+//Global list of profiles
+global.profiles = ds_list_create();
+
 //Global list for collision checking
 global.col_list = ds_list_create();
 

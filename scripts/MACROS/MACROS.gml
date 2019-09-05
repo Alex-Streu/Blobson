@@ -7,7 +7,7 @@
 #macro show_collision_boxes	false
 
 //Max Number of Players
-#macro max_players 8
+#macro max_players 4
 
 //Game Types
 #macro airdodge_type	AIRDODGE.melee
@@ -49,6 +49,7 @@
 
 //Savefiles
 #macro profiles_save "Player_Profiles.sav"
+#macro player_profiles_sav "PlayerProfiles.sav"
 
 //Countdown Time
 #macro count_time 55
@@ -513,10 +514,12 @@ enum PLAYER
 	#region //Menus
 	enum MENU_ITEM_TYPE {
 		TEXT,
-		SPRITE,
-		OBJECT
+		SPRITE
 	}
 	#endregion
+#endregion
+#region Font Sizes
+	#macro font_size_small 0.15
 #endregion
 //--> Game_Init
 //--> Player_Init

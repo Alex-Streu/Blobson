@@ -6,14 +6,16 @@ player1[? "Color"] = c_red;
 player1[? "IsActive"] = gamepad_is_connected(global.device_number[PLAYER.P1]);
 player1[? "Marker"] = [ spr_p1_marker, 25, 1 ];
 player1[? "SlotSprite"] = spr_p1_holder;
+player1[? "CursorSprite"] = spr_p1_select;
 
 var player2 = ds_map_create();
 player2[? "Name"] = "Player 2";
 player2[? "Number"] = PLAYER.P2;
 player2[? "Color"] = c_blue;
-player2[? "IsActive"] =gamepad_is_connected(global.device_number[PLAYER.P2]);
+player2[? "IsActive"] = gamepad_is_connected(global.device_number[PLAYER.P2]);
 player2[? "Marker"] = [ spr_p2_marker, 75, 1 ];
 player2[? "SlotSprite"] = spr_p2_holder;
+player2[? "CursorSprite"] = spr_p2_select;
 
 var player3 = ds_map_create();
 player3[? "Name"] = "Player 3";
@@ -21,6 +23,8 @@ player3[? "Number"] = PLAYER.P3;
 player3[? "Color"] = c_yellow;
 player3[? "IsActive"] = gamepad_is_connected(global.device_number[PLAYER.P3]);
 player3[? "Marker"] = [ spr_p3_marker, 25, 98 ];
+player3[? "SlotSprite"] = spr_p3_holder;
+player3[? "CursorSprite"] = spr_p3_select;
 
 var player4 = ds_map_create();
 player4[? "Name"] = "Player 4";
@@ -28,21 +32,14 @@ player4[? "Number"] = PLAYER.P4;
 player4[? "Color"] = c_green;
 player4[? "IsActive"] = gamepad_is_connected(global.device_number[PLAYER.P4]);
 player4[? "Marker"] = [ spr_p4_marker, 75, 98 ];
+player4[? "SlotSprite"] = spr_p4_holder;
+player4[? "CursorSprite"] = spr_p4_select;
 
 players = [];
 players[PLAYER.P1] = player1;
 players[PLAYER.P2] = player2;
 players[PLAYER.P3] = player3;
 players[PLAYER.P4] = player4;
-
-
-//------------------------------------
-//Setup player cursors
-cursors = [];
-cursors[PLAYER.P1] = spr_p1_select;
-cursors[PLAYER.P2] = spr_p2_select;
-cursors[PLAYER.P3] = spr_p3_select;
-cursors[PLAYER.P4] = spr_p4_select;
 
 
 //-------------------------------------

@@ -22,7 +22,71 @@ for (var i = 0; i < array_length_1d(characters); i++) {
 
 //---------------------------
 //Setup profiles
-profiles = file_exists("PlayerProfiles.sav") ? json_decode(load_string_file("PlayerProfiles.sav")) : ds_list_create();
+var profiles = ds_list_create();
+
+if (!file_exists(player_profiles_sav))
+{	
+	var _config = ds_map_create();
+	_config[? "ID"] = 0;
+	_config[? "Name"] = "DEF";
+	_config[? "IsDefault"] = true;
+	
+	var _configs = ds_list_create();
+	_configs[| 0] = _config;
+	
+	
+	var _default = ds_map_create();
+	_default[? "ID"] = 0;
+	_default[? "Name"] = "DEFAULT";
+	_default[? "IsDefault"] = true;
+	_default[? "Configs"] = _configs;
+	
+	profiles[| 0] = _default;
+	
+	// DELETE ME
+	var _config = ds_map_create();
+	_config[? "ID"] = 1;
+	_config[? "Name"] = "HVY";
+	_config[? "IsDefault"] = false;
+	
+	var _configs = ds_list_create();
+	_configs[| 0] = _config;
+	
+	
+	_default = ds_map_create();
+	_default[? "ID"] = 1;
+	_default[? "Name"] = "Kaboose";
+	_default[? "IsDefault"] = false;
+	_default[? "Configs"] = _configs;
+	
+	profiles[| 1] = _default;
+	
+	
+	var _config = ds_map_create();
+	_config[? "ID"] = 2;
+	_config[? "Name"] = "LIT";
+	_config[? "IsDefault"] = false;
+	
+	var _configs = ds_list_create();
+	_configs[| 0] = _config;
+	
+	
+	_default = ds_map_create();
+	_default[? "ID"] = 2;
+	_default[? "Name"] = "Dr N";
+	_default[? "IsDefault"] = false;
+	_default[? "Configs"] = _configs;
+	
+	profiles[| 2] = _default;
+	
+	//save_string_file(player_profiles_sav, json_encode(profiles));
+}
+else
+{
+	profiles = json_decode(load_string_file(player_profiles_sav));
+}
+
+global.profiles = profiles;
 
 
 
@@ -33,29 +97,13 @@ _offsetY = 32;
 _offsetX = 50;
 _space = 220;
 
-//Create player slot objects and menus
+//Create player slot objects
 for (var i = 0; i < array_length_1d(players); i++)
 {
 	var _p = players[i];
 	
-	var _slot = create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], 
-												_p[? "IsActive"], _p[? "Marker"], _p[? "SlotSprite"]);
-											
-	//Create menu
-	var _menu = instance_create_layer(0, 0, "MenuLayer", obj_menu_cs_base);
-	with (_menu)
-	{		
-		owner = _slot;
-	}
-	
-	//Setup active
-	if (_p[? "IsActive"]) 
-	{ 
-		var _cursor = create_player_cursor(_slot, cursors[i]); 
-		_slot.cursor = _cursor;
-		
-		_menu.pageIndex = 0;
-	}
+	create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], _p[? "Marker"], 
+									_p[? "SlotSprite"], _p[? "CursorSprite"]);
 	
 	pm_add_player(_p);
 }

@@ -1,31 +1,33 @@
-///@func create_character_select_player(player, name, color, isActive, marker, sprite)
+///@func create_character_select_player(player, name, color, marker, sprite, cursor)
 ///@param player
 ///@param name
 ///@param color
-///@param isActive
 ///@param marker
 ///@param sprite
+///@param cursor
 ///@desc Creates a character select player
 
-var _player = argument[0];
-var _name = argument[1];
-var _color = argument[2];
-var _isActive = argument[3];
-var _marker = argument[4];
-var _sprite = argument[5];
+var arg = 0;
+var _player = argument[arg++];
+var _name = argument[arg++];
+var _color = argument[arg++];
+var _marker = argument[arg++];
+var _sprite = argument[arg++];
+var _cursor = argument[arg++];
 
 var _item = noone;
 
-with (obj_character_select_player)
+with (obj_character_select_slot)
 {
 	if (player == _player)
 	{
 		name = _name;
 		color = _color;
-		isActive = _isActive;
 		marker = _marker;
 		sprite = _sprite;
-		_item = self;
+		cursorSprite = _cursor;
+		isLoaded = true;
+		_item = id;
 		break;
 	}
 }

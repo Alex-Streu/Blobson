@@ -17,8 +17,8 @@
     "layers": [
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "GameLayer",
-            "id": "a51fc3ec-a54e-4d7c-aaa8-7ca99862a5a3",
+            "name": "CursorLayer",
+            "id": "fa7fec73-1b43-4cd2-99ef-71a036712285",
             "depth": 0,
             "grid_x": 32,
             "grid_y": 32,
@@ -29,7 +29,7 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-{"name": "inst_B345F1C","id": "55f97ce7-5a81-4e31-8ff7-548de92919be","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_B345F1C","objId": "f353464a-892f-4b31-b713-318812a7b4fe","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 0,"y": 256}
+
             ],
             "layers": [
 
@@ -43,8 +43,8 @@
         },
         {
             "__type": "GMRInstanceLayer_Model:#YoYoStudio.MVCFormat",
-            "name": "CursorLayer",
-            "id": "fa7fec73-1b43-4cd2-99ef-71a036712285",
+            "name": "GameLayer",
+            "id": "a51fc3ec-a54e-4d7c-aaa8-7ca99862a5a3",
             "depth": 100,
             "grid_x": 32,
             "grid_y": 32,
@@ -55,7 +55,7 @@
             "inheritSubLayers": false,
             "inheritVisibility": false,
             "instances": [
-
+{"name": "inst_B345F1C","id": "55f97ce7-5a81-4e31-8ff7-548de92919be","colour": { "Value": 4294967295 },"creationCodeFile": "","creationCodeType": "","ignore": false,"imageIndex": 0,"imageSpeed": 1,"inheritCode": false,"inheritItemSettings": false,"IsDnD": false,"m_originalParentID": "00000000-0000-0000-0000-000000000000","m_serialiseFrozen": false,"modelName": "GMRInstance","name_with_no_file_rename": "inst_B345F1C","objId": "f353464a-892f-4b31-b713-318812a7b4fe","properties": null,"rotation": 0,"scaleX": 1,"scaleY": 1,"mvc": "1.1","x": 0,"y": 256}
             ],
             "layers": [
 

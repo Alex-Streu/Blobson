@@ -10,7 +10,7 @@ for(var i = 0; i < number_of_devices; i++)
 if (_start)
 {
 	var _ready = true;
-	with (obj_character_select_player)
+	with (obj_character_select_slot)
 	{
 		if (isActive)
 		{

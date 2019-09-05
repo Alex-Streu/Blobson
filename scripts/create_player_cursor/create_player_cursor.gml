@@ -11,6 +11,7 @@ var _item = instance_create_layer(_slot.x + _slot.sprite_width/2, _slot.y + _slo
 with (_item)
 {
 	sprite_index = _sprite;
+	owner = _slot;
 }
 
 return _item;
