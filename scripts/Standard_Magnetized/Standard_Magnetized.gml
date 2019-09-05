@@ -4,8 +4,8 @@ var run = true;
 //Timer
 magnet_frame=max(--magnet_frame,0);
 #region Animation
-anim_sprite=my_sprites[?"Hitstun"];
-anim_speed=ani_speed_hitstun;
+anim_sprite = choose(my_sprites[?"Hitlag"  ],my_sprites[?"Hitlag2"  ],my_sprites[?"Hitlag3"  ],my_sprites[?"Hitlag4"  ]);
+anim_speed=0;
 #endregion
 #region End Phase
 if (magnet_frame==0)

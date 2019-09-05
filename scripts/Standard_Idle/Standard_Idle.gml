@@ -24,7 +24,7 @@ if (run && check_jump()) run = false;
 if (run && check_rolling()) run = false;
 #endregion
 #region Dashing
-if (run && check_dash()) run = false;
+if (run && check_dash())    run = false;
 #endregion
 #region Walking
 if (run && check_walk()) run = false;

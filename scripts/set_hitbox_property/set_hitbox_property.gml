@@ -66,7 +66,7 @@ with (_hitbox)
 			hit_sfx = _value;
 			break;
 			case HITBOX_PROPERTY.EX_meter:
-			EX_meter = _value;
+			owner.EX_meter += _value;
 			break;
 		}
 	}

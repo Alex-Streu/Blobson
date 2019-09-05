@@ -83,7 +83,8 @@ ex_meter_ui_x = 96;
 //player_3_pal = 4;
 //player_2_pal = 5;
 current_pal = 1;
-
+my_portrait_pal_sprite = spr_sarina_pal
+ 
 	var _player = instance_find(obj_player, instance_number(obj_player)-1);	
 
 //if _player.player_number = 0 {current_pal = 2}
@@ -92,7 +93,7 @@ current_pal = 1;
 
 //Portrait box palette sprite
 
-my_portrait_pal_sprite = spr_sarina_pal
+
 //my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
 
 

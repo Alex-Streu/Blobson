@@ -9,6 +9,7 @@ if (_frame != -1)
 	//Set the state to dashing and stop the script.
 	anim_frame = 0;
 	set_state(PLAYER_STATE.dashing);
+	audio_play_sound(snd_dash,10,false); 
 	//VFX
 	var _fx = fx_create(spr_dust_dash, 1, 0, 33, x, bbox_bottom - 1, 2, 0, "FX_Layer_Below");
 	_fx.fx_xs = 2 * facing;

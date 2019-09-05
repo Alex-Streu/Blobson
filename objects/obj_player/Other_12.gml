@@ -59,22 +59,32 @@ if (surface_exists(obj_game.game_surface))
 	if (!point_in_rectangle(x, y, obj_game.cam_x, obj_game.cam_y, obj_game.cam_x + obj_game.cam_w, obj_game.cam_y + obj_game.cam_h) &&
 		state != PLAYER_STATE.lost && state != PLAYER_STATE.knocked_out)
 		{
+			
+		#region set variables for magnifer
 		var _coords = get_position_in_view(x, y, 32, obj_game.cam_x, obj_game.cam_y, obj_game.cam_w, obj_game.cam_h);
 		var _dir = point_direction(room_width div 2, room_height div 2, x, y);
 		var _scale = clamp(2 - ((point_distance(_coords[0], _coords[1], x, y) / camera_boundary)), 0.1, 2);
 		var _dis = 20 * _scale;
+		#endregion
+		#region Draw player in magifier
+		pal_swap_set(my_pal_sprite,current_pal,false); //remove if new palette system is odd or doesnt work		
+		Draw_Anim_Sprite(offscreen_sprite, 0, facing, _coords[0], _coords[1] + magnifier_y, 1);
+		//Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1] + magnifier_y, sprite_scale * (_scale / 2));  //OLD VERSION
+		pal_swap_reset(); //remove if new palette system is odd or doesnt work
+		shader_reset();
+		#endregion
+		#region Draw magnifier
 		draw_sprite_ext(spr_offscreen_pointer, 0, _coords[0] + lengthdir_x(_dis, _dir), _coords[1] + lengthdir_y(_dis, _dir), _scale, _scale, _dir, c_white, 1);
 		draw_sprite_ext(spr_offscreen_view, 0, _coords[0], _coords[1], 1, 1, 0, c_white, 1);
+		#endregion
 		shader_set(shd_player);
 		shader_set_uniform_f(uni_l, _light);
 		shader_set_uniform_f(uni_a, _alpha);
 		shader_set_uniform_f(uni_f, fade_value);
 		//shader_set_uniform_f_array(uni_s, palettes[0]);
 		//shader_set_uniform_f_array(uni_r, palettes[player_color]);
-		pal_swap_set(my_pal_sprite,current_pal,false); //remove if new palette system is odd or doesnt work		
-		Draw_Anim_Sprite(anim_sprite, floor(anim_frame), facing, _coords[0], _coords[1] + magnifier_y, sprite_scale * (_scale / 2));
-		pal_swap_reset(); //remove if new palette system is odd or doesnt work
-		shader_reset();
+		
+		
 		}
 		
 	/* DEBUG */

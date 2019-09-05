@@ -1,6 +1,5 @@
 ///Sets all of the variables for a single character
 
-
 name="Sarina";//Fighter name
 
 #region Masks
@@ -14,20 +13,20 @@ hurtbox_crouch_sprite = spr_sarina_hurtbox_crouch;
 
 //Main sizes
 sprite_scale= 1;
-
-magnifier_y = 30;
+magnifier_y = 0;
 
 #region portraits, renders, palettes
 my_pal_sprite= spr_sarina_pal; //fighter palette
-my_portrait_pal_sprite = spr_matsu_portrait_pal //fighter's portrait palette
+my_portrait_pal_sprite = spr_sarina_pal //fighter's portrait palette
 my_current_pallete = 1;
 portrait= spr_sarina_hud1;
+offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
 stock_sprite= spr_matsu_stock;
 render = spr_sarina_render;
 victory_theme = sfx_victory_sarina;
 #endregion
 
-#region Color Palettes
+#region Color Palettes (old)
 palettes= 
 	[
 	create_palette_rgb($FFFFFF,$00FF00,$000000),
@@ -291,24 +290,24 @@ my_sprites[?"Midair"  ]=spr_sarina_midair;
 my_sprites[?"Fall"    ]=spr_sarina_fall;
 my_sprites[?"Fastfall"]=spr_sarina_fall;
 my_sprites[?"Airdodge"]=spr_matsu_airdodge;
-my_sprites[?"Waveland"]=spr_sarina_landlag;
+my_sprites[?"Waveland"]=spr_sarina_waveland;
 my_sprites[?"Rolling" ]=spr_sarina_roll; 
 my_sprites[?"Techroll"]=spr_sarina_roll; 
 my_sprites[?"Teching" ]=spr_matsu_idle;
-my_sprites[?"Hitlag"  ]=spr_matsu_hitlag1;
-my_sprites[?"Hitlag2"  ]=spr_matsu_hitlag2;
-my_sprites[?"Hitlag3"  ]=spr_matsu_hitlag3;
-my_sprites[?"Hitlag4"  ]=spr_matsu_hitlag4;
-my_sprites[?"Hitstun" ]=spr_matsu_hitstun;
-my_sprites[?"Hitstun2" ]=spr_matsu_hitstun2;
-my_sprites[?"Hitstun3" ]=spr_matsu_hitstun3;
-my_sprites[?"Hitstun4" ]=spr_matsu_hitstun4;
-my_sprites[?"Hitstunheavy" ]=spr_matsu_hitstun_heavy;
+my_sprites[?"Hitlag"  ]=spr_sarina_hitlag1;
+my_sprites[?"Hitlag2"  ]=spr_sarina_hitlag1;
+my_sprites[?"Hitlag3"  ]=spr_sarina_hitlag1;
+my_sprites[?"Hitlag4"  ]=spr_sarina_hitlag1;
+my_sprites[?"Hitstun" ]=spr_sarina_hitstun1;
+my_sprites[?"Hitstun2" ]=spr_sarina_hitstun1;
+my_sprites[?"Hitstun3" ]=spr_sarina_hitstun1;
+my_sprites[?"Hitstun4" ]=spr_sarina_hitstun1;
+my_sprites[?"Hitstunheavy" ]=spr_sarina_hitstun1;
 my_sprites[?"Tumble"  ]=spr_matsu_tumble;
 my_sprites[?"Helpless"]=spr_matsu_freefall;
 my_sprites[?"Landlag"]=spr_sarina_landlag;
 my_sprites[?"Lag"     ]=spr_sarina_landlag;
-my_sprites[?"Grabbed"]=spr_matsu_grabbed; //being grabbed by an enemy
+my_sprites[?"Grabbed"]=spr_sarina_hitlag1; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
 my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
 my_sprites[?"Tech" ]=spr_matsu_tech;
@@ -358,7 +357,7 @@ my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
 #endregion
-#region Animation speeds (for non attacks
+#region Animation speeds - non attacks
 ani_speed_intro = .75;
 ani_speed_idle = 1;
 ani_speed_crouch = 1;
@@ -372,18 +371,18 @@ ani_speed_jumpdouble = 1.2
 ani_speed_walljump = 1;
 ani_speed_airborne = .8;
 ani_speed_airdodge = .8;
-ani_speed_waveland = .7
+ani_speed_waveland = 1
 ani_speed_tech = .75;
 ani_speed_techroll = .9;
 ani_speed_ledgegetup = .85;
 ani_speed_ledgesnap = .75;
 ani_speed_ledgehang = .7;
 ani_speed_ledge_jump = .75;
-ani_speed_dodgeroll = 1.2;
+ani_speed_dodgeroll = 1.4;
 ani_speed_tumble = 1;
-ani_speed_hitstun = 1;
+ani_speed_hitstun = .75;
 ani_speed_parryland = .50;
-ani_speed_lag = 1.4
+ani_speed_lag = 1;
 ani_speed_helpless = 0.75
 ani_speed_grabhold = 0.75
 ani_speed_grabbed = 0.75
@@ -392,9 +391,16 @@ ani_speed_uspecial_charge = 1;
 frame_final_crouch = 7;
 frame_final_run_confirm = false;
 #endregion
+#region Animation Variables
+ani_lag_loop = false; //for the flinch, stop at the final frame if false. loop the animation if true.
+#endregion
 //Sound effects____________________________________________________________________________________
 #region Sounds for everything besides attacks
 snd_dash = sfx_dash1;
+snd_step1 = sfx_step1;
+snd_step2 = sfx_step1;
+snd_step3 = sfx_step3;
+snd_step4 = sfx_step4;
 #endregion
 #region Sounds for attacks and effects
 snd_grab = sfx_matsu_jab3;
@@ -420,6 +426,11 @@ snd_fheavy2_hit = sfx_hit_light2; // light5
 snd_fheavy3_hit = sfx_hit_heavy4; // light5 
 snd_uheavy_hit = sfx_hit_heavy3; // light5 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
+#endregion
+#region Voice clips
+vc_nothing = sfx_nothing;
+vc_hurt1 = sfx_vc_sarina_hit1; //weak hit 1
+vc_hurt2 = sfx_vc_sarina_hit1; // weak hit 2
 #endregion
 //Custom Step Event
 custom_script= scr_matsu_custom();

@@ -52,6 +52,17 @@ if (run)
 				anim_frame=2;
 				attack_phase++;
 				attack_frame=5;
+				
+				#region ADD EX meter
+				if (attack_has_hit())   
+				{
+					EX_meter += 5;
+					}
+				else
+					{					
+					EX_meter += 0;
+					}
+				#endregion
 				}
 			break;
 			}

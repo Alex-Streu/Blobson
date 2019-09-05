@@ -1,2 +1,50 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+#region   Menu Boxes variables
+menu_boxes_x_destination = 0;
+menu_boxes_y_destination = 0;
+menu_boxes_x_spawn = -960;
+menu_boxes_y_spawn = 0;
+menu_boxes_x = menu_boxes_x_spawn;
+menu_boxes_y = menu_boxes_y_spawn;
+menu_boxes_x_scale = 1;
+menu_boxes_y_scale = 1;
+#endregion
+#region   Info Variables
+menu_info_x_spawn = 0;
+menu_info_y_spawn = 240;
+menu_info_x_destination = 0;
+menu_info_y_destination = 0;
+menu_info_x = menu_info_x_spawn;
+menu_info_y = menu_info_y_spawn;
+menu_info_x_scale = 1;
+menu_info_y_scale = 1;
+
+menu_info_hero = 0;
+#endregion
+
+#region Phase 1
+
+   #region   Phase 1 - tab 1 multiplayer
+   menu_tab1_x_destination = 0;
+   menu_tab1_y_destination = 48;
+   menu_tab1_x_spawn = 920;
+   menu_tab1_y_spawn = 0;
+   menu_tab1_x = menu_tab1_x_spawn;
+   menu_tab1_y = menu_tab1_y_spawn;
+   menu_tab1_x_scale = 1;
+   menu_tab1_y_scale = 1;
+   
+   menu_tab1_slideout_x = menu_tab1_x;
+   menu_tab1_slideout_y = menu_tab1_y;
+   menu_tab1_slideout_x_offset = 0;
+   menu_tab1_slideout_y_offset = 10;
+   menu_tab1_slideout_xscale = 0;
+   menu_tab1_slideout_yscale = 1;
+   menu_tab1_slideout_x = menu_tab1_x_spawn;
+   menu_tab1_slideout_y = menu_tab1_y_spawn;
+   
+   #endregion
+
+#endregion
