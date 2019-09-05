@@ -46,5 +46,45 @@ menu_info_hero = 0;
    menu_tab1_slideout_y = menu_tab1_y_spawn;
    
    #endregion
+   #region   Phase 1 - tab 2 solo/co-op
+   menu_tab2_x_destination = 0;
+   menu_tab2_y_destination = 128;
+   menu_tab2_x_spawn = 920;
+   menu_tab2_y_spawn = 0;
+   menu_tab2_x = menu_tab2_x_spawn;
+   menu_tab2_y = menu_tab2_y_spawn;
+   menu_tab2_x_scale = 1;
+   menu_tab2_y_scale = 1;
+   
+   menu_tab2_slideout_x = menu_tab2_x;
+   menu_tab2_slideout_y = menu_tab2_y;
+   menu_tab2_slideout_x_offset = 0;
+   menu_tab2_slideout_y_offset = 10;
+   menu_tab2_slideout_xscale = 0;
+   menu_tab2_slideout_yscale = 1;
+   menu_tab2_slideout_x = menu_tab2_x_spawn;
+   menu_tab2_slideout_y = menu_tab2_y_spawn;
+   
+   #endregion
+   #region   Phase 1 - tab 3 customization
+   menu_tab3_x_destination = 0;
+   menu_tab3_y_destination = 48;
+   menu_tab3_x_spawn = 920;
+   menu_tab3_y_spawn = 0;
+   menu_tab3_x = menu_tab3_x_spawn;
+   menu_tab3_y = menu_tab3_y_spawn;
+   menu_tab3_x_scale = 1;
+   menu_tab3_y_scale = 1;
+   
+   menu_tab3_slideout_x = menu_tab3_x;
+   menu_tab3_slideout_y = menu_tab3_y;
+   menu_tab3_slideout_x_offset = 0;
+   menu_tab3_slideout_y_offset = 10;
+   menu_tab3_slideout_xscale = 0;
+   menu_tab3_slideout_yscale = 1;
+   menu_tab3_slideout_x = menu_tab3_x_spawn;
+   menu_tab3_slideout_y = menu_tab3_y_spawn;
+   
+   #endregion
 
 #endregion
