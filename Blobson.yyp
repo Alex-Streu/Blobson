@@ -5650,7 +5650,7 @@
             "Key": "a385bb8d-bcaa-42b2-bc33-50c94112052c",
             "Value": {
                 "id": "0f742591-310e-4941-ad82-c221c0395eae",
-                "resourcePath": "sprites\\spr_menu1_icons\\spr_menu1_icons.yy",
+                "resourcePath": "sprites\\spr_menu_icons\\spr_menu_icons.yy",
                 "resourceType": "GMSprite"
             }
         },
