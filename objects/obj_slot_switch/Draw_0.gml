@@ -12,7 +12,8 @@ draw_set_alpha(1);
 draw_set_font(global.base_font);
 
 //Draw text
-draw_text_transformed(x + sprite_width/2, y + sprite_height/2, text[| owner.state], font_size_small, font_size_small, 1);
+var _text = is_undefined(text[| owner.state]) ? text[| SLOT_STATE.PLAYER] : text[| owner.state];
+draw_text_transformed(x + sprite_width/2, y + sprite_height/2, _text, font_size_small, font_size_small, 1);
 
 //Draw highlight
 draw_highlight();

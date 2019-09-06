@@ -1,6 +1,14 @@
 /// @description Draw name and highlight
 draw_self();
 
+//Deleting box
+if (isDeleting)
+{
+	draw_set_color(c_red);
+	draw_set_alpha(0.4);
+	draw_rectangle(x, y, x + (sprite_width*deleteProgress), y + sprite_height, false);
+}
+
 //Draw name
 if (profile != noone)
 {
@@ -10,4 +18,4 @@ if (profile != noone)
 }
 
 //Draw highlight
-draw_highlight();
+if (!isDeleting) { draw_highlight(); }

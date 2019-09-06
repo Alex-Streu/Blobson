@@ -30,6 +30,7 @@ if (!file_exists(player_profiles_sav))
 	_config[? "ID"] = 0;
 	_config[? "Name"] = "DEF";
 	_config[? "IsDefault"] = true;
+	_config[? "Index"] = 0;
 	
 	var _configs = ds_list_create();
 	_configs[| 0] = _config;
@@ -40,6 +41,7 @@ if (!file_exists(player_profiles_sav))
 	_default[? "Name"] = "DEFAULT";
 	_default[? "IsDefault"] = true;
 	_default[? "Configs"] = _configs;
+	_default[? "Index"] = 0;
 	
 	profiles[| 0] = _default;
 	
@@ -48,6 +50,7 @@ if (!file_exists(player_profiles_sav))
 	_config[? "ID"] = 1;
 	_config[? "Name"] = "HVY";
 	_config[? "IsDefault"] = false;
+	_config[? "Index"] = 0;
 	
 	var _configs = ds_list_create();
 	_configs[| 0] = _config;
@@ -58,6 +61,7 @@ if (!file_exists(player_profiles_sav))
 	_default[? "Name"] = "Kaboose";
 	_default[? "IsDefault"] = false;
 	_default[? "Configs"] = _configs;
+	_default[? "Index"] = 1;
 	
 	profiles[| 1] = _default;
 	
@@ -66,6 +70,7 @@ if (!file_exists(player_profiles_sav))
 	_config[? "ID"] = 2;
 	_config[? "Name"] = "LIT";
 	_config[? "IsDefault"] = false;
+	_config[? "Index"] = 0;
 	
 	var _configs = ds_list_create();
 	_configs[| 0] = _config;
@@ -76,6 +81,7 @@ if (!file_exists(player_profiles_sav))
 	_default[? "Name"] = "Dr N";
 	_default[? "IsDefault"] = false;
 	_default[? "Configs"] = _configs;
+	_default[? "Index"] = 2;
 	
 	profiles[| 2] = _default;
 	

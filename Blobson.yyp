@@ -4095,6 +4095,14 @@
             }
         },
         {
+            "Key": "754b4b0e-8808-4b76-b737-385d7fccf8d2",
+            "Value": {
+                "id": "1292aa7f-2103-44d1-934b-e141e1c2d210",
+                "resourcePath": "scripts\\configure_converted_buttons\\configure_converted_buttons.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7563daf2-5745-4d81-8db0-94059bcbdaa3",
             "Value": {
                 "id": "b2e3141c-103f-4ac6-b9e3-2afbdfaa62b0",
@@ -8708,6 +8716,7 @@
         "9cab3a12-9a4d-4d21-8f45-cb3d5fcb36d2",
         "5a86ccf6-fd72-4784-9b9f-79f2e923c00a",
         "5b938281-304d-4208-8ae3-d3be1512057d",
+        "754b4b0e-8808-4b76-b737-385d7fccf8d2",
         "fadcd8e0-1f4b-4821-bc30-5d258555ad5e",
         "ca63f912-ce45-4de1-a136-3570e6ae6622",
         "1ede41fe-52af-4c4c-a2d4-de8a756e2830",

@@ -1,10 +1,9 @@
 /// @description Initialize properties
 enum SLOT_STATE {
-	CURSOR,
-	MENU,
 	PLAYER,
 	CPU,
-	OFF
+	OFF,
+	HOLDING
 }
 
 player = PLAYER.P1;
@@ -21,7 +20,6 @@ marker = noone;
 state = SLOT_STATE.OFF;
 
 //Profile management
-profiles = noone;
 profile = noone;
 config = noone;
 
@@ -37,3 +35,8 @@ mySwitch.owner = id
 menuStack = ds_stack_create();
 menu = noone;
 update_slot_menu(obj_menu_slot_off);
+
+//Button management
+buttons = noone;
+holdingButton = noone;
+holdingComplete = true;

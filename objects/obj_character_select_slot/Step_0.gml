@@ -1,9 +1,7 @@
 /// @description Handle activity and character selection
-
 if (!isLoaded) { return; }
 
 var _id = id;
-
 sprite_index = sprite;
 
 switch (state)
@@ -13,16 +11,15 @@ switch (state)
 		
 		if (controller > -1)
 		{
+			configure_converted_buttons(controller);
 			var xx=gamepad_axis_value(controller,gp_axislh);
 			var yy=gamepad_axis_value(controller,gp_axislv);
 			gamepad_set_axis_deadzone(controller,.25)
 			
 			if (abs(xx) > 0 || abs(yy) > 0) 
-			{ 				
-				load_player_profile(0);
-				
-				update_slot_menu(obj_menu_slot_base);
-				
+			{ 
+				if (profile == noone) { load_player_profile(0);	}		
+				update_slot_menu(obj_menu_slot_base);				
 				state = SLOT_STATE.PLAYER; 
 			}
 		}
@@ -32,14 +29,13 @@ switch (state)
 		if (controller == -1) { break; }
 		
 		if (cursor == noone) { cursor = create_player_cursor(id, cursorSprite); }
-		
-		cursor.isActive = true;
+		cursor.doDraw = true;
 		
 		gamepad_set_axis_deadzone(controller,.25)
 		var xx = gamepad_axis_value(controller,gp_axislh);
 		var yy = gamepad_axis_value(controller,gp_axislv);		
-		var RT= gamepad_button_check_pressed(controller, gp_shoulderrb) || gamepad_button_check_pressed(controller, gp_shoulderr);
-		var LT= gamepad_button_check_pressed(controller, gp_shoulderlb) || gamepad_button_check_pressed(controller, gp_shoulderl);
+		var RT= gamepad_button_check_pressed(controller, buttons[? "RT"]) || gamepad_button_check_pressed(controller, buttons[? "RB"]);
+		var LT= gamepad_button_check_pressed(controller, buttons[? "LT"]) || gamepad_button_check_pressed(controller, buttons[? "LB"]);
 		
 			
 		//Move cursor
@@ -67,8 +63,8 @@ switch (state)
 			}
 		}
 		
-		//Select item
-		if (gamepad_button_check_pressed(controller, gp_face1))
+		//A pressed
+		if (gamepad_button_check_pressed(controller, buttons[? "A"]))
 		{			
 			//Click selection
 			with (cursor) 
@@ -86,8 +82,56 @@ switch (state)
 			}
 		}
 		
-		//Back pressed
-		if (gamepad_button_check_pressed(controller, gp_face2))
+		//Y pressed
+		if (gamepad_button_check_pressed(controller, buttons[? "Y"]))
+		{			
+			var _clicked = false;
+			
+			//Click selection
+			with (cursor) 
+			{  
+				var _obj = instance_place(x, y, obj_menu_object);
+				if (_obj != noone && _obj.owner == _id)
+				{
+					with (_obj) { event_user(1); }
+					_clicked = true;
+				}
+			}
+			
+			if (_clicked) 
+			{ 
+				state = SLOT_STATE.HOLDING;
+				holdingButton = buttons[? "Y"];
+				holdingComplete = false;
+			}
+		}
+		
+		//X pressed
+		if (gamepad_button_check_pressed(controller, buttons[? "X"]))
+		{				
+			var _clicked = false;
+			
+			//Click selection
+			with (cursor) 
+			{  
+				var _obj = instance_place(x, y, obj_menu_object);
+				if (_obj != noone && _obj.owner == _id)
+				{
+					with (_obj) { event_user(2); }
+					_clicked = true;
+				}
+			}
+			
+			if (_clicked) 
+			{ 
+				state = SLOT_STATE.HOLDING;
+				holdingButton = buttons[? "X"];
+				holdingComplete = false;
+			}
+		}
+		
+		//B pressed
+		if (gamepad_button_check_pressed(controller, buttons[? "B"]))
 		{
 			if (menu.allowCharacterSelect && isSelected) 
 			{
@@ -129,6 +173,28 @@ switch (state)
 		//	//Reset
 		//	Custom_Controls_Reset(button_array,i);
 		//}
+		
+		break;
+		
+	case SLOT_STATE.HOLDING:
+		cursor.doDraw = false;
+		
+		if (holdingComplete)
+		{
+			state = SLOT_STATE.PLAYER;
+		}
+		else if (gamepad_button_check_released(controller, holdingButton))
+		{
+			with (cursor) 
+			{  
+				var _obj = instance_place(x, y, obj_menu_object);
+				if (_obj != noone && _obj.owner == _id)
+				{
+					with (_obj) { event_user(1); }
+					_id.state = SLOT_STATE.PLAYER;
+				}
+			}
+		}
 		
 		break;
 }
