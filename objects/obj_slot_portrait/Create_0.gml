@@ -1,8 +1,9 @@
 /// @description Initialize portrait slot
+event_inherited();
+
 character = noone;
 name = "";
 isSelected = false;
-owner = noone;
 
 //Draw properties
 drawSurface = noone;

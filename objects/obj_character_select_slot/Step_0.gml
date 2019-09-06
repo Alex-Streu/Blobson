@@ -70,9 +70,9 @@ switch (state)
 			with (cursor) 
 			{  
 				var _obj = instance_place(x, y, obj_menu_object);
-				if (_obj != noone && _obj.owner == _id)
+				if (_obj != noone && _obj.owner == _id && _obj.hasAEvent)
 				{
-					with (_obj) { event_user(0); }
+					with (_obj) { event_user(MENU_OBJECT_EVENT.A); }
 				}
 			}
 			
@@ -91,9 +91,9 @@ switch (state)
 			with (cursor) 
 			{  
 				var _obj = instance_place(x, y, obj_menu_object);
-				if (_obj != noone && _obj.owner == _id)
+				if (_obj != noone && _obj.owner == _id && _obj.hasYEvent)
 				{
-					with (_obj) { event_user(1); }
+					with (_obj) { event_user(MENU_OBJECT_EVENT.Y); }
 					_clicked = true;
 				}
 			}
@@ -115,9 +115,9 @@ switch (state)
 			with (cursor) 
 			{  
 				var _obj = instance_place(x, y, obj_menu_object);
-				if (_obj != noone && _obj.owner == _id)
+				if (_obj != noone && _obj.owner == _id && _obj.hasXEvent)
 				{
-					with (_obj) { event_user(2); }
+					with (_obj) { event_user(MENU_OBJECT_EVENT.X); }
 					_clicked = true;
 				}
 			}

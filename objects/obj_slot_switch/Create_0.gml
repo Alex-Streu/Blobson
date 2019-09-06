@@ -1,4 +1,6 @@
 /// @description Initialize switch
+event_inherited();
+
 doDraw = true;
 isHovered = false;
 

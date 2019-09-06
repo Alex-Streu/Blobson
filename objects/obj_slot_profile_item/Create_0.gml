@@ -1,5 +1,6 @@
 /// @description Setup properties
 event_inherited();
+hasYEvent = true;
 
 profile = noone;
 isHovered = false;

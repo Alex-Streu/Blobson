@@ -1,6 +1,9 @@
 /// @description Handle hover logic
 check_if_hovered();
 
+//Turn off Y event if default
+if (profile != noone && profile[? "IsDefault"]) { hasYEvent = false; }
+
 if (isDeleting) 
 { 
 	deleteProgress += deleteSpeed; 

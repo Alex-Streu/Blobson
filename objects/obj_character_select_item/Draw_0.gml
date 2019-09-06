@@ -21,6 +21,8 @@ surface_set_target(drawSurface);
 	draw_set_alpha(1);
 	draw_set_color(c_white);
 	draw_set_font(global.base_font);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
 	draw_text_transformed(iconW/2, iconH-20, string_upper(name), 0.1, 0.1, 0);
 	
 	//Subtract window

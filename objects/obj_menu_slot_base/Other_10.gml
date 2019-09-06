@@ -15,11 +15,13 @@ var startY = owner.y;
 //Slot profile
 var profile = instance_create_layer(startX, startY, "MenuLayer", obj_slot_profile);
 profile.owner = owner;
+profile.selected = owner.profile;
 ds_list_add(pageObjects, profile);
 
 //Slot config
 var config = instance_create_layer(startX + sprite_get_width(object_get_sprite(obj_slot_profile)), startY, "MenuLayer", obj_slot_config);
 config.owner = owner;
+config.selected = owner.config;
 ds_list_add(pageObjects, config);
 
 //Slot portrait

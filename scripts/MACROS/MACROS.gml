@@ -517,6 +517,13 @@ enum PLAYER
 		TEXT,
 		SPRITE
 	}
+	
+	enum MENU_OBJECT_EVENT
+	{
+		A = 0,
+		Y = 1,
+		X = 2
+	}
 	#endregion
 #endregion
 #region Font Sizes

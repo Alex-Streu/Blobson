@@ -8,4 +8,4 @@ var cX = argument[arg++];
 var cW = argument[arg++];
 var width = argument[arg++];
 
-return (cX + cW)/2 - width/2;
+return cX + cW/2 - width/2;

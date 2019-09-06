@@ -29,6 +29,14 @@ for (var i = 0; i < itemCap && i < numProfiles; i++)
 	ds_list_add(pageObjects, item);
 }
 
+//Create add profile
+var _w = sprite_get_width(object_get_sprite(obj_slot_add_profile));
+var _h = sprite_get_height(object_get_sprite(obj_slot_add_profile));
+var item = instance_create_layer(owner.x + owner.sprite_width - _w - 10, owner.y + owner.sprite_height - _h - 10, "MenuLayer", obj_slot_add_profile);
+item.owner = owner;
+		
+ds_list_add(pageObjects, item);
+
 //Bottom page index
 var item = ds_map_create();
 item[? "Position"] = [ owner.sprite_width/2, owner.sprite_height - 15 ];

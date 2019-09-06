@@ -14,6 +14,9 @@
         "f5feec89-6fb0-4d35-8851-c8f4fdfce4c3",
         "3dcc66c7-72ac-43e0-9209-8ecc1518efd0",
         "34552be8-24f9-4497-9c66-1c77a2c342cb",
+        "a1d2b71c-08de-436e-be5f-1d62d6c025ae",
+        "3d9a7bc2-6acb-495c-91d8-29e30c76d410",
+        "05ab8b41-fe49-4021-9248-530b78d53bdf",
         "b2f5539d-f6a1-431e-b032-8c5da0cbecf9",
         "a288f483-8c53-4f1c-b797-dbbc7ed5728d"
     ],
