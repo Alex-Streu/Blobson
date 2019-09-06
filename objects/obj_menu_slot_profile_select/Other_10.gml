@@ -7,14 +7,18 @@ page = ds_list_create();
 
 #region Page Creation
 
-//Profile items
+//Draw settings
 var padding = 5;
 var col1 = (owner.sprite_width) / 2 - (sprite_get_width(object_get_sprite(obj_slot_profile_item)) * 2 + padding) / 2
 var col2 = col1 + sprite_get_width(object_get_sprite(obj_slot_profile_item)) + padding;
 var startY = 50;
-var numProfiles = ds_list_size(global.profiles) - pageIndex*itemCap;
-pageTotal  = ceil(ds_list_size(global.profiles) / itemCap);
 
+//Pages setup
+pageTotal  = ceil(ds_list_size(global.profiles) / itemCap);
+pageIndex = clamp(pageIndex, 0, pageTotal-1);
+var numProfiles = ds_list_size(global.profiles) - pageIndex*itemCap;
+
+//Create profile items
 for (var i = 0; i < itemCap && i < numProfiles; i++)
 {
 	var startX = i % 2 == 0 ? col1 : col2;

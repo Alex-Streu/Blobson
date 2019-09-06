@@ -6,6 +6,6 @@ event_inherited();
 var _val = profile;
 with (owner)
 {
-	load_player_profile(_val[? "ID"]);
+	load_player_profile(_val);
 	update_slot_menu();
 }

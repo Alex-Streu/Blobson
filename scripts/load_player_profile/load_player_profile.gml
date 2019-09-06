@@ -1,10 +1,10 @@
-///@func load_player_profile(id)
-///@param id
+///@func load_player_profile(profile)
+///@param profile
 
 var arg = 0;
-var _id = argument[arg++];
+var _qProfile = argument[arg++];
 
-var _profile = global.profiles[| _id];
+var _profile = global.profiles[| ds_list_find_index(global.profiles, _qProfile)];
 var _configs = _profile[? "Configs"];
 
 if (_profile[? "IsDefault"])

@@ -7,10 +7,11 @@ if (isDeleting)
 	
 	if (deleteProgress >= 1)
 	{
-		ds_list_delete(global.profiles, profile[? "Index"]);
 		isDeleting = false;
+		var _profile = profile;
 		with (owner)
 		{
+			delete_profile(_profile);
 			with (menu)
 			{
 				event_user(MENU_EVENT.CLEANUP);

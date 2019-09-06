@@ -18,7 +18,7 @@ switch (state)
 			
 			if (abs(xx) > 0 || abs(yy) > 0) 
 			{ 
-				if (profile == noone) { load_player_profile(0);	}		
+				if (profile == noone) { load_default_profile();	}		
 				update_slot_menu(obj_menu_slot_base);				
 				state = SLOT_STATE.PLAYER; 
 			}

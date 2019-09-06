@@ -6,6 +6,5 @@ if (isHovered)
 	draw_rectangle(x, y, x+sprite_width, y+sprite_height, false);
 	
 	//Reset draw
-	draw_set_alpha(1);
-	draw_set_color(c_white);
+	reset_draw();
 }

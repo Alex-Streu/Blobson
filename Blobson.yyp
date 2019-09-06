@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "IsDnDProject": false,
     "configs": [
-
+        
     ],
     "option_ecma": false,
     "parentProject": {
@@ -25,7 +25,7 @@
             }
         ],
         "hiddenResources": [
-
+            
         ],
         "projectPath": "${base_project}"
     },
@@ -543,11 +543,27 @@
             }
         },
         {
+            "Key": "0db1f2ea-2f0f-469a-8c9c-078985c718dd",
+            "Value": {
+                "id": "a6b656f4-e54a-4268-a416-1104b32f66de",
+                "resourcePath": "scripts\\reset_draw\\reset_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0df563be-cef7-4ce1-88a4-8d0d886cb180",
             "Value": {
                 "id": "e3ae6125-8c8e-43ea-bdda-baf0af65b588",
                 "resourcePath": "sprites\\spr_matsu_fthrow\\spr_matsu_fthrow.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0e5cd5a3-6414-403b-a7fe-6fd48345f249",
+            "Value": {
+                "id": "2b1b74dc-17cc-45ba-9f6b-b2feb6edaf10",
+                "resourcePath": "views\\0e5cd5a3-6414-403b-a7fe-6fd48345f249.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -2255,6 +2271,14 @@
             }
         },
         {
+            "Key": "3d33396f-6442-429c-a913-a1388caa589c",
+            "Value": {
+                "id": "98b61a56-f3e3-4af7-a7fc-a691fd5cd104",
+                "resourcePath": "scripts\\load_default_profile\\load_default_profile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3d611809-6b43-4202-86b0-314b8eda3d5f",
             "Value": {
                 "id": "985743d8-02ed-4d7e-9d76-00aa23a0b7c5",
@@ -3556,6 +3580,14 @@
                 "id": "14ba769b-4c98-4a48-bc9d-1f283f13a23d",
                 "resourcePath": "sprites\\spr_uair_ivysaur\\spr_uair_ivysaur.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "64286acc-3aec-4129-bb2b-0802f0fe1f2f",
+            "Value": {
+                "id": "a277d645-a96c-4e9a-9db5-2d7bd8bdc461",
+                "resourcePath": "scripts\\delete_profile\\delete_profile.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -9179,6 +9211,7 @@
         "5a86ccf6-fd72-4784-9b9f-79f2e923c00a",
         "5b938281-304d-4208-8ae3-d3be1512057d",
         "754b4b0e-8808-4b76-b737-385d7fccf8d2",
+        "0db1f2ea-2f0f-469a-8c9c-078985c718dd",
         "fadcd8e0-1f4b-4821-bc30-5d258555ad5e",
         "ca63f912-ce45-4de1-a136-3570e6ae6622",
         "1ede41fe-52af-4c4c-a2d4-de8a756e2830",
@@ -9425,11 +9458,13 @@
         "6bb3ff97-009a-4a78-9661-7711fea867f0",
         "790bed30-e7d4-46e7-8d3e-30b7307352b7",
         "ae83b565-e2b3-4e51-b9eb-ea2048e0f46e",
-        "efec865d-da32-4252-9666-5b16b9c560f0",
         "7636e20a-1820-4336-8ae3-2366b34be4ea",
         "9f237272-0bbd-4ade-a090-8dd9d126c68b",
         "4f207b43-abe8-4e5d-9d47-e52242914d13",
         "b04f9328-0acc-4f67-b70f-b009e927ba78",
+        "64286acc-3aec-4129-bb2b-0802f0fe1f2f",
+        "efec865d-da32-4252-9666-5b16b9c560f0",
+        "3d33396f-6442-429c-a913-a1388caa589c",
         "906b17cf-8dca-49ad-b31e-adcae4b85d83",
         "c73c7849-c235-45d2-b5c8-2138e2a246ac",
         "d1147e75-cba6-48ec-911a-82d8dc1e937c",

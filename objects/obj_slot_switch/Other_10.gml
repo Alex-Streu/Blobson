@@ -6,7 +6,7 @@ event_inherited();
 
 with (owner)
 {
-	update_slot_menu(obj_menu_slot_off);
+	update_slot_menu();
 				
 	instance_destroy(cursor);
 	cursor = noone;
