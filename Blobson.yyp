@@ -6666,7 +6666,7 @@
             "Key": "c54f19b3-cc24-498c-ac79-ac3dcfa932c8",
             "Value": {
                 "id": "4b9f3903-73b3-4847-9fb2-1926007d334a",
-                "resourcePath": "objects\\obj_menu\\obj_menu.yy",
+                "resourcePath": "objects\\obj_menu_slot\\obj_menu_slot.yy",
                 "resourceType": "GMObject"
             }
         },
