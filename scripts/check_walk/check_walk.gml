@@ -6,6 +6,7 @@ if (stick_tilted(Lstick,DIR.horizontal))
 	//Change the direction facing
 	change_facing();
 	//Set the state to walking and stop the script.
+	anim_frame = 0;
 	set_state(PLAYER_STATE.walking);
 	return true;
 	}

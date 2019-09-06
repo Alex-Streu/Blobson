@@ -17,17 +17,17 @@ for(var i = 0; i < number_of_players; i++)
 	draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //color beneath	
 	
 			//EX METER
-	draw_rectangle_colour(
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
-		player_status_y + 16, //y1
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
-		player_status_y + 110, //y2
-		c_white, 
-		c_white, 
-		c_white, 
-		c_white,
-		false 
-	); //EX METER
+	//draw_rectangle_colour(
+		//status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
+		//player_status_y + 16, //y1
+		//status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
+		///player_status_y + 110, //y2
+	//	c_white, 
+	//	c_white, 
+	//	c_white, 
+	//	c_white,
+	//	false 
+	//); //EX METER
 
 
 	
@@ -49,11 +49,16 @@ for(var i = 0; i < number_of_players; i++)
 	}
 	shader_reset();
 	//draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + (m * 32) + 184 + player_status_x,player_status_y,1,1,0,_accent,_fade)
+	
+	//draw meter counter
+	draw_text_ext_transformed_color(124 + status_bar_space * (i + 1), player_status_y + 12,  "EX: " + string(_player.EX_meter), 32,156,.4,.4,0,c_white,c_white,c_white,c_white,_fade);
+	
+	
 	//Lives counter
 	draw_text_ext_transformed_color(208 + status_bar_space * (i + 1), player_status_y - 18, string(_player.stock), 32,32,1,1,0,c_white,c_white,c_white,c_white,_fade);
 	//
 	//Damage	
-	draw_text_sprite(108 + status_bar_space * (i + 1),player_status_y - 12,string(_player.damage),spr_damage_font,22, _player.damage_text_x,_player.damage_text_y,1,calculate_damage_color(_player.damage),_fade);
+	draw_text_sprite(40 + status_bar_space * (i + 1) + player_status_x,player_status_y - 14,string(_player.damage),spr_damage_font,16, _player.damage_text_x,_player.damage_text_y,.8,calculate_damage_color(_player.damage),_fade);
 
 	
 	

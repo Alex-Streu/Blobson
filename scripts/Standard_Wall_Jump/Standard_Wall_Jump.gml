@@ -17,14 +17,17 @@ if (run)
 			set_speed(0, 0, false, false);
 			//Animation
 			anim_sprite = my_sprites[?"WallJ"];
-			anim_speed = 0;
+			anim_speed = ani_speed_walljump;
 		
 			if (wall_jump_frame == 0)
 				{
 				wall_jump_phase++;
 				wall_jump_frame = wall_jump_time;
 				set_speed(wall_jump_hsp * facing, wall_jump_vsp, false, false);
+				
+				//if rewind, reset telpeorter
 				if name = "Goku" {rewind_teleport_ready = true;}
+				
 				}
 			break;
 			}

@@ -5,7 +5,7 @@ var run = true;
 if (!jump_is_midair_jump)
 	{
 	//Peak of jump
-	if (abs(vsp) < 1)
+	if (abs(vsp) < 4)
 		{
 			anim_speed = ani_speed_jump
 		anim_sprite = my_sprites[?"Midair"];
@@ -46,7 +46,7 @@ else
 	//Rising
 	else if (vsp <= 1)
 		{
-		anim_sprite = my_sprites[?"JumpMid"	]
+		anim_sprite = my_sprites[?"Doublejump"	]
 		anim_speed = ani_speed_jumpdouble
 		}
 	//Fastfalling
@@ -111,6 +111,7 @@ if (run && double_jumps > 0)
 	var _tap = (scs_tap_jump && stick_flicked(Lstick, DIR.up));
 	if (button(INPUT.jump, buff) || _tap)
 		{
+			anim_frame = 0;
 		double_jump();
 		run = false;
 		}

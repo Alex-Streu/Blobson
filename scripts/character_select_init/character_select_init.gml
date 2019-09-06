@@ -53,6 +53,14 @@ matsu[? "Icon"] = spr_sarina_cs_icon;
 matsu[? "Portrait"] = spr_sarina_cs_portrait;
 matsu[? "Script"] = scr_matsu;
 
+//Sarina
+sarina = ds_map_create();
+sarina[? "Name"] = "Sarina";
+sarina[? "IsUnlocked"] = true;
+sarina[? "Icon"] = spr_sarina_cs_icon;
+sarina[? "Portrait"] = spr_sarina_cs_portrait;
+sarina[? "Script"] = scr_sarina;
+
 //REWIND
 rewind = ds_map_create();
 rewind[? "Name"] = "Rewind";
@@ -63,5 +71,6 @@ rewind[? "Script"] = scr_rewind;
 
 characters = [
 	matsu,
+	sarina,
 	rewind
 ];

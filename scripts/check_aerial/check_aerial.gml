@@ -3,6 +3,7 @@
 if (!on_ground())
 	{
 	//You're in the air
+	anim_frame = 0;
 	set_state(PLAYER_STATE.aerial);
 	return true;
 	}

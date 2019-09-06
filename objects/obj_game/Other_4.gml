@@ -6,13 +6,16 @@
 audio_stop_sound(sfx_music_menu2);
 
 if room = rm_Training
-if !audio_is_playing(sfx_music_training)
 {
 	audio_play_sound(sfx_music_training,10,true)
 }
 
-if room = rm_Dreamland or rm_Stadium
-if !audio_is_playing(sfx_music_blobson_theme)
+if room = rm_Dreamland
+{
+	audio_play_sound(sfx_music_blobson_theme,10,true)
+}
+
+if room = rm_Stadium
 {
 	audio_play_sound(sfx_music_blobson_theme,10,true)
 }

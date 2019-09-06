@@ -50,7 +50,7 @@ if (global.load_players)
 			var _obj = instance_create_layer(x, y-1, "GameLayer", obj_player);
 			with (_obj)
 			{
-				script_execute(scr_matsu);
+				script_execute(scr_sarina);
 				Custom_Controls_Load(cc, 0);
 				is_AI = true;
 			}

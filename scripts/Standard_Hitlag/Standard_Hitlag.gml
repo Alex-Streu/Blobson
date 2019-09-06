@@ -20,7 +20,11 @@ if (run && hitlag_frame == 0)
 	set_state(stored_state);
 	switch(stored_state)
 		{
+						
 		case PLAYER_STATE.in_hitstun:
+		
+		//voice clip
+			audio_play_sound(choose(vc_hurt1,vc_hurt2,vc_nothing,vc_nothing),10,false);
 			//Set the hitstun timer
 			hitstun_frame = stored_hitstun;
 			

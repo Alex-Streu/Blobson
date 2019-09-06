@@ -109,7 +109,7 @@ else
 	
 	//Dpad
 	if (gamepad_button_check_pressed(controller, gp_padd)) _buffer[| _cc[10]] = 0;
-	if (gamepad_button_check(controller, gp_padd)) _buffer[| _cc[10] + INPUT.length] = 0;
+	if (gamepad_button_check(controller, gp_padd or gp_padu)) _buffer[| _cc[10] + INPUT.length] = 0;
 	
 	//Rstick - replicate a "pressed" function
 	//Cache Stick Values

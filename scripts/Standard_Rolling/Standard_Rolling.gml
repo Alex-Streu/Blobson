@@ -74,7 +74,7 @@ if (run)
 		case 1:
 			{
 			//Animation
-			anim_speed = anim_speed_normal;
+			anim_speed = ani_speed_dodgeroll;
 
 			if (rolling_frame == 0)
 				{
@@ -87,23 +87,31 @@ if (run)
 			{
 			//Animation
 			anim_speed = 0;
-			anim_frame = sprite_get_number(my_sprites[?"Rolling"]);
+			anim_frame = sprite_get_number(my_sprites[?"Rolling"]) - 1;
+			//anim_frame = 7;
 			//No speed
 			set_speed(0, 0, false, false);
 			//End roll
 			if (run && rolling_frame == 0)
 				{
 				rolling_phase = 0;
-				//Position the player to be backwards
-				if (rolling_direction != 0)
-					{
-					facing = -sign(rolling_direction);
-					}
+				
+				//Position the player to be backwards (reuse me if method 2 doesnt work)
+				//if (rolling_direction != 0)
+					//{
+					//facing = -sign(rolling_direction);
+					//}
+					
 				//Back to Idle State, unless Shield is being held down
 				if ((shield_type == SHIELD.melee || shield_type == SHIELD.ultimate) && check_shield())
 					{}
 				else
 					{
+						//Position the player to be backwards
+				if (rolling_direction != 0)
+					{
+					facing = -sign(rolling_direction);
+					}
 					set_state(PLAYER_STATE.idle);
 					}
 				run = false;

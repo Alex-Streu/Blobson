@@ -139,7 +139,7 @@ stored_state = PLAYER_STATE.in_hitstun;
 ko_property = id; //Determines SD's / normal KO's
 stock = 3;
 any_hitbox_has_hit = false;
-can_hitfall = false;
+can_hitfall = true;
 //My Hitboxes List - Keeps track of all of the user's hitboxes
 my_hitboxes = ds_list_create();
 //Hitbox Groups - Each group has an array that stores what has been hit

@@ -19,6 +19,7 @@ switch(shield_type)
 		if (button(INPUT.shield, buff))
 			{
 			//Change to parrying state
+			anim_frame = 0;
 			set_state(PLAYER_STATE.parrying);
 			parry_frame = parry_startup;
 			return true;
