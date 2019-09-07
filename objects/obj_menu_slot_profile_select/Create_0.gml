@@ -5,4 +5,3 @@ event_inherited();
 
 itemCap = 2;
 rowSize = 2;
-drawSwitch = false;

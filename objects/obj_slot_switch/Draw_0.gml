@@ -1,5 +1,5 @@
 /// @description Draw correct text
-if (owner == noone || !doDraw) { return; }
+if (owner == noone) { return; }
 
 //Draw switch sprite
 draw_self();

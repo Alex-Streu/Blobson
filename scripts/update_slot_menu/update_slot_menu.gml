@@ -13,4 +13,3 @@ else { ds_stack_push(menuStack, _menu); }
 if (instance_exists(menu)) { instance_destroy(menu); }
 menu = instance_create_layer(0, 0, "MenuLayer", _menu);
 menu.owner = id;
-mySwitch.doDraw = menu.drawSwitch;

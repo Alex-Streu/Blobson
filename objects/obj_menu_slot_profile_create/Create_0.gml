@@ -4,7 +4,6 @@
 event_inherited();
 
 rowSize = 3;
-drawSwitch = false;
 
 characterDisplays = [
  " ",

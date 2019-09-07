@@ -3,8 +3,6 @@
 // Inherit the parent event
 event_inherited();
 
-page = ds_list_create();
-
 #region Page Creation
 
 //Create text field

@@ -1,5 +1,4 @@
 /// @description Click event
-if (!doDraw) { return; }
 
 // Inherit the parent event
 event_inherited();

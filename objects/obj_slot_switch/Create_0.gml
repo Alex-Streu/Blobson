@@ -1,7 +1,6 @@
 /// @description Initialize switch
 event_inherited();
 
-doDraw = true;
 isHovered = false;
 
 text = ds_list_create();

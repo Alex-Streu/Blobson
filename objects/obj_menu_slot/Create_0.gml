@@ -8,7 +8,6 @@ enum MENU_EVENT
 pageIndex = 0; //Set default
 pageTotal = 1; //Set default
 owner = noone; //Set default
-drawSwitch = true; //Set default
 page = ds_list_create();
 pageObjects = ds_list_create();
 isInitialized = false;

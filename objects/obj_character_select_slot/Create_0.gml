@@ -27,10 +27,6 @@ config = noone;
 //Draw properties
 drawSurface = noone;
 
-//Create slot switch
-mySwitch = instance_create_layer(x + sprite_width - sprite_get_width(object_get_sprite(obj_slot_switch)) - 10, y + sprite_height - sprite_get_height(object_get_sprite(obj_slot_switch)) - 10, "MenuLayer", obj_slot_switch);
-mySwitch.owner = id
-
 //Create menu
 menuStack = ds_stack_create();
 menu = noone;
