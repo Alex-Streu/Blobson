@@ -1,5 +1,5 @@
-/// @description Handle hover logic
-check_if_hovered();
+/// @description Handle deletion
+event_inherited();
 
 //Turn off Y event if default
 if (profile != noone && profile[? "IsDefault"]) { hasYEvent = false; }

@@ -8,6 +8,7 @@ event_inherited();
 //Create text field
 var textField = instance_create_layer(hcenter_item(owner.x, owner.sprite_width, sprite_get_width(object_get_sprite(obj_slot_text_field))), owner.y + 10, "MenuLayer", obj_slot_text_field);
 textField.owner = owner;
+textField.type = TEXT_FIELD_TYPE.PROFILE;
 		
 ds_list_add(pageObjects, textField);
 
@@ -30,15 +31,5 @@ for (var i = 0; i < array_length_1d(characters); i++)
 		
 	ds_list_add(pageObjects, item);
 }
-
-////Bottom page index
-//var item = ds_map_create();
-//item[? "Position"] = [ owner.sprite_width/2, owner.sprite_height - 15 ];
-//item[? "Type"] = MENU_ITEM_TYPE.TEXT;
-//item[? "Text"] = stringify("{0}/{1}", pageIndex + 1, pageTotal);
-//item[? "Font"] = fnt_consolas;
-//item[? "HAlign"] = fa_center;
-
-//ds_list_add(page, item);
 
 #endregion

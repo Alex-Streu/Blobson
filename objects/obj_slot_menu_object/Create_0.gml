@@ -3,3 +3,4 @@ owner = noone;
 hasAEvent = true;
 hasYEvent = false;
 hasXEvent = false;
+isHovered = false;

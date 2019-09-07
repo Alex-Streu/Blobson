@@ -2,4 +2,3 @@
 event_inherited();
 
 selected = noone;
-isHovered = false;

@@ -15,16 +15,6 @@
             "m_owner": "313b12ae-3e42-483c-9891-ea3578ecd540"
         },
         {
-            "id": "d4ee912b-d3cf-4afa-957c-1c2cbf09363d",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "313b12ae-3e42-483c-9891-ea3578ecd540"
-        },
-        {
             "id": "06b1ec01-d057-4245-80a8-196a7df646d2",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -57,7 +47,7 @@
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "044783b0-eb62-47cf-8bc9-6ec24db5ea41",
+    "parentObjectId": "41ad411b-9ae2-4364-a585-252c743a9abc",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

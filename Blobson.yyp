@@ -258,7 +258,7 @@
             "Key": "044783b0-eb62-47cf-8bc9-6ec24db5ea41",
             "Value": {
                 "id": "f0a7b32a-f730-463c-aff1-cd8dce0b5b86",
-                "resourcePath": "objects\\obj_menu_object\\obj_menu_object.yy",
+                "resourcePath": "objects\\obj_slot_menu_object\\obj_slot_menu_object.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -2460,6 +2460,14 @@
                 "id": "678a2121-6fac-4248-b21d-5b7b9653c8fa",
                 "resourcePath": "rooms\\rm_Training\\rm_Training.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "41ad411b-9ae2-4364-a585-252c743a9abc",
+            "Value": {
+                "id": "2c2de02d-2ab4-464e-9ffb-4144bf682f22",
+                "resourcePath": "objects\\obj_slot_menu_hover_object\\obj_slot_menu_hover_object.yy",
+                "resourceType": "GMObject"
             }
         },
         {

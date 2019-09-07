@@ -69,7 +69,7 @@ switch (state)
 			//Click selection
 			with (cursor) 
 			{  
-				var _obj = instance_place(x, y, obj_menu_object);
+				var _obj = instance_place(x, y, obj_slot_menu_object);
 				if (_obj != noone && _obj.owner == _id && _obj.hasAEvent)
 				{
 					with (_obj) { event_user(MENU_OBJECT_EVENT.A); }
