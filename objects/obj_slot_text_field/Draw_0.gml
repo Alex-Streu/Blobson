@@ -2,9 +2,9 @@
 draw_self();
 
 var _text = "";
-for (var i = 0; i < array_length_1d(text); i++)
+for (var i = 0; i < ds_list_size(text); i++)
 {
-	_text += string(text[i]);
+	_text += string(text[|i]);
 }
 
 draw_set_font(global.base_font);

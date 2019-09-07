@@ -3,7 +3,8 @@
 // Inherit the parent event
 event_inherited();
 
-with (owner)
+with (field)
 {
-	update_slot_menu(obj_menu_slot_profile_select);
+	ds_list_delete(text, index);
+	index--;
 }

@@ -8,7 +8,7 @@ enum TEXT_FIELD_TYPE
 }
 
 index = -1;
-text = [];
+text = ds_list_create();
 type = -1;
 limits = [];
 limits[TEXT_FIELD_TYPE.PROFILE] = 6;

@@ -30,6 +30,15 @@ for (var i = 0; i < array_length_1d(characters); i++)
 	item.field = textField;
 		
 	ds_list_add(pageObjects, item);
+	
+	if (i+1 == array_length_1d(characters))
+	{
+		i++;
+		var startX = i % 3 == 0 ? col1 : (i % 3 == 1 ? col2 : col3);
+		var item = instance_create_layer(owner.x + startX, owner.y + startY + (floor(i/3) * (sprite_get_height(object_get_sprite(obj_slot_add_text)) + padding)), "MenuLayer", obj_slot_delete_text);
+		item.owner = owner;
+		item.field = textField;
+	}
 }
 
 #endregion

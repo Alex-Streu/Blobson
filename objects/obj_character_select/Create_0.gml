@@ -17,7 +17,7 @@ for (var i = 0; i < array_length_1d(characters); i++) {
 	
 	_space = 50 + sprite_get_width(_c[? "Icon"]);
 	create_character_select_item(_c[? "Name"], _c[? "Script"], _c[? "Icon"], _c[? "Portrait"],
-												_offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
+								_offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
 }
 
 //---------------------------
