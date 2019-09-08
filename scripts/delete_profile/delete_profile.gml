@@ -4,6 +4,8 @@ var _profile = argument[0];
 
 ds_list_delete(global.profiles, ds_list_find_index(global.profiles, _profile));
 
+save_profiles();
+
 if (profile == _profile)
 {
 	load_default_profile();

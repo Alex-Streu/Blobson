@@ -50,4 +50,13 @@ item.owner = owner;
 		
 ds_list_add(pageObjects, item);
 
+//Create save profile
+var _w = sprite_get_width(object_get_sprite(obj_slot_save));
+var _h = sprite_get_height(object_get_sprite(obj_slot_save));
+var item = instance_create_layer(owner.x + owner.sprite_width - _w - 10, owner.y + owner.sprite_height - _h - 10, "MenuLayer", obj_slot_save);
+item.owner = owner;
+item.field = textField;
+
+ds_list_add(pageObjects, item);
+
 #endregion

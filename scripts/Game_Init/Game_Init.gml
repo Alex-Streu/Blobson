@@ -59,3 +59,30 @@ view_wport[0] = camera_width;
 view_hport[0] = camera_height;
 global.game_cam = camera_create_view(0, 0, camera_width, camera_height);
 view_camera[0] = global.game_cam;
+
+//Default profile
+#region Create default profile
+
+var _config = ds_map_create();
+_config[? "ID"] = 0;
+_config[? "Name"] = "DEF";
+_config[? "IsDefault"] = true;
+_config[? "Index"] = 0;
+	
+var _configs = ds_list_create();
+_configs[| 0] = _config;
+global.default_config_list = _configs;
+ds_list_mark_as_map(global.default_config_list, 0);
+	
+	
+var _default = ds_map_create();
+_default[? "ID"] = 0;
+_default[? "Name"] = "DEFAULT";
+_default[? "IsDefault"] = true;
+_default[? "Index"] = 0;
+ds_map_add_list(_default, "Configs", global.default_config_list);
+
+ds_list_add(global.profiles, _default);
+ds_list_mark_as_map(global.profiles, 0);
+
+#endregion

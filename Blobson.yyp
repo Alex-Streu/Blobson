@@ -631,6 +631,14 @@
             }
         },
         {
+            "Key": "0f4d35dd-d08b-43b4-884f-d2e8dd105c75",
+            "Value": {
+                "id": "53b9cc46-2cff-46da-88de-a89e8f7fd065",
+                "resourcePath": "objects\\obj_slot_save\\obj_slot_save.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0fc6d826-a899-475d-b9c6-c8efaddf3304",
             "Value": {
                 "id": "54b7e6c5-1a6d-4e7e-b19f-70a7875e6db5",
@@ -675,6 +683,14 @@
             "Value": {
                 "id": "50485977-5315-49f2-bb14-53de88ea3fff",
                 "resourcePath": "sprites\\spr_matsu_doublejump\\spr_matsu_doublejump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "10904d15-6b87-491e-99ed-4b745f3f0054",
+            "Value": {
+                "id": "94b7eedd-8df5-4dda-a70d-35c95a0a1aa2",
+                "resourcePath": "sprites\\spr_slot_save\\spr_slot_save.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5319,6 +5335,14 @@
             }
         },
         {
+            "Key": "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
+            "Value": {
+                "id": "9ce8bc1d-5095-41e7-8548-f86bfd3c460d",
+                "resourcePath": "scripts\\save_profiles\\save_profiles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9118b315-ea51-4df4-97d2-883671434e54",
             "Value": {
                 "id": "a6552a18-c8b7-4071-b64b-5583df0783e8",
@@ -7292,6 +7316,14 @@
                 "id": "acc64878-ab73-4892-9a0e-7ce71b3bbd47",
                 "resourcePath": "sprites\\spr_matsu_hitstun3\\spr_matsu_hitstun3.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c9b7a226-fba3-4caa-b4ec-48cbe1cc9b3f",
+            "Value": {
+                "id": "5fec09b5-d3db-4e63-ae07-4df51cbba92e",
+                "resourcePath": "objects\\obj_slot_alert\\obj_slot_alert.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -9542,6 +9574,7 @@
         "afdf49aa-21bc-4eef-a9fb-75cf8e4349aa",
         "7a74149a-06cb-4271-b2f6-53ec836876bc",
         "ad8bcdb7-86c6-48db-814e-02077c3b9b8d",
+        "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
         "1ccc6337-beea-4f64-8f71-fc1858f869e9",
         "92d0e355-8e8d-4f50-9a35-957625ce1f30",
         "d6fd84c0-b408-4f22-bcae-c22300e65ac9",
