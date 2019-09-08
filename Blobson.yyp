@@ -943,6 +943,14 @@
             }
         },
         {
+            "Key": "19b3b501-6e65-4ffe-9cdb-a98f11811cdc",
+            "Value": {
+                "id": "d9336fc1-debf-4a6f-a8c7-b1d154540090",
+                "resourcePath": "objects\\obj_slot_back\\obj_slot_back.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "19ceae9b-5923-4bca-bb6a-048e872e1353",
             "Value": {
                 "id": "4fa8efe0-a4d2-4871-a9e9-f69812b1df77",
@@ -6188,6 +6196,14 @@
                 "id": "43bf92da-c3ee-4e3e-a29c-3a8cb2e9ffda",
                 "resourcePath": "scripts\\fastfall_attack_try\\fastfall_attack_try.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a9edd967-467d-4b56-b68a-bf2bfd863016",
+            "Value": {
+                "id": "6d38aaee-bba1-4add-9276-21ad057f09d9",
+                "resourcePath": "sprites\\spr_slot_back\\spr_slot_back.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

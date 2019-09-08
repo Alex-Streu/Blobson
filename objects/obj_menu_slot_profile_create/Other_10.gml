@@ -38,7 +38,16 @@ for (var i = 0; i < array_length_1d(characters); i++)
 		var item = instance_create_layer(owner.x + startX, owner.y + startY + (floor(i/3) * (sprite_get_height(object_get_sprite(obj_slot_add_text)) + padding)), "MenuLayer", obj_slot_delete_text);
 		item.owner = owner;
 		item.field = textField;
+		
+		ds_list_add(pageObjects, item);
 	}
 }
+
+//Create back button
+var _h = sprite_get_height(object_get_sprite(obj_slot_back));
+var item = instance_create_layer(owner.x + 10, owner.y + owner.sprite_height - _h - 10, "MenuLayer", obj_slot_back);
+item.owner = owner;
+		
+ds_list_add(pageObjects, item);
 
 #endregion
