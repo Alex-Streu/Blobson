@@ -13,7 +13,7 @@ if ani_lag_loop = false
 {anim_frame = sprite_get_number(my_sprites[?"Lag"]) - 1;
 }
 
-#region If walking, make step sounds
+#region    If walking, make step sounds
 if anim_sprite = my_sprites[?"Walk"    ]
 {
 	
@@ -34,7 +34,7 @@ if anim_sprite = my_sprites[?"Walk"    ]
 }
 
 #endregion
-#region If running, make step sounds
+#region    If running, make step sounds
 if anim_sprite = my_sprites[?"Run"     ]
 {
 	
@@ -55,7 +55,7 @@ if anim_sprite = my_sprites[?"Run"     ]
 }
 
 #endregion
-#region if in hutstun and frames reach all the way. pause at the end.
+#region    If in hutstun and frames reach all the way. pause at the end.
 if anim_sprite = my_sprites[?"Hitstun" ]
 if anim_frame >= 6
 {
@@ -64,7 +64,46 @@ anim_frame = 7
 }
 
 #endregion
-
+#region    If doing an attack, update the hurtbox
+            
+			#region jab 1 hurtbox
+			if anim_sprite = spr_sarina_jab1
+			{
+            hurtbox.sprite_index = spr_sarina_jab_hurt;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region jab 2 hurtbox
+			if anim_sprite = spr_sarina_jab2
+			{
+            hurtbox.sprite_index = spr_sarina_jab2_hurt;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region jab 3 hurtbox
+			if anim_sprite = spr_sarina_jab3
+			{
+            hurtbox.sprite_index = spr_sarina_jab3_hurt;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			
+#endregion
 //if (state != PLAYER_STATE.in_hitstun)
 {
 	

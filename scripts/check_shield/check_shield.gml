@@ -5,7 +5,7 @@ switch(shield_type)
 	{
 	case SHIELD.melee:
 		{
-		if (button_hold(INPUT.shield))
+		if (button_hold(INPUT.shield, buff))
 			{
 			//Change to shielding state
 			set_state(PLAYER_STATE.shielding);
@@ -19,7 +19,7 @@ switch(shield_type)
 		if (button(INPUT.shield, buff))
 			{
 			//Change to parrying state
-			anim_frame = 0;
+			//anim_frame = 0;
 			set_state(PLAYER_STATE.parrying);
 			parry_frame = parry_startup;
 			return true;

@@ -15,7 +15,7 @@ if (run && check_aerial()) run = false;
 if (run && check_drop_through()) run = false;
 #endregion
 #region Crouching
-if (run && check_crouch()) run = false;;
+if (run && check_crouch()) run = false;
 #endregion
 #region Jumping
 if (run && check_jump()) run = false;

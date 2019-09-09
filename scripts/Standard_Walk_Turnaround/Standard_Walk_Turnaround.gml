@@ -20,7 +20,7 @@ if (run && stick_flicked(Lstick))
 	}
 #endregion
 #region Animation
-anim_sprite=my_sprites[?"Walk"];
+anim_sprite=my_sprites[?"Turn"    ]
 anim_speed=ani_speed_walk;
 #endregion
 #region Facing

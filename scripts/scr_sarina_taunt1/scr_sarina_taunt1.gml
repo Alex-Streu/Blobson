@@ -6,6 +6,7 @@ attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
 //Canceling
 if run && cancel_air_check() run=false;
+
 //Phases
 if (run)
 	{

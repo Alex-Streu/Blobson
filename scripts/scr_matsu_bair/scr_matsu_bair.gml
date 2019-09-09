@@ -77,7 +77,7 @@ if (run)
 				var _hitbox = create_melee(-70,-30,0.4,.5,10,10,1,12,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_bair_hit);
 				
-                var _hitbox = create_melee(-35,-35,0.7,.5,5,5,1,8,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+                var _hitbox = create_melee(-35,-35,0.7,.5,5,5,1,12,50,2,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);
 				}
 			break;

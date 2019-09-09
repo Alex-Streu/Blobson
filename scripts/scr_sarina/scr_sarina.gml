@@ -243,7 +243,7 @@ switch(walljump_type)
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_sarina_jab;
 my_attacks[?"DashA" ]= scr_matsu_dashattack;
-my_attacks[?"Ftilt" ]= scr_matsu_ftilt;
+my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
 my_attacks[?"Utilt" ]= scr_matsu_utilt;
 my_attacks[?"Dtilt" ]= scr_matsu_dtilt;
 my_attacks[?"Fsmash"]= scr_matsu_fheavy;
@@ -277,6 +277,7 @@ my_attacks[?"Taunt" ]= scr_sarina_taunt1;
 my_sprites[?"Idle"    ]=spr_sarina_idle;
 my_sprites[?"Crouch"  ]=spr_sarina_crouch;
 my_sprites[?"Walk"    ]=spr_sarina_walk;
+my_sprites[?"Turn"    ]=spr_sarina_turn;
 my_sprites[?"Dash"     ]=spr_sarina_runstart;
 my_sprites[?"Run"     ]=spr_sarina_run;
 my_sprites[?"Run_Stop"]=spr_sarina_runstop;
@@ -341,7 +342,7 @@ my_sprites[?"Pummel"] = spr_matsu_pummel;
 my_sprites[?"Jab1" ]=spr_sarina_jab1;
 my_sprites[?"Jab2" ]=spr_sarina_jab2;
 my_sprites[?"Jab3" ]=spr_sarina_jab3;
-my_sprites[?"Ftilt" ]=spr_matsu_ftilt;
+my_sprites[?"Ftilt" ]=spr_sarina_jab2;
 my_sprites[?"Dtilt" ]=spr_matsu_dtilt;
 my_sprites[?"Utilt" ]=spr_matsu_utilt;
 my_sprites[?"Nair" ]=spr_matsu_nair;

@@ -22,10 +22,8 @@ if (run)
 		case PHASE.start:
 			{
 			//Animation
-			anim_sprite=my_sprites[?"Jab1"];
-			anim_speed=0;
-			anim_frame=0;			
-			attack_frame=3;
+			anim_sprite=my_sprites[?"Jab1"];								
+			attack_frame=0;
 			return;
 			}
 			#endregion
@@ -68,7 +66,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				set_speed(facing*3,0,true,false);
-				var _hitbox = create_melee(38,-72,0.7,0.5,4,4,0.1,7,75,6,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(48,-72,0.8,0.5,4,4,0.1,8,75,3,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_fx_style,HIT_FX.hit1);
@@ -148,6 +146,12 @@ if (run)
 			if (attack_frame==0)
 				{
 				anim_sprite=my_sprites[?"Jab2"];
+				hurtbox.sprite_index = spr_sarina_jab2_hurt;
+                hurtbox.image_index = anim_frame;
+                hurtbox.image_speed = 0;
+                hurtbox.image_xscale = 1;
+                hurtbox.image_yscale = 1;
+                hurtbox.image_angle = 0;
 				audio_play_sound(snd_jab2,10,false);
 				anim_speed=0;
 				anim_frame=0;
@@ -179,7 +183,7 @@ if (run)
 				anim_frame= 2;
 				attack_phase++;
 				attack_frame=4;				
-				var _magnetbox = create_magnetbox(52,-60,1.1,0.45,3,5,90,5,20,4,HITBOX_SHAPE.rectangle,1);	
+				var _magnetbox = create_magnetbox(52,-60,1.1,0.45,3,8,90,5,20,4,HITBOX_SHAPE.rectangle,1);	
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				//set_hitbox_property(_magnetbox,HITBOX.base_hitlag,5);
 				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
@@ -278,6 +282,12 @@ if (run)
 			if (attack_frame==0)
 				{
 				anim_sprite=my_sprites[?"Jab3"];
+				hurtbox.sprite_index = spr_sarina_jab3_hurt;
+                hurtbox.image_index = anim_frame;
+                hurtbox.image_speed = 0;
+                hurtbox.image_xscale = 1;
+                hurtbox.image_yscale = 1;
+                hurtbox.image_angle = 0;
 				audio_play_sound(snd_jab3,10,false);
 				anim_frame= 0;
 				attack_phase++;

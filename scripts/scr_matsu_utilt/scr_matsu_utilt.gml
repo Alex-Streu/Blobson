@@ -43,7 +43,7 @@ if (run)
 				anim_frame= 2;
 				attack_phase++;
 				attack_frame=3;				
-				var _hitbox = create_melee(36,-80,0.5,.9,5,8,0.6,8,75,6,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(36,-80,0.5,.9,5,8,0.6,10,75,6,HITBOX_SHAPE.rectangle,0,FLIPPER.from_player_center_horizontal);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_utilt_hit);
 				}
 			break;
