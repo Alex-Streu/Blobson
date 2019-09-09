@@ -35,4 +35,9 @@ ds_list_mark_as_map(global.profiles, _size);
 
 save_profiles();
 
-with (owner) { update_slot_menu(); }
+with (owner) 
+{ 
+	load_player_profile(global.profiles[| _profile[? "Index"]]);
+	update_slot_menu(); 
+	update_slot_menu(); 
+}
