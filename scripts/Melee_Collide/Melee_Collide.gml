@@ -41,7 +41,7 @@ switch(_hit.invulnerable_type)
 		_total_hl=calculate_hitlag(base_hitlag);
 		//Change state
 		with(_hit) 
-			{
+			{			
 			set_state(PLAYER_STATE.in_hitlag);
 			//Calculate angle based on flipper
 			var _calc_angle = 90;

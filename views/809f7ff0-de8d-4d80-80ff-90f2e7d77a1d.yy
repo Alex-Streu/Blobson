@@ -26,8 +26,14 @@
         "d7579952-6434-4d7c-8967-a831df635326",
         "248f82a3-e3e5-4109-b676-b5315420fcdd",
         "a673f086-9370-4d79-98f0-3b4386953830",
+        "f365c0e6-a34e-4b38-b33c-5793334b1431",
+        "4097a031-5962-47da-9003-5d2fedecd519",
+        "80abeb36-0b66-434f-b499-6c1d04bb9646",
+        "f018e439-f46b-4e98-8946-a1bdf47cfd71",
+        "a7056e30-aa0f-4f1c-bc94-ad5204a6a9bb",
         "d449ccd5-2fe8-4a7b-87f9-82adc34f2c1a",
-        "db1abaf0-89e4-46d8-a5e0-cca2edd5ceca"
+        "db1abaf0-89e4-46d8-a5e0-cca2edd5ceca",
+        "135b6e12-8e03-4e78-875d-d1f78e6c1343"
     ],
     "filterType": "GMSprite",
     "folderName": "Fighter - Sarina",

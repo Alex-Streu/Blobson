@@ -56,6 +56,8 @@ switch(air_dodge_phase)
 			{
 			air_dodge_phase = 0;
 			//Change state
+			anim_speed = ani_speed_jump
+		    anim_sprite = my_sprites[?"Fall"];
 			set_state(PLAYER_STATE.aerial);
 			return;
 			}

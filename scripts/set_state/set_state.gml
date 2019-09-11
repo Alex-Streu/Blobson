@@ -14,6 +14,7 @@ switch(state)
 				{
 				anim_sprite = my_sprites[?"Midair"];
 				}
+				
 			//Falling
 			else if (vsp >= 1)
 				{
@@ -127,7 +128,7 @@ switch(state)
 		break;
 	case PLAYER_STATE.in_hitlag:
 		//Animation
-		anim_sprite=my_sprites[?"Hitlag"];
+		anim_sprite = choose(my_sprites[?"Hitlag"],my_sprites[?"Hitlag2"],my_sprites[?"Hitlag3"],my_sprites[?"Hitlag4"]);
 		anim_speed=anim_speed_normal;
 		break;
 	case PLAYER_STATE.in_hitstun:
@@ -247,8 +248,9 @@ switch(state)
 		break;
 	case PLAYER_STATE.magnetized:
 		//Animation
-		anim_sprite=my_sprites[?"Hitstun"];
-		anim_speed=anim_speed_normal;
+		anim_sprite = choose(my_sprites[?"Flinch"],my_sprites[?"Flinch2"],my_sprites[?"Flinch3"],my_sprites[?"Flinch4"]);
+		anim_speed= ani_speed_flinch;
+		anim_frame = 0;
 		break;
 	case PLAYER_STATE.parry_stun:
 		//Animation

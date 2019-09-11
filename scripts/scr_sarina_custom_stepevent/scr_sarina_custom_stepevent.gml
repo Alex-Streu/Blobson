@@ -10,8 +10,22 @@ if anim_frame >= 5.8
 if (lag_frame == 0)
 if anim_sprite = my_sprites[?"Lag"]
 if ani_lag_loop = false
-{anim_frame = sprite_get_number(my_sprites[?"Lag"]) - 1;
-}
+{anim_frame = sprite_get_number(my_sprites[?"Lag"]) - 1;}
+
+if anim_sprite = my_sprites[?"Flinch1"]
+if ani_lag_loop = false
+if anim_frame >= 3.4    
+{anim_frame = 4}
+
+if anim_sprite = my_sprites[?"Flinch2"]
+if ani_lag_loop = false
+if anim_frame >= 3.4    
+{anim_frame = 4}
+
+if anim_sprite = my_sprites[?"Flinch3"]
+if ani_lag_loop = false
+if anim_frame >= 3.4    
+{anim_frame = 4}
 
 #region    If walking, make step sounds
 if anim_sprite = my_sprites[?"Walk"    ]

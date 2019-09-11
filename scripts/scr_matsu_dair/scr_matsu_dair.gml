@@ -107,11 +107,11 @@ if (run)
 				attack_frame=2;
 				
 				//Normal
-				 var _hitbox = create_melee(26,-66,1.1,1.2,6,6,0.3,11,50,2,HITBOX_SHAPE.rectangle,0);
+				 var _hitbox = create_melee(26,-66,1.1,1.2,6,6,0.3,8,50,2,HITBOX_SHAPE.rectangle,0);
 				 set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dair_hit);
 				 set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.explosion);
 				//Sweet spot heavy
-				 var _hitbox_sweet = create_melee(43,-12,0.6,0.5,10,7,1,20,-80,2,HITBOX_SHAPE.rectangle,0);
+				 var _hitbox_sweet = create_melee(43,-12,0.6,0.5,10,7,1,15,-80,2,HITBOX_SHAPE.rectangle,0);
 				 set_hitbox_property(_hitbox_sweet,HITBOX_PROPERTY.hit_sfx,snd_dair_sweetspot_hit);		
 				 set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.explosion);
 				}
@@ -129,7 +129,7 @@ if (run)
 				attack_phase++;
 				attack_frame=6;
 				//Normal				
-				var _hitbox = create_melee(32,-22,0.9,0.5,5,4,0.3,11,50,6,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(32,-22,0.9,0.5,5,4,0.3,8,50,6,HITBOX_SHAPE.rectangle,0);
 				 set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dair_hit);
 				}
 			break;

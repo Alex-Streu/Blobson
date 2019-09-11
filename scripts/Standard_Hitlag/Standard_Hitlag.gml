@@ -8,7 +8,6 @@ hitlag_frame = max(--hitlag_frame, 0);
 if name = "Goku" {rewind_teleport_ready = true;}
 
 #region Animation
-anim_sprite = my_sprites[?"Hitlag"];
 anim_speed = 1;
 hurtbox.sprite_index = hurtbox_sprite;
 #endregion

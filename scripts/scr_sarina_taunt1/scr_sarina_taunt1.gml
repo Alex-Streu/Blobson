@@ -295,6 +295,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				audio_play_sound(sfx_sarina_taunt1,10,false);
+				EX_meter += 3;
 				}
 			break;
 			}
