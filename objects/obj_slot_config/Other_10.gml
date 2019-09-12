@@ -1,4 +1,5 @@
 /// @description Click event
+if (!isActive) { return; }
 
 // Inherit the parent event
 event_inherited();

@@ -54,13 +54,8 @@ switch (state)
 			{
 				_character = instance_place(x, y, obj_character_select_item);
 			}
-				
-			with (obj_slot_portrait)
-			{
-				if (owner != _id) { continue; }
-					
-				character = _character;
-			}
+			
+			character = _character;
 		}
 		
 		//A pressed
@@ -79,6 +74,12 @@ switch (state)
 			if (menu.allowCharacterSelect && character != noone) 
 			{
 				isSelected = true;
+				load_character_config();
+				with (menu)
+				{
+					event_user(MENU_EVENT.CLEANUP);
+					event_user(MENU_EVENT.INIT);
+				}
 			}
 		}
 		

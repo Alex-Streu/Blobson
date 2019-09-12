@@ -23,7 +23,6 @@ if (_found)
 	_alert.alarm[0] = alertLength; 
 	return; 
 }
-show_debug_message(_text)
 
 var _max =  _configs[| _size-1];
 var _config = ds_map_create();
@@ -32,6 +31,14 @@ _config[? "Name"] = _text;
 _config[? "IsDefault"] = false;
 _config[? "Index"] = ds_list_size(_configs);
 
+//Set character config
+var _characters = ds_map_create();
+if (_profile[? "Characters"] != undefined) { _characters = _profile[? "Characters"]; }
+_characters[? owner.character.name] = _config[? "ID"];
+ds_map_add_map(_profile, "Characters", _characters);
+
+
+//Save
 ds_list_add(_profile[? "Configs"], _config);
 ds_list_mark_as_map(_profile[? "Configs"], _config[? "Index"]);
 ds_list_mark_as_map(global.profiles, _profile[? "Index"]);

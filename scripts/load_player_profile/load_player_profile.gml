@@ -14,3 +14,5 @@ if (_profile[? "IsDefault"])
 
 profile = _profile;
 config = _configs[| 0];
+
+if (isSelected) { load_character_config(); }
