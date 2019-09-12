@@ -307,7 +307,7 @@ my_sprites[?"Hitstun" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstun2" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstun3" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstun4" ]=spr_sarina_hitstun1;
-my_sprites[?"Hitstunheavy" ]=spr_sarina_hitstun1;
+my_sprites[?"Hitstunheavy" ]=spr_sarina_hitstun_heavy;
 my_sprites[?"Tumble"  ]=spr_matsu_tumble;
 my_sprites[?"Helpless"]=spr_matsu_freefall;
 my_sprites[?"Landlag"]=spr_sarina_landlag;
@@ -387,6 +387,7 @@ ani_speed_dodgeroll = 1.4;
 ani_speed_tumble = 1;
 ani_speed_flinch = .5;
 ani_speed_hitstun = .75;
+ani_speed_hitstun_heavy = 1.2;
 ani_speed_parryland = .50;
 ani_speed_lag = 1;
 ani_speed_helpless = 0.75
@@ -439,5 +440,5 @@ vc_hurt1 = sfx_vc_sarina_hit1; //weak hit 1
 vc_hurt2 = sfx_vc_sarina_hit1; // weak hit 2
 #endregion
 //Custom Step Event
-custom_script= scr_matsu_custom();
+custom_script= scr_sarina_custom();
 custom_step_script = scr_sarina_custom_stepevent();

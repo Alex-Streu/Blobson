@@ -927,6 +927,14 @@
             }
         },
         {
+            "Key": "19d31568-70c9-48df-b0b5-beb32e2a9c17",
+            "Value": {
+                "id": "d4f27b63-f0ef-4e4c-a49a-9fa93b507301",
+                "resourcePath": "scripts\\scr_sarina_custom\\scr_sarina_custom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "19f0eafb-b41d-41a9-b2bb-5bc62fd2bb67",
             "Value": {
                 "id": "4aebff10-4057-498a-850a-3dc48b04169c",
@@ -6775,6 +6783,14 @@
             }
         },
         {
+            "Key": "c163e546-dfa7-425e-a096-c73c1d61b967",
+            "Value": {
+                "id": "4a736521-7a86-485b-99b4-f1c2fa870140",
+                "resourcePath": "sprites\\spr_sarina_hitstun_heavy\\spr_sarina_hitstun_heavy.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c1a67f67-3c61-4537-b1b7-c149387f14e8",
             "Value": {
                 "id": "47eb3b50-01a4-4ef2-87c2-9db4e1064191",
@@ -9067,6 +9083,7 @@
         "021825d7-2d3b-4c4b-a667-3b75c88c5700",
         "d3c4fadd-5b61-43d6-9631-994e66001962",
         "4793c51d-323e-4f64-b41e-d116f5af312a",
+        "19d31568-70c9-48df-b0b5-beb32e2a9c17",
         "3bc2a94f-3b1f-4654-aa46-0905d9c2e725",
         "5bc89727-ad0a-4998-8eab-8dcf703138cd",
         "ec4562fa-cc9c-4639-9fa8-d32ed1a02eb5",

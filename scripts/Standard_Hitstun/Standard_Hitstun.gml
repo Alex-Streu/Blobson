@@ -5,8 +5,8 @@ var run = true;
 hitstun_frame = max(--hitstun_frame, 0);
 
 #region Animation
-anim_sprite = my_sprites[?"Hitstun"];
-anim_speed = ani_speed_hitstun;
+if damage < 100  {anim_sprite = my_sprites[?"Hitstun"];   anim_speed = ani_speed_hitstun;}
+else {anim_sprite = my_sprites[?"Hitstunheavy"];   anim_speed = ani_speed_hitstun_heavy;}
 #endregion
 #region Friction / Gravity
 if (!on_ground())
