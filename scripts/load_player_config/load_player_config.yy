@@ -1,8 +1,8 @@
 {
-    "id": "7469b42c-dff6-4c64-ad9d-732bb8286dc8",
+    "id": "36c7c93e-37a9-422c-97d8-c76d084392f6",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "holding_old_cs_slot_code",
+    "name": "load_player_config",
     "IsCompatibility": false,
     "IsDnD": false
 }

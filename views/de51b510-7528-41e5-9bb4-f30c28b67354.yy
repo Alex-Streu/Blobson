@@ -18,8 +18,7 @@
         "fb56915d-e60c-4675-868c-31e59be6dd4f",
         "afdf49aa-21bc-4eef-a9fb-75cf8e4349aa",
         "7a74149a-06cb-4271-b2f6-53ec836876bc",
-        "ad8bcdb7-86c6-48db-814e-02077c3b9b8d",
-        "90c8dc3b-4762-4d61-8acd-79bfe10995bc"
+        "ad8bcdb7-86c6-48db-814e-02077c3b9b8d"
     ],
     "filterType": "GMScript",
     "folderName": "Saving_Functions",

@@ -1,8 +1,8 @@
 {
-    "id": "7469b42c-dff6-4c64-ad9d-732bb8286dc8",
+    "id": "04889958-7617-4d88-864a-7b0a1982eca9",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "hold",
+    "name": "delete_config",
     "IsCompatibility": false,
     "IsDnD": false
 }
