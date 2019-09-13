@@ -7,7 +7,7 @@
 #macro show_collision_boxes	false
 
 //Max Number of Players
-#macro max_players 8
+#macro max_players 4
 
 //Game Types
 #macro airdodge_type	AIRDODGE.melee
