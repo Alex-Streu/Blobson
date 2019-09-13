@@ -10,8 +10,8 @@
         "36c7c93e-37a9-422c-97d8-c76d084392f6",
         "3d33396f-6442-429c-a913-a1388caa589c",
         "083fdca3-5317-49e8-a3bb-db58087866fa",
-        "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
-        "a372454f-31fe-4c87-9fb7-e1293604d4df"
+        "a372454f-31fe-4c87-9fb7-e1293604d4df",
+        "90c8dc3b-4762-4d61-8acd-79bfe10995bc"
     ],
     "filterType": "GMScript",
     "folderName": "Profile_Scripts",

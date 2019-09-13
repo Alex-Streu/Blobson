@@ -1775,6 +1775,14 @@
             }
         },
         {
+            "Key": "2dcd5703-f508-46c2-a29c-16d18c405b9c",
+            "Value": {
+                "id": "96b62307-f220-4eb3-ad17-3f355ef888cd",
+                "resourcePath": "objects\\obj_slot_config_switch\\obj_slot_config_switch.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "2e2140a1-f902-42a8-b527-aaa09a6949cf",
             "Value": {
                 "id": "dd433727-a3b1-4efe-91ec-51b2643346ce",
@@ -6839,6 +6847,14 @@
             }
         },
         {
+            "Key": "b961c4f1-0464-48f8-b2bd-66e89d65d308",
+            "Value": {
+                "id": "6325b39e-6a16-42b8-9a59-f75f022f0459",
+                "resourcePath": "sprites\\spr_slot_config_switch\\spr_slot_config_switch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "b9736e3d-9590-47b9-8d5a-5203c8d26a78",
             "Value": {
                 "id": "36ed5f4c-4e0b-4391-b435-4becab6b7090",
@@ -9660,8 +9676,8 @@
         "36c7c93e-37a9-422c-97d8-c76d084392f6",
         "3d33396f-6442-429c-a913-a1388caa589c",
         "083fdca3-5317-49e8-a3bb-db58087866fa",
-        "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
         "a372454f-31fe-4c87-9fb7-e1293604d4df",
+        "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
         "906b17cf-8dca-49ad-b31e-adcae4b85d83",
         "c73c7849-c235-45d2-b5c8-2138e2a246ac",
         "d1147e75-cba6-48ec-911a-82d8dc1e937c",
