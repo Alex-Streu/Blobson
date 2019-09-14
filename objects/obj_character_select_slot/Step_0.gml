@@ -119,15 +119,7 @@ switch (state)
 				if (_obj != noone && _obj.owner == _id && _obj.hasXEvent)
 				{
 					with (_obj) { event_user(MENU_OBJECT_EVENT.X); }
-					_clicked = true;
 				}
-			}
-			
-			if (_clicked) 
-			{ 
-				state = SLOT_STATE.HOLDING;
-				holdingButton = buttons[? "X"];
-				holdingComplete = false;
 			}
 		}
 		

@@ -1,6 +1,7 @@
 /// @description Setup properties
 event_inherited();
 hasYEvent = true;
+hasXEvent = true;
 
 config = noone;
 deleteProgress = 0;

@@ -27,6 +27,7 @@ for (var i = 0; i < ds_list_size(_items); i++)
 			if (_item[? "Font"] == undefined) { _item[? "Font"] = global.base_font; }
 			if (_item[? "FontScale"] == undefined) { _item[? "FontScale"] = 1; }
 			if (_item[? "HAlign"] == undefined) { _item[? "HAlign"] = fa_left; }
+			if (_item[? "VAlign"] == undefined) { _item[? "VAlign"] = fa_middle; }
 			
 			var _p = _item[? "Position"];
 			
@@ -34,6 +35,7 @@ for (var i = 0; i < ds_list_size(_items); i++)
 			draw_set_color(c_white);
 			draw_set_font(_item[? "Font"]);
 			draw_set_halign(_item[? "HAlign"]);
+			draw_set_valign(_item[? "VAlign"]);
 			draw_text_transformed(_startX + _p[0], _startY + _p[1], _item[? "Text"], _item[? "FontScale"], _item[? "FontScale"], 0);
 			break;
 			

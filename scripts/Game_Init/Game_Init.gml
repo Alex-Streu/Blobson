@@ -60,17 +60,20 @@ view_hport[0] = camera_height;
 global.game_cam = camera_create_view(0, 0, camera_width, camera_height);
 view_camera[0] = global.game_cam;
 
-//Default profile
-#region Create default profile
+
+#region Create default profile and config
 
 var _config = ds_map_create();
 _config[? "ID"] = 0;
 _config[? "Name"] = "DEF";
 _config[? "IsDefault"] = true;
 _config[? "Index"] = 0;
+_config[? "TapJump"] = false;
+_config[? "Rumble"] = true;
+global.default_config = _config;
 	
 var _configs = ds_list_create();
-_configs[| 0] = _config;
+_configs[| 0] = global.default_config;
 global.default_config_list = _configs;
 ds_list_mark_as_map(global.default_config_list, 0);
 	

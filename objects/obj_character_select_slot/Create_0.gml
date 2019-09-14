@@ -22,7 +22,7 @@ state = SLOT_STATE.OFF;
 //Profile management
 profile = noone;
 config = noone;
-
+//editing = noone;
 
 //Draw properties
 drawSurface = noone;

@@ -12,7 +12,7 @@ draw_set_alpha(1);
 draw_set_font(global.base_font);
 
 //Draw text
-var _text = text[| setting];
+var _text = "RESET";
 draw_text_transformed(x + sprite_width/2, y + sprite_height/2, _text, font_size_small, font_size_small, 0);
 
 //Draw highlight

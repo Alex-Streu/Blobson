@@ -711,6 +711,14 @@
             }
         },
         {
+            "Key": "1081eb6c-1c05-45b4-b940-2cba1dd5c784",
+            "Value": {
+                "id": "97cab700-e7ee-43ab-9f0f-f554a6e8fd2e",
+                "resourcePath": "objects\\obj_menu_slot_config_settings\\obj_menu_slot_config_settings.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "10904d15-6b87-491e-99ed-4b745f3f0054",
             "Value": {
                 "id": "94b7eedd-8df5-4dda-a70d-35c95a0a1aa2",
@@ -1108,6 +1116,14 @@
                 "id": "6cf55418-2dc9-496e-be15-3b974ccb519b",
                 "resourcePath": "objects\\obj_slot_switch\\obj_slot_switch.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "1e21f4da-21fb-4ba3-8b0d-1370099d1565",
+            "Value": {
+                "id": "ff6e0a7a-1f35-4278-8787-c68cd6b1b1a5",
+                "resourcePath": "scripts\\load_config_settings\\load_config_settings.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -5511,6 +5527,14 @@
             }
         },
         {
+            "Key": "955d014c-e98b-44d5-a10f-54c3363505cb",
+            "Value": {
+                "id": "f658d20f-9dd4-4ff4-97db-c14cdd18d3a6",
+                "resourcePath": "objects\\obj_slot_config_setting\\obj_slot_config_setting.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "95ecd3a9-4356-4c75-98cd-29a2fbe4104d",
             "Value": {
                 "id": "7493ee79-cdcd-4b20-a928-169b14e5bcb8",
@@ -6156,6 +6180,14 @@
                 "id": "0f76da13-8a36-4270-95b5-041f5dd7d34f",
                 "resourcePath": "sprites\\spr_obj_game\\spr_obj_game.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a6b7ab03-8905-4a73-9b9f-0f9b294754a4",
+            "Value": {
+                "id": "65a392c5-6688-4059-8a69-c1cf37232a64",
+                "resourcePath": "objects\\obj_slot_config_reset\\obj_slot_config_reset.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -9678,6 +9710,7 @@
         "083fdca3-5317-49e8-a3bb-db58087866fa",
         "a372454f-31fe-4c87-9fb7-e1293604d4df",
         "90c8dc3b-4762-4d61-8acd-79bfe10995bc",
+        "1e21f4da-21fb-4ba3-8b0d-1370099d1565",
         "906b17cf-8dca-49ad-b31e-adcae4b85d83",
         "c73c7849-c235-45d2-b5c8-2138e2a246ac",
         "d1147e75-cba6-48ec-911a-82d8dc1e937c",
