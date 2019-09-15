@@ -60,7 +60,65 @@ switch (pageIndex)
 		
 		
 		#endregion
-	break;
+		break;
+	case 1:		
+		#region Moves Page (1/2)
+		
+		//Draw settings
+		var textColumn = owner.sprite_width / 3 - 10;
+		var btnColumn = owner.x + (owner.sprite_width / 3) * 2 - (sprite_get_width(object_get_sprite(obj_slot_config_controls)) / 2) + 10;
+
+		//Create rows
+		var baseY = 45;
+		for (var i = 0; i < array_length_1d(moves)/2; i += 2)
+		{		
+			var startY = baseY + 20*i;
+			
+			var item = ds_map_create();
+			item[? "Position"] = [ textColumn, startY ];
+			item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+			item[? "Text"] = moves[i];
+			item[? "Font"] = fnt_consolas;
+			item[? "HAlign"] = fa_center;
+			ds_list_add(page, item);
+		
+			item = instance_create_layer(btnColumn, owner.y + startY - 15, "MenuLayer", obj_slot_config_controls);
+			item.owner = owner;
+			item.name = moves[i+1];
+			ds_list_add(pageObjects, item);
+		}		
+		
+		#endregion
+		break;
+	case 2:		
+		#region Moves Page (2/2)
+		
+		//Draw settings
+		var textColumn = owner.sprite_width / 3 - 10;
+		var btnColumn = owner.x + (owner.sprite_width / 3) * 2 - (sprite_get_width(object_get_sprite(obj_slot_config_controls)) / 2) + 10;
+
+		//Create rows
+		var baseY = 45;
+		for (var i = array_length_1d(moves)/2; i < array_length_1d(moves); i += 2)
+		{		
+			var startY = baseY + 20*(i - array_length_1d(moves)/2);
+			
+			var item = ds_map_create();
+			item[? "Position"] = [ textColumn, startY ];
+			item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+			item[? "Text"] = moves[i];
+			item[? "Font"] = fnt_consolas;
+			item[? "HAlign"] = fa_center;
+			ds_list_add(page, item);
+		
+			item = instance_create_layer(btnColumn, owner.y + startY - 15, "MenuLayer", obj_slot_config_controls);
+			item.owner = owner;
+			item.name = moves[i+1];
+			ds_list_add(pageObjects, item);
+		}		
+		
+		#endregion
+		break;
 }
 
 //Create back button

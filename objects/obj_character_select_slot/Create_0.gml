@@ -34,5 +34,6 @@ update_slot_menu(obj_menu_slot_off);
 
 //Button management
 buttons = noone;
+buttonNames = ds_map_create();
 holdingButton = noone;
 holdingComplete = true;

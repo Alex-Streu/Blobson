@@ -18,8 +18,11 @@ switch (state)
 			
 			if (abs(xx) > 0 || abs(yy) > 0) 
 			{ 
+				buttonNames = get_button_names(controller);
+				
 				if (profile == noone) { load_default_profile();	}		
-				update_slot_menu(obj_menu_slot_base);				
+				update_slot_menu(obj_menu_slot_base);	
+				
 				state = SLOT_STATE.PLAYER; 
 			}
 		}

@@ -37,5 +37,5 @@ if (global.replay_record)
 	draw_set_color(c_black);
 	draw_set_halign(fa_right);
 	draw_set_valign(fa_top);
-	draw_text(room_width - 8, 8, stringify("Press {0} to save a replay", btn_names[2]));
+	draw_text(room_width - 8, 8, stringify("Press {0} to save a replay", btn_names[| 2]));
 }

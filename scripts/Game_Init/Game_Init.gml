@@ -60,6 +60,29 @@ view_hport[0] = camera_height;
 global.game_cam = camera_create_view(0, 0, camera_width, camera_height);
 view_camera[0] = global.game_cam;
 
+#region Create button map
+
+var key = [];
+key[0]=gp_face1;
+key[1]=gp_face2;
+key[2]=gp_face3;
+key[3]=gp_face4;
+key[4]=gp_shoulderl;
+key[5]=gp_shoulderr;
+key[6]=gp_shoulderlb;
+key[7]=gp_shoulderrb;
+key[8]=gp_start;
+key[9]=gp_select;
+key[10]=gp_padu;
+key[11]=gp_padd;
+key[12]=gp_padl;
+key[13]=gp_padr;
+key[14]=gp_stickl;
+key[15]=gp_stickr;
+global.button_map = key;
+
+#endregion
+
 
 #region Create default profile and config
 
@@ -70,6 +93,12 @@ _config[? "IsDefault"] = true;
 _config[? "Index"] = 0;
 _config[? "TapJump"] = false;
 _config[? "Rumble"] = true;
+_config[? "Attack"] = [ gp_face1 ];
+_config[? "Special"] = [ gp_face2 ];
+_config[? "Jump"] = [ gp_face3, gp_face4 ];
+_config[? "Grab"] = [ gp_shoulderr, gp_shoulderl ];
+_config[? "Parry"] = [ gp_shoulderrb, gp_shoulderlb ];
+_config[? "Taunt"] = [ gp_padu ];
 global.default_config = _config;
 	
 var _configs = ds_list_create();

@@ -26,7 +26,7 @@ for(var i = 0; i < max_players; i++)
 		//Draw the button
 		var button_name = get_button_names(_controller);
 		col = make_color_hsv((m / array_height_2d(button_array)) * 255, 255, 255);
-		draw_text_color(x + 8 + (i * 200), y + m * 16, string(button_name[m]), col, col, col, col, 1);
+		draw_text_color(x + 8 + (i * 200), y + m * 16, string(button_name[? global.button_map[m]]), col, col, col, col, 1);
 		col = make_color_hsv((button_array[m, i + 1] / 8) * 255, 230, 255);
 		//Draw what it is assigned to
 		switch(button_array[@ m, i + 1])
