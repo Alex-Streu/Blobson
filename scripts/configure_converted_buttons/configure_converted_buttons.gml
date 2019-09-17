@@ -18,7 +18,10 @@ if (string_count("nintendo", desc) > 0) //Nintendo
 	buttons[? "RT"] = gp_shoulderrb;
 	buttons[? "Start"] = gp_start;
 	buttons[? "Back"] = gp_select;
-	buttons[? "DPad"] = gp_padu;
+	buttons[? "DPadUp"] = gp_padu;
+	buttons[? "DPadDown"] = gp_padd;
+	buttons[? "DPadLeft"] = gp_padl;
+	buttons[? "DPadRight"] = gp_padr;
 	buttons[? "RStick"] = gp_stickr;
 }
 else //Xbox by default
@@ -33,6 +36,9 @@ else //Xbox by default
 	buttons[? "RT"] = gp_shoulderrb;
 	buttons[? "Start"] = gp_start;
 	buttons[? "Back"] = gp_select;
-	buttons[? "DPad"] = gp_padu;
+	buttons[? "DPadUp"] = gp_padu;
+	buttons[? "DPadDown"] = gp_padd;
+	buttons[? "DPadLeft"] = gp_padl;
+	buttons[? "DPadRight"] = gp_padr;
 	buttons[? "RStick"] = gp_stickr;
 }

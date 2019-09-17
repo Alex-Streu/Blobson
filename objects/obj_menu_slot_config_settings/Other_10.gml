@@ -119,6 +119,35 @@ switch (pageIndex)
 		
 		#endregion
 		break;
+	case 3:		
+		#region Team Page
+		
+		//Draw settings
+		var textColumn = owner.sprite_width / 3 - 10;
+		var btnColumn = owner.x + (owner.sprite_width / 3) * 2 - (sprite_get_width(object_get_sprite(obj_slot_config_controls)) / 2) + 10;
+
+		//Create rows
+		var baseY = 40;
+		for (var i = 0; i < array_length_1d(teamMoves); i += 2)
+		{		
+			var startY = baseY + 15*i;
+			
+			var item = ds_map_create();
+			item[? "Position"] = [ textColumn, startY ];
+			item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+			item[? "Text"] = teamMoves[i];
+			item[? "Font"] = fnt_consolas;
+			item[? "HAlign"] = fa_center;
+			ds_list_add(page, item);
+		
+			item = instance_create_layer(btnColumn, owner.y + startY - 15, "MenuLayer", obj_slot_config_controls);
+			item.owner = owner;
+			item.name = teamMoves[i+1];
+			ds_list_add(pageObjects, item);
+		}		
+		
+		#endregion
+		break;
 }
 
 //Create back button

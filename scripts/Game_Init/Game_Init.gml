@@ -98,7 +98,15 @@ _config[? "Special"] = [ gp_face2 ];
 _config[? "Jump"] = [ gp_face3, gp_face4 ];
 _config[? "Grab"] = [ gp_shoulderr, gp_shoulderl ];
 _config[? "Parry"] = [ gp_shoulderrb, gp_shoulderlb ];
-_config[? "Taunt"] = [ gp_padu ];
+_config[? "Taunt"] = [ gp_padd ];
+_config[? "TeamLeft"] = [ gp_padl ];
+_config[? "TeamRight"] = [ gp_padr ];
+_config[? "TeamJump"] = [ gp_padu ];
+_config[? "TagIn"] = [ gp_select ];
+_config[? "HSensitivity"] = 0.7;
+_config[? "VSensitivity"] = 0.55;
+_config[? "RunSensitivity"] = 0.15;
+_config[? "RStickSensitivity"] = 0.25;
 global.default_config = _config;
 	
 var _configs = ds_list_create();

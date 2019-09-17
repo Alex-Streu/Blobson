@@ -27,3 +27,14 @@ moves = [
 	"TAUNT",
 	"Taunt"
 ];
+
+teamMoves = [
+	"LEFT",
+	"TeamLeft",
+	"RIGHT",
+	"TeamRight",
+	"JUMP",
+	"TeamJump",
+	"TAG IN",
+	"TagIn"
+];

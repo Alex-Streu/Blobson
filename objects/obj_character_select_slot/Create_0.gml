@@ -22,7 +22,6 @@ state = SLOT_STATE.OFF;
 //Profile management
 profile = noone;
 config = noone;
-//editing = noone;
 
 //Draw properties
 drawSurface = noone;
@@ -37,3 +36,6 @@ buttons = noone;
 buttonNames = ds_map_create();
 holdingButton = noone;
 holdingComplete = true;
+
+//Manager properties
+manageData = noone;
