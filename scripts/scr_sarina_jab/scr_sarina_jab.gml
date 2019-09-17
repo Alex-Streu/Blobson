@@ -174,7 +174,7 @@ if (run)
 			break;
 			}
 			#endregion
-			#region Frame 3 - jab 2 + magnetbox
+			#region Frame 3 - jab 2 + hitbox2
 		case 8:
 			{
 			if (attack_frame==0) 
@@ -183,10 +183,15 @@ if (run)
 				anim_frame= 2;
 				attack_phase++;
 				attack_frame=4;				
-				var _magnetbox = create_magnetbox(52,-60,1.1,0.45,3,8,90,5,20,4,HITBOX_SHAPE.rectangle,1);	
-				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
-				//set_hitbox_property(_magnetbox,HITBOX.base_hitlag,5);
-				set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
+				//var _magnetbox = create_magnetbox(52,-60,1.1,0.45,3,8,90,5,20,4,HITBOX_SHAPE.rectangle,1);	
+				//set_hitbox_property(_magnetbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
+				//set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
+				
+				//var _hitbox2 = create_melee(52,-60,1.1,.5,4,8,0.0,8,70,4,HITBOX_SHAPE.rectangle,2);		
+				var _hitbox2 = create_melee(52,-60,1.1,.5,4,3,0,8,50,4,HITBOX_SHAPE.rectangle,2);	
+				
+				//set_hitbox_property(_hitbox2,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
+				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
 				}
 			break;
 			}
@@ -317,10 +322,11 @@ if (run)
 				anim_frame= 2;
 				attack_phase++;
 				attack_frame=3;											
-				var _hitbox = create_melee(0,0,1,1,5,8,0.9,8,45,3,HITBOX_SHAPE.rectangle,2);
-				_hitbox.sprite_index = spr_sarina_jab3_hb;
-				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
+				var _hitbox3 = create_melee(0,0,1,1,5,8,0.9,8,45,3,HITBOX_SHAPE.rectangle,2);
+				_hitbox3.sprite_index = spr_sarina_jab3_hb;
+				if (facing == -1) {_hitbox3.image_xscale *= -1;}		
+				set_hitbox_property(_hitbox3,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
 				}
 			break;
 			}

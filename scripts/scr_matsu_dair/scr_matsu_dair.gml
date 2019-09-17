@@ -111,7 +111,7 @@ if (run)
 				 set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dair_hit);
 				 set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.explosion);
 				//Sweet spot heavy
-				 var _hitbox_sweet = create_melee(43,-12,0.6,0.5,10,7,1,15,-80,2,HITBOX_SHAPE.rectangle,0);
+				 var _hitbox_sweet = create_melee(43,-12,0.6,0.5,10,4,1,15,-80,2,HITBOX_SHAPE.rectangle,0);
 				 set_hitbox_property(_hitbox_sweet,HITBOX_PROPERTY.hit_sfx,snd_dair_sweetspot_hit);		
 				 set_hitbox_property(_hitbox, HITBOX_PROPERTY.hit_fx_style, HIT_FX.explosion);
 				}

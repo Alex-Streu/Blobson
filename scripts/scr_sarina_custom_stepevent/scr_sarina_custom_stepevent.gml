@@ -116,6 +116,19 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region down tilt hurtbox
+			if anim_sprite = spr_sarina_dtilt
+			{
+            hurtbox.sprite_index = spr_sarina_dtillt_hurt;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			
 			
 #endregion
 //if (state != PLAYER_STATE.in_hitstun)

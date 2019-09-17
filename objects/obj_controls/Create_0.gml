@@ -13,6 +13,7 @@ for(var i = 0; i < max_players; i++)
 	xPress[i] = false;
 	yPress[i] = false;
 	//Set up custom buttons array
+	
 	Custom_Controls_Reset(button_array, i);
 	}
 	
