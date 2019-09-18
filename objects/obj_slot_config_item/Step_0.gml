@@ -2,7 +2,7 @@
 event_inherited();
 
 //Turn off Y event if default
-if (config != noone && config[? "IsDefault"]) { hasYEvent = false; }
+if (config != noone && config[? "IsDefault"]) { hasYEvent = false; hasXEvent = false; }
 
 if (isDeleting) 
 { 
@@ -14,7 +14,7 @@ if (isDeleting)
 		var _config = config;
 		with (owner)
 		{
-			delete_profile(_config);
+			delete_config(_config);
 			with (menu)
 			{
 				event_user(MENU_EVENT.CLEANUP);

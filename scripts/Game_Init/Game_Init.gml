@@ -110,7 +110,8 @@ _config[? "RStickSensitivity"] = 0.25;
 global.default_config = _config;
 	
 var _configs = ds_list_create();
-_configs[| 0] = global.default_config;
+_configs[| 0] = ds_map_create();
+ds_map_copy(_configs[| 0], global.default_config);
 global.default_config_list = _configs;
 ds_list_mark_as_map(global.default_config_list, 0);
 	

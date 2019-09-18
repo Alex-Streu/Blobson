@@ -3,10 +3,9 @@
 // Inherit the parent event
 event_inherited();
 
-owner.config = global.default_config;
+ds_map_copy(owner.config, global.default_config);
 
-var _config = owner.config;
 with (obj_slot_config_setting)
 {
-	setting = _config[? name];
+	setting = owner.config[? name];
 }

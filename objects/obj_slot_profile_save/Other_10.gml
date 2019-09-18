@@ -28,7 +28,8 @@ _profile[? "ID"] = _max[? "ID"] + 1;
 _profile[? "Name"] = _text;
 _profile[? "IsDefault"] = false;
 _profile[? "Index"] = ds_list_size(global.profiles);
-ds_map_add_list(_profile, "Configs", global.default_config_list);
+ds_map_add_list(_profile, "Configs", ds_list_create());
+ds_list_copy(_profile[? "Configs"], global.default_config_list);
 
 ds_list_add(global.profiles, _profile);
 ds_list_mark_as_map(global.profiles, _size);

@@ -26,6 +26,7 @@ if (_found)
 
 var _max =  _configs[| _size-1];
 var _config = ds_map_create();
+ds_map_copy(_config, global.default_config);
 _config[? "ID"] = _max[? "ID"] + 1;
 _config[? "Name"] = _text;
 _config[? "IsDefault"] = false;

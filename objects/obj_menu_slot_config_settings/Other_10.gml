@@ -50,6 +50,7 @@ switch (pageIndex)
 		item = instance_create_layer(btnColumn, owner.y + startY - 15, "MenuLayer", obj_slot_config_switch);
 		item.owner = owner;
 		item.name = "Rumble";
+		item.setting = owner.config[? "Rumble"];
 		ds_list_add(pageObjects, item);
 		
 		

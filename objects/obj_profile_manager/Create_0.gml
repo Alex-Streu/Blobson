@@ -7,7 +7,6 @@ var _file = file_exists(profiles_save) ? profiles_save : "default_profile.sav";
 var _profile_map = json_decode(load_string_file(_file));
 
 //Extract profiles from the map
-show_debug_message(ds_map_size(_profile_map));
 var _key = ds_map_find_first(_profile_map);
 do
 	{
