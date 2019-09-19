@@ -58,12 +58,12 @@ hitstun_grav=0.6;
 max_fall_speed=11;
 fast_fall_speed=14;
 //Jumping
-jumpsquat_time=3;
+jumpsquat_time=5;
 jump_speed=18;
 shorthop_speed= 9;
 double_jump_speed=16;
 max_double_jumps=1;
-land_time=3;
+land_time=5;
 
 #endregion
 #region Wall Jump
