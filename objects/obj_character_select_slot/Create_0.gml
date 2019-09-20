@@ -28,6 +28,7 @@ drawSurface = noone;
 
 //Create menu
 menuStack = ds_stack_create();
+pageIndexStack = ds_stack_create();
 menu = noone;
 update_slot_menu(obj_menu_slot_off);
 
