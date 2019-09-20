@@ -24,6 +24,7 @@ if (run)
 			//Animation
 			anim_sprite=my_sprites[?"Jab1"];								
 			attack_frame=0;
+			anim_frame = 0;
 			return;
 			}
 			#endregion

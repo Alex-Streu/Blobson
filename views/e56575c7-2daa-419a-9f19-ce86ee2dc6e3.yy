@@ -9,7 +9,9 @@
         "2c62d0f5-fa31-4118-a8ae-9dbcd2715cb2",
         "6216dd3d-f2cd-41cc-a9ef-b55926482fc6",
         "31f5cca1-2a38-4994-ad66-65024a975c03",
-        "177984a7-46ee-4889-beb4-158359f09087"
+        "177984a7-46ee-4889-beb4-158359f09087",
+        "86affd76-a957-4089-9f11-3e630a872e53",
+        "136a358d-5deb-4073-b5fe-5632ceb0ecd9"
     ],
     "filterType": "GMScript",
     "folderName": "Character_Scripts",

@@ -62,16 +62,16 @@ sarina[? "Icon"] = spr_sarina_cs_icon;
 sarina[? "Portrait"] = spr_sarina_cs_portrait;
 sarina[? "Script"] = scr_sarina;
 
-//REWIND
-rewind = ds_map_create();
-rewind[? "Name"] = "Rewind";
-rewind[? "IsUnlocked"] = true;
-rewind[? "Icon"] = spr_otus_icon;
-rewind[? "Portrait"] = spr_otus_portrait;
-rewind[? "Script"] = scr_rewind;
+//takia
+takia = ds_map_create();
+takia[? "Name"] = "Takia";
+takia[? "IsUnlocked"] = true;
+takia[? "Icon"] = spr_sarina_cs_icon;
+takia[? "Portrait"] = spr_sarina_cs_portrait;
+takia[? "Script"] = scr_takia;
 
 characters = [
 	matsu,
 	sarina,
-	rewind
+	takia
 ];
