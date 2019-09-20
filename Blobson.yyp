@@ -1359,6 +1359,14 @@
             }
         },
         {
+            "Key": "220df4fd-fd93-4fd1-858a-17fcdf4a64af",
+            "Value": {
+                "id": "2f03a2a4-2c36-4779-b176-ef7747d42777",
+                "resourcePath": "objects\\obj_slot_config_sensitivity_controller\\obj_slot_config_sensitivity_controller.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "221c9e62-10f9-439f-a609-f527d14d023c",
             "Value": {
                 "id": "e8d04674-3042-44fa-b515-6429cd2d0c70",
@@ -2431,6 +2439,14 @@
             }
         },
         {
+            "Key": "3daf89bb-a63c-4f34-b7cf-c03359cd9bd6",
+            "Value": {
+                "id": "1b8f530e-2b8d-4809-a583-0c802184b4ce",
+                "resourcePath": "sprites\\spr_slot_sensitivity_control_left\\spr_slot_sensitivity_control_left.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3dcc66c7-72ac-43e0-9209-8ecc1518efd0",
             "Value": {
                 "id": "d403ad1a-a76f-457c-9df5-2faa9107a32e",
@@ -2644,6 +2660,14 @@
                 "id": "058b6856-132e-43aa-b0f1-d5b887d29e48",
                 "resourcePath": "sprites\\spr_matsu_dtilt\\spr_matsu_dtilt.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "452220b0-19fe-4023-a78b-6b94892164ca",
+            "Value": {
+                "id": "660635a0-454a-4ab4-a75b-b980efa7134e",
+                "resourcePath": "objects\\obj_slot_config_sensitivity_control_r\\obj_slot_config_sensitivity_control_r.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -3044,6 +3068,14 @@
                 "id": "5e46bd31-befa-41d3-8d7f-e398ed876f82",
                 "resourcePath": "views\\527fea6e-49cc-4d11-a5fe-0f9b667a771b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5281c22d-9fb8-40b7-9cbf-46439031c0e5",
+            "Value": {
+                "id": "dbd0d7f0-2709-4fb6-a07d-1f9be56bbc62",
+                "resourcePath": "objects\\obj_slot_config_sensitivity_control_l\\obj_slot_config_sensitivity_control_l.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -4287,6 +4319,14 @@
             }
         },
         {
+            "Key": "70da3ecf-cf79-479a-a117-28516b881109",
+            "Value": {
+                "id": "5affab06-709e-408a-9fd6-1a3564da9156",
+                "resourcePath": "sprites\\spr_slot_sensitivity_control_right\\spr_slot_sensitivity_control_right.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "70e9ed29-0a61-43ef-815d-3e39a2a39c72",
             "Value": {
                 "id": "942f00ac-cfe8-4ee5-9580-86e94e3479a7",
@@ -4700,6 +4740,14 @@
                 "id": "ecae80f3-d35d-43e3-b5b9-72e742f4d51f",
                 "resourcePath": "sounds\\sfx_step7\\sfx_step7.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "7ce459e2-6099-487a-9c66-1a35d37230da",
+            "Value": {
+                "id": "dc9caf38-2efc-4a4a-90f1-bac892c60a3b",
+                "resourcePath": "objects\\obj_slot_config_sensitivity\\obj_slot_config_sensitivity.yy",
+                "resourceType": "GMObject"
             }
         },
         {

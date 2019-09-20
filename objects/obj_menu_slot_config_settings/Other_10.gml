@@ -149,6 +149,49 @@ switch (pageIndex)
 		
 		#endregion
 		break;
+	case 4:		
+		#region Sensitivity Page
+		
+		//Draw settings
+		var _controlWidth = sprite_get_width(object_get_sprite(obj_slot_config_sensitivity)) 
+						+ sprite_get_width(object_get_sprite(obj_slot_config_sensitivity_control_l))
+						+ sprite_get_width(object_get_sprite(obj_slot_config_sensitivity_control_r));
+		var textColumn = owner.sprite_width / 4 - 10;
+		var btnColumn = owner.x + (owner.sprite_width / 3) * 2 - (_controlWidth / 2) + 10;
+
+		//Create rows
+		var baseY = 40;
+		for (var i = 0; i < array_length_1d(sensitivities); i += 2)
+		{		
+			var startY = baseY + 15*i;
+			
+			var item = ds_map_create();
+			item[? "Position"] = [ textColumn, startY ];
+			item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+			item[? "Text"] = sensitivities[i];
+			item[? "Font"] = fnt_consolas;
+			item[? "HAlign"] = fa_center;
+			ds_list_add(page, item);
+		
+			var left = instance_create_layer(btnColumn, owner.y + startY - 15, "MenuLayer", obj_slot_config_sensitivity_control_l);
+			left.owner = owner;
+			
+			var ctrl = instance_create_layer(left.x + left.sprite_width, owner.y + startY - 15, "MenuLayer", obj_slot_config_sensitivity);
+			ctrl.owner = owner;
+			ctrl.name = sensitivities[i+1];
+			ds_list_add(pageObjects, ctrl);
+			
+			var right = instance_create_layer(ctrl.x + ctrl.sprite_width, owner.y + startY - 15, "MenuLayer", obj_slot_config_sensitivity_control_r);
+			right.owner = owner;
+			
+			left.field = ctrl;
+			right.field = ctrl;
+			ds_list_add(pageObjects, left);
+			ds_list_add(pageObjects, right);
+		}		
+		
+		#endregion
+		break;
 }
 
 //Create back button

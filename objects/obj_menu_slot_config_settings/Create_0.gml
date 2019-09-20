@@ -38,3 +38,14 @@ teamMoves = [
 	"TAG IN",
 	"TagIn"
 ];
+
+sensitivities = [
+	"HOR",
+	"HSensitivity",
+	"VER",
+	"VSensitivity",
+	"RUN",
+	"RunSensitivity",
+	"R STICK",
+	"RStickSensitivity"
+];
