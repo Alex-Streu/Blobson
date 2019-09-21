@@ -11,20 +11,48 @@ if (run)
 	{
 	switch(_phase)
 		{
-		#region   Frame 1   
+		    #region   Frame 1   
 		case PHASE.start:
 			{
 			//Animation
 			anim_sprite= my_sprites[?"Fheavy"];
 			anim_speed=0;
 			anim_frame=0;
-		
-			attack_frame= 3;
+			
+			smash_charge=0;
+			attack_frame=smash_attack_max_charge;
 			return;
-			}
+			}						
 			#endregion
-			#region   Frame 2
+			
+		#region charge heavy attack - frame 1
 		case 0:
+			{
+			//Animation (every 8 frames switch the sprite)
+			if (smash_charge % 8 == 0)
+				{
+				if (anim_frame==0)
+					{
+					anim_frame=0;
+					}
+				else
+					{
+					anim_frame=0;
+					}
+				}
+			
+			smash_charge++;
+			if (smash_charge>=smash_attack_max_charge || attack_frame==0 || !button_hold(INPUT.smash,1))
+				{
+				attack_phase++;
+				attack_frame=8;
+				}
+			break;
+			}
+			#endregion		
+		
+			#region   Frame 2
+		case 1:
 			{
 			if (attack_frame==0)
 				{
@@ -37,8 +65,8 @@ if (run)
 			break;
 			}
 			#endregion
-			#region   Frame 3 - hitbox
-		case 1:
+			#region   Frame 3
+		case 2:
 			{
 			if (attack_frame==0)
 				{
@@ -46,21 +74,13 @@ if (run)
 				anim_frame=2;
 			
 				attack_phase++;
-				attack_frame=3;
-				#region tipper
-				var _tipper = create_melee(106,-60,0.1,0.2,6,10,.2,15,75,3,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_tipper,HITBOX_PROPERTY.hit_sfx,snd_tipper2);
-				#endregion
-				#region hitbox
-				var _hitbox = create_melee(70,-50,1,0.5,6,5,0.7,10,30,3,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
-				#endregion
+				attack_frame=2;
 				}
 			break;
 			}
 			#endregion
-		    #region   Frame 4 - hitbox + ex meter
-		case 2:
+			#region   Frame 4
+		case 3:
 			{
 			if (attack_frame==0)
 				{
@@ -68,32 +88,13 @@ if (run)
 				anim_frame=3;
 			
 				attack_phase++;
-				attack_frame=4;
-				#region tipper
-				var _tipper = create_melee(120,-60,0.1,0.2,6,5,0.7,10,75,4,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_tipper,HITBOX_PROPERTY.hit_sfx,snd_tipper2);
-				#endregion
-				#region hitbox
-				var _hitbox = create_melee(64,-50,1.65,0.5,6,5,0.7,10,30,4,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
-				#endregion
-							
-                #region ADD EX meter                               (add me in the (attack_frame==0) section
-				if (attack_has_hit())   
-				{
-					EX_meter += 1;
-					}
-				else
-					{					
-					EX_meter += 0;
-					}
-				#endregion				
+				attack_frame=1;
 				}
 			break;
 			}
 			#endregion
 			#region   Frame 5
-		case 3:
+		case 4:
 			{
 			if (attack_frame==0)
 				{
@@ -101,65 +102,269 @@ if (run)
 				anim_frame=4;
 			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=1;
 				}
 			break;
 			}
 			#endregion
-			#region	 Frame 6
-		case 4:
-			{
-			if (attack_frame==0)
-				{
-				//Animation
-				anim_frame=5;			
-				attack_phase++;
-				attack_frame=3;
-				}
-			break;
-			}
-			#endregion
-			#region   Frame 7
+			#region   Frame 6
 		case 5:
 			{
 			if (attack_frame==0)
 				{
 				//Animation
-				anim_frame=6;			
+				anim_frame=5;
+			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=1;
 				}
 			break;
 			}
-		#endregion				
-			#region   Frame 8
+			#endregion
+			#region   Frame 7
 		case 6:
 			{
 			if (attack_frame==0)
 				{
 				//Animation
-				anim_frame=7;			
-				attack_phase++;				
-				#region whiff lag
-				if (attack_has_hit())   
+				anim_frame=6;
+			
+				attack_phase++;
+				attack_frame=1;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 8 - hitbox
+		case 7:
+			{
+			if (attack_frame==0)
 				{
-					attack_frame=3;
-					}
-				else
-					{					
-					attack_frame=6;
-					}
+				//Animation
+				anim_frame=7;
+				attack_phase++;
+				attack_frame=2;
+				
+				#region normal hitbox
+				var _damage = calculate_smash_damage(9,smash_charge / 2,8,0.3);		
+				var _hitbox = create_melee(0,0,1,1,_damage,5,1.3,10,45,2,HITBOX_SHAPE.circle,0);
+				_hitbox.sprite_index = spr_takia_fheavy_hitbox;
+				_hitbox.image_speed = 0;
+				_hitbox.image_index = anim_frame;
+				if (facing == -1) {_hitbox.image_xscale *= -1;}
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fheavy_hit);
+				#endregion
+				
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 9 - hitbox + ex meter
+		case 8:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=8;
+				attack_phase++;
+				attack_frame=2;
+				
+				#region normal hitbox
+				var _damage = calculate_smash_damage(6,smash_charge / 2,10,0.6);	
+				var _hitbox = create_melee(0,0,1,1,_damage,5,1,10,45,2,HITBOX_SHAPE.circle,0);
+				_hitbox.sprite_index = spr_takia_fheavy_hitbox;
+				_hitbox.image_speed = 0;
+				_hitbox.image_index = anim_frame;
+				if (facing == -1) {_hitbox.image_xscale *= -1;}
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fheavy_hit);
 				#endregion
 				}
 			break;
 			}
-		#endregion				
-		    #region Finish
-		case 7:
+			#endregion
+			#region   Frame 10 - hitbox + ex meter
+		case 9:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=9;
+			
+				attack_phase++;
+				attack_frame=2;
+				
+				#region normal hitbox
+				var _damage = calculate_smash_damage(6,smash_charge / 2,10,0.6);	
+				var _hitbox = create_melee(0,0,1,1,_damage,12,1,10,45,2,HITBOX_SHAPE.circle,0);
+				_hitbox.sprite_index = spr_takia_fheavy_hitbox;
+				_hitbox.image_speed = 0;
+				_hitbox.image_index = anim_frame;
+				if (facing == -1) {_hitbox.image_xscale *= -1;}
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fheavy_hit);
+				#endregion
+				
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 11 - hitbox + ex meter
+		case 10:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=10;
+			
+				attack_phase++;
+				attack_frame=2;
+				
+				#region normal hitbox
+				var _damage = calculate_smash_damage(6,smash_charge / 2,10,0.6);		
+				var _hitbox = create_melee(0,0,1,1,_damage,12,1,10,45,2,HITBOX_SHAPE.circle,0);
+				_hitbox.sprite_index = spr_takia_fheavy_hitbox;
+				_hitbox.image_speed = 0;
+				_hitbox.image_index = anim_frame;
+				if (facing == -1) {_hitbox.image_xscale *= -1;}
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fheavy_hit);
+				#endregion
+				
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 12 - ex meter
+		case 11:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=11;
+			
+				attack_phase++;
+				attack_frame=2;
+				
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 13
+		case 12:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=12;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 14
+		case 13:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=13;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 15
+		case 14:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=14;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 16
+		case 15:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=15;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 17
+		case 16:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=16;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 18
+		case 17:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=17;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 19
+		case 18:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=18;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region   Frame 20
+		case 19:
+			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=19;
+			
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+		    #region   Finish
+		case 20:
 			{
 			//Animation
 			if (attack_frame==1)
-				anim_frame=7;
+				anim_frame=19;
 			if (attack_frame==0)
 				{
 				attack_stop(PLAYER_STATE.idle);

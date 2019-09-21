@@ -242,13 +242,13 @@ switch(walljump_type)
 //Character scripts________________________________________________________________________________
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_takia_jab;
-my_attacks[?"DashA" ]= scr_matsu_dashattack;
+my_attacks[?"DashA" ]= scr_takia_dashattack;
 my_attacks[?"Ftilt" ]= scr_takia_ftilt;
 my_attacks[?"Utilt" ]= scr_takia_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
-my_attacks[?"Fheavy"]= scr_matsu_fheavy;
-my_attacks[?"Uheavy"]= scr_matsu_uheavy;
-my_attacks[?"Dheavy"]= scr_matsu_dheavy;
+my_attacks[?"Fsmash"]= scr_takia_fheavy;
+my_attacks[?"Usmash"]= scr_takia_uheavy;
+my_attacks[?"Dsmash"]= scr_matsu_dheavy;
 my_attacks[?"Nair"  ]= scr_takia_nair;
 my_attacks[?"Fair"  ]= scr_takia_fair;
 my_attacks[?"Bair"  ]= scr_takia_bair;
@@ -335,7 +335,7 @@ my_sprites[?"Entrance"]=spr_sarina_entrance;
 my_sprites[?"Taunt"]=spr_sarina_taunt;
 #endregion
 #region Animations - Attacks
-my_sprites[?"Dashattack" ]=spr_matsu_dashattack
+my_sprites[?"Dashattack" ]=spr_takia_dashattack
 my_sprites[?"Grab" ]=spr_matsu_grab;
 my_sprites[?"Grabbing" ]=spr_matsu_grabbing;
 my_sprites[?"Bthrow" ]=spr_matsu_bthrow;
@@ -430,10 +430,8 @@ snd_uair_hit = sfx_hit_med4; // light5
 snd_ftilt_hit = sfx_stab2; // light5 
 snd_dtilt_hit = sfx_hit_light4; // light5 
 snd_utilt_hit = sfx_hit_light5; // light5 
-snd_fheavy1_hit = sfx_hit_light1; // light5 
-snd_fheavy2_hit = sfx_hit_light2; // light5 
-snd_fheavy3_hit = sfx_hit_heavy4; // light5 
-snd_uheavy_hit = sfx_hit_heavy3; // light5 
+snd_fheavy_hit = sfx_stab4; // light5 
+snd_uheavy_hit = sfx_stab3;; // light5 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
 
 snd_hitmulti1 = sfx_hit_light1;

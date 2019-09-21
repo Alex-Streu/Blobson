@@ -431,6 +431,14 @@
             }
         },
         {
+            "Key": "091ee06c-a84f-4adb-b67e-15f5c053b982",
+            "Value": {
+                "id": "860e0bfd-e6f1-450a-9256-0ed58090ecc8",
+                "resourcePath": "sprites\\spr_sarina_fair_hitbox\\spr_sarina_fair_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "09cd5557-17ef-4091-8717-979d8e83075e",
             "Value": {
                 "id": "a8cde95d-3501-4b50-8965-13fad8509b08",
@@ -524,6 +532,14 @@
                 "id": "b19307e5-b859-4db2-ae18-439e5aa4764a",
                 "resourcePath": "sprites\\spr_matsu_doublejump_airborne\\spr_matsu_doublejump_airborne.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "0ce628d4-9f14-47ba-b994-a4aa501538e2",
+            "Value": {
+                "id": "8f85269f-a958-4a02-904d-cde5734cece7",
+                "resourcePath": "scripts\\scr_takia_utilt1\\scr_takia_utilt1.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -2071,6 +2087,14 @@
             }
         },
         {
+            "Key": "34478f82-4062-404a-8a54-63441b93dbac",
+            "Value": {
+                "id": "2763a8aa-b64e-4fdb-aec6-3af6f5a3a512",
+                "resourcePath": "sprites\\spr_takia_fheavy_hurtbox\\spr_takia_fheavy_hurtbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3461becb-0cb9-4870-8b2b-657e3006364d",
             "Value": {
                 "id": "70b1df61-07c8-4409-8d77-9e3f69e39e46",
@@ -2415,6 +2439,14 @@
             }
         },
         {
+            "Key": "3e63ec63-2c82-4319-a169-52a655b6c86f",
+            "Value": {
+                "id": "5e8269b1-b8c6-4411-9a68-79edaa292c0a",
+                "resourcePath": "sprites\\spr_takia_fheavy_hitbox\\spr_takia_fheavy_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3e90be6b-d64c-4716-a3bd-234fd372ea20",
             "Value": {
                 "id": "091ff725-661b-4913-bde7-d934e95a5d30",
@@ -2627,6 +2659,14 @@
             "Value": {
                 "id": "aab5805c-0a8a-4c91-b299-5688394da96a",
                 "resourcePath": "sprites\\spr_dust_air_jump\\spr_dust_air_jump.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "44a5ce53-02b0-428b-853e-b330f181ddb7",
+            "Value": {
+                "id": "f8e61e4e-0fa7-4fee-a532-a6006587fbd6",
+                "resourcePath": "sprites\\spr_takia_dashattack_hurtbox\\spr_takia_dashattack_hurtbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -2967,6 +3007,14 @@
             }
         },
         {
+            "Key": "4efa57d9-8f40-4ac1-affa-e0cc9e130997",
+            "Value": {
+                "id": "6182778d-3d1e-4863-b58f-3a08c0619da4",
+                "resourcePath": "sprites\\spr_takia_dair_sweetbox\\spr_takia_dair_sweetbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "4f1bdd9d-be81-46e0-8aff-65927868045b",
             "Value": {
                 "id": "08cce7d0-6c61-4c20-a125-68f7b278f6e3",
@@ -3019,6 +3067,14 @@
             "Value": {
                 "id": "2c89a33c-8442-4d3d-9fa5-ea6c9a3f6e8d",
                 "resourcePath": "sprites\\spr_sarina_runstop\\spr_sarina_runstop.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "511a31ba-ec0a-4607-9bf2-97f30cc74297",
+            "Value": {
+                "id": "9f60e5a9-38cb-4773-b052-08afccb8a776",
+                "resourcePath": "sprites\\spr_sarina_fair_hutbox\\spr_sarina_fair_hutbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3655,6 +3711,14 @@
             }
         },
         {
+            "Key": "5fa6b56d-245e-4a48-ad81-fc91e0390889",
+            "Value": {
+                "id": "14af0cab-9b4b-4ed4-ab37-4b243296b9c3",
+                "resourcePath": "scripts\\scr_takia_uheavy\\scr_takia_uheavy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5fcba92d-a8a4-4a9c-ba96-a592754b1ec1",
             "Value": {
                 "id": "eaad0dce-a32c-4708-b7f9-db5e79ccc91e",
@@ -4004,6 +4068,14 @@
                 "id": "ddbb4d74-0513-4192-9434-6f1142cde6c5",
                 "resourcePath": "scripts\\check_shield\\check_shield.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "672eef21-d49f-45c4-b665-408b3693219a",
+            "Value": {
+                "id": "1f2a5ad2-f3ab-4b20-89e0-f8ea16ed6dee",
+                "resourcePath": "sprites\\spr_takia_dashattack_hitbox\\spr_takia_dashattack_hitbox.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -4379,6 +4451,14 @@
             "Value": {
                 "id": "17a278c8-7217-4489-b95d-da6f0f8ab555",
                 "resourcePath": "sprites\\spr_icon_rivals\\spr_icon_rivals.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "706cacfa-fbc2-4b1a-a91e-60ae0341ff67",
+            "Value": {
+                "id": "a731c1a6-edf4-41ce-bd23-366aba771c9d",
+                "resourcePath": "sprites\\spr_takia_dashattack\\spr_takia_dashattack.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -5783,6 +5863,14 @@
             }
         },
         {
+            "Key": "9888a8cc-0bfb-406e-95e0-a87906bab45f",
+            "Value": {
+                "id": "47deeb6b-3402-4363-91cf-bd6a1b087999",
+                "resourcePath": "sprites\\spr_sarina_fair\\spr_sarina_fair.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "989dbba6-32c5-4c6a-a223-6ba54ea3e6f7",
             "Value": {
                 "id": "a649ba0a-84cd-4dcd-907e-f867008068a0",
@@ -6327,6 +6415,14 @@
             }
         },
         {
+            "Key": "a5dbe724-8dba-488d-b6a2-7e562f641dfb",
+            "Value": {
+                "id": "6debdb34-04f0-48ee-a0b1-0375360d2599",
+                "resourcePath": "sprites\\spr_takia_uheavy_sweetbox\\spr_takia_uheavy_sweetbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a632cf70-57d1-4dd4-a99d-b85ef8eb8cbf",
             "Value": {
                 "id": "5bbd8a95-4b92-4266-b405-71e3ab9c061d",
@@ -6468,6 +6564,14 @@
                 "id": "3d6c26f9-e8b3-4916-92f2-c9842f64b37a",
                 "resourcePath": "sprites\\spr_mainmenu\\spr_mainmenu.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a9617d13-8f76-4b46-8570-7500d5265ecd",
+            "Value": {
+                "id": "282330c9-d004-4f2e-b2b7-25cffc7511de",
+                "resourcePath": "scripts\\scr_takia_dashattack\\scr_takia_dashattack.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7051,6 +7155,14 @@
             "Value": {
                 "id": "b8d1e6ab-24ff-4104-8be8-e3251c3c9d49",
                 "resourcePath": "sprites\\sprite216\\sprite216.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b931294e-efc2-41ca-b3cf-03c9de4a050b",
+            "Value": {
+                "id": "90a56469-2edd-4de2-9a61-ffec470345a9",
+                "resourcePath": "sprites\\spr_takia_uheavy_hitbox\\spr_takia_uheavy_hitbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -8203,6 +8315,14 @@
             "Value": {
                 "id": "87a55da6-ca9a-4091-88f4-72cd0ec17c24",
                 "resourcePath": "sprites\\spr_sarina_entrance\\spr_sarina_entrance.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "d76a5832-997e-44b4-ac41-47d7e2086d52",
+            "Value": {
+                "id": "cc9e4b3b-86a1-49b8-aa66-c307fe840f4e",
+                "resourcePath": "sprites\\spr_takia_uheavy_hurtbox\\spr_takia_uheavy_hurtbox.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -9722,8 +9842,11 @@
         "78dd3a96-6d57-4f60-acae-3e19740d5a73",
         "906ab181-42cf-45bc-8b48-6066985a047d",
         "f364face-2d23-4971-81c5-0b52b1f5e690",
-        "43e89f19-546a-4918-94aa-e34d602310a8",
         "dde5a89d-554e-4d39-bf7d-a0cdbd643fa8",
+        "0ce628d4-9f14-47ba-b994-a4aa501538e2",
+        "a9617d13-8f76-4b46-8570-7500d5265ecd",
+        "43e89f19-546a-4918-94aa-e34d602310a8",
+        "5fa6b56d-245e-4a48-ad81-fc91e0390889",
         "25d83745-b451-4677-847d-1cda0fc6929d",
         "4ae4c59d-edf9-4a04-8437-877eeaa69e61",
         "5919bbd3-8db3-4a52-b81c-d75e0aa2d65f",

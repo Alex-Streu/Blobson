@@ -161,7 +161,7 @@ if (run)
 				attack_frame=3;
 				reset_hitbox_groups();
 				#region hitbox 1
-				var _hitbox5 = create_melee(-4,-124,2.1,0.7,5,6,1,10,80,3,HITBOX_SHAPE.circle,0);	
+				var _hitbox5 = create_melee(-4,-124,2.1,0.7,5,5,1.4,10,80,3,HITBOX_SHAPE.circle,0);	
 				set_hitbox_property(_hitbox5,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);				
 				//set_hitbox_property(_hitbox5,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_hitstun);
 				#endregion
@@ -213,7 +213,11 @@ if (run)
 				anim_frame=8;			
 				attack_phase++;		
 				attack_frame = 5;
-				 if run && cancel_jump_check()	 run=false;
+				#region jump cancelable
+				if (attack_has_hit())   
+				{if run && cancel_jump_check()	 run=false;}
+				else{EX_meter += 0;}
+				#endregion
 				}
 			break;
 			}
@@ -227,7 +231,11 @@ if (run)
 				anim_frame=9;			
 				attack_phase++;		
 				attack_frame = 5;
-				 if run && cancel_jump_check()	 run=false;
+				#region jump cancelable
+				if (attack_has_hit())   
+				{if run && cancel_jump_check()	 run=false;}
+				else{EX_meter += 0;}
+				#endregion
 				}
 			break;
 			}
@@ -241,7 +249,11 @@ if (run)
 				anim_frame=10;			
 				attack_phase++;		
 				attack_frame = 4;
-			
+			    #region jump cancelable
+				if (attack_has_hit())   
+				{if run && cancel_jump_check()	 run=false;}
+				else{EX_meter += 0;}
+				#endregion
 				}
 			break;
 			}
@@ -253,7 +265,12 @@ if (run)
 				{
 				//Animation
 				anim_frame=11;			
-				attack_phase++;		
+				attack_phase++;
+				#region jump cancelable
+				if (attack_has_hit())   
+				{if run && cancel_jump_check()	 run=false;}
+				else{EX_meter += 0;}
+				#endregion
 				#region whiff lag
 				if (attack_has_hit())   
 				{

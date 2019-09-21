@@ -19,7 +19,6 @@ if (run)
 			anim_speed=0;
 		
 			smash_charge=0;
-		
 			attack_frame=smash_attack_max_charge;
 			return;
 			}

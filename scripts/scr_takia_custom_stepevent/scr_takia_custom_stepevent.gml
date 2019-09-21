@@ -122,6 +122,18 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region up heavy hurtbox
+			if anim_sprite = spr_takia_uheavy
+			{
+            hurtbox.sprite_index = spr_takia_uheavy_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
 			#region back air
 			if anim_sprite = spr_takia_bair
 			{

@@ -3,7 +3,7 @@
 #region Game Constants
 #macro debug				false
 #macro show_hitboxes		true
-#macro show_hurtboxes		true
+#macro show_hurtboxes		false
 #macro show_collision_boxes	false
 
 //Max Number of Players
@@ -87,8 +87,8 @@
 	#macro hitstun_multiplier 1.1 //0.85
 	#macro hitstun_base_multiplier 4 //4
 	#macro hitstun_weight_multiplier 0.6
-	#macro hitstun_damage_multiplier 0.24 //0.12
-	#macro hitstun_knockback_multiplier 6
+	#macro hitstun_damage_multiplier 0.4 //0.24
+	#macro hitstun_knockback_multiplier 3//6
 	#macro hitlag_multiplier 1 //0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
