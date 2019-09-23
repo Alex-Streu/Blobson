@@ -17,7 +17,12 @@
         "f3cf6812-9a1d-47b8-b9bd-bf3c7a7be047",
         "73742695-628e-4feb-9151-a8607f3e87da",
         "015a91df-77a0-4ab6-bb28-14255e473fc5",
-        "6f4bba65-0559-4a03-af0f-d6ba2623e95d"
+        "6f4bba65-0559-4a03-af0f-d6ba2623e95d",
+        "c67b1ac4-f5df-4420-9fe8-b1c02e2b7df5",
+        "2996f99d-7ecf-4c82-863a-7ce0fbf758b4",
+        "9aa4c096-68b5-46c5-8bb4-339d07a93680",
+        "a08faf62-3a4d-4339-9560-6ad819e1c697",
+        "2bfebd50-cf49-4197-b4c4-4d6a0f843cf7"
     ],
     "filterType": "GMSprite",
     "folderName": "Fighter - Takia",

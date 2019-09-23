@@ -4,10 +4,15 @@ var run = true;
 //Timer
 hitstun_frame = max(--hitstun_frame, 0);
 
+#region reset recoveries
+if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
+#endregion
+
 #region Animation
 if damage < 100  {anim_sprite = my_sprites[?"Hitstun"];   anim_speed = ani_speed_hitstun;}
 else {anim_sprite = my_sprites[?"Hitstunheavy"];   anim_speed = ani_speed_hitstun_heavy;}
 #endregion
+
 #region Friction / Gravity
 if (!on_ground())
 	{

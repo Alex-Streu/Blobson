@@ -12,6 +12,12 @@ if (!stick_tilted(Lstick, DIR.down))
 		anim_frame = 0;
 		set_state(PLAYER_STATE.in_lag);
 		lag_frame = land_time;		
+		
+		#region Ensure recovery special are restored and useable
+        akuma_fspecial_ready = true;
+        akuma_uspecial_ready = true;
+        #endregion
+		
 		//VFX
 		fx_create(spr_dust_land, 1, 0, 25, x, bbox_bottom - 1, 2, 0, "FX_Layer_Below");
 		return true;

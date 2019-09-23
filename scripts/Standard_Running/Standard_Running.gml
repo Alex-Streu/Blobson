@@ -3,6 +3,11 @@
 var run = true;
 //Timer
 dash_frame=max(--dash_frame,0);
+
+#region reset recoveries
+if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
+#endregion
+
 #region Animation
 anim_sprite=my_sprites[?"Run"];
 anim_speed=ani_speed_run;

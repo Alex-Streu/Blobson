@@ -4,6 +4,11 @@
 var run = true;
 //Timer
 jumpsquat_frame = approach(jumpsquat_frame, 0, 2);
+
+#region reset recoveries
+if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
+#endregion
+
 #region Animation
 anim_sprite = my_sprites[?"JumpS"];
 anim_speed = ani_speed_jumpsquat;

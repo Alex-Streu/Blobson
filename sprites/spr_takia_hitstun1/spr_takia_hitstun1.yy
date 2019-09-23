@@ -16,28 +16,6 @@
     "edgeFiltering": false,
     "frames": [
         {
-            "id": "f50d79ea-1aa6-459e-92d3-9ecd24fface1",
-            "modelName": "GMSpriteFrame",
-            "mvc": "1.0",
-            "SpriteId": "65d4f92f-5d67-4dae-91ff-ae204874743d",
-            "compositeImage": {
-                "id": "c47932ab-cc89-469a-9dc2-4d4ca6b6f34d",
-                "modelName": "GMSpriteImage",
-                "mvc": "1.0",
-                "FrameId": "f50d79ea-1aa6-459e-92d3-9ecd24fface1",
-                "LayerId": "00000000-0000-0000-0000-000000000000"
-            },
-            "images": [
-                {
-                    "id": "3d1f7bf3-2f78-4858-9e62-80db174bd01a",
-                    "modelName": "GMSpriteImage",
-                    "mvc": "1.0",
-                    "FrameId": "f50d79ea-1aa6-459e-92d3-9ecd24fface1",
-                    "LayerId": "fb3fe0b5-dc3f-4c83-97d4-91085aa30f52"
-                }
-            ]
-        },
-        {
             "id": "7a668184-dd14-4839-b94d-c2b31e2f111a",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",

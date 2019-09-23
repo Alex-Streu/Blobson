@@ -6,6 +6,7 @@ var run = true;
 hitlag_frame = max(--hitlag_frame, 0);
 
 if name = "Goku" {rewind_teleport_ready = true;}
+if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 
 #region Animation
 anim_speed = 1;

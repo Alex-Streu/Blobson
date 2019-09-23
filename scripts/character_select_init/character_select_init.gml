@@ -70,8 +70,17 @@ takia[? "Icon"] = spr_sarina_cs_icon;
 takia[? "Portrait"] = spr_sarina_cs_portrait;
 takia[? "Script"] = scr_takia;
 
+//akuma
+akuma = ds_map_create();
+akuma[? "Name"] = "Akuma";
+akuma[? "IsUnlocked"] = true;
+akuma[? "Icon"] = spr_sarina_cs_icon;
+akuma[? "Portrait"] = spr_sarina_cs_portrait;
+akuma[? "Script"] = scr_akuma;
+
 characters = [
 	matsu,
 	sarina,
-	takia
+	takia,
+	akuma
 ];

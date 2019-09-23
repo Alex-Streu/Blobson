@@ -3,6 +3,11 @@
 var run = true;
 //Timer
 walk_to_dash_frame = max(--walk_to_dash_frame, 0);
+
+#region reset recoveries
+if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
+#endregion
+
 #region Animation
 anim_sprite = my_sprites[?"Walk"];
 anim_speed = ani_speed_walk;

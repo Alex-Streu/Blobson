@@ -1,6 +1,13 @@
 ///Standard_Crouching
 //Contains the standard actions for the crouching state.
 var run = true;
+
+#region Ensure recovery special are restored and useable
+akuma_fspecial_ready = true;
+akuma_uspecial_ready = true;
+#endregion
+
+
 #region Animation
 anim_sprite=my_sprites[?"Crouch"];
 anim_speed= ani_speed_crouch;

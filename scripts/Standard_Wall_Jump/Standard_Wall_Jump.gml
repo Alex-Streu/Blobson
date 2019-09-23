@@ -25,8 +25,10 @@ if (run)
 				wall_jump_frame = wall_jump_time;
 				set_speed(wall_jump_hsp * facing, wall_jump_vsp, false, false);
 				
-				//if rewind, reset telpeorter
+				//if rewind, reset recoveries for fighters
 				if name = "Goku" {rewind_teleport_ready = true;}
+				
+				if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 				
 				}
 			break;

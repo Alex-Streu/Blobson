@@ -21,7 +21,30 @@ if (button(INPUT.special,buff))
 	//Fspec
 	if (stick_tilted(_stick,DIR.horizontal))
 		{
+		//attack_start(my_attacks[?"Fspec"]);
+		#region sarina f-special check
+		if name = "Sarina"
+		{
 		attack_start(my_attacks[?"Fspec"]);
+		}
+		#endregion	
+		#region takia f-special check
+		if name = "Takia"
+		{
+		attack_start(my_attacks[?"Fspec"]);
+		}
+		#endregion	
+		#region Akuma f-special check
+		
+		//This will check to make sure akuma can spin kick
+		
+		if name = "Akuma" and akuma_fspecial_ready = true and akuma_fspecial_cooldown <= 0
+		{
+		attack_start(my_attacks[?"Fspec"]);
+		}
+		#endregion
+		
+		
 		}
 	else
 	//Nspec
