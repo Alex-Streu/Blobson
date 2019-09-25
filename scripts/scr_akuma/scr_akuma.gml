@@ -4,6 +4,7 @@ name="Akuma";//Fighter name
 
 #region specific akuma variables
 akuma_fspecial_ready = true;
+akuma_fspecial_cancel = false;
 akuma_fspecial_cooldown_max = 20;
 akuma_fspecial_cooldown = 0;
 akuma_uspecial_ready = true;
@@ -11,7 +12,7 @@ akuma_uspecial_ready = true;
 
 #region Masks
 //Collision box
-mask_index=spr_takia_mask_collide;
+mask_index=spr_akuma_collision_mask;
 //Hurtbox
 hurtbox_sprite=spr_sarina_hurtbox;
 hurtbox=create_hurtbox(hurtbox_sprite);
@@ -27,10 +28,10 @@ my_pal_sprite= spr_akuma_pal; //fighter palette
 my_portrait_pal_sprite = spr_akuma_pal //fighter's portrait palette
 my_current_pallete = 1;
 portrait= spr_akuma_hud1;
-offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
+offscreen_sprite = spr_akuma_offscreen; //When fighter is shown in indicator
 stock_sprite= spr_matsu_stock;
-render = spr_sarina_render;
-victory_theme = sfx_victory_sarina;
+render = spr_akuma_render;
+victory_theme = sfx_victory_akuma;
 #endregion
 
 #region Color Palettes (old)
@@ -93,8 +94,8 @@ switch(walljump_type)
 #region Aerial Movment
 //Air control
 air_accel=0.5;
-max_air_speed=6;
-max_air_speed_dash = 8.5;
+max_air_speed=5;
+max_air_speed_dash = 7;
 air_friction=0.04;
 //Helpless
 helpless_accel=0.4;
@@ -124,7 +125,7 @@ run_stop_time=8;
 roll_speed=11;
 roll_startup=3;
 roll_active=20;
-roll_endlag=8;
+roll_endlag=14;
 #endregion
 #region Ledges
 ledge_jump_vsp=17;
@@ -144,7 +145,7 @@ ledge_attack_finish_y=-127;
 //Some characters would not appear to grab the ledge
 //at the right spot due to sprite origin, so these
 //variables allow you to add an offset.
-ledge_hang_relative_x=-22;
+ledge_hang_relative_x=-30;
 ledge_hang_relative_y= 126;
 #endregion
 #region Airdodge
@@ -249,25 +250,25 @@ switch(walljump_type)
 //Character scripts________________________________________________________________________________
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_akuma_jab;
-my_attacks[?"DashA" ]= scr_takia_dashattack;
-my_attacks[?"Ftilt" ]= scr_takia_ftilt;
-my_attacks[?"Utilt" ]= scr_takia_utilt;
-my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
-my_attacks[?"Fsmash"]= scr_takia_fheavy;
-my_attacks[?"Usmash"]= scr_takia_uheavy;
-my_attacks[?"Dsmash"]= scr_matsu_dheavy;
-my_attacks[?"Nair"  ]= scr_takia_nair;
-my_attacks[?"Fair"  ]= scr_takia_fair;
-my_attacks[?"Bair"  ]= scr_takia_bair;
-my_attacks[?"Uair"  ]= scr_takia_uair;
+my_attacks[?"DashA" ]= scr_akuma_dashattack;
+my_attacks[?"Ftilt" ]= scr_akuma_ftilt;
+my_attacks[?"Utilt" ]= scr_akuma_utilt;
+my_attacks[?"Dtilt" ]= scr_akuma_dtilt;
+my_attacks[?"Fsmash"]= scr_akuma_fheavy;
+my_attacks[?"Usmash"]= scr_akuma_uheavy;
+my_attacks[?"Dsmash"]= scr_akuma_dheavy;
+my_attacks[?"Nair"  ]= scr_akuma_nair;
+my_attacks[?"Fair"  ]= scr_akuma_fair;
+my_attacks[?"Bair"  ]= scr_akuma_bair;
+my_attacks[?"Uair"  ]= scr_akuma_uair;
 my_attacks[?"Uair_success"  ]= scr_matsu_uair_success;
-my_attacks[?"Dair"  ]= scr_matsu_dair;
-my_attacks[?"Nspec" ]= scr_matsu_fspecial;
+my_attacks[?"Dair"  ]= scr_akuma_dair;
+my_attacks[?"Nspec" ]= scr_akuma_fspecial;
 my_attacks[?"Fspec" ]= scr_akuma_fspecial;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
 my_attacks[?"Uspec" ]= scr_akuma_uspecial;
-my_attacks[?"Dspec" ]= scr_matsu_dspecial;
-my_attacks[?"Grab"	]= scr_matsu_grab;
+my_attacks[?"Dspec" ]= scr_akuma_dspecial;
+my_attacks[?"Grab"	]= scr_akuma_grab;
 my_attacks[?"DashG"	]= scr_matsu_dashgrab;
 my_attacks[?"Pummel"]= scr_matsu_pummel;
 my_attacks[?"Zair"	]= zair0;
@@ -296,12 +297,12 @@ my_sprites[?"Doublejumpfall"]=spr_akuma_fall;
 my_sprites[?"Doublejumpair"] = spr_akuma_doublejump;
 my_sprites[?"Midair"  ]=spr_akuma_midair;
 my_sprites[?"Fall"    ]=spr_akuma_fall;
-my_sprites[?"Fastfall"]=spr_takia_fall;
+my_sprites[?"Fastfall"]=spr_akuma_fall;
 my_sprites[?"Airdodge"]=spr_akuma_airdodge;
 my_sprites[?"Waveland"]=spr_akuma_squat;
 my_sprites[?"Rolling" ]=spr_akuma_dodgeroll 
-my_sprites[?"Techroll"]=spr_sarina_roll; 
-my_sprites[?"Teching" ]=spr_sarina_waveland;
+my_sprites[?"Techroll"]=spr_akuma_dodgeroll; 
+my_sprites[?"Teching" ]=spr_akuma_squat;
 my_sprites[?"Hitlag"  ]=spr_akuma_hitlag1;
 my_sprites[?"Hitlag2"]=spr_akuma_hitlag2;
 my_sprites[?"Hitlag3"]=spr_akuma_hitlag1;
@@ -320,30 +321,30 @@ my_sprites[?"Helpless"]=spr_akuma_helpless;
 my_sprites[?"Landlag"]=spr_akuma_squat;
 my_sprites[?"Lag"     ]=spr_akuma_squat;
 my_sprites[?"Grabbed"]=spr_akuma_hitlag1; //being grabbed by an enemy
-my_sprites[?"Shield"  ]=spr_matsu_parrystart;
-my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
+my_sprites[?"Shield"  ]=spr_akuma_parrystart;
+my_sprites[?"ShieldB" ]=spr_akuma_parrystart;
 my_sprites[?"Tech" ]=spr_matsu_tech;
-my_sprites[?"Parry" ]=spr_matsu_parrystart;
-my_sprites[?"ParryS"  ]=spr_matsu_parried;
-my_sprites[?"Parryland"]=spr_matsu_parryland;
-my_sprites[?"SDodge"  ]=spr_matsu_parrystart;
-my_sprites[?"LedgeS"  ]=spr_matsu_ledgesnap;
-my_sprites[?"Ledge"   ]=spr_matsu_ledgehang;
-my_sprites[?"LedgeG"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeJ"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeR"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeA"  ]=spr_matsu_ledge_getup;
+my_sprites[?"Parry" ]=spr_akuma_parrystart;
+my_sprites[?"ParryS"  ]=spr_matsu_parried;//if parried
+my_sprites[?"Parryland"]=spr_akuma_parry;
+my_sprites[?"SDodge"  ]=spr_akuma_parrystart;
+my_sprites[?"LedgeS"  ]=spr_akuma_ledge_snap;
+my_sprites[?"Ledge"   ]=spr_akuma_ledge_hang;
+my_sprites[?"LedgeG"  ]=spr_akuma_ledge_getup;
+my_sprites[?"LedgeJ"  ]=spr_akuma_ledge_getup;
+my_sprites[?"LedgeR"  ]=spr_akuma_ledge_getup;
+my_sprites[?"LedgeA"  ]=spr_akuma_ledge_getup;
 my_sprites[?"LedgeT"  ]=spr_ledge_tether0;
 my_sprites[?"LedgeTr"	] = spr_ledge_trump0;
 my_sprites[?"WallC"		] = spr_wall_cling0;
-my_sprites[?"WallJ"		] = spr_sarina_walljump;
+my_sprites[?"WallJ"		] = spr_akuma_doublejump;
 my_sprites[?"Grabbing"]=spr_matsu_grab;
 my_sprites[?"Entrance"]=spr_sarina_entrance;
 my_sprites[?"Taunt"]=spr_sarina_taunt;
 #endregion
 #region Animations - Attacks
-my_sprites[?"Dashattack" ]=spr_takia_dashattack
-my_sprites[?"Grab" ]=spr_matsu_grab;
+my_sprites[?"Dashattack" ]=spr_akuma_dashattack
+my_sprites[?"Grab" ]=spr_akuma_grab;
 my_sprites[?"Grabbing" ]=spr_matsu_grabbing;
 my_sprites[?"Bthrow" ]=spr_matsu_bthrow;
 my_sprites[?"Fthrow" ]=spr_matsu_fthrow;
@@ -354,18 +355,18 @@ my_sprites[?"Jab1" ]=spr_akuma_jab1;
 my_sprites[?"Jab2" ]=spr_akuma_jab2;
 my_sprites[?"Jab3" ]=spr_akuma_jab3;
 my_sprites[?"Jab4" ]=spr_takia_jab4;
-my_sprites[?"Ftilt" ]=spr_takia_ftilt;
-my_sprites[?"Dtilt" ]=spr_takia_dtilt;
-my_sprites[?"Utilt" ]=spr_takia_utilt;
-my_sprites[?"Nair" ]=spr_takia_nair;
-my_sprites[?"Bair" ]=spr_takia_bair;
-my_sprites[?"Fair" ]=spr_takia_fair;
-my_sprites[?"Dair" ]=spr_takia_dair;
-my_sprites[?"Uair" ]=spr_takia_uair;
+my_sprites[?"Ftilt" ]=spr_akuma_ftilt;
+my_sprites[?"Dtilt" ]=spr_akuma_dtilt;
+my_sprites[?"Utilt" ]=spr_akuma_utilt;
+my_sprites[?"Nair" ]=spr_akuma_nair;
+my_sprites[?"Bair" ]=spr_akuma_bair;
+my_sprites[?"Fair" ]=spr_akuma_fair;
+my_sprites[?"Dair" ]=spr_akuma_dair;
+my_sprites[?"Uair" ]=spr_akuma_uair;
 my_sprites[?"Uairb" ]=spr_matsu_uairb;
-my_sprites[?"Fheavy" ]=spr_takia_fheavy;
-my_sprites[?"Dheavy" ]=spr_takia_dheavy;
-my_sprites[?"Uheavy" ]=spr_takia_uheavy;
+my_sprites[?"Fheavy" ]=spr_akuma_fheavy;
+my_sprites[?"Dheavy" ]=spr_akuma_dheavy;
+my_sprites[?"Uheavy" ]=spr_akuma_uheavy;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
@@ -421,25 +422,31 @@ snd_step4 = sfx_step4;
 snd_grab = sfx_matsu_jab3;
 snd_pummel = sfx_hitgrab1;
 snd_jab1 = sfx_matsu_jab1;
-snd_jab1_hit = sfx_hit_light1;
+snd_jab1_hit = sfx_hit_light3;
 snd_jab2 = sfx_matsu_jab2;
-snd_jab2_hit = sfx_hit_light2;
+snd_jab2_hit = sfx_hit_light4;
 snd_jab3 = sfx_matsu_jab3;
-snd_jab3_hit = sfx_hit_med3; // med 2
+snd_jab3_hit = sfx_hit_light8; // med 2
 snd_dashattack_hit = sfx_hit_med12; // med 2
 snd_nair_sour_hit = sfx_hit_light1;
 snd_nair_hit = sfx_hit_light5; // light5 
-snd_fair_hit = sfx_stab3;
+snd_fair_hit = sfx_hit_heavy1;
+snd_fair_sourhit = sfx_hit_light2;
 snd_bair_hit = sfx_hit_med11; // med2
+snd_bair_sweethit = sfx_hit_heavy3; // med2
 snd_dair_hit = sfx_hit_med8; // light5 
 snd_dair_sweetspot_hit = sfx_hit_heavy1; // light5 
 snd_uair_hit = sfx_hit_med4; // light5 
-snd_ftilt_hit = sfx_stab2; // light5 
+snd_uair_hit2 = sfx_hit_med4; // light5
+snd_ftilt_hit = sfx_hit_med15; // light5 
+snd_ftilt_sweethit = sfx_hit_med12; // light5 
 snd_dtilt_hit = sfx_hit_light4; // light5 
-snd_utilt_hit = sfx_hit_light5; // light5 
-snd_fheavy_hit = sfx_stab4; // light5 
-snd_uheavy_hit = sfx_stab3;; // light5 
-snd_dheavy_hit = sfx_hit_heavy2; // light5 
+snd_dtilt_sweethit = sfx_hit_light4; // light5 
+snd_utilt_hit1 = sfx_hit_light5;
+snd_utilt_hit2 = sfx_hit_light1;
+snd_fheavy_hit = sfx_hit_heavy4; // light5 
+snd_uheavy_hit = sfx_hit_heavy1; // light5 
+snd_dheavy_hit = sfx_hit_heavy4; // light5 
 
 snd_hitmulti1 = sfx_hit_light1;
 snd_hitmulti2 = sfx_hit_light2;
@@ -449,11 +456,83 @@ snd_tipper2 = sfx_stab1;
 #endregion
 #region Voice clips
 vc_nothing = sfx_nothing;
-vc_hurt1 = sfx_vc_sarina_hit1; //weak hit 1
-vc_hurt2 = sfx_vc_sarina_hit1; // weak hit 2
-vc_spinkick1 = sfx_vc_akuma_spinkick1;
-vc_spinkick2 = sfx_vc_akuma_spinkick2;
+vc_intro1a = sfx_nothing;
+vc_intro1b = sfx_nothing;
+vc_intro2a = sfx_nothing;
+vc_intro2b = sfx_nothing;
 
+#region Voice attacks - general
+vc_jab1 = sfx_nothing;
+vc_jab2 = sfx_nothing;
+vc_jab3 = sfx_nothing;
+vc_dashattack1 = sfx_nothing;
+vc_dashattack2 = sfx_nothing;
+vc_ftilt1 = sfx_nothing;
+vc_ftilt2 = sfx_nothing;
+vc_dtilt1 = sfx_nothing;
+vc_dtilt2 = sfx_nothing;
+vc_utilt1 = sfx_nothing;
+vc_utilt2 = sfx_nothing;
+vc_uair1 = sfx_nothing;
+vc_uair2 = sfx_nothing;
+vc_dair1 = sfx_nothing;
+vc_dair2 = sfx_nothing;
+vc_fair1 = sfx_nothing;
+vc_fair2 = sfx_nothing;
+vc_bair1 = sfx_nothing;
+vc_bair2 = sfx_nothing;
+vc_nair1 = sfx_nothing;
+vc_nair2 = sfx_nothing;
+vc_uheavy1 = sfx_vc_akuma_strong1;
+vc_uheavy2 = sfx_vc_akuma_strong3;
+vc_fheavy1 = sfx_vc_akuma_strong2;
+vc_fheavy2 = sfx_vc_akuma_strong3;
+vc_dheavy1 = sfx_vc_akuma_strong1;
+vc_dheavy2 = sfx_vc_akuma_strong2;
+vc_nspecial1 = sfx_nothing;
+vc_nspecial2 = sfx_nothing;
+vc_sspecial1 = sfx_vc_akuma_spinkick1;
+vc_sspecial2 = sfx_vc_akuma_spinkick2;
+vc_uspecial1 = sfx_vc_akuma_shoyu;
+vc_uspecial2 = sfx_vc_akuma_spinkick2;
+vc_dspecial1 = sfx_nothing;
+vc_dspecial2 = sfx_nothing;
+vc_grab = sfx_nothing;
+#endregion
+#region Voice actions - general
+vc_jump1 = sfx_akuma_jump1;
+vc_jump2 = sfx_nothing;
+vc_doublejump1 = sfx_nothing;
+vc_doublejump2 = sfx_nothing;
+vc_walljump1 = sfx_akuma_jump1;
+vc_walljump2 = sfx_akuma_jump1;
+vc_parry1 = sfx_nothing;
+vc_parry2 = sfx_nothing;
+vc_parryland1 = sfx_nothing;
+vc_parryland2 = sfx_nothing;
+vc_ledgesnap1 = sfx_nothing;
+vc_ledgesnap2 = sfx_nothing;
+vc_dodgeroll1 = sfx_nothing;
+vc_dodgeroll2 = sfx_nothing;
+vc_airdodge1 = sfx_nothing;
+vc_airdodge2 = sfx_nothing;
+#endregion
+#region Voice hurt - general
+vc_hurt1 = sfx_nothing; //weak hit 1
+vc_hurt2 = sfx_nothing; // weak hit 2
+vc_hurt3 = sfx_nothing; //weak hit 3
+vc_hurtbad1 = sfx_nothing;
+vc_hurtbad2 = sfx_nothing;
+vc_hurtbad3 = sfx_nothing;
+vc_hurtbad4 = sfx_nothing;
+vc_hurtbad5 = sfx_nothing;
+vc_hurtbad1 = sfx_nothing;
+vc_parried1 = sfx_nothing;
+vc_parried2 = sfx_nothing;
+vc_ko = sfx_vc_akuma_ko;
+vc_ko2 = sfx_nothing;
+vc_ko3 = sfx_nothing;
+#endregion
 #endregion
 
 //Custom Step Events

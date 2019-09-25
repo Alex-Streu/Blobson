@@ -21,7 +21,12 @@
         "d921d446-a4ea-4620-9505-21923a652fa3",
         "3e9ecc58-a3ff-48cf-ba83-6201bf1c51c3",
         "9b68e0f1-4550-4a0f-b4df-eed4df2e6b16",
-        "5ab1b369-c8ec-4d41-bde6-a481b021c15f"
+        "5ab1b369-c8ec-4d41-bde6-a481b021c15f",
+        "698d4f9c-5129-4024-bad0-4f85fcaaea0e",
+        "987f75b6-458e-4f35-bdc4-ee7e19c1c6bb",
+        "2aed8e07-6be7-482c-86da-04877957c24a",
+        "4d9a929f-a3a0-42a6-ac20-018f0f8a3bf6",
+        "635ae9dc-f320-4540-982f-cd48f7f09b18"
     ],
     "filterType": "GMSprite",
     "folderName": "Akuma attacks",

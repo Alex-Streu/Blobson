@@ -5,7 +5,8 @@
     "name": "ad5361f5-4c43-4480-ab7e-a46b015280d5",
     "children": [
         "97a5a608-d583-4cbc-b742-f0466596690b",
-        "9bb20bb4-f3df-4e2f-9774-d8068d3d05ca"
+        "9bb20bb4-f3df-4e2f-9774-d8068d3d05ca",
+        "29639c6f-ecac-44b9-bd2c-20ba9503ed12"
     ],
     "filterType": "GMObject",
     "folderName": "Detached_Hitbox_Objects",

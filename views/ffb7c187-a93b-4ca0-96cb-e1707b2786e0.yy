@@ -5,7 +5,10 @@
     "name": "ffb7c187-a93b-4ca0-96cb-e1707b2786e0",
     "children": [
         "9139d7c8-e7b9-4890-8343-07615dafe76d",
-        "836f0246-20f1-49b3-93e4-de01eaf2e901"
+        "836f0246-20f1-49b3-93e4-de01eaf2e901",
+        "77b9931a-5188-457c-8d41-a93d1eb69962",
+        "951aaf29-b515-4533-b522-4cff4dd7b414",
+        "e66078ef-465c-49cc-ab25-1face846ba99"
     ],
     "filterType": "GMSound",
     "folderName": "SFX Swish\/Swhooshes",

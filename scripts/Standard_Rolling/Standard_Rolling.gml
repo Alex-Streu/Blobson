@@ -53,6 +53,7 @@ if (run)
 		{
 		case 0:
 			{
+				
 			//Animation
 			anim_sprite = my_sprites[?"Rolling"];
 			anim_speed = 0;

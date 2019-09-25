@@ -382,6 +382,9 @@ snd_fheavy2_hit = sfx_hit_light2; // light5
 snd_fheavy3_hit = sfx_hit_heavy4; // light5 
 snd_uheavy_hit = sfx_hit_heavy3; // light5 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
+
+vc_ko = sfx_vc_akuma_ko;
+
 //Custom Step Event
 custom_script= scr_rewind_custom();
 

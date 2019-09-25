@@ -25,6 +25,7 @@ if (run)
 	//If jumpsquat timer is done
 	if (jumpsquat_frame == 0)
 		{
+			audio_play_sound(choose(vc_jump1,vc_jump2,sfx_nothing,sfx_nothing),10,false);
 		//Change state to aerial state, set speed, and exit the script.
 		set_state(PLAYER_STATE.aerial);
 		//VFX

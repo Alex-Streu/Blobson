@@ -11,7 +11,11 @@
         "93999380-4148-4d79-a8ec-95231d8d2fff",
         "9888a8cc-0bfb-406e-95e0-a87906bab45f",
         "511a31ba-ec0a-4607-9bf2-97f30cc74297",
-        "091ee06c-a84f-4adb-b67e-15f5c053b982"
+        "091ee06c-a84f-4adb-b67e-15f5c053b982",
+        "0acd329a-66f1-4c3c-b340-412f84265eca",
+        "644bdf9d-cf21-4e6e-bba2-a0892ffe9d40",
+        "20c75e67-d44a-4f4a-b004-c05b50bf3c01",
+        "2b1f0b45-3034-4c4b-a013-fdad969821be"
     ],
     "filterType": "GMSprite",
     "folderName": "Sarina Attacks",

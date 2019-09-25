@@ -22,7 +22,7 @@ my_current_pallete = 1;
 portrait= spr_sarina_hud1;
 offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
 stock_sprite= spr_matsu_stock;
-render = spr_sarina_render;
+render = spr_takia_render;
 victory_theme = sfx_victory_sarina;
 #endregion
 
@@ -442,8 +442,78 @@ snd_tipper2 = sfx_stab1;
 #endregion
 #region Voice clips
 vc_nothing = sfx_nothing;
-vc_hurt1 = sfx_vc_sarina_hit1; //weak hit 1
-vc_hurt2 = sfx_vc_sarina_hit1; // weak hit 2
+vc_intro1a = sfx_nothing;
+vc_intro1b = sfx_nothing;
+vc_intro2a = sfx_nothing;
+vc_intro2b = sfx_nothing;
+
+#region Voice attacks - general
+vc_jab1 = sfx_nothing;
+vc_jab2 = sfx_nothing;
+vc_jab3 = sfx_nothing;
+vc_dashattack1 = sfx_nothing;
+vc_dashattack2 = sfx_nothing;
+vc_ftilt1 = sfx_nothing;
+vc_ftilt2 = sfx_nothing;
+vc_dtilt1 = sfx_nothing;
+vc_dtilt2 = sfx_nothing;
+vc_utilt1 = sfx_nothing;
+vc_utilt2 = sfx_nothing;
+vc_uair1 = sfx_nothing;
+vc_uair2 = sfx_nothing;
+vc_dair1 = sfx_nothing;
+vc_dair2 = sfx_nothing;
+vc_fair1 = sfx_nothing;
+vc_fair2 = sfx_nothing;
+vc_bair1 = sfx_nothing;
+vc_bair2 = sfx_nothing;
+vc_nair1 = sfx_nothing;
+vc_nair2 = sfx_nothing;
+vc_uair1 = sfx_nothing;
+vc_nspecial1 = sfx_nothing;
+vc_nspecial2 = sfx_nothing;
+vc_sspecial1 = sfx_nothing;
+vc_sspecial2 = sfx_nothing;
+vc_uspecial1 = sfx_nothing;
+vc_uspecial2 = sfx_nothing;
+vc_dspecial1 = sfx_nothing;
+vc_dspecial2 = sfx_nothing;
+vc_grab = sfx_nothing;
+#endregion
+#region Voice actions - general
+vc_jump1 = sfx_nothing;
+vc_jump2 = sfx_nothing;
+vc_doublejump1 = sfx_nothing;
+vc_doublejump2 = sfx_nothing;
+vc_walljump1 = sfx_nothing;
+vc_walljump2 = sfx_nothing;
+vc_parry1 = sfx_nothing;
+vc_parry2 = sfx_nothing;
+vc_parryland1 = sfx_nothing;
+vc_parryland2 = sfx_nothing;
+vc_ledgesnap1 = sfx_nothing;
+vc_ledgesnap2 = sfx_nothing;
+vc_dodgeroll1 = sfx_nothing;
+vc_dodgeroll2 = sfx_nothing;
+vc_airdodge1 = sfx_nothing;
+vc_airdodge2 = sfx_nothing;
+#endregion
+#region Voice hurt - general
+vc_hurt1 = sfx_nothing; //weak hit 1
+vc_hurt2 = sfx_nothing; // weak hit 2
+vc_hurt3 = sfx_nothing; //weak hit 3
+vc_hurtbad1 = sfx_nothing;
+vc_hurtbad2 = sfx_nothing;
+vc_hurtbad3 = sfx_nothing;
+vc_hurtbad4 = sfx_nothing;
+vc_hurtbad5 = sfx_nothing;
+vc_hurtbad1 = sfx_nothing;
+vc_parried1 = sfx_nothing;
+vc_parried2 = sfx_nothing;
+vc_ko = sfx_vc_takia_ko1;
+vc_ko2 = sfx_vc_takia_ko1;
+vc_ko3 = sfx_vc_takia_ko1;
+#endregion
 #endregion
 //Custom Step Event
 custom_script= scr_sarina_custom();

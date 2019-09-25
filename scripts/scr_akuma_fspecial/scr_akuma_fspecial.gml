@@ -24,7 +24,8 @@ if (run)
 			anim_speed=0;
 			anim_frame=0;
 			attack_frame = 3
-			audio_play_sound(vc_spinkick2,10,false);
+			audio_play_sound(choose(vc_sspecial1,vc_sspecial2),10,false);
+			akuma_fspecial_cancel = false; //allow to be cancelable
 			return;
 			}						
 			#endregion
@@ -118,7 +119,7 @@ if (run)
 				attack_frame=2;	
 				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
 				var _hitbox2 = create_melee(74,-76,0.9,.5,2,8,0,5,30,2,HITBOX_SHAPE.rectangle,2);	
-				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
+				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_hitmulti1);
 				}
 			break;
 			}
@@ -145,12 +146,14 @@ if (run)
 				//Animation
 				anim_frame=7;
 				attack_phase++;
-				attack_frame=2;				
+				attack_frame=2;
+				
+				
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 9 -
+			#region   Frame 9 - check for cancel
 		case 8:
 			{
 			if (attack_frame==0)
@@ -158,12 +161,23 @@ if (run)
 				//Animation
 				anim_frame=8;
 				attack_phase++;
-				attack_frame=2;
+				
+				#region keep doing rest of the move if player is holding special button
+				if !(button_hold(INPUT.special,buff)) {attack_frame=2;} //if held, keep spin kicking	
+				#endregion
+				#region confirm cancel rest of move
+				if !(button_hold(INPUT.special,buff))
+				{	
+					attack_frame=20;	
+					set_speed(4*facing,0,false,false);
+					akuma_fspecial_cancel = true; //allow to be cancelable
+				}
+				#endregion
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 10 -
+			#region   Frame 10 - cancel move
 		case 9:
 			{
 			if (attack_frame==0)
@@ -172,7 +186,17 @@ if (run)
 				anim_frame=9;
 			
 				attack_phase++;
-				attack_frame=2;							
+				#region keep spin kicking if held
+				if akuma_fspecial_cancel = false {attack_frame=2;} //if held, keep spin kicking		
+				#endregion
+				#region cancel the rest of move
+				if akuma_fspecial_cancel = true
+				{	
+					landing_lag = 10;
+					akuma_fspecial_cooldown = akuma_fspecial_cooldown_max * 2;
+					attack_stop(PLAYER_STATE.aerial);
+				}
+				#endregion
 				}
 			break;
 			}
@@ -190,7 +214,9 @@ if (run)
 				
 				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
 				var _hitbox2 = create_melee(74,-76,0.9,.5,3,8,0,5,30,2,HITBOX_SHAPE.rectangle,2);	
-				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
+				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_hitmulti2);
+				
+				
 				}
 			break;
 			}
@@ -224,7 +250,7 @@ if (run)
 			break;
 			}
 			#endregion
-			#region   Frame 14
+			#region   Frame 14 - check for cancel
 		case 13:
 			{
 			if (attack_frame==0)
@@ -234,11 +260,22 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=2;
+				#region keep doing rest of the move if player is holding special button
+				if !(button_hold(INPUT.special,buff)) {attack_frame=2;} //if held, keep spin kicking	
+				#endregion
+				#region confirm cancel rest of move
+				if !(button_hold(INPUT.special,buff))
+				{	
+					attack_frame=20;	
+					set_speed(4*facing,0,false,false);
+					akuma_fspecial_cancel = true; //allow to be cancelable
+				}
+				#endregion
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 15
+			#region   Frame 15 - cancel move
 		case 14:
 			{
 			if (attack_frame==0)
@@ -247,7 +284,17 @@ if (run)
 				anim_frame=14;
 			
 				attack_phase++;
-				attack_frame=2;
+				#region keep spin kicking if held
+				if akuma_fspecial_cancel = false {attack_frame=2;} //if held, keep spin kicking		
+				#endregion
+				#region cancel the rest of move
+				if akuma_fspecial_cancel = true
+				{	
+					landing_lag = 10;
+					akuma_fspecial_cooldown = akuma_fspecial_cooldown_max * 2;
+					attack_stop(PLAYER_STATE.aerial);
+				}
+				#endregion
 				}
 			break;
 			}
@@ -265,7 +312,7 @@ if (run)
 				
 				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
 				var _hitbox2 = create_melee(74,-76,0.9,.5,2,8,0,5,30,2,HITBOX_SHAPE.rectangle,2);	
-				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
+				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_hitmulti1);
 				}
 			break;
 			}
@@ -298,7 +345,7 @@ if (run)
 			break;
 			}
 			#endregion
-			#region   Frame 19
+			#region   Frame 19 - check for cancel
 		case 18:
 			{
 			if (attack_frame==0)
@@ -307,12 +354,22 @@ if (run)
 				anim_frame=18;
 			
 				attack_phase++;
-				attack_frame=2;
+				#region keep doing rest of the move if player is holding special button
+				if !(button_hold(INPUT.special,buff)) {attack_frame=2;} //if held, keep spin kicking	
+				#endregion
+				#region confirm cancel rest of move
+				if !(button_hold(INPUT.special,buff))
+				{	
+					attack_frame=20;	
+					set_speed(4*facing,0,false,false);
+					akuma_fspecial_cancel = true; //allow to be cancelable
+				}
+				#endregion
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 20
+			#region   Frame 20 - cancel move
 		case 19:
 			{
 			if (attack_frame==0)
@@ -321,7 +378,17 @@ if (run)
 				anim_frame=19;
 			
 				attack_phase++;
-				attack_frame=2;
+				#region keep spin kicking if held
+				if akuma_fspecial_cancel = false {attack_frame=2;} //if held, keep spin kicking		
+				#endregion
+				#region cancel the rest of move
+				if akuma_fspecial_cancel = true
+				{	
+					landing_lag = 10;
+					akuma_fspecial_cooldown = akuma_fspecial_cooldown_max * 2;
+					attack_stop(PLAYER_STATE.aerial);
+				}
+				#endregion
 				}
 			break;
 			}
@@ -338,8 +405,8 @@ if (run)
 				attack_frame=2;
 				
 				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
-				var _hitbox2 = create_melee(74,-76,0.9,.5,3,8,0,5,30,2,HITBOX_SHAPE.rectangle,2);	
-				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
+				var _hitbox2 = create_melee(74,-76,0.9,.5,3,10,0,5,65,2,HITBOX_SHAPE.rectangle,2);	
+				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_hitmulti2);
 				}
 			break;
 			}

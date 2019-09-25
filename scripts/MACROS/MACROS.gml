@@ -2,7 +2,7 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		true
+#macro show_hitboxes		false
 #macro show_hurtboxes		false
 #macro show_collision_boxes	false
 
@@ -18,7 +18,7 @@
 #macro camera_width 960 //960
 #macro camera_height 540 //540
 #macro camera_boundary 256 //120
-#macro camera_move_speed 0.1
+#macro camera_move_speed 0.15
 
 //Camera Zoom
 #macro camera_enable_zoom false
@@ -84,11 +84,11 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 1.1 //0.85
-	#macro hitstun_base_multiplier 4 //4
-	#macro hitstun_weight_multiplier 0.6
-	#macro hitstun_damage_multiplier 0.4 //0.24
-	#macro hitstun_knockback_multiplier 3//6
+	#macro hitstun_multiplier 1.3 //0.85
+	#macro hitstun_base_multiplier 5 //4
+	#macro hitstun_weight_multiplier 0.8
+	#macro hitstun_damage_multiplier 0.25 //0.24
+	#macro hitstun_knockback_multiplier 4//6
 	#macro hitlag_multiplier 1 //0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
@@ -463,6 +463,7 @@ enum HIT_FX
 	explosion,
 	shield,
 	hit1,
+	hit2,
 	//Enum end
 	length,
 	}

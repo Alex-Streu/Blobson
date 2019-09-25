@@ -24,7 +24,7 @@ if (run)
 			anim_speed=0;
 			anim_frame=0;
 			attack_frame = 3
-			audio_play_sound(vc_spinkick2,10,false);
+			audio_play_sound(choose(vc_uspecial1,vc_uspecial2),10,false);
 			//set_invulnerable(INV.superarmor, 5);
 			return;
 			}						
@@ -101,7 +101,7 @@ if (run)
 				set_speed(3 * facing,-18,-1,false);
 				
 				//reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
-				var _hitbox = create_melee(20,-145,0.4,0.6,10,10,1,12,80,6,HITBOX_SHAPE.rectangle,1);		
+				var _hitbox = create_melee(20,-145,0.4,0.6,10,7,1,12,80,6,HITBOX_SHAPE.rectangle,1);		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);
 				}
 			break;

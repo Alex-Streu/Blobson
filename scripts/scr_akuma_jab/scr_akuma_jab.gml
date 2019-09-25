@@ -1,4 +1,4 @@
-//Jab for Takia
+//Jab for akuma
 /*
 - Press the button multiple times to continue the combo
 - The first two hits can be canceled into tilts
@@ -128,7 +128,7 @@ if (run)
 			if (button(INPUT.attack,12))
 				{
 				attack_phase++;
-				attack_frame=4;
+				attack_frame=6;
 				}
 			//Auto end
 			else if (attack_frame==0)

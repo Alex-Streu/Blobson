@@ -68,6 +68,7 @@ if (state == GAME_STATE.normal || state == GAME_STATE.startup || (state == GAME_
 			{
 			if (check_blastzones(0, 0, room_width, room_height))
 				{
+					audio_play_sound(vc_ko,10,false);
 				die();
 				}
 			}
