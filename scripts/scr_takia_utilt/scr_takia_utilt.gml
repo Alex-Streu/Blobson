@@ -159,7 +159,7 @@ if (run)
 				anim_frame=6;			
 				attack_phase++;
 				attack_frame=3;
-				reset_hitbox_groups();
+				reset_hitbox_groups()
 				#region hitbox 1
 				var _hitbox5 = create_melee(-4,-124,2.1,0.7,5,5,1.4,10,80,3,HITBOX_SHAPE.circle,0);	
 				set_hitbox_property(_hitbox5,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);				

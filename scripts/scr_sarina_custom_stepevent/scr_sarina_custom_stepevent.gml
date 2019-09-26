@@ -1,16 +1,18 @@
 ///The custom script for SARINA
 
 
+#region Crouch
 //If crouched, make the final frame not move.
 if anim_sprite = my_sprites[?"Crouch"  ]
 if anim_frame >= 5.8    
 {anim_frame = 6}
-
-
+#endregion
+#region Lag
 if (lag_frame == 0)
 if anim_sprite = my_sprites[?"Lag"]
 if ani_lag_loop = false
 {anim_frame = sprite_get_number(my_sprites[?"Lag"]) - 1;}
+#endregion
 
 if anim_sprite = my_sprites[?"Flinch1"]
 if ani_lag_loop = false
@@ -78,6 +80,10 @@ anim_frame = 7
 }
 
 #endregion
+
+#region if doing certain movement or tech, update the hurtbox
+ //hurtbox.sprite_index =spr_sarina_hurtbox;
+#endregion
 #region    If doing an attack, update the hurtbox
             
 			#region jab 1 hurtbox
@@ -116,10 +122,34 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
-			#region down tilt hurtbox
+			#region dtilt hurtbox
 			if anim_sprite = spr_sarina_dtilt
 			{
             hurtbox.sprite_index = spr_sarina_dtillt_hurt;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region ftilt hurtbox
+			if anim_sprite = spr_sarina_ftilt
+			{
+            hurtbox.sprite_index = spr_sarina_ftilt_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region fair hurtbox
+			if anim_sprite = spr_sarina_fair
+			{
+            hurtbox.sprite_index = spr_sarina_fair_hurtbox;
             hurtbox.image_index = anim_frame;
             hurtbox.image_speed = 0;
             hurtbox.image_xscale = 1;

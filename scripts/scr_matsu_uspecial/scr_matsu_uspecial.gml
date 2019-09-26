@@ -39,7 +39,7 @@ if (run)
 				var _spd=15;
 				set_speed(lengthdir_x(_spd,_dir),lengthdir_y(_spd,_dir),false,false);
 				destroy_all_attached_hitboxes(my_hitboxes);
-				create_melee(0,-36,1.1,1.1,9,6,1.2,10,90,25,HITBOX_SHAPE.circle,1);
+				create_melee(0,-36,1.1,1.1,9,5,1.4,10,90,25,HITBOX_SHAPE.circle,1);
 				//create_melee(0,-36,1.2,1.2,9,9,0.8,10,_dir,25,HITBOX_SHAPE.circle,1);
 				
 				attack_frame=25;

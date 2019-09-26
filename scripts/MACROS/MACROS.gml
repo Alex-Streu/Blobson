@@ -2,8 +2,8 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		false
-#macro show_hurtboxes		false
+#macro show_hitboxes		true
+#macro show_hurtboxes		true
 #macro show_collision_boxes	false
 
 //Max Number of Players
@@ -51,7 +51,7 @@
 #macro profiles_save "Player_Profiles.sav"
 
 //Countdown Time
-#macro count_time 55
+#macro count_time 60
 
 //VFX
 #macro knockback_cloud_trails_enable true
@@ -132,12 +132,12 @@
 	#macro hit_turnaround true
 	
 	//Magnetboxes
-	#macro magnetbox_snap_speed 10
+	#macro magnetbox_snap_speed 30
 	
 	//Grabbing
 	#macro base_grab_time 30
 	#macro grab_time_multiplier 0.7
-	#macro grab_snap_speed 20
+	#macro grab_snap_speed 30
 	#macro throw_flick_buff 20
 	
 	//Grab releases

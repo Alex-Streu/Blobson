@@ -6,6 +6,7 @@ name="Sarina";//Fighter name
 //Collision box
 mask_index=spr_matsu_collision_mask;
 //Hurtbox
+hurtbox_default = spr_sarina_hurtbox;
 hurtbox_sprite=spr_sarina_hurtbox;
 hurtbox=create_hurtbox(hurtbox_sprite);
 hurtbox_crouch_sprite = spr_sarina_hurtbox_crouch;
@@ -246,11 +247,11 @@ my_attacks[?"DashA" ]= scr_matsu_dashattack;
 my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
 my_attacks[?"Utilt" ]= scr_matsu_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
-my_attacks[?"Fsmash"]= scr_matsu_fheavy;
+my_attacks[?"Fsmash"]= scr_takia_fheavy;
 my_attacks[?"Usmash"]= scr_matsu_uheavy;
 my_attacks[?"Dsmash"]= scr_matsu_dheavy;
 my_attacks[?"Nair"  ]= scr_matsu_nair;
-my_attacks[?"Fair"  ]= scr_matsu_fair;
+my_attacks[?"Fair"  ]= scr_sarina_fair;
 my_attacks[?"Bair"  ]= scr_matsu_bair;
 my_attacks[?"Uair"  ]= scr_matsu_uair;
 my_attacks[?"Uair_success"  ]= scr_matsu_uair_success;
@@ -346,12 +347,12 @@ my_sprites[?"Pummel"] = spr_matsu_pummel;
 my_sprites[?"Jab1" ]=spr_sarina_jab1;
 my_sprites[?"Jab2" ]=spr_sarina_jab2;
 my_sprites[?"Jab3" ]=spr_sarina_jab3;
-my_sprites[?"Ftilt" ]=spr_sarina_jab2;
+my_sprites[?"Ftilt" ]=spr_sarina_ftilt;
 my_sprites[?"Dtilt" ]=spr_sarina_dtilt;
 my_sprites[?"Utilt" ]=spr_matsu_utilt;
 my_sprites[?"Nair" ]=spr_matsu_nair;
 my_sprites[?"Bair" ]=spr_matsu_bair;
-my_sprites[?"Fair" ]=spr_matsu_fair;
+my_sprites[?"Fair" ]=spr_sarina_fair;
 my_sprites[?"Dair" ]=spr_matsu_dairb;
 my_sprites[?"Uair" ]=spr_matsu_uair;
 my_sprites[?"Uairb" ]=spr_matsu_uairb;
@@ -421,12 +422,21 @@ snd_jab3_hit = sfx_hit_med3; // med 2
 snd_dashattack_hit = sfx_hit_med12; // med 2
 snd_nair_sour_hit = sfx_hit_light1;
 snd_nair_hit = sfx_hit_light5; // light5 
+
+
 snd_fair_hit = sfx_stab3;
+snd_fair = sfx_swoosh2;
+
 snd_bair_hit = sfx_hit_med11; // med2
 snd_dair_hit = sfx_hit_med8; // light5 
 snd_dair_sweetspot_hit = sfx_hit_heavy1; // light5 
 snd_uair_hit = sfx_hit_med4; // light5 
+
+snd_ftilt_firsthit = sfx_stab1;
 snd_ftilt_hit = sfx_stab2; // light5 
+snd_ftilt_endhit = sfx_stab4;
+snd_ftilt_loop = sfx_swoosh2;
+
 snd_dtilt_hit = sfx_hit_light4; // light5 
 snd_utilt_hit = sfx_hit_light5; // light5 
 snd_fheavy_hit = sfx_stab4; // light5 
