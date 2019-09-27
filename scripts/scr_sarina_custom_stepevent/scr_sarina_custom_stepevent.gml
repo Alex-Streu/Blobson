@@ -158,6 +158,18 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region nair hurtbox
+			if anim_sprite = spr_sarina_nair
+			{
+            hurtbox.sprite_index = spr_sarina_nair_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
 			
 			
 #endregion

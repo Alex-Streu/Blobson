@@ -30,6 +30,8 @@ if (run)
 				{
 				//Animation
 				anim_frame=1;
+				
+				audio_play_sound(choose(vc_dtilt1,vc_dtilt2,vc_nothing),10,false);
 			
 				attack_phase++;
 				attack_frame=3;
@@ -48,7 +50,7 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				var _hitbox = create_melee(77,-16,1.3,0.5,6,7,0.5,13,65,3,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);     
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dtilt_sweethit);     
 				}
 			break;
 			}
@@ -64,7 +66,7 @@ if (run)
 				attack_phase++;
 				attack_frame=4;	
 				var _hitbox = create_melee(77,-16,1.3,0.5,6,5,0.5,8,60,3,HITBOX_SHAPE.rectangle,0);	
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);   
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dtilt_hit);   
 				}
 			break;
 			}

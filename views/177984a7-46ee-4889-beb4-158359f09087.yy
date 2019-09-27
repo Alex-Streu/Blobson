@@ -14,7 +14,10 @@
         "4793c51d-323e-4f64-b41e-d116f5af312a",
         "bca9e7fb-2793-4ef2-9b64-127b86c9f36d",
         "088506aa-da43-40aa-ad90-acc02f391cc6",
-        "5b00f673-44dd-4983-ba6b-1252c3a82349"
+        "43d8de3c-5401-4395-a8be-57606afca1ed",
+        "0c6eb9c6-626b-4c1b-8515-19a393ebb5b8",
+        "5b00f673-44dd-4983-ba6b-1252c3a82349",
+        "afd6a79b-06af-4361-9aac-02afe9995325"
     ],
     "filterType": "GMScript",
     "folderName": "Sarina scripts",

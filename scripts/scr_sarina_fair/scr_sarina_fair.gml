@@ -50,6 +50,7 @@ if (run)
 				anim_frame=2;			
 				attack_phase++;
 				attack_frame=4;
+				audio_play_sound(choose(vc_fair1,vc_fair2,sfx_nothing),10,false);
 				}
 			break;
 			}

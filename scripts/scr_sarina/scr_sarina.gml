@@ -243,18 +243,17 @@ switch(walljump_type)
 //Character scripts________________________________________________________________________________
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_sarina_jab;
-my_attacks[?"DashA" ]= scr_matsu_dashattack;
+my_attacks[?"DashA" ]= scr_takia_dashattack;
 my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
-my_attacks[?"Utilt" ]= scr_matsu_utilt;
+my_attacks[?"Utilt" ]= scr_takia_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
 my_attacks[?"Fsmash"]= scr_takia_fheavy;
-my_attacks[?"Usmash"]= scr_matsu_uheavy;
+my_attacks[?"Usmash"]= scr_sarina_uheavy;
 my_attacks[?"Dsmash"]= scr_matsu_dheavy;
-my_attacks[?"Nair"  ]= scr_matsu_nair;
+my_attacks[?"Nair"  ]= scr_sarina_nair;
 my_attacks[?"Fair"  ]= scr_sarina_fair;
-my_attacks[?"Bair"  ]= scr_matsu_bair;
-my_attacks[?"Uair"  ]= scr_matsu_uair;
-my_attacks[?"Uair_success"  ]= scr_matsu_uair_success;
+my_attacks[?"Bair"  ]= scr_sarina_bair_b;
+my_attacks[?"Uair"  ]= scr_takia_uair;
 my_attacks[?"Dair"  ]= scr_matsu_dair;
 my_attacks[?"Nspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec" ]= scr_matsu_fspecial;
@@ -336,7 +335,7 @@ my_sprites[?"Entrance"]=spr_sarina_entrance;
 my_sprites[?"Taunt"]=spr_sarina_taunt;
 #endregion
 #region Animations - Attacks
-my_sprites[?"Dashattack" ]=spr_matsu_dashattack
+my_sprites[?"Dashattack" ]=spr_takia_dashattack
 my_sprites[?"Grab" ]=spr_matsu_grab;
 my_sprites[?"Grabbing" ]=spr_matsu_grabbing;
 my_sprites[?"Bthrow" ]=spr_matsu_bthrow;
@@ -349,16 +348,16 @@ my_sprites[?"Jab2" ]=spr_sarina_jab2;
 my_sprites[?"Jab3" ]=spr_sarina_jab3;
 my_sprites[?"Ftilt" ]=spr_sarina_ftilt;
 my_sprites[?"Dtilt" ]=spr_sarina_dtilt;
-my_sprites[?"Utilt" ]=spr_matsu_utilt;
-my_sprites[?"Nair" ]=spr_matsu_nair;
-my_sprites[?"Bair" ]=spr_matsu_bair;
+my_sprites[?"Utilt" ]=spr_takia_utilt;
+my_sprites[?"Nair" ]=spr_sarina_nair;
+my_sprites[?"Bair" ]=spr_takia_bair;
+my_sprites[?"Bairb"]=spr_sarina_bair2;
 my_sprites[?"Fair" ]=spr_sarina_fair;
-my_sprites[?"Dair" ]=spr_matsu_dairb;
-my_sprites[?"Uair" ]=spr_matsu_uair;
-my_sprites[?"Uairb" ]=spr_matsu_uairb;
-my_sprites[?"Fheavy" ]=spr_matsu_fheavy;
-my_sprites[?"Dheavy" ]=spr_matsu_dheavy;
-my_sprites[?"Uheavy" ]=spr_matsu_uheavy;
+my_sprites[?"Dair" ]=spr_takia_dair;
+my_sprites[?"Uair" ]=spr_takia_uair;
+my_sprites[?"Fheavy" ]=spr_takia_fheavy;
+my_sprites[?"Dheavy" ]=spr_takia_dheavy;
+my_sprites[?"Uheavy" ]=spr_sarina_uheavy;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
@@ -419,10 +418,14 @@ snd_jab2 = sfx_matsu_jab2;
 snd_jab2_hit = sfx_hit_light2;
 snd_jab3 = sfx_matsu_jab3;
 snd_jab3_hit = sfx_hit_med3; // med 2
-snd_dashattack_hit = sfx_hit_med12; // med 2
-snd_nair_sour_hit = sfx_hit_light1;
+snd_dashattack_hit = sfx_hit_med12;
+
+snd_nair = sfx_swoosh2;
+snd_nair_sourhit = sfx_hit_light1;
 snd_nair_hit = sfx_hit_light5; // light5 
 
+snd_bair_b = sfx_swoosh2;
+snd_bair_b_hit= sfx_hit_med11; // light5 
 
 snd_fair_hit = sfx_stab3;
 snd_fair = sfx_swoosh2;
@@ -438,9 +441,14 @@ snd_ftilt_endhit = sfx_stab4;
 snd_ftilt_loop = sfx_swoosh2;
 
 snd_dtilt_hit = sfx_hit_light4; // light5 
+snd_dtilt_sweethit = sfx_hit_med1
+
 snd_utilt_hit = sfx_hit_light5; // light5 
 snd_fheavy_hit = sfx_stab4; // light5 
-snd_uheavy_hit = sfx_stab3;; // light5 
+
+snd_uheavy = sfx_swoosh2; // light5 
+snd_uheavy_hit = sfx_stab3;// light5 
+
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
 
 snd_hitmulti1 = sfx_hit_light1;
@@ -449,6 +457,7 @@ snd_hitmulti2 = sfx_hit_light2;
 snd_tipper1 = sfx_stab4;
 snd_tipper2 = sfx_stab1;
 #endregion
+//Voices
 #region Voice clips
 vc_nothing = sfx_nothing;
 vc_intro1a = sfx_nothing;
@@ -456,15 +465,17 @@ vc_intro1b = sfx_nothing;
 vc_intro2a = sfx_nothing;
 vc_intro2b = sfx_nothing;
 
+
 #region Voice attacks - general
 vc_jab1 = sfx_nothing;
 vc_jab2 = sfx_nothing;
 vc_jab3 = sfx_nothing;
 vc_dashattack1 = sfx_nothing;
 vc_dashattack2 = sfx_nothing;
-vc_ftilt1 = sfx_nothing;
-vc_ftilt2 = sfx_nothing;
-vc_dtilt1 = sfx_nothing;
+vc_ftilt1 = sfx_vc_sarina_attack_ftilt1;
+vc_ftilt2 = sfx_vc_sarina_attack_ftilt2;
+vc_ftilt3 = sfx_vc_sarina_attack_ftilt3;
+vc_dtilt1 = sfx_vc_sarina_action2;
 vc_dtilt2 = sfx_nothing;
 vc_utilt1 = sfx_nothing;
 vc_utilt2 = sfx_nothing;
@@ -472,12 +483,18 @@ vc_uair1 = sfx_nothing;
 vc_uair2 = sfx_nothing;
 vc_dair1 = sfx_nothing;
 vc_dair2 = sfx_nothing;
-vc_fair1 = sfx_nothing;
-vc_fair2 = sfx_nothing;
+vc_fair1 = sfx_vc_takia_action1;
+vc_fair2 = sfx_vc_takia_action2;
 vc_bair1 = sfx_nothing;
 vc_bair2 = sfx_nothing;
-vc_nair1 = sfx_nothing;
-vc_nair2 = sfx_nothing;
+vc_nair1 = sfx_vc_takia_action1;
+vc_nair2 = sfx_vc_takia_action1;
+vc_fheavy1 = sfx_vc_sarina_attack9;
+vc_fheavy2 = sfx_vc_sarina_attack2;
+vc_dheavy1 = sfx_vc_sarina_attack9;
+vc_dheavy2 = sfx_vc_sarina_attack2;
+vc_uheavy1 = sfx_vc_sarina_attack9;
+vc_uheavy2 = sfx_vc_sarina_attack2;
 vc_uair1 = sfx_nothing;
 vc_nspecial1 = sfx_nothing;
 vc_nspecial2 = sfx_nothing;
@@ -490,8 +507,8 @@ vc_dspecial2 = sfx_nothing;
 vc_grab = sfx_nothing;
 #endregion
 #region Voice actions - general
-vc_jump1 = sfx_nothing;
-vc_jump2 = sfx_nothing;
+vc_jump1 = sfx_vc_sarina_action1;
+vc_jump2 = sfx_vc_sarina_action1;
 vc_doublejump1 = sfx_nothing;
 vc_doublejump2 = sfx_nothing;
 vc_walljump1 = sfx_nothing;

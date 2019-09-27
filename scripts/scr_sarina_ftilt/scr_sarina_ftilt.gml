@@ -85,6 +85,9 @@ if (run)
 				anim_frame=5;			
 				attack_phase++;
 				attack_frame=3;
+				
+				audio_play_sound(choose(vc_ftilt1,vc_ftilt2,vc_ftilt3),10,false);
+				
 				var _hitbox = create_magnetbox(32,-64,1.3,0.5,2,5,112,-8,10,3,HITBOX_SHAPE.rectangle,0)
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_firsthit);
 				}
@@ -543,12 +546,12 @@ if (run)
 				attack_frame = 2;
 				#region reset hitboxes
 				reset_hitbox_groups()
-				var _hitbox = create_melee(0,0,1,1,3,7,1,8,45,2,HITBOX_SHAPE.rectangle,0)
+				var _hitbox = create_melee(0,0,1,1,1,7,1,8,45,2,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_endhit);
 				#endregion
 				}
 			break;
