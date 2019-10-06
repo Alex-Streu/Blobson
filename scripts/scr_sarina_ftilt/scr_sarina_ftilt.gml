@@ -575,7 +575,9 @@ if (run)
 				else   {attack_frame =6}
 				#endregion			
 				
-				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel				
+				#region Dash Cancel
+				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
+				#endregion
 				}
 			break;
 			}

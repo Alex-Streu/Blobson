@@ -2,7 +2,7 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		false
+#macro show_hitboxes		true
 #macro show_hurtboxes		false
 #macro show_collision_boxes	false
 
@@ -84,11 +84,11 @@
 	#macro knockback_scaling_multiplier 0.12
 	
 	//Hitstun / Hitlag
-	#macro hitstun_multiplier 1.3 //0.85
+	#macro hitstun_multiplier 1 //0.85
 	#macro hitstun_base_multiplier 5 //4
-	#macro hitstun_weight_multiplier 0.8
+	#macro hitstun_weight_multiplier 1
 	#macro hitstun_damage_multiplier 0.25 //0.24
-	#macro hitstun_knockback_multiplier 4//6
+	#macro hitstun_knockback_multiplier 6//6
 	#macro hitlag_multiplier 1 //0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
@@ -151,6 +151,7 @@
 	#macro hit_sound_pitch_variance 0.2
 	
 	#endregion
+	
 	#region Collisions
 	
 	//Platform Collision checking type
@@ -161,9 +162,10 @@
 	
 	//Bouncing
 	#macro bounce_minimum_speed 12//characters only bounce while in hitstun if they have enough speed
-	#macro bounce_speed_multiplier 0.6
+	#macro bounce_speed_multiplier 1//0.6
 	
 	#endregion
+	
 	#region General
 	
 	//Custom Controls
@@ -177,7 +179,7 @@
 	#macro tap (buff - 1)
 
 	//Dashing
-	#macro dash_buffer 4 //After the player enters the walk state, there are this many frames to transition to dash
+	#macro dash_buffer 3 //After the player enters the walk state, there are this many frames to transition to dash. default is 4
 	
 	//Shielding
 	#macro shield_perfect_frame 6

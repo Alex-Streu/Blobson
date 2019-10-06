@@ -52,7 +52,7 @@ if (run)
 				//var _hitbox1 = create_melee(-4,-124,2.1,0.7,6,3,0.0,10,100,3,HITBOX_SHAPE.circle,0);	
 				//set_hitbox_property(_hitbox1,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				
-				var _hitbox1 = create_magnetbox(-4,-124,2.1,0.7,2,6,6,-90,20,3,HITBOX_SHAPE.rectangle,0);	
+				var _hitbox1 = create_magnetbox(-4,-124,2.1,0.7,1,6,6,-90,20,3,HITBOX_SHAPE.rectangle,0);	
 				set_hitbox_property(_hitbox1,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_hitstun);
 				set_hitbox_property(_hitbox1,HITBOX_PROPERTY.hit_sfx,snd_hitmulti1);			
 				
@@ -161,7 +161,7 @@ if (run)
 				attack_frame=3;
 				reset_hitbox_groups()
 				#region hitbox 1
-				var _hitbox5 = create_melee(-4,-124,2.1,0.7,5,5,1.4,10,80,3,HITBOX_SHAPE.circle,0);	
+				var _hitbox5 = create_melee(-4,-124,2.1,0.7,7,6,1,10,80,3,HITBOX_SHAPE.circle,0);	
 				set_hitbox_property(_hitbox5,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);				
 				//set_hitbox_property(_hitbox5,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_hitstun);
 				#endregion

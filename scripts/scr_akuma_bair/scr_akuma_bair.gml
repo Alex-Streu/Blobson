@@ -51,7 +51,7 @@ if (run)
 				attack_frame=1;	
 				
 				#region normal hitbox
-				var _hitbox = create_melee(-70,-88,.6,.6,9,9,1.3,12,130,1,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(-70,-88,.6,.6,9,7,1.3,12,130,1,HITBOX_SHAPE.rectangle,0);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_bair_sweethit);
 				#endregion
 				}

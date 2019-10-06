@@ -196,6 +196,10 @@ if (run)
 				//Animation
 				anim_frame=7;
 				attack_phase++;
+				#region EX meter
+				if (attack_has_hit())   {EX_meter += 12;}
+				else                              {EX_meter += 0;}
+				#endregion	
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame = 4;}
 				else  {attack_frame = 6;}

@@ -13,6 +13,12 @@ if anim_sprite = my_sprites[?"Lag"]
 if ani_lag_loop = false
 {anim_frame = sprite_get_number(my_sprites[?"Lag"]) - 1;}
 #endregion
+#region Wall jump
+//If crouched, make the final frame not move.
+if anim_sprite = my_sprites[?"WallJ"  ]
+if anim_frame >= 3.8    
+{anim_frame = 4}
+#endregion
 
 if anim_sprite = my_sprites[?"Flinch1"]
 if ani_lag_loop = false

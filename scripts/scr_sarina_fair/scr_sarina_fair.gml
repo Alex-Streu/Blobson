@@ -116,11 +116,16 @@ if (run)
 				//Animate
 				anim_frame=5;			
 				attack_phase++;
-				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
-				else                              {attack_frame =3}
+				
+				#region EX meter
+				if (attack_has_hit())   {EX_meter += 12;}
+				else                              {EX_meter += 0;}
+				#endregion	
+				#region whiff lag + landing lag
+				if (attack_has_hit())   {attack_frame =2; landing_lag = 3;}
+				else                              {attack_frame =3; landing_lag = 10;}
 				#endregion				
-				landing_lag = 3
+
 				}
 			break;
 			}

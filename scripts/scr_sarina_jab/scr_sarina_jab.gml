@@ -68,10 +68,11 @@ if (run)
 				attack_frame=3;
 				set_speed(facing*3,0,true,false);
 				var _hitbox = create_melee(48,-72,0.8,0.5,4,4,0.1,8,75,3,HITBOX_SHAPE.rectangle,0);
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
+				//set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_fx_style,HIT_FX.hit1);
 				//set_hitbox_property(_hitbox,HITBOX_PROPERTY.EX_meter,5);					
+				
 				}
 			break;
 			}
@@ -295,9 +296,11 @@ if (run)
                 hurtbox.image_yscale = 1;
                 hurtbox.image_angle = 0;
 				audio_play_sound(snd_jab3,10,false);
+				audio_play_sound(vc_jab3,10,false); 
 				anim_frame= 0;
 				attack_phase++;
 				attack_frame=3;
+				
 				}
 			break;
 			}
@@ -310,7 +313,7 @@ if (run)
 				anim_frame= 1;
 				attack_phase++;
 				attack_frame=3;
-				set_speed(facing*9,0,false,false);	
+				set_speed(facing*9,0,false,false);				
 				}
 			break;
 			}

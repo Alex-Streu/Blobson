@@ -55,7 +55,7 @@ if (run)
 			break;
 			}
 			#endregion
-		    #region   Frame 4 - weak hitbox
+		    #region   Frame 4 - weak hitbox + dash cancel
 		case 2:
 			{
 			if (attack_frame==0)
@@ -65,13 +65,18 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=4;	
+				
+				#region Dash Cancel
+				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
+				#endregion
+				
 				var _hitbox = create_melee(77,-16,1.3,0.5,6,5,0.5,8,60,3,HITBOX_SHAPE.rectangle,0);	
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dtilt_hit);   
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 5 - add meter
+			#region   Frame 5 - add meter + dash cancel
 		case 3:
 			{
 			if (attack_frame==0)
@@ -81,16 +86,13 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=3;
-				#region ADD EX meter                               (add me in the (attack_frame==0) section
-				if (attack_has_hit())   
-				{
-					EX_meter += 3;
-					}
-				else
-					{					
-					EX_meter += 0;
-					}
-				#endregion				
+				#region EX meter
+				if (attack_has_hit())   {EX_meter += 8;}
+				else                              {EX_meter += 0;}
+				#endregion	
+				#region Dash Cancel
+				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
+				#endregion
 				}
 			break;
 			}

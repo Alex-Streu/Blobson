@@ -112,6 +112,12 @@ if (run)
 				if (attack_has_hit())   {landing_lag=3;}
 				else                              {landing_lag=10;}
 				#endregion
+				#region jump boost if meter is enough and special is held
+				if (attack_has_hit())  
+				if (button_hold(INPUT.special,buff))
+				{set_speed(0,-11)}
+				else {					EX_meter += 0;}
+				#endregion 			
 				#region normal hitbox
 				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,70,2,HITBOX_SHAPE.circle,0);
 				_hitbox.sprite_index = spr_sarina_nair_hitbox;
@@ -145,6 +151,7 @@ if (run)
 				if (attack_has_hit())   {landing_lag=3;}
 				else                              {landing_lag=10;}
 				#endregion
+				
 				#region normal hitbox
 				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,130,2,HITBOX_SHAPE.circle,0);
 				_hitbox.sprite_index = spr_sarina_nair_hitbox;
@@ -198,6 +205,10 @@ if (run)
 				//Animate
 				anim_frame=8;			
 				attack_phase++;
+				#region EX meter
+				if (attack_has_hit())   {EX_meter += 8;}
+				else                              {EX_meter += 0;}
+				#endregion	
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame =2; landing_lag=10;}
 				else                              {attack_frame =4;}

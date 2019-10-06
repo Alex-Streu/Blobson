@@ -77,7 +77,7 @@ switch(_hit.invulnerable_type)
 			background_clear_activate(_total_hl,palette_get_color(owner.palettes[owner.player_color],0));
 			}
 		//Projectiles destroy on contact
-		destroy=true;
+		if impact_destroy = true {destroy=true;}
 		break;
 		}
 	case INV.invincible:

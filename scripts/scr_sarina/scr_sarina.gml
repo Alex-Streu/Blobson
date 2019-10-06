@@ -74,12 +74,25 @@ switch(walljump_type)
 	//Rivals of Aether
 	case WALLJUMP.rivals:
 		{
+		if instance_exists(obj_cubecrush)
+		{
+		wall_jump_startup = 3;
+		wall_jump_time = 7;
+		wall_jump_hsp = 14;
+		wall_jump_vsp = -20;
+		max_wall_jumps = 100;
+		can_wall_cling = false;
+		}
+		if !instance_exists(obj_cubecrush)
+		{
 		wall_jump_startup = 10;
 		wall_jump_time = 7;
 		wall_jump_hsp = 7;
 		wall_jump_vsp = -13;
 		max_wall_jumps = 1;
 		can_wall_cling = false;
+		}
+		
 		}
 	default: break;
 	}
@@ -88,7 +101,7 @@ switch(walljump_type)
 //Air control
 air_accel=0.5;
 max_air_speed=5;
-max_air_speed_dash = 8.5;
+max_air_speed_dash = 9;
 air_friction=0.04;
 //Helpless
 helpless_accel=0.4;
@@ -105,11 +118,11 @@ walk_speed= 4;
 walk_accel=0.5;
 walk_turn_time=6;
 //Dashing
-dash_speed=8;
+dash_speed=10;
 dash_time=8;
 dash_accel=4;
 //Running
-run_speed=8;
+run_speed=10;
 run_accel=0.8;
 run_turn_time=10;
 run_turn_accel=0.8;
@@ -249,17 +262,17 @@ my_attacks[?"Utilt" ]= scr_takia_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
 my_attacks[?"Fsmash"]= scr_takia_fheavy;
 my_attacks[?"Usmash"]= scr_sarina_uheavy;
-my_attacks[?"Dsmash"]= scr_matsu_dheavy;
+my_attacks[?"Dsmash"]= scr_sarina_dheavy;
 my_attacks[?"Nair"  ]= scr_sarina_nair;
 my_attacks[?"Fair"  ]= scr_sarina_fair;
 my_attacks[?"Bair"  ]= scr_sarina_bair_b;
-my_attacks[?"Uair"  ]= scr_takia_uair;
-my_attacks[?"Dair"  ]= scr_matsu_dair;
+my_attacks[?"Uair"  ]= scr_sarina_uair;
+my_attacks[?"Dair"  ]= scr_sarina_dair;
 my_attacks[?"Nspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
 my_attacks[?"Uspec" ]= scr_matsu_uspecial;
-my_attacks[?"Dspec" ]= scr_matsu_dspecial;
+my_attacks[?"Dspec" ]= scr_akuma_dspecial;
 my_attacks[?"Grab"	]= scr_matsu_grab;
 my_attacks[?"DashG"	]= scr_matsu_dashgrab;
 my_attacks[?"Pummel"]= scr_matsu_pummel;
@@ -353,10 +366,10 @@ my_sprites[?"Nair" ]=spr_sarina_nair;
 my_sprites[?"Bair" ]=spr_takia_bair;
 my_sprites[?"Bairb"]=spr_sarina_bair2;
 my_sprites[?"Fair" ]=spr_sarina_fair;
-my_sprites[?"Dair" ]=spr_takia_dair;
-my_sprites[?"Uair" ]=spr_takia_uair;
+my_sprites[?"Dair" ]=spr_sarina_dairv2;
+my_sprites[?"Uair" ]=spr_sarina_uair;
 my_sprites[?"Fheavy" ]=spr_takia_fheavy;
-my_sprites[?"Dheavy" ]=spr_takia_dheavy;
+my_sprites[?"Dheavy" ]=spr_sarina_dheavy;
 my_sprites[?"Uheavy" ]=spr_sarina_uheavy;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
 my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
@@ -373,7 +386,9 @@ ani_speed_runstop = .7;
 ani_speed_jump = .8;
 ani_speed_jumpsquat = 1;
 ani_speed_jumpdouble = 1.2
-ani_speed_walljump = 1;
+if  instance_exists(obj_cubecrush)   {ani_speed_walljump = 2;}
+if !instance_exists(obj_cubecrush)   {ani_speed_walljump = 1;}
+
 ani_speed_airborne = .8;
 ani_speed_airdodge = 1.8;
 ani_speed_waveland = 1
@@ -417,7 +432,7 @@ snd_jab1_hit = sfx_hit_light1;
 snd_jab2 = sfx_matsu_jab2;
 snd_jab2_hit = sfx_hit_light2;
 snd_jab3 = sfx_matsu_jab3;
-snd_jab3_hit = sfx_hit_med3; // med 2
+snd_jab3_hit = sfx_stab1; // med 2
 snd_dashattack_hit = sfx_hit_med12;
 
 snd_nair = sfx_swoosh2;
@@ -431,9 +446,14 @@ snd_fair_hit = sfx_stab3;
 snd_fair = sfx_swoosh2;
 
 snd_bair_hit = sfx_hit_med11; // med2
-snd_dair_hit = sfx_hit_med8; // light5 
-snd_dair_sweetspot_hit = sfx_hit_heavy1; // light5 
-snd_uair_hit = sfx_hit_med4; // light5 
+
+snd_dair = sfx_swoosh2;
+snd_dair_hit = sfx_stab3; // light5 
+snd_dair_sweetspot_hit = sfx_stab4; // light5 
+
+snd_uair_hit = sfx_stab2; // light5 
+snd_uair_sourhit = sfx_stab3; // light5 
+snd_uair_sweethit = sfx_stab1;; // light5 
 
 snd_ftilt_firsthit = sfx_stab1;
 snd_ftilt_hit = sfx_stab2; // light5 
@@ -469,7 +489,7 @@ vc_intro2b = sfx_nothing;
 #region Voice attacks - general
 vc_jab1 = sfx_nothing;
 vc_jab2 = sfx_nothing;
-vc_jab3 = sfx_nothing;
+vc_jab3 = sfx_vc_sarina_attack9;
 vc_dashattack1 = sfx_nothing;
 vc_dashattack2 = sfx_nothing;
 vc_ftilt1 = sfx_vc_sarina_attack_ftilt1;
@@ -498,10 +518,10 @@ vc_uheavy2 = sfx_vc_sarina_attack2;
 vc_uair1 = sfx_nothing;
 vc_nspecial1 = sfx_nothing;
 vc_nspecial2 = sfx_nothing;
-vc_sspecial1 = sfx_nothing;
-vc_sspecial2 = sfx_nothing;
-vc_uspecial1 = sfx_nothing;
-vc_uspecial2 = sfx_nothing;
+vc_sspecial1 = sfx_vc_akuma_spinkick1;
+vc_sspecial2 = sfx_vc_akuma_spinkick2;
+vc_uspecial1 = sfx_vc_akuma_spinkick1;
+vc_uspecial2 = sfx_vc_akuma_shoyu;
 vc_dspecial1 = sfx_nothing;
 vc_dspecial2 = sfx_nothing;
 vc_grab = sfx_nothing;
