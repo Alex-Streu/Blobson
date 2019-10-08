@@ -5,7 +5,8 @@
     "name": "8408cd2a-485f-4df1-8025-7139d2f038e0",
     "children": [
         "fb99717c-ff17-4f37-8c99-88ca099fd93b",
-        "abb4917b-5461-439c-98f2-8791a8fc6914"
+        "abb4917b-5461-439c-98f2-8791a8fc6914",
+        "80f0538a-929c-4e74-85d9-7e6fd362e362"
     ],
     "filterType": "GMSprite",
     "folderName": "Training\/CB",
