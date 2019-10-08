@@ -19,11 +19,13 @@ switch(air_dodge_phase)
 			air_dodge_frame = air_dodge_active;
 			//Invulnerability
 			set_invulnerable(INV.invincible, air_dodge_active);
+			airdodge_flash = true; //Airdodge overlay flash
 			#region Waveland
 			if (run && check_waveland())
 				{
 				run = false;
 				//Reset invulnerability
+				airdodge_flash = false; //Airdodge overlay flash
 				set_invulnerable(INV.normal, 0);
 				}
 			#endregion
@@ -43,6 +45,7 @@ switch(air_dodge_phase)
 			{
 			run = false;
 			//Reset invulnerability
+			airdodge_flash = false; //Airdodge overlay flash
 			set_invulnerable(INV.normal, 0);
 			}
 		#endregion
@@ -58,6 +61,7 @@ switch(air_dodge_phase)
 			//Change state
 			anim_speed = ani_speed_jump
 		    anim_sprite = my_sprites[?"Fall"];
+			airdodge_flash = false; //Airdodge overlay flash
 			set_state(PLAYER_STATE.aerial);
 			return;
 			}

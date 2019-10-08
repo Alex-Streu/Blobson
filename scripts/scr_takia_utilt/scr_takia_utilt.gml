@@ -161,7 +161,7 @@ if (run)
 				attack_frame=3;
 				reset_hitbox_groups()
 				#region hitbox 1
-				var _hitbox5 = create_melee(-4,-124,2.1,0.7,7,6,1,10,80,3,HITBOX_SHAPE.circle,0);	
+				var _hitbox5 = create_melee(-4,-124,2.1,0.7,5,6,1,10,80,3,HITBOX_SHAPE.circle,0);	
 				set_hitbox_property(_hitbox5,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);				
 				//set_hitbox_property(_hitbox5,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_hitstun);
 				#endregion
@@ -179,7 +179,7 @@ if (run)
 			break;
 			}
 		#endregion				
-			#region   Frame 8 + ex meter
+			#region   Frame 8 + ex meter + dash cancel
 		case 6:
 			{
 			if (attack_frame==0)
@@ -188,6 +188,9 @@ if (run)
 				anim_frame=7;						
 				attack_phase++;	
 				attack_frame = 3;
+				#region dash cancel
+				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
+				#endregion
 				#region ADD EX meter + jump cancelable
 				if (attack_has_hit())   
 				{

@@ -265,7 +265,7 @@ my_attacks[?"Usmash"]= scr_sarina_uheavy;
 my_attacks[?"Dsmash"]= scr_sarina_dheavy;
 my_attacks[?"Nair"  ]= scr_sarina_nair;
 my_attacks[?"Fair"  ]= scr_sarina_fair;
-my_attacks[?"Bair"  ]= scr_sarina_bair_b;
+my_attacks[?"Bair"  ]= scr_sarina_bair_a;
 my_attacks[?"Uair"  ]= scr_sarina_uair;
 my_attacks[?"Dair"  ]= scr_sarina_dair;
 my_attacks[?"Nspec" ]= scr_matsu_fspecial;
@@ -285,6 +285,7 @@ my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
 #endregion
 my_attacks[?"Taunt" ]= scr_sarina_taunt1;
 //Animations______________________________________________________________________________________
+
 //Animation sprites
 #region Animations - main
 my_sprites[?"Idle"    ]=spr_sarina_idle;
@@ -325,7 +326,7 @@ my_sprites[?"Tumble"  ]=spr_matsu_tumble;
 my_sprites[?"Helpless"]=spr_matsu_freefall;
 my_sprites[?"Landlag"]=spr_sarina_landlag;
 my_sprites[?"Lag"     ]=spr_sarina_landlag;
-my_sprites[?"Grabbed"]=spr_sarina_hitlag1; //being grabbed by an enemy
+my_sprites[?"Grabbed"]=spr_sarina_grabbed; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
 my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
 my_sprites[?"Tech" ]=spr_matsu_tech;
@@ -363,7 +364,7 @@ my_sprites[?"Ftilt" ]=spr_sarina_ftilt;
 my_sprites[?"Dtilt" ]=spr_sarina_dtilt;
 my_sprites[?"Utilt" ]=spr_takia_utilt;
 my_sprites[?"Nair" ]=spr_sarina_nair;
-my_sprites[?"Bair" ]=spr_takia_bair;
+my_sprites[?"Bair" ]=spr_sarina_bair;
 my_sprites[?"Bairb"]=spr_sarina_bair2;
 my_sprites[?"Fair" ]=spr_sarina_fair;
 my_sprites[?"Dair" ]=spr_sarina_dairv2;
@@ -376,7 +377,7 @@ my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
 my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
 #endregion
 #region Animation speeds - non attacks
-ani_speed_intro = .75;
+ani_speed_intro = .65;
 ani_speed_idle = 1;
 ani_speed_crouch = 1;
 ani_speed_walk = 1;
@@ -416,6 +417,24 @@ frame_final_run_confirm = false;
 #region Animation Variables
 ani_lag_loop = false; //for the flinch, stop at the final frame if false. loop the animation if true.
 #endregion
+
+#region Animation Effects
+
+#region Heavy attack flash
+heavy_flash_timer_startup = 10;
+heavy_flash_timer = heavy_flash_timer_startup;
+heavy_flash = false;
+#endregion
+#region Dodgeroll flash
+dodgeroll_sprite = spr_sarina_roll_flash;
+dodgeroll_flash = false;
+#endregion
+#region Airdodge flash
+airdodge_sprite = spr_sarina_airdodge_flash;
+airdodge_flash = false;
+#endregion
+
+#endregion
 //Sound effects____________________________________________________________________________________
 #region Sounds for everything besides attacks
 snd_dash = sfx_dash1;
@@ -444,6 +463,11 @@ snd_bair_b_hit= sfx_hit_med11; // light5
 
 snd_fair_hit = sfx_stab3;
 snd_fair = sfx_swoosh2;
+
+snd_bair1 = sfx_swoosh2;
+snd_bair1_hit = sfx_stab3; // med2
+snd_bair1_sweethit = sfx_stab1; // light5 
+
 
 snd_bair_hit = sfx_hit_med11; // med2
 
@@ -563,4 +587,5 @@ vc_ko3 = sfx_vc_takia_ko1;
 #endregion
 //Custom Step Event
 custom_script= scr_sarina_custom();
+custom_draw_script = scr_sarina_draw();
 custom_step_script = scr_sarina_custom_stepevent();

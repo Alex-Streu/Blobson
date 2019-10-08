@@ -52,24 +52,7 @@ if (run)
 				attack_frame=2;
 				
                 audio_play_sound(snd_dair,10,false);
-				
-				#region hitbox
-				var _hitbox = create_melee(0,0,1,1,5,6,0.8,10,45,2,HITBOX_SHAPE.circle,0);
-				_hitbox.sprite_index = spr_sarina_dair_hitbox;
-				_hitbox.image_speed = 0;
-				if (facing == -1) {_hitbox.image_xscale *= -1;}
-				_hitbox.image_index = 2;
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dair_hit);
-				#endregion
-				#region sour hitbox
-				var _hitbox = create_melee(0,0,1,1,4,4,1,10,130,2,HITBOX_SHAPE.circle,0);
-				_hitbox.sprite_index = spr_sarina_dair_sourbox;
-				_hitbox.image_speed = 0;
-				if (facing == -1) {_hitbox.image_xscale *= -1;}
-				_hitbox.image_index = 2;
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dair_hit);
-				#endregion
-				
+
 				}
 			break;
 			}

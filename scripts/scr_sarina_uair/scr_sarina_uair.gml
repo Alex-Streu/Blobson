@@ -125,7 +125,7 @@ if (run)
 				_hitbox.sprite_index = spr_sarina_uair_tipper;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
-				_hitbox.image_index = 0;
+				_hitbox.image_index = 1;
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_tipper1);
 				#endregion
 				#region sweetbox

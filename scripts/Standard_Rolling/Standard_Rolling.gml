@@ -42,6 +42,7 @@ if (run && rolling_phase == 0)
 #region Cancel in air
 if (run && !on_ground())
 	{
+	dodgeroll_flash = false; //overlay to show invinibility
 	set_state(PLAYER_STATE.aerial);
 	run = false;
 	}
@@ -66,6 +67,7 @@ if (run)
 				rolling_phase++;
 				rolling_frame = roll_active;
 				//Invulnerability
+				dodgeroll_flash = true; //overlay to show invinibility
 				set_invulnerable(INV.invincible, roll_active);
 				//Speed
 				set_speed(roll_speed * rolling_direction, 0, false, false);
@@ -113,6 +115,7 @@ if (run)
 					{
 					facing = -sign(rolling_direction);
 					}
+					dodgeroll_flash = false; //overlay to show invinibility
 					set_state(PLAYER_STATE.idle);
 					}
 				run = false;

@@ -629,7 +629,7 @@
             "isLocked": false,
             "name": "tipper",
             "opacity": 51,
-            "visible": true
+            "visible": false
         },
         {
             "id": "6a098073-9d18-4c9e-994c-58f5ed64a193",
@@ -640,7 +640,7 @@
             "isLocked": false,
             "name": "hitbox",
             "opacity": 48,
-            "visible": true
+            "visible": false
         },
         {
             "id": "b626b29b-72cf-4058-8d55-3387135aa193",
@@ -651,7 +651,7 @@
             "isLocked": false,
             "name": "sour",
             "opacity": 52,
-            "visible": true
+            "visible": false
         },
         {
             "id": "2121016a-1a43-43f0-a5ab-ff40cb80dbac",
@@ -662,7 +662,7 @@
             "isLocked": false,
             "name": "hurtbox",
             "opacity": 50,
-            "visible": true
+            "visible": false
         },
         {
             "id": "98ecde4c-7037-4d69-845d-05069fd91085",
@@ -672,7 +672,7 @@
             "blendMode": 0,
             "isLocked": false,
             "name": "default",
-            "opacity": 60,
+            "opacity": 100,
             "visible": true
         }
     ],

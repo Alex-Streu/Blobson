@@ -1,4 +1,4 @@
-///The custom script for SARINA
+///The custom step script for SARINA. Make sure this can be checked in the obj_player object.
 
 
 #region Crouch
@@ -164,6 +164,18 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region bair1 hurtbox
+			if anim_sprite = spr_sarina_bair
+			{
+            hurtbox.sprite_index = spr_sarina_bair_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
 			#region nair hurtbox
 			if anim_sprite = spr_sarina_nair
 			{
@@ -179,6 +191,25 @@ anim_frame = 7
 			
 			
 #endregion
+
+#region If doing a heavy sttack and charging it, flash the player.
+
+//timer
+if anim_sprite = my_sprites[?"Uheavy" ] or anim_sprite = my_sprites[?"Dheavy" ] or anim_sprite = my_sprites[?"Fheavy" ]
+if anim_frame = 0
+if heavy_flash_timer > 0
+{
+heavy_flash_timer -= 1;
+}
+
+if heavy_flash_timer <= 0   {heavy_flash_timer = heavy_flash_timer_startup;}
+
+if heavy_flash_timer >= 5 and heavy_flash_timer <= 10   {heavy_flash = false;}
+if heavy_flash_timer >= 0 and heavy_flash_timer < 5   {heavy_flash = true;}
+
+#endregion
+
+
 //if (state != PLAYER_STATE.in_hitstun)
 {
 	
