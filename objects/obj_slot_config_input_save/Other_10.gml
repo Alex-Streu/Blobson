@@ -3,23 +3,21 @@
 // Inherit the parent event
 event_inherited();
 
-//Convert field input to setting
-with (field)
-{
-	setting = [];
-	for (var i = 0; i < ds_list_size(input); i++)
-	{
-		setting[i] = input[| i];
-	}
-}
+var test = ds_map_create();
+ds_map_add_list(test, field.name, field.setting);
+show_debug_message(json_encode(test))
 
 //Get config
 var _profile = ds_list_find_value(global.profiles, owner.profile[? "Index"]);
 var _configs = _profile[? "Configs"];
 var _config = ds_list_find_value(_configs, owner.config[? "Index"]);
+var _settings = ds_map_create();
+ds_map_copy(_settings, _config[? "Settings"]);
 
 //Update config setting
-_config[? field.name] = field.setting;
+ds_map_delete(_settings, field.name);
+ds_map_add_list(_settings, field.name, field.setting);
+ds_map_copy(_config[? "Settings"], _settings);
 
 //Save
 save_profiles();

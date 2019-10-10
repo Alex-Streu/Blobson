@@ -5,7 +5,9 @@ event_inherited();
 
 var _package = ds_map_create();
 _package[? "Name"] = name;
-_package[? "Setting"] = setting;
+var _list = ds_list_create();
+ds_list_copy(_list, setting);
+ds_map_add_list(_package, "Setting", _list);
 
 with (owner)
 {

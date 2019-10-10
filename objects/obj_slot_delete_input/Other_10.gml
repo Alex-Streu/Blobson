@@ -5,5 +5,5 @@ event_inherited();
 
 with (field)
 {
-	ds_list_clear(input);
+	ds_list_clear(setting);
 }

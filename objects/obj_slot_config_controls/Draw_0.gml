@@ -13,9 +13,9 @@ draw_set_font(fnt_consolas);
 
 //Draw text
 var _text = "";
-for (var i = 0; i < array_length_1d(setting); i++)
+for (var i = 0; i < ds_list_size(setting); i++)
 {
-	_text += owner.buttonNames[? setting[i]] + " ";
+	_text += owner.buttonNames[? setting[| i]] + " ";
 }
 draw_text_transformed(x + sprite_width/2, y + sprite_height/2, _text, 1, 1, 0);
 

@@ -4,12 +4,21 @@
 event_inherited();
 
 #region Page Creation
+//Help text
+var item = ds_map_create();
+item[? "Position"] = [ owner.sprite_width/2, 30 ];
+item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+item[? "Text"] = "Press START to\nend input";
+item[? "Font"] = fnt_consolas;
+item[? "HAlign"] = fa_center;
+ds_list_add(page, item);
 
 //Create input field
 var inputField = instance_create_layer(hcenter_item(owner.x, owner.sprite_width, sprite_get_width(object_get_sprite(obj_slot_config_control_input))), owner.y + 50, "MenuLayer", obj_slot_config_control_input);
 inputField.owner = owner;
 inputField.name = owner.manageData[? "Name"];
 inputField.setting = owner.manageData[? "Setting"];
+show_debug_message(json_encode(owner.manageData))
 ds_list_add(pageObjects, inputField);
 
 //Create back button

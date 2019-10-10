@@ -211,8 +211,9 @@ item[? "HAlign"] = fa_center;
 ds_list_add(page, item);
 
 //Load config settings
-var _config = owner.config;
+var _settings = ds_map_create();
+ds_map_copy(_settings, owner.config[? "Settings"]);
 with (obj_slot_config_setting)
 {
-	setting = _config[? name];
+	setting = _settings[? name];
 }

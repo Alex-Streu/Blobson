@@ -26,11 +26,14 @@ if (_found)
 
 var _max =  _configs[| _size-1];
 var _config = ds_map_create();
-ds_map_copy(_config, global.default_config);
 _config[? "ID"] = _max[? "ID"] + 1;
 _config[? "Name"] = _text;
 _config[? "IsDefault"] = false;
 _config[? "Index"] = ds_list_size(_configs);
+
+var _settings = ds_map_create();
+ds_map_copy(_settings, global.default_config[? "Settings"]);
+ds_map_add_map(_config, "Settings", _settings);
 
 //Set character config
 var _characters = ds_map_create();

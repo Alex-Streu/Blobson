@@ -4,6 +4,22 @@
 event_inherited();
 
 #region Page Creation
+//Top page text
+var item = ds_map_create();
+item[? "Position"] = [ owner.sprite_width/2, 10 ];
+item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+item[? "Text"] = "Hold Y to delete";
+item[? "Font"] = fnt_consolas;
+item[? "HAlign"] = fa_center;
+ds_list_add(page, item);
+
+item = ds_map_create();
+item[? "Position"] = [ owner.sprite_width/2, 30 ];
+item[? "Type"] = MENU_ITEM_TYPE.TEXT;
+item[? "Text"] = "Press X to edit";
+item[? "Font"] = fnt_consolas;
+item[? "HAlign"] = fa_center;
+ds_list_add(page, item);
 
 //Draw settings
 var padding = 5;

@@ -3,5 +3,5 @@
 // Inherit the parent event
 event_inherited();
 
-itemCap = 2;
+itemCap = 4;
 rowSize = 2;

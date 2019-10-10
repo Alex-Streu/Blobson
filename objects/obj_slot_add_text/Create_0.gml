@@ -7,6 +7,6 @@ field = noone;
 characters = [];
 display = "";
 index = 0;
-timeLimit = 120;
+timeLimit = 60;
 isNew = true;
 isHovered = false;

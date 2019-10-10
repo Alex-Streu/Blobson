@@ -4,3 +4,5 @@
 event_inherited();
 
 setting = !setting;
+
+save_profiles();

@@ -86,27 +86,32 @@ global.button_map = key;
 
 #region Create default profile and config
 
+var _settings = ds_map_create();
+_settings[? "TapJump"] = false;
+_settings[? "Rumble"] = true;
+_settings[? "HSensitivity"] = 0.7;
+_settings[? "VSensitivity"] = 0.55;
+_settings[? "RunSensitivity"] = 0.15;
+_settings[? "RStickSensitivity"] = 0.25;
+
+var _list = ds_list_create();
+_list = ds_list_create(); ds_list_add(_list, gp_face1); ds_map_add_list(_settings, "Attack", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_face2); ds_map_add_list(_settings, "Special", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_face3); ds_list_add(_list, gp_face4); ds_map_add_list(_settings, "Jump", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_shoulderr); ds_list_add(_list, gp_shoulderl); ds_map_add_list(_settings, "Grab", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_shoulderrb); ds_list_add(_list, gp_shoulderlb); ds_map_add_list(_settings, "Parry", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_padd); ds_map_add_list(_settings, "Taunt", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_padl); ds_map_add_list(_settings, "TeamLeft", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_padr); ds_map_add_list(_settings, "TeamRight", _list);
+_list = ds_list_create(); ds_list_add(_list, gp_padu); ds_map_add_list(_settings, "TeamJump", _list);
+_list =  ds_list_create(); ds_list_add(_list, gp_select); ds_map_add_list(_settings, "TagIn", _list);
+
 var _config = ds_map_create();
 _config[? "ID"] = 0;
 _config[? "Name"] = "DEF";
 _config[? "IsDefault"] = true;
 _config[? "Index"] = 0;
-_config[? "TapJump"] = false;
-_config[? "Rumble"] = true;
-_config[? "Attack"] = [ gp_face1 ];
-_config[? "Special"] = [ gp_face2 ];
-_config[? "Jump"] = [ gp_face3, gp_face4 ];
-_config[? "Grab"] = [ gp_shoulderr, gp_shoulderl ];
-_config[? "Parry"] = [ gp_shoulderrb, gp_shoulderlb ];
-_config[? "Taunt"] = [ gp_padd ];
-_config[? "TeamLeft"] = [ gp_padl ];
-_config[? "TeamRight"] = [ gp_padr ];
-_config[? "TeamJump"] = [ gp_padu ];
-_config[? "TagIn"] = [ gp_select ];
-_config[? "HSensitivity"] = 0.7;
-_config[? "VSensitivity"] = 0.55;
-_config[? "RunSensitivity"] = 0.15;
-_config[? "RStickSensitivity"] = 0.25;
+ds_map_add_map(_config, "Settings", _settings);
 global.default_config = _config;
 	
 var _configs = ds_list_create();
