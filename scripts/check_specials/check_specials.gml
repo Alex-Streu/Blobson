@@ -15,7 +15,24 @@ if (button(INPUT.special,buff))
 	//Dspec
 	if (stick_tilted(_stick,DIR.down))
 		{
-		attack_start(my_attacks[?"Dspec"]);
+	
+	    #region sarina d-special check - Slide kick or Dive kick
+		if name = "Sarina"
+		{
+		      if (on_ground())
+	          {
+	          attack_start(scr_sarina_dspecial_slide )    
+	          }
+		
+		      else
+			  {
+				  attack_start(scr_sarina_dspecial_air )
+			  }
+		}
+		#endregion	
+	
+	//READD THIS SCRIPT OR MAKE OTHER  FIGHTERS LIKE SARINA
+		//attack_start(my_attacks[?"Dspec"]);
 		}
 	else
 	//Fspec

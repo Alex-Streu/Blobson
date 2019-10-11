@@ -6,6 +6,11 @@ attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
 //Canceling
 if run && cancel_air_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 5;
+meter_gain_magnet = 1;
+
 #region Phases
 if (run)
 	{
@@ -76,7 +81,7 @@ if (run)
 			break;
 			}
 			#endregion
-			#region   Frame 5 - add meter + dash cancel
+			#region   Frame 5 - dash cancel
 		case 3:
 			{
 			if (attack_frame==0)
@@ -86,10 +91,6 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=3;
-				#region EX meter
-				if (attack_has_hit())   {EX_meter += 8;}
-				else                              {EX_meter += 0;}
-				#endregion	
 				#region Dash Cancel
 				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
 				#endregion

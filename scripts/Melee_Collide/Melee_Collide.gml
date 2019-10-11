@@ -24,10 +24,13 @@ for(var i=0;i<ds_list_size(_col_list);i++)
 //Check invulnerability
 switch(_hit.invulnerable_type)
 	{
+		#region normal
 	case INV.normal:
-		{
+		{			
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
+		//EX meter gain
+		owner.EX_meter += owner.meter_gain
 		//Knockback and damage
 		_hit.damage+=damage;
 		_hit.damage_text_random=damage;
@@ -87,6 +90,8 @@ switch(_hit.invulnerable_type)
 			}
 		break;
 		}
+		#endregion
+		#region invincible
 	case INV.invincible:
 		{
 		//No knockback or damage or hitlag
@@ -94,6 +99,8 @@ switch(_hit.invulnerable_type)
 		//This is because the opponent should be hit even if their invincibility runs out mid-attack
 		break;
 		}
+		#endregion
+		#region superarmor
 	case INV.superarmor:
 		{
 		//Add the other player to the collided list
@@ -106,6 +113,8 @@ switch(_hit.invulnerable_type)
 		_hit.self_hitlag_frame=base_hitlag;
 		break;
 		}
+		#endregion
+		#region shielding
 	case INV.shielding:
 		{
 		//Add the other player to the collided list
@@ -118,8 +127,11 @@ switch(_hit.invulnerable_type)
 		//Effects
 		hit_fx_style_create(HIT_FX.shield,0,_hit,0);
 		hit_sfx_play(hit_sfx);
+		
 		break;
 		}
+		#endregion
+		#region parry
 	case INV.parry:
 		{
 		//Add the other player to the collided list
@@ -128,5 +140,6 @@ switch(_hit.invulnerable_type)
 		parry_trigger(owner,_hit);
 		break;
 		}
+		#endregion
 	default: break;
 	}

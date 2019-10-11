@@ -9,6 +9,11 @@ allow_hitfall();
 aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 5;
+meter_gain_magnet = 0;
+
 //Phases
 if (run)
 	{
@@ -185,11 +190,6 @@ if (run)
 				//Animate
 				anim_frame=7;			
 				attack_phase++;
-				
-				#region EX meter
-				if (attack_has_hit())   {EX_meter += 8;}
-				else                              {EX_meter += 0;}
-				#endregion	
 				
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame =2;   landing_lag = 3;}

@@ -7,8 +7,11 @@ friction_gravity(air_friction,grav,max_fall_speed);
 fastfall_attack_try();
 allow_hitfall();
 aerial_drift();
-//Canceling
-if run && cancel_ground_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 7;
+meter_gain_magnet = 0;
+
 //Phases
 if (run)
 	{
@@ -84,7 +87,7 @@ if (run)
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
 				_hitbox.image_index = anim_frame;
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_nair_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_nair_hit);				
 				#endregion
 				#region sour hitbox
 				var _hitbox = create_melee(0,0,1,1,5,4,0.3,6,35,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
@@ -205,10 +208,6 @@ if (run)
 				//Animate
 				anim_frame=8;			
 				attack_phase++;
-				#region EX meter
-				if (attack_has_hit())   {EX_meter += 8;}
-				else                              {EX_meter += 0;}
-				#endregion	
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame =2; landing_lag=10;}
 				else                              {attack_frame =4;}
@@ -273,6 +272,15 @@ if (run)
 //Movement
 move_();
 	
-	
+	#region Canceling
+if run && cancel_ground_check() 
+{
+	#region EX meter
+				if (attack_has_hit())   {EX_meter += ex_sarina_nair;}
+				else                              {EX_meter += 0;}
+				#endregion	
+    run=false;
+}
+#endregion
 	
 	

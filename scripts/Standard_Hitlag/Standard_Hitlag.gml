@@ -2,6 +2,9 @@
 //Contains the standard actions for the hitlag state.
 /* NOTE: This state is the small pause whenever a character is hit, so not much happens */
 var run = true;
+
+hitlag_state = true;
+hitstun_state = false;
 //Timer
 hitlag_frame = max(--hitlag_frame, 0);
 
@@ -22,7 +25,7 @@ if (run && hitlag_frame == 0)
 		{
 						
 		case PLAYER_STATE.in_hitstun:
-		
+		hitlag_state = false;
 		//voice clip
 			audio_play_sound(choose(vc_hurt1,vc_hurt2,vc_nothing,vc_nothing),10,false);
 			//Set the hitstun timer
@@ -73,6 +76,7 @@ if (run && hitlag_frame == 0)
 				}
 			break;
 		case PLAYER_STATE.in_flinch:
+	     	hitlag_state = false;
 			//Set the timer for flinching
 			flinch_frame = stored_hitstun;
 			break;

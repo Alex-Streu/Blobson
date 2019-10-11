@@ -1,6 +1,9 @@
 ///@func Projectile_Collide(id)
 ///@param id
 //All of the actions that happen when a projectile comes into contact with a player
+
+#region orginal script
+
 //Exit out early if it is the owner
 var _hurtbox=argument[0];
 var _hit=_hurtbox.player;
@@ -127,3 +130,4 @@ switch(_hit.invulnerable_type)
 		}
 	default: break;
 	}
+	#endregion

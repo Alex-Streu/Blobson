@@ -1,6 +1,7 @@
 ///The custom step script for SARINA. Make sure this can be checked in the obj_player object.
 
 
+
 #region Crouch
 //If crouched, make the final frame not move.
 if anim_sprite = my_sprites[?"Crouch"  ]
@@ -208,6 +209,21 @@ if heavy_flash_timer >= 5 and heavy_flash_timer <= 10   {heavy_flash = false;}
 if heavy_flash_timer >= 0 and heavy_flash_timer < 5   {heavy_flash = true;}
 
 #endregion
+
+
+if ex_flash = true
+if ex_flash_timer > 0
+{
+ex_flash_timer -= 1;
+image_blend = c_yellow;
+}
+
+if ex_flash = true
+if ex_flash_timer <= 0
+{
+	ex_flash = false;
+	image_blend = c_white;
+}
 
 
 //if (state != PLAYER_STATE.in_hitstun)

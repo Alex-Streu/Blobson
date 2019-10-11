@@ -13,6 +13,9 @@ friction_gravity(ground_friction,grav,max_fall_speed);
 if run && cancel_air_check() run=false;
 #endregion
 
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 3;
+
 #region //Phases
 if (run)
 	{
@@ -86,16 +89,6 @@ if (run)
 				anim_frame=4;			
 				attack_phase++;
 				attack_frame=4;
-				#region ADD EX meter                               (add me in the (attack_frame==0) section
-				if (attack_has_hit())   
-				{
-					EX_meter += 1;
-					}
-				else
-					{					
-					EX_meter += 0;
-					}
-				#endregion
 				}
 				
 			break;
@@ -206,16 +199,6 @@ if (run)
 				anim_frame=3;
 				attack_phase++;
 				attack_frame=3;
-				#region ADD EX meter                               (add me in the (attack_frame==0) section
-				if (attack_has_hit())   
-				{
-					EX_meter += 2;
-					}
-				else
-					{					
-					EX_meter += 0;
-					}
-				#endregion
 				}
 			break;
 			}
@@ -346,16 +329,6 @@ if (run)
 			
 				attack_phase++;
 				attack_frame=2;
-				#region ADD EX meter                               (add me in the (attack_frame==0) section
-				if (attack_has_hit())   
-				{
-					EX_meter += 3;
-					}
-				else
-					{					
-					EX_meter += 0;
-					}
-				#endregion
 				}
 			break;
 			}

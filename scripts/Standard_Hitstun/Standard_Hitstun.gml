@@ -4,6 +4,8 @@ var run = true;
 //Timer
 hitstun_frame = max(--hitstun_frame, 0);
 
+hitstun_state = true;
+
 #region reset recoveries
 if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 #endregion
@@ -26,6 +28,7 @@ else
 #region End Hitstun - Go to tumble
 if (run && hitstun_frame == 0)
 	{
+		hitstun_state = false;
 	//Go to tumble state, which can be canceled to return to normal
 	set_state(PLAYER_STATE.in_tumble);
 	run = false;
@@ -35,6 +38,7 @@ if (run && hitstun_frame == 0)
 var _current_speed = point_distance(x, y, x + hsp, y + vsp);
 if (run && on_ground() && vsp >= 0 && _current_speed <= bounce_minimum_speed)
 	{
+		hitstun_state = false;
 	set_state(PLAYER_STATE.knockdown);
 	//Chooses the larger value or remaining hitstun or the hard landing lag
 	knockdown_frame = max(hitstun_frame, hard_landing_lag);

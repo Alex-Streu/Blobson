@@ -54,8 +54,8 @@ menu_mainbox_ads2_x = menu_mainbox_x + 214;
    
    #endregion
 
-if menu_bg_grid_frame != 40 {menu_bg_grid_frame += 1;}
-if menu_bg_grid_frame >= 40 {menu_bg_grid_frame = 0;}
+//if menu_bg_grid_frame != 40 {menu_bg_grid_frame += 1;}
+//if menu_bg_grid_frame >= 40 {menu_bg_grid_frame = 0;}
 
 #endregion
 

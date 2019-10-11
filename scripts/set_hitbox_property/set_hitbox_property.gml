@@ -62,10 +62,12 @@ with (_hitbox)
 				hit_fx_style = _value;
 				}
 			break;
+		
 		case HITBOX_PROPERTY.hit_sfx:
 			hit_sfx = _value;
 			break;
-			case HITBOX_PROPERTY.EX_meter:
+		
+		case HITBOX_PROPERTY.EX_meter:
 			owner.EX_meter += _value;
 			break;
 		}

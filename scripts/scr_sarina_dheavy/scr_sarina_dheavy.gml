@@ -169,12 +169,7 @@ if (run)
 				//Animation
 				anim_frame=8;
 				attack_frame = 2;
-				attack_phase++;		
-				
-				#region EX meter
-				if (attack_has_hit())   {EX_meter += 10;}
-				else                              {EX_meter += 0;}
-				#endregion	
+				attack_phase++;						
 				
 				//fx_create(spr_sarina_dheavy_hitbox,1,0,11,x,y-16,1,0)
 				
@@ -311,3 +306,7 @@ if (run)
 	#endregion
 //Movement
 move_grounded_();
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 5 + round(smash_charge / 5);
+meter_gain_magnet = 1;

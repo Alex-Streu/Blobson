@@ -6,6 +6,11 @@ attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
 //Canceling
 if run && cancel_air_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 1;
+meter_gain_magnet = 1;
+
 #region Phases
 if (run)
 	{
@@ -566,10 +571,6 @@ if (run)
 				anim_frame=27;
 			
 				attack_phase++;
-				#region ADD EX meter
-				if (attack_has_hit())   {EX_meter += 10;}
-                    else   {EX_meter += 0;}
-				#endregion 			
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame =2}
 				else   {attack_frame =6}

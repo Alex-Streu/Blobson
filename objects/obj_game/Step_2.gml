@@ -18,7 +18,7 @@ with(obj_player)
 //If there is only one winner, the game ends
 //Will eventually need to be updated for team battles
 if (_win_count == 1)
-if !instance_exists(obj_cubecrush)
+if !instance_exists(obj_crushrush)
 	{
 	var _w = _winners[0];
 	part_particles_clear(global.part_sys);

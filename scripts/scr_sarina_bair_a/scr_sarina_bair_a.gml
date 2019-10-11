@@ -9,6 +9,11 @@ allow_hitfall();
 aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 6;
+meter_gain_magnet = 1;
+
 //Phases
 if (run)
 	{

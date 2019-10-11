@@ -74,16 +74,16 @@ switch(walljump_type)
 	//Rivals of Aether
 	case WALLJUMP.rivals:
 		{
-		if instance_exists(obj_cubecrush)
+		if instance_exists(obj_crushrush)
 		{
 		wall_jump_startup = 3;
 		wall_jump_time = 7;
 		wall_jump_hsp = 14;
 		wall_jump_vsp = -20;
-		max_wall_jumps = 100;
+		max_wall_jumps = 1;
 		can_wall_cling = false;
 		}
-		if !instance_exists(obj_cubecrush)
+		if !instance_exists(obj_crushrush)
 		{
 		wall_jump_startup = 10;
 		wall_jump_time = 7;
@@ -238,6 +238,9 @@ techroll_startup=8;
 techroll_active=12;
 techroll_endlag=14;
 #endregion
+#region EX meter
+ex_sarina_nair = 5;
+#endregion
 #region UNUSED
 //Walljump Values
 /*
@@ -258,7 +261,7 @@ switch(walljump_type)
 my_attacks[?"Jab"   ]= scr_sarina_jab;
 my_attacks[?"DashA" ]= scr_takia_dashattack;
 my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
-my_attacks[?"Utilt" ]= scr_takia_utilt;
+my_attacks[?"Utilt" ]= scr_sarina_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
 my_attacks[?"Fsmash"]= scr_takia_fheavy;
 my_attacks[?"Usmash"]= scr_sarina_uheavy;
@@ -272,7 +275,7 @@ my_attacks[?"Nspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec" ]= scr_matsu_fspecial;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
 my_attacks[?"Uspec" ]= scr_matsu_uspecial;
-my_attacks[?"Dspec" ]= scr_akuma_dspecial;
+my_attacks[?"Dspec" ]= scr_sarina_dspecial_slide;
 my_attacks[?"Grab"	]= scr_matsu_grab;
 my_attacks[?"DashG"	]= scr_matsu_dashgrab;
 my_attacks[?"Pummel"]= scr_matsu_pummel;
@@ -362,7 +365,7 @@ my_sprites[?"Jab2" ]=spr_sarina_jab2;
 my_sprites[?"Jab3" ]=spr_sarina_jab3;
 my_sprites[?"Ftilt" ]=spr_sarina_ftilt;
 my_sprites[?"Dtilt" ]=spr_sarina_dtilt;
-my_sprites[?"Utilt" ]=spr_takia_utilt;
+my_sprites[?"Utilt" ]=spr_sarina_utilt;
 my_sprites[?"Nair" ]=spr_sarina_nair;
 my_sprites[?"Bair" ]=spr_sarina_bair;
 my_sprites[?"Bairb"]=spr_sarina_bair2;
@@ -387,8 +390,8 @@ ani_speed_runstop = .7;
 ani_speed_jump = .8;
 ani_speed_jumpsquat = 1;
 ani_speed_jumpdouble = 1.2
-if  instance_exists(obj_cubecrush)   {ani_speed_walljump = 2;}
-if !instance_exists(obj_cubecrush)   {ani_speed_walljump = 1;}
+if  instance_exists(obj_crushrush)   {ani_speed_walljump = 2;}
+if !instance_exists(obj_crushrush)   {ani_speed_walljump = 1;}
 
 ani_speed_airborne = .8;
 ani_speed_airdodge = 1.8;
@@ -487,7 +490,10 @@ snd_ftilt_loop = sfx_swoosh2;
 snd_dtilt_hit = sfx_hit_light4; // light5 
 snd_dtilt_sweethit = sfx_hit_med1
 
-snd_utilt_hit = sfx_hit_light5; // light5 
+snd_utilt_hit = sfx_stab3; // light5 
+
+
+
 snd_fheavy_hit = sfx_stab4; // light5 
 
 snd_uheavy = sfx_swoosh2; // light5 

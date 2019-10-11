@@ -28,6 +28,8 @@ switch(_hit.invulnerable_type)
 		{
 		//Add the other player to the collided list
 		ds_list_add(_col_list,_hit);
+		//add meter
+		owner.EX_meter += owner.meter_gain_magnet;
 		//Knockback and damage
 		_hit.damage+=damage;
 		_hit.damage_text_random=damage;

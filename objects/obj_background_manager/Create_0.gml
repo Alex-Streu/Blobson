@@ -11,7 +11,7 @@ background =
 	];
 }
 
-if room = rm_Training or instance_exists(obj_cubecrush)
+if room = rm_Training or instance_exists(obj_crushrush)
 {
 background = 
 	[
