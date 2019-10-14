@@ -211,20 +211,6 @@ if heavy_flash_timer >= 0 and heavy_flash_timer < 5   {heavy_flash = true;}
 #endregion
 
 
-if ex_flash = true
-if ex_flash_timer > 0
-{
-ex_flash_timer -= 1;
-image_blend = c_yellow;
-}
-
-if ex_flash = true
-if ex_flash_timer <= 0
-{
-	ex_flash = false;
-	image_blend = c_white;
-}
-
 
 //if (state != PLAYER_STATE.in_hitstun)
 {

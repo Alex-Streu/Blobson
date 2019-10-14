@@ -3,6 +3,11 @@ var run=true;
 var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 5;
+meter_gain_magnet = 1;
+
 //Phases
 if (run)
 	{

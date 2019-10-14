@@ -20,6 +20,7 @@ if (run)
 			anim_sprite=spr_sarina_dspecial_dive;
 			anim_frame=0;
 			anim_speed=0;
+			sarina_dspecial_ex_dive = false;
 			//Ground v.s. Air startup
 			if (!on_ground())
 				{
@@ -38,6 +39,15 @@ if (run)
 		//Startup -> Active
 		case 0:
 			{
+				if (button_hold(INPUT.attack, buff,true))
+				if sarina_dspecial_ex_dive = false
+				if EX_meter >= 25
+				{
+					sarina_dspecial_ex_dive = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= 25;
+				}
 			//Animation
 			if (attack_frame<7)
 				{
@@ -49,7 +59,18 @@ if (run)
 					anim_frame=3;
 				attack_phase++;
 				attack_frame=45;//90
+				
+				
+			   if sarina_dspecial_ex_dive = true
+			   {
 				create_melee(-8,-32,0.6,1,7,4,1,10,300,45,HITBOX_SHAPE.rectangle,0);
+			   }
+			   
+			   if sarina_dspecial_ex_dive = false
+			   {
+				create_melee(-8,-32,0.6,1,5,11,0.5,10,65,45,HITBOX_SHAPE.rectangle,0);
+			   }
+				
 				}
 			break;
 			}
@@ -59,6 +80,7 @@ if (run)
 			//Animation - every 2 frames
 			if (attack_frame % 2 == 0)
 				{
+					
 				anim_frame++;
 				if (anim_frame==8)
 					{
@@ -68,6 +90,7 @@ if (run)
 			//Jump Cancel
 			if (cancel_jump_check()) return;
 			//Speed Values
+			
 			set_speed(6*facing,24,false,false);
 			//Hitting the ground causes a ground pound
 			if (on_ground())
