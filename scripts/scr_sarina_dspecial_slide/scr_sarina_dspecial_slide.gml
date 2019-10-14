@@ -74,12 +74,12 @@ if (run)
 				if (attack_has_hit())   
 				{
 					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 20
+					   if EX_meter >= 25
 				       {
 						   ex_flash = true;
 						   ex_flash_timer = 30;
 						   EX_meter -= 25
-						   
+						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					    attack_stop(PLAYER_STATE.jumpsquat);		
 					   }
 					}
@@ -108,12 +108,12 @@ if (run)
 				if (attack_has_hit())   
 				{
 					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 20
+					   if EX_meter >= 25
 				       {
 						   ex_flash = true;
 						   ex_flash_timer = 30;
 						   EX_meter -= 25
-						   
+						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					    attack_stop(PLAYER_STATE.jumpsquat);		
 					   }
 					}
@@ -139,12 +139,12 @@ if (run)
 				if (attack_has_hit())   
 				{
 					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 20
+					   if EX_meter >= 25
 				       {
 						   ex_flash = true;
 						   ex_flash_timer = 30;
 						   EX_meter -= 25
-						   
+						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					    attack_stop(PLAYER_STATE.jumpsquat);		
 					   }
 					}
@@ -171,12 +171,12 @@ if (run)
 				if (attack_has_hit())   
 				{
 					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 20
+					   if EX_meter >= 25
 				       {
 						   ex_flash = true;
 						   ex_flash_timer = 30;
 						   EX_meter -= 25
-						   
+						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					    attack_stop(PLAYER_STATE.jumpsquat);		
 					   }
 					}
@@ -200,12 +200,12 @@ if (run)
 				if (attack_has_hit())   
 				{
 					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 20
+					   if EX_meter >= 25
 				       {
 						   ex_flash = true;
 						   ex_flash_timer = 30;
 						   EX_meter -= 25
-						   
+						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					    attack_stop(PLAYER_STATE.jumpsquat);		
 					   }
 					}

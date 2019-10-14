@@ -82,14 +82,15 @@ if (run)
 				//Animate
 				anim_frame=4;			
 				attack_phase++;
-				attack_frame=2;					
-				
+				attack_frame=2;		
+
 				#region tipper hitbox	
 				var _tipper = create_melee(0,0,1,1,7,5,1.1,17,45,2,HITBOX_SHAPE.circle,0);
 				_tipper.sprite_index = spr_sarina_fair_hitboxes;
 				_tipper.image_speed = 0;
 				if (facing == -1) {_tipper.image_xscale *= -1;}
 				_tipper.image_index = 1;
+				set_hitbox_property(_tipper,HITBOX_PROPERTY.hit_fx_style,HIT_FX.hit2);
 				set_hitbox_property(_tipper,HITBOX_PROPERTY.hit_sfx,snd_tipper1);
 				#endregion			
 				#region normal hitbox
@@ -98,7 +99,7 @@ if (run)
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
 				_hitbox.image_index = 0;
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_fair_hit);				
 				#endregion
 				#region sour hitbox
 				var _hitbox = create_melee(0,0,1,1,5,6,0.8,10,45,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);

@@ -43,6 +43,7 @@ if (run)
 				if sarina_dspecial_ex_dive = false
 				if EX_meter >= 25
 				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
 					sarina_dspecial_ex_dive = true;
 					ex_flash = true;
 					ex_flash_timer = 30;

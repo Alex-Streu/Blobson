@@ -51,6 +51,7 @@ switch(_style)
 		//With the target
 		with(_hit)
 			{
+				
 			//Particle Effects
 			part_type_direction(global.p1, _angle - 15, _angle + 15, 0, 0);
 			part_type_speed(global.p1, max(7, _knock), max(10, _knock + 3), 0, 0);
@@ -80,6 +81,8 @@ switch(_style)
 		//With the target
 		with(_hit)
 			{
+				
+				instance_create_depth(x,y,-100,obj_effect_melee1);
 			//Particle Effects
 			part_type_direction(global.p1, _angle - 15, _angle + 15, 0, 0);
 			part_type_speed(global.p1, max(7, _knock), max(10, _knock + 3), 0, 0);

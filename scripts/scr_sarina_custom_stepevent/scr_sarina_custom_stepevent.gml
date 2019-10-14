@@ -210,12 +210,21 @@ if heavy_flash_timer >= 0 and heavy_flash_timer < 5   {heavy_flash = true;}
 
 #endregion
 
-
+if parry_cooldown_timer > 0   {parry_cooldown_timer -= 1;}
 
 //if (state != PLAYER_STATE.in_hitstun)
 {
 	
 }
+
+//if state = PLAYER_STATE.idle
+///if (button(INPUT.shield, buff))
+//{
+//	set_state(PLAYER_STATE.parrying);
+//	parry_frame = parry_startup;
+//	run = false;
+///}
+
 
 
 

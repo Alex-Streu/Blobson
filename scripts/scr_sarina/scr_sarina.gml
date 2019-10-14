@@ -205,6 +205,8 @@ switch(shield_type)
 	//Rivals Parry
 	case SHIELD.rivals:
 		{
+		parry_cooldown_default = 30;
+		parry_cooldown_timer = 30;
 		parry_startup=2;
 		parry_active=12;
 		parry_endlag=20;

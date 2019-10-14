@@ -18,6 +18,7 @@ if (run)
 		case PHASE.start:
 			{
 			//Animation
+			//instance_create_depth(x,y,-20,obj_effect_parry);
 			anim_sprite = my_sprites[?"Parry" ]
 			
 			anim_speed=0;
@@ -74,6 +75,7 @@ if (run)
 				parry_phase=0;
 				
 				//Back to Idle State
+				parry_cooldown_timer = parry_cooldown_default;
 				set_state(PLAYER_STATE.idle);
 				}
 			break;

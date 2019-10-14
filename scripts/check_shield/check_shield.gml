@@ -16,7 +16,9 @@ switch(shield_type)
 		}
 	case SHIELD.rivals:
 		{
-		if (button(INPUT.shield, buff))
+		if (button_hold(INPUT.shield))
+		if !stick_tilted(Lstick,DIR.horizontal) 
+		if parry_cooldown_timer <= 0
 			{
 			//Change to parrying state
 			//anim_frame = 0;
