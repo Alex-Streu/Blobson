@@ -2,7 +2,7 @@
 #macro version "Beta 0.2.0"
 #region Game Constants
 #macro debug				false
-#macro show_hitboxes		true
+#macro show_hitboxes		false
 #macro show_hurtboxes		false
 #macro show_collision_boxes	false
 
@@ -38,7 +38,7 @@
 #macro camera_special_zoom_height 270
 
 //Player status
-#macro player_status_padding_bottom 54
+#macro player_status_padding_bottom 96
 
 //Game surface
 #macro game_surface_enable false

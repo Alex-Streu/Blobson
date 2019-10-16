@@ -59,7 +59,7 @@ if (run)
 			break;
 			}
 			#endregion
-		    #region   Frame 4 - hitbox + ex jump cancel
+		    #region   Frame 4 - hitbox
 		case 2:
 			{
 			if (attack_frame==0)
@@ -70,29 +70,11 @@ if (run)
 				attack_frame=3;
 				var _hitbox = create_melee(4,-16,1,0.5,6,8,0.5,13,45,3,HITBOX_SHAPE.rectangle,0);	
 				
-				#region EX jump cancel
-				if (attack_has_hit())   
-				{
-					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 25
-				       {
-						   ex_flash = true;
-						   ex_flash_timer = 30;
-						   EX_meter -= 25
-						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
-					    attack_stop(PLAYER_STATE.jumpsquat);		
-					   }
-					}
-				else
-					{					
-					}
-				#endregion
-				
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 5 - hitbox + ex jump cancel
+			#region   Frame 5 - hitbox + ex vault
 		case 3:
 			{
 			if (attack_frame==0)
@@ -103,29 +85,24 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				var _hitbox = create_melee(4,-16,1,0.5,6,8,0.5,13,45,3,HITBOX_SHAPE.rectangle,0);
-				
-				#region EX jump cancel
+				#region Vault attack
+				if (button(INPUT.attack, buff))
+				if EX_meter >= ex_useage_dspecial_slide
 				if (attack_has_hit())   
 				{
-					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 25
-				       {
-						   ex_flash = true;
-						   ex_flash_timer = 30;
-						   EX_meter -= 25
-						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
-					    attack_stop(PLAYER_STATE.jumpsquat);		
-					   }
-					}
-				else
-					{					
-					}
+					audio_play_sound(sfx_ex_useage,10,false);
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_dspecial_slide
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					attack_start(scr_sarina_dspecial_vault)
+				}
 				#endregion
 				}
 			break;
 			}
 			#endregion
-			#region	 Frame 6 - hitbox + ex jump cancel
+			#region	 Frame 6 - hitbox + ex vault
 		case 4:
 			{
 			if (attack_frame==0)
@@ -135,29 +112,25 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				var _hitbox = create_melee(0,-16,1,0.5,6,8,0.5,13,45,3,HITBOX_SHAPE.rectangle,0);	
-				#region EX jump cancel
+				#region Vault attack
+				if (button(INPUT.attack, buff))
+				if EX_meter >= ex_useage_dspecial_slide
 				if (attack_has_hit())   
 				{
-					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 25
-				       {
-						   ex_flash = true;
-						   ex_flash_timer = 30;
-						   EX_meter -= 25
-						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
-					    attack_stop(PLAYER_STATE.jumpsquat);		
-					   }
-					}
-				else
-					{					
-					}
+					audio_play_sound(sfx_ex_useage,10,false);
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_dspecial_slide
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					attack_start(scr_sarina_dspecial_vault)
+				}
 				#endregion
 				
 				}
 			break;
 			}
 			#endregion
-			#region   Frame 7 - hitbox + ex jump cancel
+			#region   Frame 7 - hitbox + ex vault
 		case 5:
 			{
 			if (attack_frame==0)
@@ -166,29 +139,25 @@ if (run)
 				anim_frame=6;			
 				attack_phase++;
 				attack_frame=3;
-				var _hitbox = create_melee(0,-16,1,0.5,6,8,0.5,13,45,3,HITBOX_SHAPE.rectangle,0);	
-				#region EX jump cancel
+				var _hitbox = create_melee(0,-16,1,0.5,6,8,0.5,13,45,3,HITBOX_SHAPE.rectangle,0);
+				#region Vault attack
+				if (button(INPUT.attack, buff))
+				if EX_meter >= ex_useage_dspecial_slide
 				if (attack_has_hit())   
 				{
-					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 25
-				       {
-						   ex_flash = true;
-						   ex_flash_timer = 30;
-						   EX_meter -= 25
-						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
-					    attack_stop(PLAYER_STATE.jumpsquat);		
-					   }
-					}
-				else
-					{					
-					}
+					audio_play_sound(sfx_ex_useage,10,false);
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_dspecial_slide
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					attack_start(scr_sarina_dspecial_vault)
+				}
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 8 - ex jump cancel
+			#region   Frame 8 - ex vault
 		case 6:
 			{
 			if (attack_frame==0)
@@ -196,22 +165,18 @@ if (run)
 				//Animation
 				anim_frame=7;			
 				attack_phase++;	
-				#region EX jump cancel
+				#region Vault attack
+				if (button(INPUT.attack, buff))
+				if EX_meter >= ex_useage_dspecial_slide
 				if (attack_has_hit())   
 				{
-					   if (button(INPUT.jump, buff,true))			
-					   if EX_meter >= 25
-				       {
-						   ex_flash = true;
-						   ex_flash_timer = 30;
-						   EX_meter -= 25
-						   instance_create_depth(x,y-60,300,obj_effect_ex_flash);
-					    attack_stop(PLAYER_STATE.jumpsquat);		
-					   }
-					}
-				else
-					{					
-					}
+					audio_play_sound(sfx_ex_useage,10,false);
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_dspecial_slide
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					attack_start(scr_sarina_dspecial_vault)
+				}
 				#endregion
 				#region whiff lag
 				if (attack_has_hit())   
@@ -227,14 +192,27 @@ if (run)
 			break;
 			}
 		#endregion				
-			#region   Frame 9
+			#region   Frame 9 - ex vault
 		case 7:
 			{
 			if (attack_frame==0)
 				{
 				//Animation
 				anim_frame=8;			
-				attack_phase++;				
+				attack_phase++;	
+				#region Vault attack
+				if (button(INPUT.attack, buff))
+				if EX_meter >= ex_useage_dspecial_slide
+				if (attack_has_hit())   
+				{
+					audio_play_sound(sfx_ex_useage,10,false);
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_dspecial_slide
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					attack_start(scr_sarina_dspecial_vault)
+				}
+				#endregion
 				#region whiff lag
 				if (attack_has_hit())   
 				{
@@ -256,7 +234,7 @@ if (run)
 				{
 				//Animation
 				anim_frame=9;			
-				attack_phase++;				
+				attack_phase++;			
 				#region whiff lag
 				if (attack_has_hit())   
 				{
@@ -278,7 +256,7 @@ if (run)
 				{
 				//Animation
 				anim_frame=10;			
-				attack_phase++;				
+				attack_phase++;		
 				#region whiff lag
 				if (attack_has_hit())   
 				{
@@ -286,7 +264,7 @@ if (run)
 					}
 				else
 					{					
-					attack_frame=4;
+					attack_frame=5;
 					}
 				#endregion
 				}
@@ -308,7 +286,7 @@ if (run)
 					}
 				else
 					{					
-					attack_frame=4;
+					attack_frame=5;
 					}
 				#endregion
 				}

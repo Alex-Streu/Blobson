@@ -142,6 +142,18 @@ anim_frame = 7
 			}
 			#endregion
 			#region ftilt hurtbox
+			if anim_sprite = spr_sarina_utilt
+			{
+            hurtbox.sprite_index = spr_sarina_utilt_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region ftilt hurtbox
 			if anim_sprite = spr_sarina_ftilt
 			{
             hurtbox.sprite_index = spr_sarina_ftilt_hurtbox;
@@ -153,6 +165,31 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region Fheavy hurtbox
+			if anim_sprite = spr_sarina_fheavy
+			{
+            hurtbox.sprite_index = spr_sarina_fheavy_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region Dheavy hurtbox
+			if anim_sprite = spr_sarina_dheavy
+			{
+            hurtbox.sprite_index = spr_sarina_dheavy_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+
 			#region fair hurtbox
 			if anim_sprite = spr_sarina_fair
 			{
@@ -189,6 +226,43 @@ anim_frame = 7
             hurtbox.image_angle = 0;
 			}
 			#endregion
+			#region dspecial slide hurtbox
+			if anim_sprite = spr_sarina_dspecial_slide
+			{
+            hurtbox.sprite_index = spr_sarina_dspecial_slide_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region dspecial slide vault hurtbox
+			if anim_sprite = spr_sarina_dspecial_vault
+			{
+            hurtbox.sprite_index = spr_sarina_dspecial_vault_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			#region dspecial dive hurtbox
+			if anim_sprite = spr_sarina_dspecial_dive
+			{
+            hurtbox.sprite_index = spr_sarina_dspecial_dive_hurtbox;
+            hurtbox.image_index = anim_frame;
+            hurtbox.image_speed = 0;
+            hurtbox.image_xscale = 1;
+			if (facing == -1) {hurtbox.image_xscale *= -1;}	
+            hurtbox.image_yscale = 1;
+            hurtbox.image_angle = 0;
+			}
+			#endregion
+			
 			
 			
 #endregion
@@ -240,4 +314,8 @@ if gamepad_button_check_pressed(controller,gp_stickr)
 }
 
 if EX_meter > EX_meter_max   {EX_meter = EX_meter_max;}
+if EX_meter < 100 {EX_level = 0;}
+if EX_meter >= 100 and EX_meter < 200 {EX_level = 1;}
+if EX_meter >= 200 and EX_meter < 300 {EX_level = 2;}
+if EX_meter >= 300 {EX_level = 3;}
 return;

@@ -41,13 +41,14 @@ if (run)
 			{
 				if (button_hold(INPUT.attack, buff,true))
 				if sarina_dspecial_ex_dive = false
-				if EX_meter >= 25
+				if EX_meter >= ex_useage_dspecial_air
 				{
 					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
 					sarina_dspecial_ex_dive = true;
 					ex_flash = true;
 					ex_flash_timer = 30;
-					EX_meter -= 25;
+					EX_meter -= ex_useage_dspecial_air;
 				}
 			//Animation
 			if (attack_frame<7)
@@ -89,14 +90,26 @@ if (run)
 					}
 				}
 			//Jump Cancel
-			if (cancel_jump_check()) return;
+			
+		if (button_hold(INPUT.jump, buff))
+		if sarina_dspecial_ex_dive = true
+		if (double_jumps > 0)
+		
+		{
+		attack_stop(PLAYER_STATE.jumpsquat);		
+		//return true;
+		}
+		
+		
+		
 			//Speed Values
 			
 			set_speed(6*facing,24,false,false);
 			//Hitting the ground causes a ground pound
 			if (on_ground())
 				{
-					
+					if sarina_dspecial_ex_dive = true {sarina_dspecial_ex_dive_land = true;}
+					if sarina_dspecial_ex_dive = false {sarina_dspecial_ex_dive_land = false;}
 					attack_start(scr_sarina_dspecial_air_endlag)
 					
 				//Cancel movement
@@ -116,7 +129,7 @@ if (run)
 		//Ground pound version
 		case 2:
 			{
-			//Friction / Gravity
+			//Friction / Gravity			
 			friction_gravity(ground_friction,grav,max_fall_speed);
 			//Enable ledge cancel
 			if cancel_air_check() return;

@@ -7,6 +7,7 @@ if anim_frame = 0
 {
 if anim_sprite = my_sprites[?"Uheavy" ]  {draw_sprite_ext(spr_sarina_uheavy_charge,anim_frame,x,y,sprite_scale * facing,sprite_scale,0,c_red,0.7)}
 if anim_sprite = my_sprites[?"Dheavy" ]  {draw_sprite_ext(spr_sarina_dheavy_charge,anim_frame,x,y,sprite_scale * facing,sprite_scale,0,c_red,0.7)}
+if anim_sprite = my_sprites[?"Fheavy" ]  {draw_sprite_ext(spr_sarina_fheavy_charge,anim_frame,x,y,sprite_scale * facing,sprite_scale,0,c_red,0.7)}
 }
 #endregion
 #region Dodgeroll flash

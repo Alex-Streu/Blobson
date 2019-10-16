@@ -22,7 +22,7 @@ my_portrait_pal_sprite = spr_sarina_pal //fighter's portrait palette
 my_current_pallete = 1;
 portrait= spr_sarina_hud1;
 offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
-stock_sprite= spr_matsu_stock;
+stock_sprite= spr_player_life_icon;
 render = spr_sarina_render;
 victory_theme = sfx_victory_sarina;
 #endregion
@@ -43,9 +43,15 @@ palettes=
 	];
 #endregion
 
-//Ex meter
-EX_meter = 0;
-EX_meter_max = 100;
+#region Ex meter
+EX_meter = 100;
+EX_meter_max = 300;
+EX_level = 1;
+//Attack/move ex meter usage
+ex_useage_dspecial_air = 100;
+ex_useage_dspecial_slide = 100;
+#endregion
+
 
 #region Weight and Gravity
 //Weight
@@ -265,7 +271,7 @@ my_attacks[?"DashA" ]= scr_takia_dashattack;
 my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
 my_attacks[?"Utilt" ]= scr_sarina_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
-my_attacks[?"Fsmash"]= scr_takia_fheavy;
+my_attacks[?"Fsmash"]= scr_sarina_fheavy;
 my_attacks[?"Usmash"]= scr_sarina_uheavy;
 my_attacks[?"Dsmash"]= scr_sarina_dheavy;
 my_attacks[?"Nair"  ]= scr_sarina_nair;
@@ -273,8 +279,8 @@ my_attacks[?"Fair"  ]= scr_sarina_fair;
 my_attacks[?"Bair"  ]= scr_sarina_bair_a;
 my_attacks[?"Uair"  ]= scr_sarina_uair;
 my_attacks[?"Dair"  ]= scr_sarina_dair;
-my_attacks[?"Nspec" ]= scr_matsu_fspecial;
-my_attacks[?"Fspec" ]= scr_matsu_fspecial;
+my_attacks[?"Nspec" ]= scr_matsu_uspecial;
+my_attacks[?"Fspec" ]= scr_matsu_uspecial;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
 my_attacks[?"Uspec" ]= scr_matsu_uspecial;
 my_attacks[?"Dspec" ]= scr_sarina_dspecial_slide;
@@ -374,7 +380,7 @@ my_sprites[?"Bairb"]=spr_sarina_bair2;
 my_sprites[?"Fair" ]=spr_sarina_fair;
 my_sprites[?"Dair" ]=spr_sarina_dairv2;
 my_sprites[?"Uair" ]=spr_sarina_uair;
-my_sprites[?"Fheavy" ]=spr_takia_fheavy;
+my_sprites[?"Fheavy" ]=spr_sarina_fheavy;
 my_sprites[?"Dheavy" ]=spr_sarina_dheavy;
 my_sprites[?"Uheavy" ]=spr_sarina_uheavy;
 my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
@@ -496,7 +502,9 @@ snd_utilt_hit = sfx_stab3; // light5
 
 
 
-snd_fheavy_hit = sfx_stab4; // light5 
+snd_fheavy_hit = sfx_stab1; // light5 
+snd_fheavy_sourhit = sfx_stab3; // light5 
+snd_fheavy_sweethit = sfx_stab4; // light5 
 
 snd_uheavy = sfx_swoosh2; // light5 
 snd_uheavy_hit = sfx_stab3;// light5 

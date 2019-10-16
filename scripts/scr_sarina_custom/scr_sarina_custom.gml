@@ -8,6 +8,7 @@ sarina_dspecial_slidekick = false;
 
 //Down Special EX Dive kick
 sarina_dspecial_ex_dive = false;
+sarina_dspecial_ex_dive_land = false;
 
 //This variable checks to see if sarina has done the slide kick for the grounded version.
 //If it's false, the grounded version will not do the leap.
