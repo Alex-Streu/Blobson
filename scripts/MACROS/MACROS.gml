@@ -49,6 +49,7 @@
 
 //Savefiles
 #macro profiles_save "Player_Profiles.sav"
+#macro player_profiles_sav "PlayerProfiles.sav"
 
 //Countdown Time
 #macro count_time 60
@@ -514,6 +515,22 @@ enum PLAYER
 	P7 = 6,
 	P8 = 7
 }
+	#region //Menus
+	enum MENU_ITEM_TYPE {
+		TEXT,
+		SPRITE
+	}
+	
+	enum MENU_OBJECT_EVENT
+	{
+		A = 0,
+		Y = 1,
+		X = 2
+	}
+	#endregion
+#endregion
+#region Font Sizes
+	#macro font_size_small 0.15
 #endregion
 //--> Game_Init
 //--> Player_Init

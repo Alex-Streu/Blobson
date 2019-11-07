@@ -1,4 +1,4 @@
 /// @description Draw cursor with player sprite
-if (sprite_index == noone) { return; }
+if (sprite_index == noone || !doDraw) { return; }
 
-draw_sprite(sprite_index, 0, x, y);
+draw_self();

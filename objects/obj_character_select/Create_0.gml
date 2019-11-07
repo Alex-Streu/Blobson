@@ -17,8 +17,20 @@ for (var i = 0; i < array_length_1d(characters); i++) {
 	
 	_space = 50 + sprite_get_width(_c[? "Icon"]);
 	create_character_select_item(_c[? "Name"], _c[? "Script"], _c[? "Icon"], _c[? "Portrait"],
-												_offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
+								_offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
 }
+
+//---------------------------
+//Setup profiles
+if (file_exists(player_profiles_sav))
+{	
+	var profiles = ds_map_create();
+	profiles = json_decode(load_string_file(player_profiles_sav));
+	var _default = global.profiles[| 0];
+	global.profiles = profiles[? "Profiles"];
+	ds_list_insert(global.profiles, 0, _default);
+}
+
 
 
 //--------------------------
@@ -28,15 +40,13 @@ _offsetY = 32;
 _offsetX = 50;
 _space = 220;
 
-//Create player slot objects and selectors
+//Create player slot objects
 for (var i = 0; i < array_length_1d(players); i++)
 {
 	var _p = players[i];
 	
-	var _slot = create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], _p[? "IsActive"],
-											_offsetX + _space*i, _offsetY, _p[? "Marker"]);
-											
-	if (_p[? "IsActive"]) { create_player_cursor(_p[? "Number"], _slot, cursors[i]); }
+	create_character_select_player(_p[? "Number"], _p[? "Name"], _p[? "Color"], _p[? "Marker"], 
+									_p[? "SlotSprite"], _p[? "CursorSprite"]);
 	
 	pm_add_player(_p);
 }
