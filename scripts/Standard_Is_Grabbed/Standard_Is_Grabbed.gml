@@ -3,7 +3,8 @@
 var run = true;
 #region Animation
 anim_sprite= my_sprites[?"Grabbed"];
-anim_speed= 0;
+anim_speed= ani_speed_grabbed;
+
 #endregion
 #region Snap to the grabbing player's position
 if (run)

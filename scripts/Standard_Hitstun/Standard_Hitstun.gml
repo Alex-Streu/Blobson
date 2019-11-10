@@ -11,8 +11,15 @@ if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 #endregion
 
 #region Animation
+
 if damage < 100  {anim_sprite = my_sprites[?"Hitstun"];   anim_speed = ani_speed_hitstun;}
-else {anim_sprite = my_sprites[?"Hitstunheavy"];   anim_speed = ani_speed_hitstun_heavy;}
+if damage >= 100 {anim_sprite = my_sprites[?"Hitstunheavy"];   anim_speed = ani_speed_hitstun_heavy;}
+
+if (stored_state == PLAYER_STATE.is_grabbed)
+{
+anim_sprite = my_sprites[?"Pummeled"]	
+}
+
 #endregion
 
 #region Friction / Gravity
@@ -30,6 +37,7 @@ if (run && hitstun_frame == 0)
 	{
 		hitstun_state = false;
 	//Go to tumble state, which can be canceled to return to normal
+	anim_frame = 0;
 	set_state(PLAYER_STATE.in_tumble);
 	run = false;
 	}
@@ -40,6 +48,7 @@ if (run && on_ground() && vsp >= 0 && _current_speed <= bounce_minimum_speed)
 	{
 		hitstun_state = false;
 	set_state(PLAYER_STATE.knockdown);
+	
 	//Chooses the larger value or remaining hitstun or the hard landing lag
 	knockdown_frame = max(hitstun_frame, hard_landing_lag);
 	run = false;

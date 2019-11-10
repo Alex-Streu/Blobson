@@ -8,8 +8,23 @@ if (button(INPUT.special,buff))
 	change_facing(_stick);	
 	//Uspec
 	if (stick_tilted(_stick,DIR.up))
+		{	
+		#region sarina u-special check
+		if name = "Sarina"
 		{
-		attack_start(my_attacks[?"Uspec"]);
+		      if (on_ground())
+	          {
+	          attack_start(scr_sarina_uspecial_ground)    
+	          }
+		
+		      else
+			  {
+				  attack_start(scr_sarina_uspecial_air )
+			  }
+		}
+		#endregion	
+		
+		
 		}
 	else
 	//Dspec
@@ -42,7 +57,15 @@ if (button(INPUT.special,buff))
 		#region sarina f-special check
 		if name = "Sarina"
 		{
-		attack_start(my_attacks[?"Fspec"]);
+		      if (on_ground())
+	          {
+	          attack_start(scr_sarina_fspecial_ground)    
+	          }
+		
+		      else
+			  {
+				  attack_start(scr_sarina_fspecial_air )
+			  }
 		}
 		#endregion	
 		#region takia f-special check

@@ -1,5 +1,5 @@
 /// @description DEFINE BACKGROUNDS
-if room = rm_Stadium or rm_Dreamland
+if room = rm_Stadium or room = rm_Casino
 {
 background = 
 	[
@@ -10,6 +10,19 @@ background =
 		[back_clear],
 	];
 }
+
+if room = rm_Dreamland
+{
+background = 
+	[
+	    background_define(spr_bg_night, 0, -64, 1, 0.1, 0.1, 0, 0),
+		background_define(spr_bg_arena_night_main, 0, 0, 1, .2, .2, 0, 0),
+		//background_define(back_battlefield_floating, 0, 0, 1, 0.5, 0.5, 0, 0),
+		//background_define(back_battlefield_clouds, 0, 0, 1.2, 0, 0, 0.5, 0),
+		[back_clear],
+	];
+}
+
 
 if room = rm_Training or instance_exists(obj_crushrush)
 {

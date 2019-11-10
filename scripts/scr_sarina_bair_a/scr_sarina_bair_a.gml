@@ -10,6 +10,11 @@ aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
 
+#region landing lag change if hit
+				if (attack_has_hit())   {landing_lag = 3;}
+				else                              {landing_lag = 10;}
+				#endregion				
+
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 6;
 meter_gain_magnet = 1;

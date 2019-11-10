@@ -6,6 +6,7 @@ if (button(INPUT.shield, buff))
 	if (stick_tilted(Lstick, DIR.horizontal))
 		{
 		audio_play_sound(choose(vc_dodgeroll1, vc_dodgeroll2,vc_nothing),10,false);
+		audio_play_sound(sfx_dodgeroll,10,false)
 		anim_frame = 0;
 		set_state(PLAYER_STATE.rolling);
 		//Facing

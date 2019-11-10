@@ -26,8 +26,9 @@ if (run)
 			{
 			//Animation
 			anim_sprite=my_sprites[?"Jab1"];								
-			attack_frame=0;
+			attack_frame=4;
 			anim_frame = 0;
+			anim_speed=0;
 			return;
 			}
 			#endregion
@@ -40,7 +41,7 @@ if (run)
 				anim_frame=1;
 			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=4;
 				}
 			break;
 			}
@@ -70,8 +71,8 @@ if (run)
 				attack_phase++;
 				attack_frame=3;
 				set_speed(facing*3,0,true,false);
-				var _hitbox = create_melee(48,-72,0.8,0.5,4,4,0.1,8,75,3,HITBOX_SHAPE.rectangle,0);
-				//set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
+				var _hitbox = create_melee(48,-72,0.8,0.5,4,5,0,8,75,3,HITBOX_SHAPE.rectangle,0);
+			//	set_hitbox_property(_hitbox,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab1_hit);
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_fx_style,HIT_FX.hit1);
 				//set_hitbox_property(_hitbox,HITBOX_PROPERTY.EX_meter,5);					
@@ -88,7 +89,10 @@ if (run)
 				//Animation
 				anim_frame=4;			
 				attack_phase++;
-				attack_frame=4;
+				#region whiff lag
+				if (attack_has_hit())   {attack_frame =2}
+				else                              {attack_frame =3}
+				#endregion				
 				}
 				
 			break;
@@ -103,16 +107,36 @@ if (run)
 				anim_frame=5
 			
 				attack_phase++;
-				attack_frame=4;
+				#region whiff lag
+				if (attack_has_hit())   {attack_frame =2}
+				else                              {attack_frame =3}
+				#endregion				
 				}
 			break;
 			}		
 			#endregion					
-		    #region Frame 7 - jab 1 ending (check for ground attacks, jab extension, or no inputs)
+		    #region Frame 7 - jab 1
 		case 5:
 			{
+			if (attack_frame==0)
+				{
+				//Animation
+				anim_frame=6
+			
+				attack_phase++;
+				#region whiff lag
+				if (attack_has_hit())   {attack_frame =2}
+				else                              {attack_frame =3}
+				#endregion				
+				}
+			break;
+			}		
+			#endregion					
+			#region Frame 8 - jab 1 ending (check for ground attacks, jab extension, or no inputs)
+		case 6:
+			{
 			//Animation
-			anim_frame=6;
+			anim_frame=7;
 			
 			//Cancel into tilts from first jab
 			if (stick_tilted(Lstick) && check_grounds())
@@ -123,7 +147,10 @@ if (run)
 			if (button(INPUT.attack,12))
 				{
 				attack_phase++;
-				attack_frame=4;
+				#region whiff lag
+				if (attack_has_hit())   {attack_frame =2}
+				else                              {attack_frame =3}
+				#endregion				
 				}
 			//Auto end
 			else if (attack_frame==0)
@@ -136,7 +163,7 @@ if (run)
 			#endregion
 			
 			#region Frame 1 - jab 2 (change the animation to second jab and play sound)
-		case 6:
+		case 7:
 			{
 			if (attack_frame==0)
 				{
@@ -157,7 +184,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 2 - jab 2 + slide
-		case 7:
+		case 8:
 			{
 			if (attack_frame==0)
 				{
@@ -170,7 +197,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 3 - jab 2 + hitbox2
-		case 8:
+		case 9:
 			{
 			if (attack_frame==0) 
 				{
@@ -183,7 +210,7 @@ if (run)
 				//set_hitbox_property(_magnetbox,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
 				
 				//var _hitbox2 = create_melee(52,-60,1.1,.5,4,8,0.0,8,70,4,HITBOX_SHAPE.rectangle,2);		
-				var _hitbox2 = create_melee(52,-60,1.1,.5,4,3,0,8,50,4,HITBOX_SHAPE.rectangle,2);	
+				var _hitbox2 = create_melee(52,-60,1.1,.5,3,7,0,8,70,4,HITBOX_SHAPE.rectangle,2);	
 				
 				//set_hitbox_property(_hitbox2,HITBOX_PROPERTY.knockback_state,PLAYER_STATE.in_flinch);
 				set_hitbox_property(_hitbox2,HITBOX_PROPERTY.hit_sfx,snd_jab2_hit);				
@@ -192,7 +219,7 @@ if (run)
 			}
 			#endregion	
 			#region Frame 4 - jab 2 + add meter
-		case 9:
+		case 10:
 			{
 			if (attack_frame==0)
 				{
@@ -204,7 +231,7 @@ if (run)
 			}
 			#endregion		
 			#region Frame 5 - jab 2
-			case 10:
+			case 11:
 			{			
 			if (attack_frame==0)
 				{
@@ -216,7 +243,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 6 - jab 2
-			case 11:
+			case 12:
 			{			
 			if (attack_frame==0)
 				{
@@ -228,7 +255,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 7 - jab 2
-			case 12:
+			case 13:
 			{			
 			if (attack_frame==0)
 				{
@@ -240,7 +267,7 @@ if (run)
 			}
 			#endregion			
 		    #region Frame 8 - jab 2 ending (check for ground attacks, jab extension, or no inputs)
-		case 13:
+		case 14:
 			{
 			//Animation
 			anim_frame= 7;
@@ -254,7 +281,7 @@ if (run)
 			if (button(INPUT.attack,12))
 				{
 				attack_phase++;
-				attack_frame=4;
+				attack_frame=2;
 				}
 			//Auto end
 			else if (attack_frame==0)
@@ -267,59 +294,49 @@ if (run)
 			#endregion
 			
 			#region Frame 1 - jab 3 (change the animation to second jab and play sound)
-			case 14:
+			case 15:
 			{			
 			if (attack_frame==0)
 				{
 				anim_sprite=my_sprites[?"Jab3"];
-				hurtbox.sprite_index = spr_sarina_jab3_hurt;
-                hurtbox.image_index = anim_frame;
-                hurtbox.image_speed = 0;
-                hurtbox.image_xscale = 1;
-                hurtbox.image_yscale = 1;
-                hurtbox.image_angle = 0;
 				audio_play_sound(snd_jab3,10,false);
 				audio_play_sound(vc_jab3,10,false); 
 				anim_frame= 0;
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=2;
 				
 				}
 			break;
 			}
 			#endregion
-			#region Frame 2 - jab 3 - slide
-			case 15:
+			#region Frame 2 - jab 3
+			case 16:
 			{			
 			if (attack_frame==0)
 				{
 				anim_frame= 1;
 				attack_phase++;
-				attack_frame=3;
-				set_speed(facing*9,0,false,false);				
+				attack_frame=2;
+							
 				}
 			break;
 			}
 			#endregion
 			#region Frame 3 - jab 3 - hitbox
-			case 16:
+			case 17:
 			{			
 			if (attack_frame==0)
 				{
 				anim_frame= 2;
 				attack_phase++;
-				attack_frame=3;											
-				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
-				var _hitbox3 = create_melee(0,0,1,1,5,8,0.9,8,45,3,HITBOX_SHAPE.rectangle,2);
-				_hitbox3.sprite_index = spr_sarina_jab3_hb;
-				if (facing == -1) {_hitbox3.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox3,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				attack_frame=2;			
+				set_speed(facing*9,0,false,false);					
 				}
 			break;
 			}
 			#endregion
-			#region Frame 4 - jab 3 - meter
-		case 17:
+			#region Frame 4 - jab 3
+		case 18:
 			{
 			//Animation
 			if (attack_frame==0)
@@ -334,32 +351,44 @@ if (run)
 			}
 			#endregion
 			#region Frame 5 - jab 3
-			case 18:
+			case 19:
 			{			
 			if (attack_frame==0)
 				{
 				anim_frame= 4;
 				attack_phase++;
 				attack_frame=2;
-				
+				reset_hitbox_group(collided, 2); //reset hitbox so next one can connect
+				var _hitbox3 = create_melee(0,0,1,1,5,8,0.9,8,45,2,HITBOX_SHAPE.rectangle,2);
+				_hitbox3.sprite_index = spr_sarina_jab3_hitbox;
+				_hitbox3.image_index = anim_frame;
+				_hitbox3.image_speed = 0;
+				if (facing == -1) {_hitbox3.image_xscale *= -1;}		
+				set_hitbox_property(_hitbox3,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
 				}
 			break;
 			}
 			#endregion
 			#region Frame 6 - jab 3
-			case 19:
+			case 20:
 			{			
 			if (attack_frame==0)
 				{
 				anim_frame= 5;
 				attack_phase++;
 				attack_frame=2;
+				var _hitbox3 = create_melee(0,0,1,1,5,8,0.9,8,45,2,HITBOX_SHAPE.rectangle,2);
+				_hitbox3.sprite_index = spr_sarina_jab3_hitbox;
+				_hitbox3.image_index = anim_frame;
+				_hitbox3.image_speed = 0;
+				if (facing == -1) {_hitbox3.image_xscale *= -1;}		
+				set_hitbox_property(_hitbox3,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
 				}
 			break;
 			}
 			#endregion
 			#region Frame 7 - jab 3
-			case 20:
+			case 21:
 			{			
 			if (attack_frame==0)
 				{
@@ -371,7 +400,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 8 - jab 3
-			case 21:
+			case 22:
 			{			
 			if (attack_frame==0)
 				{
@@ -383,19 +412,19 @@ if (run)
 			}
 			#endregion
 			#region Frame 9 - jab 3
-			case 22:
+			case 23:
 			{			
 			if (attack_frame==0)
 				{
 				anim_frame= 8;
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=2;
 				}
 			break;
 			}
 			#endregion
 			#region Frame 10 - jab 3
-			case 23:
+			case 24:
 			{			
 			if (attack_frame==0)
 				{
@@ -407,7 +436,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 11 - jab 3
-			case 24:
+			case 25:
 			{			
 			if (attack_frame==0)
 				{
@@ -419,7 +448,7 @@ if (run)
 			}
 			#endregion
 			#region Frame 12 - jab 3
-			case 25:
+			case 26:
 			{			
 			if (attack_frame==0)
 				{
@@ -431,7 +460,19 @@ if (run)
 			}
 			#endregion
 			#region Frame 13 - jab 3
-			case 26:
+			case 27:
+			{			
+			if (attack_frame==0)
+				{
+				anim_frame= 12;
+				attack_phase++;
+				attack_frame=2;
+				}
+			break;
+			}
+			#endregion
+			#region Frame 14 - jab 3
+			case 28:
 			{			
 			if (attack_frame==0)
 				{
@@ -444,7 +485,7 @@ if (run)
 			#endregion
             #region end the jab string
 		//Third Jab Endlag
-		case 27:
+		case 29:
 			{
 			if (attack_frame==0)
 				{
@@ -459,9 +500,3 @@ if (run)
 	#endregion
 //Movement
 move_grounded_();
-
-//Hurtbox matching
-//if (run)
-//	{
-//	hurtbox_match_animation();
-//	}

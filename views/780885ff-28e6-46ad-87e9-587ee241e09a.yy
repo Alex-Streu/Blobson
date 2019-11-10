@@ -10,7 +10,10 @@
         "3ad0491d-4107-4c38-b55b-03ce264a6555",
         "1c8b8fac-6855-44b0-92ca-87c636e3a23f",
         "45b14135-d3cd-41cf-b070-6598fe3b9cd0",
-        "25727033-bcec-48ab-8d28-8101f314c3a9"
+        "25727033-bcec-48ab-8d28-8101f314c3a9",
+        "5399a8f6-c89e-4fa2-8895-9966819daf80",
+        "d03176df-fad1-40b1-9303-dd863815686f",
+        "68df869d-e325-4619-8837-4c38dc7046a4"
     ],
     "filterType": "GMSprite",
     "folderName": "HUD\/Masks\/Portraits",

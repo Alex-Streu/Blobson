@@ -55,6 +55,7 @@ else if (button(INPUT.grab,buff))
 	{
 	if (!on_ground())
 		{
+		anim_frame=0;
 		attack_start(my_attacks[?"Zair"]);
 		return true;
 		}

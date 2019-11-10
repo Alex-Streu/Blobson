@@ -1,17 +1,17 @@
 stage_select_init();
 
-rowSize = 4;
+rowSize = 2;
 
-var _offsetY = 50;
-var _offsetX = 50;
-var _space = 10;
+var _offsetY = 8;
+var _offsetX = 8;
+var _space = 8;
 
 //Create icon objects
 for (var i = 0; i < array_length_1d(stages); i++) {
 	var _s = stages[i];
 	if (!_s[? "IsUnlocked"]) { continue; }
 	
-	_space = 50 + sprite_get_width(_s[? "Icon"]);
+	_space = 8 + sprite_get_width(_s[? "Icon"]);
 	create_stage_select_item(_s[? "Name"], _s[? "Icon"], _s[? "Room"], _offsetX + _space*(i%rowSize), _offsetY + _space*floor(i/rowSize));
 }
 

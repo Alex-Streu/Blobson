@@ -23,7 +23,7 @@ surface_set_target(drawSurface);
 	draw_text_transformed(iconW/2, iconH-20, string_upper(name), 0.4, 0.4, 0);
 	
 	//Subtract window
-	gpu_set_blendmode(bm_subtract);
+    gpu_set_blendmode(bm_subtract);
 	draw_sprite(spr_stage_icon_window, 0, 0, 0);
 	
 	//Add frame

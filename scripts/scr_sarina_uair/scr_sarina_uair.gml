@@ -10,6 +10,11 @@ aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
 
+#region landing lag change if hit
+				if (attack_has_hit())   {landing_lag = 3;}
+				else                              {landing_lag = 10;}
+				#endregion				
+
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 7;
 meter_gain_magnet = 0;
@@ -123,10 +128,10 @@ if (run)
 				//Animate
 				anim_frame=5;			
 				attack_phase++;
-				attack_frame = 2
+				attack_frame = 1
 				
 				#region tipper
-				var _hitbox = create_melee(0,0,1,1,9,5,1,15,75,2,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(0,0,1,1,9,5,1,15,75,1,HITBOX_SHAPE.circle,0);
 				_hitbox.sprite_index = spr_sarina_uair_tipper;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -134,7 +139,7 @@ if (run)
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_tipper1);
 				#endregion
 				#region sweetbox
-				var _hitbox = create_melee(0,0,1,1,5,10,1,10,90,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(0,0,1,1,5,10,1,10,90,1,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_sarina_uair_sweetbox;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -142,7 +147,7 @@ if (run)
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_uair_sweethit);
 				#endregion
 				#region hitbox
-				var _hitbox = create_melee(0,0,1,1,5,5,1,10,80,2,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(0,0,1,1,5,5,1,10,80,1,HITBOX_SHAPE.circle,0);
 				_hitbox.sprite_index = spr_sarina_uair_hitbox;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -150,7 +155,7 @@ if (run)
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_uair_hit);
 				#endregion
 				#region sour hitbox
-				var _hitbox = create_melee(0,0,1,1,5,3,1,10,70,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
+				var _hitbox = create_melee(0,0,1,1,5,3,1,10,70,1,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_sarina_uair_sourbox;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}

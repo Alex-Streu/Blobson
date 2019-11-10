@@ -9,6 +9,16 @@ allow_hitfall();
 aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
+
+#region landing lag change if hit
+				if (attack_has_hit())   {landing_lag = 3;}
+				else                              {landing_lag = 10;}
+				#endregion				
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 6;
+meter_gain_magnet = 1;
+
 //Phases
 if (run)
 	{
@@ -91,7 +101,7 @@ if (run)
 				attack_phase++;
 				attack_frame = 2;
 				#region normal hitbox
-				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,45,2,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,130,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_sarina_bair2_hitbox;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -116,7 +126,7 @@ if (run)
 				else                              {landing_lag=10;}
 				#endregion
 				#region normal hitbox
-				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,45,2,HITBOX_SHAPE.circle,0);
+				var _hitbox = create_melee(0,0,1,1,6,5,0.5,10,45,2,HITBOX_SHAPE.circle,0,FLIPPER.from_player_center_horizontal);
 				_hitbox.sprite_index = spr_sarina_bair2_hitbox;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -139,15 +149,12 @@ if (run)
 				if (attack_has_hit())   {attack_frame =2;}
 				else                              {attack_frame =3;}
 				#endregion				
-				#region Landing lag descrease if attack was landed
-				if (attack_has_hit())   {landing_lag=3;}
-				else                              {landing_lag=10;}
-				#endregion
+
 				}
 			break;
 			}
 			#endregion
-			#region Frame 9 - landing lag change
+			#region Frame 9
 		case 7:
 			{
 			if (attack_frame==0)
@@ -156,8 +163,8 @@ if (run)
 				anim_frame=8;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2; landing_lag=3;}
-				else                              {attack_frame =4;   landing_lag=10;}
+				if (attack_has_hit())   {attack_frame =2;}
+				else                              {attack_frame =4;}
 				#endregion				
 				}
 			break;

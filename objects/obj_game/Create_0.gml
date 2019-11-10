@@ -75,7 +75,18 @@ countdown = count_time * 4;
 
 current_pal = 1;
 
-ex_meter_ui_x = 96;
+//EX meter stuff
+
+ex_meter_ui_x = 47;
+ex_meter_ui_y = 0;
+
+ex_meter_sprite_x = 47;
+ex_meter_sprite_y = 35;
+
+ex_level0_color = make_colour_hsv(0, 220, 255);//red
+ex_level1_color = make_colour_hsv(90, 220, 255);//green
+ex_level2_color = make_colour_hsv(150, 220, 255);//blue
+ex_level3_color = make_colour_hsv(180, 220, 255);//purple
 
 //portrait palettes
 

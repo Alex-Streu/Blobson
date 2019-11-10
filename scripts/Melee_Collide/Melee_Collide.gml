@@ -83,6 +83,7 @@ switch(_hit.invulnerable_type)
 		//Effects
 		hit_fx_style_create(hit_fx_style,_calc_angle,_hit,_total_kb);
 		hit_sfx_play(hit_sfx);
+		
 		//Final Hit fade
 		if (is_finishing_blow(_total_kb,_hit.x,_hit.y,_calc_angle,_hit.stored_hitstun,_hit))
 			{

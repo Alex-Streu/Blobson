@@ -31,16 +31,7 @@ if !instance_exists(obj_crushrush)
 		}
 		
 	//Pass in character data
-	global.win_screen_data_temp = Player_Data_Create
-		(
-		_w.name, 
-		_w.player_color,
-		_w.controller, 
-		0, 
-		_w.render, 
-		_w.palettes,
-		_w.victory_theme
-		);
+	global.win_screen_data_temp = Player_Data_Create(_w.name, _w.player_color,_w.controller, 0, _w.render, _w.palettes,_w.victory_theme, _w.text);
 		
 	//Back to character select screen
 	room_goto(rm_Win_Screen);

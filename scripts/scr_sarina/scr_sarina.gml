@@ -22,8 +22,8 @@ my_portrait_pal_sprite = spr_sarina_pal //fighter's portrait palette
 my_current_pallete = 1;
 portrait= spr_sarina_hud1;
 offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
-stock_sprite= spr_matsu_stock;
-render = spr_sarina_render;
+stock_sprite= spr_player_life_icon;
+render = spr_sarina_dialouge_body;
 victory_theme = sfx_victory_sarina;
 #endregion
 
@@ -43,9 +43,8 @@ palettes=
 	];
 #endregion
 
-//Ex meter
-EX_meter = 0;
-EX_meter_max = 100;
+
+
 
 #region Weight and Gravity
 //Weight
@@ -205,11 +204,20 @@ switch(shield_type)
 	//Rivals Parry
 	case SHIELD.rivals:
 		{
+		parry_cooldown_default = 30;
+		parry_cooldown_timer = 30;
 		parry_startup=2;
 		parry_active=12;
 		parry_endlag=20;
-		parry_trigger_time=15;
+		parry_landed = false;//this confirms if the parry landed or not. 
+		parry_trigger_time=30;
 		parry_script= scr_sarina_parry;
+		parryland_script= scr_sarina_parry_land;
+		parry_flash_sprite = spr_sarina_parryland_flash;
+		parrystart_flash_sprite = spr_sarina_parrystart_flash;
+		parry_flash = false;//this does the flash effect.
+		parry_startup_flash = false;//this make the fighter glow when parry frames are active
+		
 		break;
 		}
 	/*
@@ -238,9 +246,6 @@ techroll_startup=8;
 techroll_active=12;
 techroll_endlag=14;
 #endregion
-#region EX meter
-ex_sarina_nair = 5;
-#endregion
 #region UNUSED
 //Walljump Values
 /*
@@ -259,11 +264,11 @@ switch(walljump_type)
 //Character scripts________________________________________________________________________________
 #region Attack scripts
 my_attacks[?"Jab"   ]= scr_sarina_jab;
-my_attacks[?"DashA" ]= scr_takia_dashattack;
+my_attacks[?"DashA" ]= scr_sarina_dashattack;
 my_attacks[?"Ftilt" ]= scr_sarina_ftilt;
 my_attacks[?"Utilt" ]= scr_sarina_utilt;
 my_attacks[?"Dtilt" ]= scr_sarina_dtilt;
-my_attacks[?"Fsmash"]= scr_takia_fheavy;
+my_attacks[?"Fsmash"]= scr_sarina_fheavy;
 my_attacks[?"Usmash"]= scr_sarina_uheavy;
 my_attacks[?"Dsmash"]= scr_sarina_dheavy;
 my_attacks[?"Nair"  ]= scr_sarina_nair;
@@ -271,20 +276,20 @@ my_attacks[?"Fair"  ]= scr_sarina_fair;
 my_attacks[?"Bair"  ]= scr_sarina_bair_a;
 my_attacks[?"Uair"  ]= scr_sarina_uair;
 my_attacks[?"Dair"  ]= scr_sarina_dair;
-my_attacks[?"Nspec" ]= scr_matsu_fspecial;
-my_attacks[?"Fspec" ]= scr_matsu_fspecial;
+my_attacks[?"Nspec" ]= scr_sarina_nspecial;
+my_attacks[?"Fspec" ]= scr_sarina_fspecial_ground;
 my_attacks[?"Fspec_success" ]= scr_matsu_fspecial_success;
-my_attacks[?"Uspec" ]= scr_matsu_uspecial;
+my_attacks[?"Uspec" ]= scr_sarina_uspecial_air;
 my_attacks[?"Dspec" ]= scr_sarina_dspecial_slide;
-my_attacks[?"Grab"	]= scr_matsu_grab;
-my_attacks[?"DashG"	]= scr_matsu_dashgrab;
-my_attacks[?"Pummel"]= scr_matsu_pummel;
-my_attacks[?"Zair"	]= zair0;
-my_attacks[?"FThrow"]= scr_matsu_fthrow;
-my_attacks[?"BThrow"]=scr_matsu_bthrow;
-my_attacks[?"UThrow"]=scr_matsu_uthrow;
-my_attacks[?"DThrow"]= scr_matsu_dthrow;
-my_attacks[?"LedgeA"]=scr_matsu_ledgeattack;
+my_attacks[?"Grab"	]= scr_sarina_grab;
+my_attacks[?"DashG"	]= scr_sarina_grab;
+my_attacks[?"Pummel"]= scr_sarina_pummel;
+my_attacks[?"Zair"	]= scr_sarina_bair_b;
+my_attacks[?"FThrow"]= scr_sarina_fthrow;
+my_attacks[?"BThrow"]=scr_sarina_bthrow;
+my_attacks[?"UThrow"]=scr_sarina_uthrow;
+my_attacks[?"DThrow"]= scr_sarina_dthrow;
+my_attacks[?"LedgeA"]=scr_sarina_dtilt;
 #endregion
 my_attacks[?"Taunt" ]= scr_sarina_taunt1;
 //Animations______________________________________________________________________________________
@@ -325,24 +330,26 @@ my_sprites[?"Hitstun2" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstun3" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstun4" ]=spr_sarina_hitstun1;
 my_sprites[?"Hitstunheavy" ]=spr_sarina_hitstun_heavy;
-my_sprites[?"Tumble"  ]=spr_matsu_tumble;
-my_sprites[?"Helpless"]=spr_matsu_freefall;
+my_sprites[?"Pummeled"] = spr_sarina_pummeled;
+my_sprites[?"Tumble"  ]=spr_sarina_tumble;
+my_sprites[?"Helpless"]=spr_sarina_freefall;
 my_sprites[?"Landlag"]=spr_sarina_landlag;
-my_sprites[?"Lag"     ]=spr_sarina_landlag;
+my_sprites[?"Lag"]=spr_sarina_landlag;
 my_sprites[?"Grabbed"]=spr_sarina_grabbed; //being grabbed by an enemy
 my_sprites[?"Shield"  ]=spr_matsu_parrystart;
 my_sprites[?"ShieldB" ]=spr_matsu_parrystart;
 my_sprites[?"Tech" ]=spr_matsu_tech;
-my_sprites[?"Parry" ]=spr_matsu_parrystart;
-my_sprites[?"ParryS"  ]=spr_matsu_parried;
-my_sprites[?"Parryland"]=spr_matsu_parryland;
+my_sprites[?"Parry" ]=spr_sarina_parrystart;
+my_sprites[?"Parryland"]=spr_sarina_parryland;
+my_sprites[?"ParryS"  ]=spr_sarina_parry_stunned;
+
 my_sprites[?"SDodge"  ]=spr_matsu_parrystart;
-my_sprites[?"LedgeS"  ]=spr_matsu_ledgesnap;
-my_sprites[?"Ledge"   ]=spr_matsu_ledgehang;
-my_sprites[?"LedgeG"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeJ"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeR"  ]=spr_matsu_ledge_getup;
-my_sprites[?"LedgeA"  ]=spr_matsu_ledge_getup;
+my_sprites[?"LedgeS"  ]=spr_sarina_ledgesnap;
+my_sprites[?"Ledge"   ]=spr_sarina_ledgehang;
+my_sprites[?"LedgeG"  ]=spr_sarina_ledge_getup;
+my_sprites[?"LedgeJ"  ]=spr_sarina_ledge_getup;
+my_sprites[?"LedgeR"  ]=spr_sarina_ledge_getup;
+my_sprites[?"LedgeA"  ]=spr_sarina_ledge_getup;
 my_sprites[?"LedgeT"  ]=spr_ledge_tether0;
 my_sprites[?"LedgeTr"	] = spr_ledge_trump0;
 my_sprites[?"WallC"		] = spr_wall_cling0;
@@ -351,35 +358,9 @@ my_sprites[?"Grabbing"]=spr_matsu_grab;
 my_sprites[?"Entrance"]=spr_sarina_entrance;
 my_sprites[?"Taunt"]=spr_sarina_taunt;
 #endregion
-#region Animations - Attacks
-my_sprites[?"Dashattack" ]=spr_takia_dashattack
-my_sprites[?"Grab" ]=spr_matsu_grab;
-my_sprites[?"Grabbing" ]=spr_matsu_grabbing;
-my_sprites[?"Bthrow" ]=spr_matsu_bthrow;
-my_sprites[?"Fthrow" ]=spr_matsu_fthrow;
-my_sprites[?"Uthrow" ]=spr_matsu_uthrow;
-my_sprites[?"Dthrow" ]=spr_matsu_dthrow;
-my_sprites[?"Pummel"] = spr_matsu_pummel;
-my_sprites[?"Jab1" ]=spr_sarina_jab1;
-my_sprites[?"Jab2" ]=spr_sarina_jab2;
-my_sprites[?"Jab3" ]=spr_sarina_jab3;
-my_sprites[?"Ftilt" ]=spr_sarina_ftilt;
-my_sprites[?"Dtilt" ]=spr_sarina_dtilt;
-my_sprites[?"Utilt" ]=spr_sarina_utilt;
-my_sprites[?"Nair" ]=spr_sarina_nair;
-my_sprites[?"Bair" ]=spr_sarina_bair;
-my_sprites[?"Bairb"]=spr_sarina_bair2;
-my_sprites[?"Fair" ]=spr_sarina_fair;
-my_sprites[?"Dair" ]=spr_sarina_dairv2;
-my_sprites[?"Uair" ]=spr_sarina_uair;
-my_sprites[?"Fheavy" ]=spr_takia_fheavy;
-my_sprites[?"Dheavy" ]=spr_sarina_dheavy;
-my_sprites[?"Uheavy" ]=spr_sarina_uheavy;
-my_sprites[?"Fspecial" ]=spr_matsu_fspecial;
-my_sprites[?"Uspecial" ]=spr_matsu_uspecial;
-my_sprites[?"Uspecial2" ]=spr_matsu_uspecial2;
-#endregion
-#region Animation speeds - non attacks
+//Animations for attacks can be found in scr_sarina_custom
+
+#region Animation speeds
 ani_speed_intro = .65;
 ani_speed_idle = 1;
 ani_speed_crouch = 1;
@@ -393,13 +374,14 @@ ani_speed_jumpdouble = 1.2
 if  instance_exists(obj_crushrush)   {ani_speed_walljump = 2;}
 if !instance_exists(obj_crushrush)   {ani_speed_walljump = 1;}
 
+
 ani_speed_airborne = .8;
 ani_speed_airdodge = 1.8;
 ani_speed_waveland = 1
 ani_speed_tech = .75;
 ani_speed_techroll = .9;
 ani_speed_ledgegetup = .85;
-ani_speed_ledgesnap = .75;
+ani_speed_ledgesnap = 2;
 ani_speed_ledgehang = .7;
 ani_speed_ledge_jump = .75;
 ani_speed_dodgeroll = 1.4;
@@ -408,10 +390,11 @@ ani_speed_flinch = .5;
 ani_speed_hitstun = .75;
 ani_speed_hitstun_heavy = 1.2;
 ani_speed_parryland = .50;
+ani_speed_parried = 1;
 ani_speed_lag = 1;
-ani_speed_helpless = 0.75
-ani_speed_grabhold = 0.75
-ani_speed_grabbed = 0.75
+ani_speed_helpless = 0.75;
+ani_speed_grabhold = 1;
+ani_speed_grabbed = 1;
 ani_speed_uspecial_charge = 1;
 
 frame_final_crouch = 7;
@@ -438,6 +421,7 @@ airdodge_flash = false;
 #endregion
 
 #endregion
+
 //Sound effects____________________________________________________________________________________
 #region Sounds for everything besides attacks
 snd_dash = sfx_dash1;
@@ -448,14 +432,17 @@ snd_step4 = sfx_step4;
 #endregion
 #region Sounds for attacks and effects
 snd_grab = sfx_matsu_jab3;
-snd_pummel = sfx_hitgrab1;
+snd_pummel = sfx_hit_light7;
+snd_parrystart = sfx_parrystart;
+
+
 snd_jab1 = sfx_matsu_jab1;
 snd_jab1_hit = sfx_hit_light1;
 snd_jab2 = sfx_matsu_jab2;
 snd_jab2_hit = sfx_hit_light2;
 snd_jab3 = sfx_matsu_jab3;
 snd_jab3_hit = sfx_stab1; // med 2
-snd_dashattack_hit = sfx_hit_med12;
+snd_dashattack_hit = sfx_stab3;
 
 snd_nair = sfx_swoosh2;
 snd_nair_sourhit = sfx_hit_light1;
@@ -482,6 +469,9 @@ snd_uair_hit = sfx_stab2; // light5
 snd_uair_sourhit = sfx_stab3; // light5 
 snd_uair_sweethit = sfx_stab1;; // light5 
 
+snd_ftilt_normal_sourhit = sfx_stab3;
+snd_ftilt_normal_tipper = sfx_stab1;
+
 snd_ftilt_firsthit = sfx_stab1;
 snd_ftilt_hit = sfx_stab2; // light5 
 snd_ftilt_endhit = sfx_stab4;
@@ -492,14 +482,40 @@ snd_dtilt_sweethit = sfx_hit_med1
 
 snd_utilt_hit = sfx_stab3; // light5 
 
-
-
-snd_fheavy_hit = sfx_stab4; // light5 
+snd_fheavy_hit = sfx_stab1; // light5 
+snd_fheavy_sourhit = sfx_stab3; // light5 
+snd_fheavy_sweethit = sfx_stab4; // light5 
 
 snd_uheavy = sfx_swoosh2; // light5 
 snd_uheavy_hit = sfx_stab3;// light5 
 
 snd_dheavy_hit = sfx_hit_heavy2; // light5 
+
+snd_fspecial1 = sfx_swish_strong1//Sarina when she lounges
+snd_fspecial2 = sfx_swoosh1//Sarina when she swings
+snd_fspecial_hit = sfx_stab1//Sarina when she lands the attack
+snd_fspecial_ex_hit = sfx_stab4//Sarina when she lands the EX attack
+
+snd_dspecial_vault_hit = sfx_hit_med8;
+snd_dspecial_vault_sourhit = sfx_hit_light1;
+snd_dspecial_slide_hit = sfx_hit_light2;
+
+snd_uspecial_hit = sfx_hit_heavy4;
+snd_uspecial_ex_hit = sfx_stab4;
+
+snd_uthrow_hit = sfx_hit_light2;
+snd_uthrow_sourhit = sfx_hit_light1;
+
+snd_fthrow1 = sfx_swish_strong1;
+snd_fthrow2 = sfx_swoosh1;
+snd_fthrow_hit = sfx_hit_heavy4;
+
+snd_bthrow1 = sfx_swish_strong1;
+snd_bthrow2 = sfx_swoosh1;
+snd_bthrow_hit1 = sfx_stab3;
+snd_bthrow_hit2 = sfx_stab4;
+
+snd_dthrow_hit = sfx_hit_1;
 
 snd_hitmulti1 = sfx_hit_light1;
 snd_hitmulti2 = sfx_hit_light2;
@@ -507,6 +523,7 @@ snd_hitmulti2 = sfx_hit_light2;
 snd_tipper1 = sfx_stab4;
 snd_tipper2 = sfx_stab1;
 #endregion
+
 //Voices
 #region Voice clips
 vc_nothing = sfx_nothing;
@@ -515,20 +532,26 @@ vc_intro1b = sfx_nothing;
 vc_intro2a = sfx_nothing;
 vc_intro2b = sfx_nothing;
 
+vc_parry = sfx_vc_sarina_attack10;
 
 #region Voice attacks - general
+
 vc_jab1 = sfx_nothing;
 vc_jab2 = sfx_nothing;
 vc_jab3 = sfx_vc_sarina_attack9;
 vc_dashattack1 = sfx_nothing;
 vc_dashattack2 = sfx_nothing;
-vc_ftilt1 = sfx_vc_sarina_attack_ftilt1;
-vc_ftilt2 = sfx_vc_sarina_attack_ftilt2;
-vc_ftilt3 = sfx_vc_sarina_attack_ftilt3;
+
+//Tilt attacks
+vc_ftilt = sfx_vc_sarina_attack_ftilt1;
+
+vc_ftilt_ex = sfx_vc_sarina_attack_ftilt3;
 vc_dtilt1 = sfx_vc_sarina_action2;
 vc_dtilt2 = sfx_nothing;
 vc_utilt1 = sfx_nothing;
 vc_utilt2 = sfx_nothing;
+
+//air attacks
 vc_uair1 = sfx_nothing;
 vc_uair2 = sfx_nothing;
 vc_dair1 = sfx_nothing;
@@ -539,22 +562,33 @@ vc_bair1 = sfx_nothing;
 vc_bair2 = sfx_nothing;
 vc_nair1 = sfx_vc_takia_action1;
 vc_nair2 = sfx_vc_takia_action1;
+
+//heavy attacks
 vc_fheavy1 = sfx_vc_sarina_attack9;
 vc_fheavy2 = sfx_vc_sarina_attack2;
 vc_dheavy1 = sfx_vc_sarina_attack9;
 vc_dheavy2 = sfx_vc_sarina_attack2;
 vc_uheavy1 = sfx_vc_sarina_attack9;
 vc_uheavy2 = sfx_vc_sarina_attack2;
-vc_uair1 = sfx_nothing;
+
+//special attacks
 vc_nspecial1 = sfx_nothing;
 vc_nspecial2 = sfx_nothing;
-vc_sspecial1 = sfx_vc_akuma_spinkick1;
-vc_sspecial2 = sfx_vc_akuma_spinkick2;
-vc_uspecial1 = sfx_vc_akuma_spinkick1;
-vc_uspecial2 = sfx_vc_akuma_shoyu;
+vc_fspecial1 = sfx_vc_sarina_action1;
+vc_fspecial2 = sfx_vc_sarina_fspecial;
+vc_uspecial1 = sfx_vc_sarina_uspecial1;
+vc_uspecial2 = sfx_vc_sarina_uspecial2;
+vc_uspecial_ex1 = sfx_vc_sarina_uspecial_ex1;//"How about-"
+vc_uspecial_ex2 = sfx_vc_sarina_uspecial_ex2;//"THIS?"
 vc_dspecial1 = sfx_nothing;
 vc_dspecial2 = sfx_nothing;
-vc_grab = sfx_nothing;
+//grabs/throws
+vc_grabmiss1 = sfx_vc_sarina_grabmiss;
+vc_grabmiss2 = sfx_vc_sarina_grabmiss2;
+vc_uthrow = sfx_vc_sarina_attack1;
+vc_bthrow = sfx_vc_sarina_bthrow;
+vc_dthrow = sfx_vc_sarina_attack7;
+vc_fthrow = sfx_vc_sarina_action5;
 #endregion
 #region Voice actions - general
 vc_jump1 = sfx_vc_sarina_action1;
@@ -575,15 +609,23 @@ vc_airdodge1 = sfx_nothing;
 vc_airdodge2 = sfx_nothing;
 #endregion
 #region Voice hurt - general
-vc_hurt1 = sfx_nothing; //weak hit 1
-vc_hurt2 = sfx_nothing; // weak hit 2
-vc_hurt3 = sfx_nothing; //weak hit 3
-vc_hurtbad1 = sfx_nothing;
-vc_hurtbad2 = sfx_nothing;
-vc_hurtbad3 = sfx_nothing;
-vc_hurtbad4 = sfx_nothing;
-vc_hurtbad5 = sfx_nothing;
-vc_hurtbad1 = sfx_nothing;
+vc_hurt_light1 = sfx_vc_sarina_hit1; //if damage is under 50%
+vc_hurt_light2 = sfx_vc_sarina_hit5; //if damage is under 50%
+vc_hurt_light3 = sfx_vc_sarina_hit6; //if damage is under 50%
+vc_hurt_light4 = sfx_vc_sarina_hit9; //if damage is under 50%
+vc_hurt_light5 = sfx_vc_sarina_hit11; //if damage is under 50%
+vc_hurt_light6 = sfx_vc_sarina_hit15; //if damage is under 50%
+vc_hurt_light7 = sfx_vc_sarina_hit16; //if damage is under 50%
+vc_hurt_med1 = sfx_vc_sarina_hit2; //if damage is over 50% but under 100%
+vc_hurt_med2 = sfx_vc_sarina_hit3; //if damage is over 50% but under 100%
+vc_hurt_med3 = sfx_vc_sarina_hit4; //if damage is over 50% but under 100%
+vc_hurt_med4 = sfx_vc_sarina_hit7; //if damage is over 50% but under 100%
+vc_hurt_med5 = sfx_vc_sarina_hit8; //if damage is over 50% but under 100%
+vc_hurt_med6 = sfx_vc_sarina_hit10; //if damage is over 50% but under 100%
+vc_hurt_hard1 = sfx_vc_sarina_hit12; //if damage is over 100%
+vc_hurt_hard2 = sfx_vc_sarina_hit13; //if damage is over 100%
+vc_hurt_hard3 = sfx_vc_sarina_hit14; //if damage is over 100%
+
 vc_parried1 = sfx_nothing;
 vc_parried2 = sfx_nothing;
 vc_ko = sfx_vc_takia_ko1;
@@ -591,7 +633,24 @@ vc_ko2 = sfx_vc_takia_ko1;
 vc_ko3 = sfx_vc_takia_ko1;
 #endregion
 #endregion
-//Custom Step Event
+//win Dialouge
+#region Sarina vs Sarina
+
+text = choose(
+"hm, looks like you weren't as strong as I thought... I'm sorry I expected more of you.",
+"Looks like i win this fight. It was an honor.",
+"This is more than just fate, it's my destiny."
+);
+
+//text = choose(
+//"I dunno who the hell you really are, but you're coming with me!",
+//"It appears father was correct about his multiverse theory...",
+//"Gawopdawoop"
+//);
+
+#endregion
+
+//Custom
 custom_script= scr_sarina_custom();
 custom_draw_script = scr_sarina_draw();
 custom_step_script = scr_sarina_custom_stepevent();

@@ -13,3 +13,10 @@ if white_cube = false
 {timer_on = false}
 
 if timer_on = true {timer += 1;}
+
+
+
+if obj_player.stock = 0
+{
+	room_goto(rm_Main_Menu)
+}

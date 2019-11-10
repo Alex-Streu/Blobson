@@ -59,6 +59,7 @@ if (run)
 			anim_sprite = my_sprites[?"Rolling"];
 			anim_speed = 0;
 			anim_frame = 0;
+			
 			//No speed
 			set_speed(0, 0, false, false);
 			if (rolling_frame == 0)

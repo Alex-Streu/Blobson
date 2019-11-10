@@ -145,7 +145,7 @@ if (run)
 				//Animation
 				anim_frame=6;			
 				attack_phase++;
-				attack_frame=3;
+				attack_frame=2;
 				reset_hitbox_groups()
 				#region hitbox 4
 				var _hitbox4 = create_magnetbox(0,0,1,1,1,2,24,-100,20,2,HITBOX_SHAPE.rectangle,3);	
@@ -171,7 +171,7 @@ if (run)
 				attack_frame = 3;
 				reset_hitbox_groups()
 				#region hitbox 1
-				var _hitbox5 = create_melee(0,0,1,1,1,8,1,10,80,3,HITBOX_SHAPE.circle,0);	
+				var _hitbox5 = create_melee(0,0,1,1,1,8,1,7,80,3,HITBOX_SHAPE.circle,0);	
 				set_hitbox_property(_hitbox5,HITBOX_PROPERTY.hit_sfx,snd_utilt_hit);	
 				_hitbox5.sprite_index = spr_sarina_utilt_hitbox;
 				_hitbox5.image_speed = 0;
@@ -192,13 +192,8 @@ if (run)
 				anim_frame=8;			
 				attack_phase++;		
 				#region whiff lag
-				if (attack_has_hit() )   {attack_frame = 12;}
-				else                               {attack_frame = 18;}
-				#endregion
-				#region jump cancelable
-				if (attack_has_hit())   
-				{if run && cancel_jump_check()	 run=false;}
-				else{EX_meter += 0;}
+				if (attack_has_hit() )   {attack_frame = 8;}
+				else                               {attack_frame = 15;}
 				#endregion
 				}
 			break;

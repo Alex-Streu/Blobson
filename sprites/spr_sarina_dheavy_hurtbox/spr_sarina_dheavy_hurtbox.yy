@@ -490,7 +490,7 @@
             "blendMode": 0,
             "isLocked": false,
             "name": "Layer 1",
-            "opacity": 72,
+            "opacity": 51,
             "visible": true
         }
     ],
