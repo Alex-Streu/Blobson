@@ -6223,6 +6223,14 @@
             }
         },
         {
+            "Key": "792710af-c135-48d6-b3cf-ced3a841853c",
+            "Value": {
+                "id": "ea1fcba8-30b3-417c-9232-b12204fc1b7a",
+                "resourcePath": "scripts\\scr_sarina_dspecial_air_bounce\\scr_sarina_dspecial_air_bounce.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "794ff814-4be6-4dda-9898-abd9dc8c017f",
             "Value": {
                 "id": "c2b215a0-ba73-4d64-917b-b933f4add9e0",
@@ -11871,6 +11879,14 @@
             }
         },
         {
+            "Key": "ee14dd1d-bffb-4ade-b6c6-3b2dccf776c4",
+            "Value": {
+                "id": "055ce087-cda3-4824-9a50-8ac4bb43b44a",
+                "resourcePath": "sprites\\spr_sarina_dspecial_bounce\\spr_sarina_dspecial_bounce.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ee1d368b-a6f7-475b-b2d7-1a5222dca5a3",
             "Value": {
                 "id": "6931c330-d8e0-4705-ac11-f904c48c298b",
@@ -12774,6 +12790,7 @@
         "230e0e97-25a9-425b-8719-2a57df4f5c08",
         "eaec16ab-df27-4f7f-9bb9-601b283f4f24",
         "4b0681c7-6aca-4bcf-82f5-8761b55064f7",
+        "792710af-c135-48d6-b3cf-ced3a841853c",
         "62336198-167c-422d-9899-4dabdbe92c33",
         "1a643e70-0ff0-4669-8025-6333ef70e3f0",
         "98e6b491-e77b-4f96-a8b0-f84a2ef4e444",
