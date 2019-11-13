@@ -671,6 +671,14 @@
             }
         },
         {
+            "Key": "0c2a60e3-651b-47b2-bd5b-e98c69cf9a69",
+            "Value": {
+                "id": "69a79663-5eb9-4312-b4cf-b8d60345b7ce",
+                "resourcePath": "sprites\\spr_sarina_tech_ground\\spr_sarina_tech_ground.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0c6eb9c6-626b-4c1b-8515-19a393ebb5b8",
             "Value": {
                 "id": "f350e96d-22a1-4db1-9bed-ea9ddfcfed45",
@@ -6219,14 +6227,6 @@
             "Value": {
                 "id": "e24c910d-6c83-4ff9-8613-a5d63c8a15f4",
                 "resourcePath": "scripts\\create_character_select_player\\create_character_select_player.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "792710af-c135-48d6-b3cf-ced3a841853c",
-            "Value": {
-                "id": "ea1fcba8-30b3-417c-9232-b12204fc1b7a",
-                "resourcePath": "scripts\\scr_sarina_dspecial_air_bounce\\scr_sarina_dspecial_air_bounce.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -12239,6 +12239,14 @@
             }
         },
         {
+            "Key": "f78019c6-df55-4e64-9239-1bdec7f4ef1f",
+            "Value": {
+                "id": "a4dfcfca-5f07-4c9b-94ac-5d9564c872f7",
+                "resourcePath": "scripts\\scr_sarina_dspecial_bounce\\scr_sarina_dspecial_bounce.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f7b62d4a-12d4-4de0-8a8c-232e49a365eb",
             "Value": {
                 "id": "27450ce5-99a9-4a65-be39-913d546aa80b",
@@ -12790,8 +12798,8 @@
         "230e0e97-25a9-425b-8719-2a57df4f5c08",
         "eaec16ab-df27-4f7f-9bb9-601b283f4f24",
         "4b0681c7-6aca-4bcf-82f5-8761b55064f7",
-        "792710af-c135-48d6-b3cf-ced3a841853c",
         "62336198-167c-422d-9899-4dabdbe92c33",
+        "f78019c6-df55-4e64-9239-1bdec7f4ef1f",
         "1a643e70-0ff0-4669-8025-6333ef70e3f0",
         "98e6b491-e77b-4f96-a8b0-f84a2ef4e444",
         "aaeb76f6-7664-4ad1-a02a-614d31703a49",

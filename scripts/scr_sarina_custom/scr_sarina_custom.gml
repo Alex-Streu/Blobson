@@ -124,6 +124,8 @@ snd_fspecial_ex_hit = sfx_stab4//Sarina when she lands the EX attack
 snd_dspecial_vault_hit = sfx_hit_med8;
 snd_dspecial_vault_sourhit = sfx_hit_light1;
 snd_dspecial_slide_hit = sfx_hit_light2;
+snd_dspecial_dive_hit = sfx_hit_med2;
+snd_dspecial_dive_exhit = sfx_hit_heavy3;
 
 snd_uspecial_hit = sfx_hit_heavy4;
 snd_uspecial_ex_hit = sfx_stab4;

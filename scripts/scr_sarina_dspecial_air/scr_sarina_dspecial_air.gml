@@ -65,13 +65,15 @@ if (run)
 				
 			   if sarina_dspecial_ex_dive = true
 			   {
-				create_melee(-8,-32,0.6,1,7,4,1,10,300,45,HITBOX_SHAPE.rectangle,0);
+				var _hitbox = create_melee(-8,-32,0.6,1,7,4,1,12,300,45,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dspecial_dive_exhit);
+				
 			   }
 			   
 			   if sarina_dspecial_ex_dive = false
-			   {
-				   
-				create_melee(-8,-32,0.6,1,5,11,0.5,10,65,45,HITBOX_SHAPE.rectangle,0);
+			   {				   
+				var _hitbox = create_melee(-8,-32,0.6,1,5,11,0.7,12,80,45,HITBOX_SHAPE.rectangle,0);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_dspecial_dive_hit);
 			   }
 				
 				}
@@ -184,6 +186,11 @@ if (run)
 	}
 //Movement
 move_();
+
+if (attack_has_hit())   
+{
+	attack_start(scr_sarina_dspecial_bounce)
+}
 
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 6;

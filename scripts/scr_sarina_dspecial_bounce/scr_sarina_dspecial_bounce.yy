@@ -1,8 +1,8 @@
 {
-    "id": "24a7ec58-dbe0-4593-ab21-c4b1cb98cca5",
+    "id": "f78019c6-df55-4e64-9239-1bdec7f4ef1f",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scr_sarina_fspecial_air",
+    "name": "scr_sarina_dspecial_bounce",
     "IsCompatibility": false,
     "IsDnD": false
 }
