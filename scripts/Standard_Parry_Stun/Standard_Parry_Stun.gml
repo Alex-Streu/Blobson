@@ -22,7 +22,7 @@ else
 	{
 	anim_sprite=my_sprites[?"Tumble"];
 	}
-anim_speed= 0.5;
+anim_speed= ani_speed_parried;
 #endregion
 #region When the lag is done
 if (run && parry_stun_frame==0)

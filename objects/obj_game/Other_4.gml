@@ -12,7 +12,7 @@ if room = rm_Training
 
 if room = rm_Dreamland
 {
-	audio_play_sound(sfx_music_blobson_theme,10,true)
+	audio_play_sound(sfx_music_arena,10,true)
 }
 
 if room = rm_Stadium

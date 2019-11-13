@@ -38,7 +38,7 @@
 #macro camera_special_zoom_height 270
 
 //Player status
-#macro player_status_padding_bottom 54
+#macro player_status_padding_bottom 96
 
 //Game surface
 #macro game_surface_enable false
@@ -88,8 +88,8 @@
 	#macro hitstun_multiplier 1 //0.85
 	#macro hitstun_base_multiplier 5 //4
 	#macro hitstun_weight_multiplier 1
-	#macro hitstun_damage_multiplier 0.25 //0.24
-	#macro hitstun_knockback_multiplier 6//6
+	#macro hitstun_damage_multiplier 0.1 //0.24
+	#macro hitstun_knockback_multiplier 5//5
 	#macro hitlag_multiplier 1 //0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4
@@ -105,8 +105,8 @@
 	#macro default_knockback_angle 90
 	#macro ASDI 4
 	#macro DI_Max 15
-	#macro drift_DI_accel 0.2
-	#macro drift_DI_max 2
+	#macro drift_DI_accel 0.8
+	#macro drift_DI_max 4
 	
 	//Sakurai angle
 	#macro s_angle_knockback_threshold 10
@@ -195,7 +195,7 @@
 	//Parrying
 	#macro parry_grabs true
 	#macro parry_default_stun_time 90
-	#macro parry_hitlag 15
+	#macro parry_hitlag 5
 	#macro parry_invincible_time 30
 	#macro parry_reflect_speed_multiplier 1.5
 	
@@ -203,7 +203,7 @@
 	#macro ledge_grab_timeout_standard 60
 	#macro ledge_snap_speed 16
 	#macro ledge_grab_distance 28 //24
-	#macro ledge_snap_time 3
+	#macro ledge_snap_time 6
 	#macro ledge_hang_min_time 10
 	#macro ledge_hang_max_time 180
 	#macro ledge_invincible_time 60
@@ -485,7 +485,8 @@ enum PLAYER_DATA
 	controller,
 	render,
 	palettes,
-	victory_theme
+	victory_theme,
+	text
 	}
 //Enum for control stick
 enum CONTROL_STICK

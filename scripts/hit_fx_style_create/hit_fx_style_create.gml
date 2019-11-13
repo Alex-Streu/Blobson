@@ -15,7 +15,7 @@ switch(_style)
 	#region Normal Weak
 	case HIT_FX.normal_weak:
 		//Direction Burst
-		var _fx = fx_create(spr_hit_fx_direction_burst, 1, 0, 13, _hit.x, _hit.y, 1, _angle, _layer);
+		var _fx = fx_create(spr_hit_fx_direction_burst, 1, 0, 13, _hit.x, _hit.y -70, 1, _angle, _layer);
 		_fx.image_xscale *= choose(-1, 1);
 
 		//With the target
@@ -51,6 +51,7 @@ switch(_style)
 		//With the target
 		with(_hit)
 			{
+				
 			//Particle Effects
 			part_type_direction(global.p1, _angle - 15, _angle + 15, 0, 0);
 			part_type_speed(global.p1, max(7, _knock), max(10, _knock + 3), 0, 0);
@@ -80,6 +81,8 @@ switch(_style)
 		//With the target
 		with(_hit)
 			{
+				
+				instance_create_depth(x,y,-100,obj_effect_melee1);
 			//Particle Effects
 			part_type_direction(global.p1, _angle - 15, _angle + 15, 0, 0);
 			part_type_speed(global.p1, max(7, _knock), max(10, _knock + 3), 0, 0);

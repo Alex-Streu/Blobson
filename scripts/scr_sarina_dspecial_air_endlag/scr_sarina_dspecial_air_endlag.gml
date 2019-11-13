@@ -14,12 +14,16 @@ if (run)
 			#region   Frame 15 of dspecial dive   
 		case PHASE.start:
 			{
+			sarina_dspecial_ex_dive = false;
+			ex_flash = false;
+			
 			//Animation
 			anim_sprite= spr_sarina_dspecial_dive
 			anim_frame=14;	
 			//anim_speed = .75;
 			anim_speed = 0;
-			attack_frame= 3;
+			if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 			set_speed(8*facing,0,true,false);
 			return;
 			}
@@ -32,7 +36,8 @@ if (run)
 				//Animation
 				anim_frame=15;			
 				attack_phase++;
-				attack_frame=3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -45,7 +50,8 @@ if (run)
 				//Animation
 				anim_frame=16;
 				attack_phase++;
-				attack_frame=3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -58,7 +64,8 @@ if (run)
 				//Animation
 				anim_frame=17;
 				attack_phase++;
-				attack_frame=3;	
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -71,7 +78,8 @@ if (run)
 				//Animation
 				anim_frame=18;
 				attack_phase++;
-				attack_frame=3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -84,7 +92,8 @@ if (run)
 				//Animation
 				anim_frame=19;			
 				attack_phase++;
-				attack_frame=3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -97,7 +106,8 @@ if (run)
 				//Animation
 				anim_frame=20;			
 				attack_phase++;
-				attack_frame=3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -110,7 +120,8 @@ if (run)
 				//Animation
 				anim_frame=21;			
 				attack_phase++;
-				attack_frame = 3;
+				if sarina_dspecial_ex_dive_land = false {attack_frame= 3;}
+			    if sarina_dspecial_ex_dive_land = true {attack_frame= 2;}
 				}
 			break;
 			}
@@ -123,6 +134,8 @@ if (run)
 				anim_frame=21;
 			if (attack_frame==0)
 				{
+				sarina_dspecial_ex_dive = false;
+				sarina_dspecial_ex_dive_land = false;
 				attack_stop(PLAYER_STATE.idle);
 				anim_frame = 23
 				run = false;

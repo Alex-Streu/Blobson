@@ -11,9 +11,13 @@ hitlag_frame = max(--hitlag_frame, 0);
 if name = "Goku" {rewind_teleport_ready = true;}
 if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 
+
+
 #region Animation
 anim_speed = 1;
 hurtbox.sprite_index = hurtbox_sprite;
+
+
 #endregion
 #region End Hitlag
 if (run && hitlag_frame == 0)
@@ -26,8 +30,56 @@ if (run && hitlag_frame == 0)
 						
 		case PLAYER_STATE.in_hitstun:
 		hitlag_state = false;
-		//voice clip
-			audio_play_sound(choose(vc_hurt1,vc_hurt2,vc_nothing,vc_nothing),10,false);
+		#region voice hurt clips
+		
+		#region if damage is less than 50
+		if damage < 50
+		{
+			audio_play_sound
+			(choose(
+			vc_nothing,vc_nothing,vc_nothing,vc_nothing, vc_nothing, vc_nothing,vc_nothing,vc_nothing,vc_nothing,vc_nothing, //10
+			vc_hurt_light1, 
+			vc_hurt_light2, 
+			vc_hurt_light3, 
+			vc_hurt_light4, 
+			vc_hurt_light5,
+			vc_hurt_light6,
+			vc_hurt_light7
+			),10,false);
+		}
+		#endregion
+		#region if damage is 50 or more but less than 125
+		if damage >= 50 and damage < 125
+		{
+			audio_play_sound
+			(choose(
+			vc_nothing,vc_nothing,vc_nothing,vc_nothing, vc_nothing, vc_nothing,vc_nothing,vc_nothing,vc_nothing,vc_nothing, //10
+			vc_hurt_med1, 
+			vc_hurt_med2, 
+			vc_hurt_med3, 
+			vc_hurt_med4, 
+			vc_hurt_med5,
+			vc_hurt_med6
+			),10,false);
+		}
+		#endregion
+		#region if damage is 50 or more but less than 125
+		if damage >= 125
+		{
+			audio_play_sound
+			(choose(
+			vc_nothing,vc_nothing,vc_nothing,vc_nothing, vc_nothing, vc_nothing,vc_nothing,vc_nothing,vc_nothing,vc_nothing, //10
+			vc_hurt_hard1, 
+			vc_hurt_hard2, 
+			vc_hurt_hard3
+			),10,false);
+		}
+		#endregion
+		
+		#endregion
+			
+			
+			
 			//Set the hitstun timer
 			hitstun_frame = stored_hitstun;
 			

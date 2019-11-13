@@ -137,7 +137,9 @@ kspd = 0;
 stored_hitstun = 0;
 stored_state = PLAYER_STATE.in_hitstun;
 ko_property = id; //Determines SD's / normal KO's
-stock = 3;
+
+if instance_exists(obj_crushrush) {stock = 1;}
+if !instance_exists(obj_crushrush) {stock = 3;}
 any_hitbox_has_hit = false;
 can_hitfall = true;
 //My Hitboxes List - Keeps track of all of the user's hitboxes

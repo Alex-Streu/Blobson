@@ -4,6 +4,12 @@ var _phase = argument_count > 0 ? argument[0] : attack_phase;
 //Timer
 attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 6;
+meter_gain_magnet = 0;
+
+
 //Canceling
 if run && cancel_air_check() run=false;
 #region Phases

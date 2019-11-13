@@ -10,6 +10,11 @@ aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
 
+#region landing lag change if hit
+				if (attack_has_hit())   {landing_lag = 3;}
+				else                              {landing_lag = 10;}
+				#endregion				
+
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 5;
 meter_gain_magnet = 0;
@@ -46,7 +51,7 @@ if (run)
 			break;
 			}
 			#endregion
-			#region Frame 3 - sour hitboxes
+			#region Frame 3
 		case 1:
 			{
 			if (attack_frame==0)
@@ -102,6 +107,8 @@ if (run)
 				anim_frame=4;			
 				attack_phase++;
 				attack_frame=2;					
+				
+				
 				
 				#region tipper
 				var _hitbox = create_melee(0,0,1,1,10,6,1,15,70,2,HITBOX_SHAPE.circle,0);

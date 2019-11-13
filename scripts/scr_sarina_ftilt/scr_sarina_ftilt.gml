@@ -23,8 +23,20 @@ if (run)
 			anim_sprite= my_sprites[?"Ftilt"];
 			anim_speed=0;
 			anim_frame=0;
-		
 			attack_frame= 2;
+			#region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
 			return;
 			}
 			#endregion
@@ -34,10 +46,23 @@ if (run)
 			if (attack_frame==0)
 				{
 				//Animation
-				anim_frame=1;
-			
+				anim_frame=1;			
 				attack_phase++;
-				attack_frame=2;
+				#region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
+				if sarina_ftilt_ex = false {attack_frame=2;}
+				if sarina_ftilt_ex = true {attack_frame=1;}
 				}
 			break;
 			}
@@ -50,7 +75,21 @@ if (run)
 				//Animation
 				anim_frame=2;
 				attack_phase++;
-				attack_frame=2;
+				#region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
+				if sarina_ftilt_ex = false {attack_frame=3;}
+				if sarina_ftilt_ex = true {attack_frame=1;}
 				}
 			break;
 			}
@@ -63,7 +102,21 @@ if (run)
 				//Animation
 				anim_frame=3;			
 				attack_phase++;
-				attack_frame=2;
+				#region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
+				if sarina_ftilt_ex = false {attack_frame=3;}
+				if sarina_ftilt_ex = true {attack_frame=1;}
 				}
 			break;
 			}
@@ -76,7 +129,21 @@ if (run)
 				//Animation
 				anim_frame=4;
 				attack_phase++;
-				attack_frame=2;
+				#region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
+				if sarina_ftilt_ex = false {attack_frame=3;}
+				if sarina_ftilt_ex = true {attack_frame=1;}
 				}
 			break;
 			}
@@ -88,13 +155,23 @@ if (run)
 				{
 				//Animation
 				anim_frame=5;			
-				attack_phase++;
-				attack_frame=3;
+				attack_phase++;		
 				
-				audio_play_sound(choose(vc_ftilt1,vc_ftilt2,vc_ftilt3),10,false);
-				
-				var _hitbox = create_magnetbox(32,-64,1.3,0.5,2,5,112,-8,10,3,HITBOX_SHAPE.rectangle,0)
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_firsthit);
+                #region Activate EX version
+			if (button_hold(INPUT.special, buff,true))
+				if sarina_ftilt_ex = false
+				if EX_meter >= ex_useage_ftilt
+				{
+					instance_create_depth(x,y-60,300,obj_effect_ex_flash);
+					audio_play_sound(sfx_ex_useage,10,false);
+					sarina_ftilt_ex = true;
+					ex_flash = true;
+					ex_flash_timer = 30;
+					EX_meter -= ex_useage_ftilt;
+				}
+				#endregion			
+				if sarina_ftilt_ex = false {attack_frame=2;}
+				if sarina_ftilt_ex = true {attack_frame=1;}
 				}
 			break;
 			}
@@ -107,14 +184,32 @@ if (run)
 				//Animation
 				anim_frame=6;			
 				attack_phase++;
+				
+				if sarina_ftilt_ex = true {audio_play_sound(vc_ftilt_ex,10,false);}
+				
+				#region normal - hitbox 
+				if sarina_ftilt_ex = false
+				{
+				attack_frame=2;
+				//tipper
+				var _hitbox = create_melee(154,-68,0.1,0.1,9,8,1,8,45,2,HITBOX_SHAPE.circle,0)
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_normal_tipper);
+				//Sour hit
+				var _hitbox = create_melee(110,-75,1,1,5,7,0.5,8,45,2,HITBOX_SHAPE.circle,0)
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_normal_sourhit);
+				}
+				#endregion
+				#region EX VERSION - magnet box first one
+				if sarina_ftilt_ex = true
+				{
 				attack_frame=1;
-				#region magnet box first one
 				var _hitbox = create_magnetbox(0,0,1,1,1,6,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_firsthit);
+				}
 				#endregion
 				}
 			break;
@@ -128,8 +223,25 @@ if (run)
 				//Animation
 				anim_frame=7;			
 				attack_phase++;				
-				attack_frame = 3;
+					
+				#region normal version endlag
+				if sarina_ftilt_ex = false
+				{
+				      #region whiff lag
+				      if (attack_has_hit() )   {attack_frame = 3;}
+				      else                               {attack_frame = 6;}
+				#endregion
+				}
+				#endregion
+				#region EX version
+				if sarina_ftilt_ex = true
+				{
+				attack_frame = 1;
+				anim_sprite= my_sprites[?"Ftilt_ex"];	
 				audio_play_sound(snd_ftilt_loop,10,false);
+				}
+				#endregion
+				
 				}
 			break;
 			}
@@ -142,10 +254,21 @@ if (run)
 				//Animation
 				anim_frame=8;			
 				attack_phase++;				
-				attack_frame = 1;
-			
 				
-				#region reset hitboxes
+			    #region normal version endlag
+				if sarina_ftilt_ex = false
+				{
+				      #region whiff lag
+				      if (attack_has_hit() )   {attack_frame = 2;}
+				      else                               {attack_frame = 8;}
+				#endregion
+				}
+				#endregion
+				
+				#region EX version - reset hitboxes
+				if sarina_ftilt_ex = true
+				{
+				attack_frame = 1;
 				reset_hitbox_group(collided, 1); //reset hitbox so next one can connect
 				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
@@ -153,6 +276,7 @@ if (run)
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
+				}
 				#endregion
 				}
 			break;
@@ -165,15 +289,28 @@ if (run)
 				{
 				//Animation
 				anim_frame=9;			
-				attack_phase++;				
-				attack_frame = 1;
+				attack_phase++;		
+				
+				#region normal version endlag
+				if sarina_ftilt_ex = false
+				{
+				      #region whiff lag
+				      if (attack_has_hit() )   {attack_frame = 2;}
+				      else                               {attack_frame = 5;}
+				#endregion
+				}
+				#endregion
 				#region reset hitboxes
+				if sarina_ftilt_ex = true
+				{
+				attack_frame = 1;
 				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
+				}
 				#endregion
 				}
 			break;
@@ -187,11 +324,21 @@ if (run)
 				//Animation
 				anim_frame=10;			
 				attack_phase++;				
-				attack_frame = 1;
-				
-				audio_play_sound(snd_ftilt_loop,10,false);
-				
+
+				#region normal version endlag
+				if sarina_ftilt_ex = false
+				{
+				      #region whiff lag
+				      if (attack_has_hit() )   {attack_frame = 2;}
+				      else                               {attack_frame = 5;}
+				#endregion
+				}
+				#endregion
 				#region reset hitboxes
+				if sarina_ftilt_ex = true
+				{
+				audio_play_sound(snd_ftilt_loop,10,false);
+				attack_frame = 1;
 				reset_hitbox_group(collided, 0); //reset hitbox so next one can connect
 				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
@@ -199,6 +346,7 @@ if (run)
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
+				}
 				#endregion
 				}
 			break;
@@ -212,14 +360,27 @@ if (run)
 				//Animation
 				anim_frame=11;			
 				attack_phase++;				
-				attack_frame = 1;
+				
+				
+				#region normal version endlag
+				if sarina_ftilt_ex = false
+				{
+				attack_frame = 2;
+				attack_stop(PLAYER_STATE.idle);
+				run = false;
+				}
+				#endregion				
 				#region reset hitboxes
+				if sarina_ftilt_ex = true
+				{
+				attack_frame = 1;
 				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
 				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
+				}
 				#endregion
 				}
 			break;
@@ -551,7 +712,7 @@ if (run)
 				attack_frame = 2;
 				#region reset hitboxes
 				reset_hitbox_groups()
-				var _hitbox = create_melee(0,0,1,1,1,7,1,8,45,2,HITBOX_SHAPE.rectangle,0)
+				var _hitbox = create_melee(0,0,1,1,1,7,1,8,110,2,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;

@@ -203,6 +203,7 @@ if (run)
 				anim_frame=14;
 				attack_phase++;
 				attack_frame=3;
+				audio_play_sound(sfx_vc_sarina_taunt1,10,false);
 				}
 			break;
 			}

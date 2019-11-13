@@ -9,6 +9,8 @@
         "69177728-bc23-4c7b-aac0-3953778dbf7c",
         "aa4e9abe-6625-4446-912e-2544ca21c60d",
         "be7b3a7b-f70d-443b-b929-657d190e585b",
+        "6828e844-42a9-49dd-8b86-029fbcb53479",
+        "a1d14e30-6749-4459-9bd7-addbb90b3a8a",
         "655450e6-7ed1-4d97-9dfb-459c80405baf",
         "50e3996c-04a5-442a-a85e-c76ed289e4ba",
         "824665dc-08bd-431e-ba98-dec0c64e3dc6",
@@ -19,8 +21,7 @@
         "60acdb1d-cae9-4452-b738-f988e48c6f06",
         "352428ec-c5b0-48e2-9369-3f2e1baada1e",
         "044d72a2-9359-4661-8974-8bcd09874375",
-        "51fdf1fc-4c10-4cbc-836f-d19e36f2142e",
-        "6828e844-42a9-49dd-8b86-029fbcb53479"
+        "51fdf1fc-4c10-4cbc-836f-d19e36f2142e"
     ],
     "filterType": "GMSprite",
     "folderName": "Menu_Sprites",

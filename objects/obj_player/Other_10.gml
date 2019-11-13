@@ -124,3 +124,6 @@ if (debug)
 		ds_list_delete(state_log, 0);
 		}
 	}
+	
+	
+	if instance_exists(obj_crushrush) and damage > 100 {die();}

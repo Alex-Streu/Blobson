@@ -10,15 +10,15 @@ cursors[PLAYER.P1] = spr_p1_select;
 stadium = ds_map_create();
 stadium[? "Name"] = "Stadium";
 stadium[? "IsUnlocked"] = true;
-stadium[? "Icon"] = spr_icon_rivals;
+stadium[? "Icon"] = spr_stage_icon_stadium;
 stadium[? "Room"] = rm_Stadium;
 
-//DREAMLAND
-dreamland = ds_map_create();
-dreamland[? "Name"] = "Dreamland";
-dreamland[? "IsUnlocked"] = true;
-dreamland[? "Icon"] = spr_icon_rivals;
-dreamland[? "Room"] = rm_Dreamland;
+//Arena
+arena = ds_map_create();
+arena[? "Name"] = "Arena";
+arena[? "IsUnlocked"] = true;
+arena[? "Icon"] = spr_stage_icon_arena;
+arena[? "Room"] = rm_Dreamland;
 
 //EIGHT
 eight = ds_map_create();
@@ -27,12 +27,12 @@ eight[? "IsUnlocked"] = true;
 eight[? "Icon"] = spr_icon_rivals;
 eight[? "Room"] = rm_Training;
 
-//CENTERPIECE
-centerpiece = ds_map_create();
-centerpiece[? "Name"] = "Centerpiece";
-centerpiece[? "IsUnlocked"] = true;
-centerpiece[? "Icon"] = spr_icon_rivals;
-centerpiece[? "Room"] = rm_Centerpiece;
+//Casino
+casino = ds_map_create();
+casino[? "Name"] = "Casino";
+casino[? "IsUnlocked"] = true;
+casino[? "Icon"] = spr_stage_icon_arena;
+casino[? "Room"] = rm_Casino;
 
 //DRILLER
 driller = ds_map_create();
@@ -43,8 +43,8 @@ driller[? "Room"] = rm_Driller;
 
 stages = [
 	stadium,
-	dreamland,
+	arena,
 	eight,
-	centerpiece,
+	casino,
 	driller
 ];

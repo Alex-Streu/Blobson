@@ -1,0 +1,16 @@
+damage = 25;
+angle = 0;
+base_knockback=10;
+facing=1;
+angle = -180;
+hitbox_group= 1;
+base_hitlag=10;
+knockback_scaling=1.5;
+angle_flipper=FLIPPER.standard;
+di_angle=DI_Max;
+grounded_angle=90;
+drawing_angle=angle;
+hsp=0;
+vsp=0;
+fric=0;
+grav=0;

@@ -106,7 +106,10 @@ if (run)
 				//Animation
 				anim_frame=5;			
 				attack_phase++;
-				attack_frame=3;
+				#region whiff lag
+				if (attack_has_hit() )   {attack_frame = 2;}
+				else                               {attack_frame = 3;}
+				#endregion
 				}
 			break;
 			}
@@ -119,7 +122,10 @@ if (run)
 				//Animation
 				anim_frame=6;			
 				attack_phase++;
-				attack_frame=3;
+				#region whiff lag
+				if (attack_has_hit() )   {attack_frame = 2;}
+				else                               {attack_frame = 3;}
+				#endregion
 				}
 			break;
 			}
@@ -133,14 +139,8 @@ if (run)
 				anim_frame=7;			
 				attack_phase++;				
 				#region whiff lag
-				if (attack_has_hit())   
-				{
-					attack_frame=3;
-					}
-				else
-					{					
-					attack_frame=6;
-					}
+				if (attack_has_hit() )   {attack_frame = 2;}
+				else                               {attack_frame = 5;}
 				#endregion
 				}
 			break;
@@ -166,9 +166,3 @@ if (run)
 	#endregion
 //Movement
 move_grounded_();
-
-//Hurtbox matching
-if (run)
-	{
-	hurtbox_match_animation();
-	}

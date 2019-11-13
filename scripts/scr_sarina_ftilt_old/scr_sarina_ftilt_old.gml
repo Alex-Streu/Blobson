@@ -6,6 +6,11 @@ attack_frame=max(--attack_frame,0);
 friction_gravity(ground_friction,grav,max_fall_speed);
 //Canceling
 if run && cancel_air_check() run=false;
+
+//How much EX_meter is gained upon landing the attack.
+meter_gain = 1;
+meter_gain_magnet = 1;
+
 #region Phases
 if (run)
 	{
@@ -85,8 +90,11 @@ if (run)
 				anim_frame=5;			
 				attack_phase++;
 				attack_frame=3;
-				var _hitbox = create_magnetbox(32,-64,1.3,0.5,2,5,112,-8,3,3,HITBOX_SHAPE.rectangle,0)
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				
+				audio_play_sound(choose(vc_ftilt1,vc_ftilt2,vc_ftilt3),10,false);
+				
+				//var _hitbox = create_magnetbox(32,-64,1.3,0.5,2,5,112,-8,10,3,HITBOX_SHAPE.rectangle,0)
+				//set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_firsthit);
 				}
 			break;
 			}
@@ -101,12 +109,12 @@ if (run)
 				attack_phase++;
 				attack_frame=1;
 				#region magnet box first one
-				var _hitbox = create_magnetbox(0,0,1,1,1,6,112,-16,1,1,HITBOX_SHAPE.rectangle,1)
+				var _hitbox = create_magnetbox(0,0,1,1,1,6,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_firsthit);
 				#endregion
 				}
 			break;
@@ -120,21 +128,13 @@ if (run)
 				//Animation
 				anim_frame=7;			
 				attack_phase++;				
-				attack_frame = 1;
-				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
-				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
-				_hitbox.image_index = anim_frame;
-				_hitbox.image_speed = 0;
-				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
-				#endregion
+				attack_frame = 3;
+				audio_play_sound(snd_ftilt_loop,10,false);
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 9
+			#region   Frame 9 - hitbox A
 		case 7:
 			{
 			if (attack_frame==0)
@@ -143,20 +143,22 @@ if (run)
 				anim_frame=8;			
 				attack_phase++;				
 				attack_frame = 1;
+			
+				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				reset_hitbox_group(collided, 1); //reset hitbox so next one can connect
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 10
+			#region   Frame 10 - hitbox A
 		case 8:
 			{
 			if (attack_frame==0)
@@ -165,21 +167,19 @@ if (run)
 				anim_frame=9;			
 				attack_phase++;				
 				attack_frame = 1;
-				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 11
+			#region   Frame 11 - Hitbox B
 		case 9:
 			{
 			if (attack_frame==0)
@@ -188,20 +188,23 @@ if (run)
 				anim_frame=10;			
 				attack_phase++;				
 				attack_frame = 1;
+				
+				audio_play_sound(snd_ftilt_loop,10,false);
+				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				reset_hitbox_group(collided, 0); //reset hitbox so next one can connect
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 12
+			#region   Frame 12 - Hitbox B
 		case 10:
 			{
 			if (attack_frame==0)
@@ -211,19 +214,18 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 13
+			#region   Frame 13 - Hitbox A
 		case 11:
 			{
 			if (attack_frame==0)
@@ -232,20 +234,23 @@ if (run)
 				anim_frame=12;			
 				attack_phase++;				
 				attack_frame = 1;
+				
+				audio_play_sound(snd_ftilt_loop,10,false);
+				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				reset_hitbox_group(collided, 0); //reset hitbox so next one can connect
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 14
+			#region   Frame 14 - Hitbox A
 		case 12:
 			{
 			if (attack_frame==0)
@@ -254,20 +259,22 @@ if (run)
 				anim_frame=13;			
 				attack_phase++;				
 				attack_frame = 1;
+				
+				audio_play_sound(snd_ftilt_loop,10,false);
+				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 15
+			#region   Frame 15 - Hitbox B
 		case 13:
 			{
 			if (attack_frame==0)
@@ -276,20 +283,23 @@ if (run)
 				anim_frame=14;			
 				attack_phase++;				
 				attack_frame = 1;
+				
+				audio_play_sound(snd_ftilt_loop,10,false);
+				
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				reset_hitbox_group(collided, 0); //reset hitbox so next one can connect
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 16
+			#region   Frame 16 - Hitbox B
 		case 14:
 			{
 			if (attack_frame==0)
@@ -299,19 +309,18 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,20,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 17
+			#region   Frame 17 - Hitbox A
 		case 15:
 			{
 			if (attack_frame==0)
@@ -321,19 +330,19 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				reset_hitbox_group(collided, 0); //reset hitbox so next one can connect
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 18
+			#region   Frame 18 - Hitbox A
 		case 16:
 			{
 			if (attack_frame==0)
@@ -343,19 +352,18 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 19
+			#region   Frame 19 - Hitbox B
 		case 17:
 			{
 			if (attack_frame==0)
@@ -365,19 +373,18 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-16,1,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 20
+			#region   Frame 20 - Hitbox B
 		case 18:
 			{
 			if (attack_frame==0)
@@ -387,19 +394,18 @@ if (run)
 				attack_phase++;				
 				attack_frame = 1;
 				#region reset hitboxes
-				reset_hitbox_groups()
-				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 21
+			#region   Frame 21 - start super fast hits
 		case 19:
 			{
 			if (attack_frame==0)
@@ -415,7 +421,7 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
@@ -430,6 +436,9 @@ if (run)
 				anim_frame=21;			
 				attack_phase++;				
 				attack_frame = 1;
+				
+				audio_play_sound(snd_ftilt_loop,10,false);
+				
 				#region reset hitboxes
 				reset_hitbox_groups()
 				var _hitbox = create_magnetbox(0,0,1,1,1,2,112,-2,1,1,HITBOX_SHAPE.rectangle,2)
@@ -437,7 +446,7 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
@@ -459,7 +468,7 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
@@ -481,7 +490,7 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
@@ -503,7 +512,7 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
@@ -525,13 +534,13 @@ if (run)
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_hit);
 				#endregion
 				}
 			break;
 			}
 		#endregion				
-			#region   Frame 27
+			#region   Frame 27 - final hit
 		case 25:
 			{
 			if (attack_frame==0)
@@ -542,12 +551,12 @@ if (run)
 				attack_frame = 2;
 				#region reset hitboxes
 				reset_hitbox_groups()
-				var _hitbox = create_melee(0,0,1,1,3,9,1,8,60,2,HITBOX_SHAPE.rectangle,2)
+				var _hitbox = create_melee(0,0,1,1,1,7,1,8,45,2,HITBOX_SHAPE.rectangle,0)
 				_hitbox.sprite_index = spr_sarina_ftilt_hitbox;
 				_hitbox.image_index = anim_frame;
 				_hitbox.image_speed = 0;
 				if (facing == -1) {_hitbox.image_xscale *= -1;}		
-				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_jab3_hit);
+				set_hitbox_property(_hitbox,HITBOX_PROPERTY.hit_sfx,snd_ftilt_endhit);
 				#endregion
 				}
 			break;
@@ -563,9 +572,13 @@ if (run)
 			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =4}
-				else   {attack_frame =7}
-				#endregion				
+				if (attack_has_hit())   {attack_frame =2}
+				else   {attack_frame =6}
+				#endregion			
+				
+				#region Dash Cancel
+				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
+				#endregion
 				}
 			break;
 			}
@@ -580,9 +593,11 @@ if (run)
 			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =4}
-				else   {attack_frame =7}
+				if (attack_has_hit())   {attack_frame =2}
+				else   {attack_frame =6}
 				#endregion				
+				
+				if (attack_has_hit())   { if run && check_dash() run=false;} //Dash cancel
 				}
 			break;
 			}
@@ -597,8 +612,8 @@ if (run)
 			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =4}
-				else   {attack_frame =7}
+				if (attack_has_hit())   {attack_frame =2}
+				else   {attack_frame =6}
 				#endregion				
 				}
 			break;
@@ -614,8 +629,8 @@ if (run)
 			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =4}
-				else   {attack_frame =7}
+				if (attack_has_hit())   {attack_frame =2}
+				else   {attack_frame =6}
 				#endregion				
 				}
 			break;

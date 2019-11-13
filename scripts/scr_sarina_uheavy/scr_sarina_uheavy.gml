@@ -103,9 +103,9 @@ if (run)
 			if (attack_frame==0)
 				{
 				//Animation
-				anim_frame=4;
-			
+				anim_frame=4;			
 				attack_phase++;
+				attack_frame = 2;
 				var _damage = calculate_smash_damage(6,smash_charge / 2,8,0.3);		
 				#region tipper hitbox	
 				var _tipper = create_melee(0,0,1,1,_damage + 3,8,1.2,17,80,2,HITBOX_SHAPE.circle,0);

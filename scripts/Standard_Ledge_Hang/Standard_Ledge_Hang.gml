@@ -10,7 +10,6 @@ anim_speed = ani_speed_ledgehang;
 #region Renew resources
 
 if name = "Goku" {rewind_teleport_ready = true;}
-
 if name = "Akuma" {akuma_uspecial_ready = true;   akuma_fspecial_ready = true;}
 
 

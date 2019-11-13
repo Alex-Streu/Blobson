@@ -1,5 +1,5 @@
 {
-    "id": "00577686-e070-474b-850c-3a5c1e4337b1",
+    "id": "189a5468-eac3-4a02-a191-3065b5e9e14f",
     "modelName": "GMSound",
     "mvc": "1.0",
     "name": "sfx_vc_sarina_hit2",
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.3
+    "volume": 0.26
 }
