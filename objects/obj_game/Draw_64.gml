@@ -19,11 +19,11 @@ for(var i = 0; i < number_of_players; i++)
 	
 	#region Ex meter level 0 - bar 1 - drawing the line
 	if _player.EX_meter  >= 0
-	if _player.EX_meter  < 50
+	if _player.EX_meter  < 100
 	if _fade = 1
 	draw_rectangle_colour(
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
-		player_status_y + 36, //y1
+		player_status_y + 51, //y1
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter, //x2
 		player_status_y + 59, //y2
 	    ex_level0_color, 
@@ -33,38 +33,13 @@ for(var i = 0; i < number_of_players; i++)
 	    false 
 	    ); //EX METER
         #endregion
-	#region EX meter level 0 drawing the bar sprite
-		if _player.EX_meter  >= 50
-		if _player.EX_meter  <	100
-		{
-        draw_sprite_ext(spr_hype_meter,1,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,ex_level0_color,_fade); //bar color
-		draw_sprite_ext(spr_hype_meter,0,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,c_white,_fade); //hype sign
-		}
-	#endregion	
-	#region Ex meter level 0 - bar 2 - drawing the line
-	if _player.EX_meter  >= 50
-	if _player.EX_meter  < 100
-	if _fade = 1
-	draw_rectangle_colour(
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + 56, //x1
-		player_status_y + 36, //y1
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter + 6, //x2
-		player_status_y + 59, //y2
-	    ex_level0_color, 
-	    ex_level0_color, 
-	    ex_level0_color, 
-	    ex_level0_color,
-	    false 
-	    ); //EX METER
-        #endregion
-	
 	#region Ex meter level 1 - bar 1 - drawing the line
 	if _player.EX_meter  >= 100
-	if _player.EX_meter  < 150
+	if _player.EX_meter  < 200
 	if _fade = 1
 	draw_rectangle_colour(
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
-		player_status_y + 36, //y1
+		player_status_y + 51, //y1
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter - 100, //x2
 		player_status_y + 59, //y2
 	    ex_level1_color, 
@@ -74,38 +49,13 @@ for(var i = 0; i < number_of_players; i++)
 	    false 
 	    ); //EX METER
         #endregion
-	#region EX meter level 1 drawing the bar sprite
-		if _player.EX_meter  >= 150
-		if _player.EX_meter  <	200
-		{
-        draw_sprite_ext(spr_hype_meter,1,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,ex_level1_color,_fade); //bar color
-		draw_sprite_ext(spr_hype_meter,0,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,c_white,_fade); //hype sign
-		}
-	#endregion	
-	#region Ex meter level 1 - bar 2 - drawing the line
-	if _player.EX_meter  >= 150
-	if _player.EX_meter  < 200
-	if _fade = 1
-	draw_rectangle_colour(
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + 56, //x1
-		player_status_y + 36, //y1
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter - 100 + 6, //x2
-		player_status_y + 59, //y2
-	    ex_level1_color, 
-	    ex_level1_color, 
-	    ex_level1_color, 
-	    ex_level1_color,
-	    false 
-	    ); //EX METER
-        #endregion
-	
 	#region Ex meter level 2 - bar 1 - drawing the line
 	if _player.EX_meter  >= 200
-	if _player.EX_meter  < 250
+	if _player.EX_meter  < 300
 	if _fade = 1
 	draw_rectangle_colour(
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x, //x1
-		player_status_y + 36, //y1
+		player_status_y + 51, //y1
 		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter - 200, //x2
 		player_status_y + 59, //y2
 	    ex_level2_color, 
@@ -115,32 +65,6 @@ for(var i = 0; i < number_of_players; i++)
 	    false 
 	    ); //EX METER
         #endregion
-	#region EX meter level 2 - bar 1 - drawing the bar sprite
-		if _player.EX_meter  >= 250
-		if _player.EX_meter  <	300
-		{
-        draw_sprite_ext(spr_hype_meter,1,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,ex_level2_color,_fade); //bar color
-		draw_sprite_ext(spr_hype_meter,0,status_bar_space * (i + 1) + player_status_x + ex_meter_sprite_x,player_status_y + ex_meter_sprite_y,1,1,0,c_white,_fade); //hype sign
-		}
-	#endregion
-	#region Ex meter level 2 - bar 2 - drawing the line
-	if _player.EX_meter  >= 250
-	if _player.EX_meter  < 300
-	if _fade = 1
-	draw_rectangle_colour(
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + 56, //x1
-		player_status_y + 36, //y1
-		status_bar_space * (i + 1) + player_status_x + ex_meter_ui_x + _player.EX_meter - 200 + 6, //x2
-		player_status_y + 59, //y2
-	    ex_level2_color, 
-	    ex_level2_color, 
-	    ex_level2_color, 
-	    ex_level2_color,
-	    false 
-	    ); //EX METER
-        #endregion
-	
-	
 	
 	draw_sprite_ext(spr_player_status,0,status_bar_space * (i + 1) + player_status_x,player_status_y,1,1,0,_accent,_fade); //boarder
 		
@@ -155,7 +79,7 @@ for(var i = 0; i < number_of_players; i++)
 		//alternate way would be to draw to surfaces and then draw the surfaces with alpha
 	for(var m = 0; m < _player.stock; m++)
 	{
-		draw_sprite_ext(_player.stock_sprite,0,status_bar_space * (i + 1) + (m * 24) + 48,player_status_y - 24,1,1,0,_accent,round(_fade) );
+		draw_sprite_ext(_player.stock_sprite,0,status_bar_space * (i + 1) + (m * 24) + 118,player_status_y - 24,1,1,0,_accent,round(_fade) );
 	}
 	shader_reset();
 	//draw_sprite_ext(spr_player_status,1,status_bar_space * (i + 1) + (m * 32) + 184 + player_status_x,player_status_y,1,1,0,_accent,_fade)

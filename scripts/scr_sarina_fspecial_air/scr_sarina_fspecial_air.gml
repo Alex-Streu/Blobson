@@ -285,7 +285,7 @@ if (run)
 				#region EX version and non ex version hitboxes
 				   if sarina_fspecial_air_ex = false   //Non ex version
 				   {
-				    var _hitbox = create_melee(0,0,1,1,7,8,0.5,10,45,3,HITBOX_SHAPE.circle,1,FLIPPER.from_player_center_horizontal);
+				    var _hitbox = create_melee(0,0,1,1,7,8,0.5,10,75,3,HITBOX_SHAPE.circle,1,FLIPPER.from_player_center_horizontal);
 				    _hitbox.sprite_index = spr_sarina_fspecial_air_hitbox;
 				    _hitbox.image_speed = 0;
 				    if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -295,7 +295,7 @@ if (run)
 					
 					 if sarina_fspecial_air_ex = true   //EX version
 				   {
-				    var _hitbox = create_melee(0,0,1,1,9,10,1,15,50,3,HITBOX_SHAPE.circle,1,FLIPPER.from_player_center_horizontal);
+				    var _hitbox = create_melee(0,0,1,1,9,10,1,15,75,3,HITBOX_SHAPE.circle,1,FLIPPER.from_player_center_horizontal);
 				    _hitbox.sprite_index = spr_sarina_fspecial_ground_hitbox;
 				    _hitbox.image_speed = 0;
 				    if (facing == -1) {_hitbox.image_xscale *= -1;}

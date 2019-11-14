@@ -23,7 +23,7 @@ my_current_pallete = 1;
 portrait= spr_sarina_hud1;
 offscreen_sprite = spr_sarina_offscreen; //When fighter is shown in indicator
 stock_sprite= spr_player_life_icon;
-render = spr_sarina_dialouge_body;
+render = spr_sarina_render;
 victory_theme = sfx_victory_sarina;
 #endregion
 

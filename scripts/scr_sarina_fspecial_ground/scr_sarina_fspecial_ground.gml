@@ -246,7 +246,7 @@ if (run)
 				#region If EX version and non ex version hitboxes
 				   if sarina_fspecial_ground_ex = false   //Non ex version
 				   {
-				    var _hitbox = create_melee(0,0,1,1,7,8,1,12,45,3,HITBOX_SHAPE.circle,1);
+				    var _hitbox = create_melee(0,0,1,1,7,8,1,12,70,3,HITBOX_SHAPE.circle,1);
 				    _hitbox.sprite_index = spr_sarina_fspecial_ground_hitbox;
 				    _hitbox.image_speed = 0;
 				    if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -257,7 +257,7 @@ if (run)
 					 if sarina_fspecial_ground_ex = true   //EX version
 				   {
 
-				    var _hitbox = create_melee(0,0,1,1,9,12,1,15,50,3,HITBOX_SHAPE.circle,1);
+				    var _hitbox = create_melee(0,0,1,1,9,12,1,15,70,3,HITBOX_SHAPE.circle,1);
 				    _hitbox.sprite_index = spr_sarina_fspecial_ground_hitbox;
 				    _hitbox.image_speed = 0;
 				    if (facing == -1) {_hitbox.image_xscale *= -1;}
@@ -359,8 +359,8 @@ if (run)
 				anim_frame=13;				
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =8;}
-				else                              {attack_frame =16;}
+				if (attack_has_hit())   {attack_frame =6;}
+				else                              {attack_frame =14;}
 				#endregion											
 				#region If EX version is activated, speed up attack endlag
 				if sarina_fspecial_ground_ex = true    {attack_frame=2;}

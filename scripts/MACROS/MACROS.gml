@@ -88,7 +88,7 @@
 	#macro hitstun_base_multiplier 6 //4
 	#macro hitstun_weight_multiplier 1
 	#macro hitstun_damage_multiplier 0.25 //0.24
-	#macro hitstun_knockback_multiplier 4//5
+	#macro hitstun_knockback_multiplier 5//5
 	#macro hitlag_multiplier 1 //0.6
 	#macro maximum_hitlag 120
 	#macro default_shieldstun_multiplier 4

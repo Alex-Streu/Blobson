@@ -164,15 +164,15 @@ vc_parry = sfx_vc_sarina_attack10;
 
 vc_jab1 = sfx_nothing;
 vc_jab2 = sfx_nothing;
-vc_jab3 = sfx_vc_sarina_attack9;
+vc_jab3 = sfx_nothing;
 vc_dashattack1 = sfx_nothing;
 vc_dashattack2 = sfx_nothing;
 
 //Tilt attacks
-vc_ftilt = sfx_vc_sarina_attack_ftilt1;
+vc_ftilt = sfx_nothing;
 
-vc_ftilt_ex = sfx_vc_sarina_attack_ftilt3;
-vc_dtilt1 = sfx_vc_sarina_action2;
+vc_ftilt_ex = sfx_nothing;
+vc_dtilt1 = sfx_nothing;
 vc_dtilt2 = sfx_nothing;
 vc_utilt1 = sfx_nothing;
 vc_utilt2 = sfx_nothing;
@@ -182,43 +182,43 @@ vc_uair1 = sfx_nothing;
 vc_uair2 = sfx_nothing;
 vc_dair1 = sfx_nothing;
 vc_dair2 = sfx_nothing;
-vc_fair1 = sfx_vc_takia_action1;
-vc_fair2 = sfx_vc_takia_action2;
+vc_fair1 = sfx_nothing;
+vc_fair2 = sfx_nothing;
 vc_bair1 = sfx_nothing;
 vc_bair2 = sfx_nothing;
-vc_nair1 = sfx_vc_takia_action1;
-vc_nair2 = sfx_vc_takia_action1;
+vc_nair1 = sfx_nothing;
+vc_nair2 = sfx_nothing;
 
 //heavy attacks
-vc_fheavy1 = sfx_vc_sarina_attack9;
-vc_fheavy2 = sfx_vc_sarina_attack2;
-vc_dheavy1 = sfx_vc_sarina_attack9;
-vc_dheavy2 = sfx_vc_sarina_attack2;
-vc_uheavy1 = sfx_vc_sarina_attack9;
-vc_uheavy2 = sfx_vc_sarina_attack2;
+vc_fheavy1 = sfx_nothing;
+vc_fheavy2 = sfx_nothing;
+vc_dheavy1 = sfx_nothing;
+vc_dheavy2 = sfx_nothing;
+vc_uheavy1 = sfx_nothing;
+vc_uheavy2 = sfx_nothing;
 
 //special attacks
 vc_nspecial1 = sfx_nothing;
 vc_nspecial2 = sfx_nothing;
-vc_fspecial1 = sfx_vc_sarina_action1;
-vc_fspecial2 = sfx_vc_sarina_fspecial;
-vc_uspecial1 = sfx_vc_sarina_uspecial1;
-vc_uspecial2 = sfx_vc_sarina_uspecial2;
-vc_uspecial_ex1 = sfx_vc_sarina_uspecial_ex1;//"How about-"
-vc_uspecial_ex2 = sfx_vc_sarina_uspecial_ex2;//"THIS?"
+vc_fspecial1 = sfx_nothing;
+vc_fspecial2 = sfx_nothing;
+vc_uspecial1 = sfx_nothing;
+vc_uspecial2 = sfx_nothing;
+vc_uspecial_ex1 = sfx_nothing;//"How about-"
+vc_uspecial_ex2 = sfx_nothing;//"THIS?"
 vc_dspecial1 = sfx_nothing;
 vc_dspecial2 = sfx_nothing;
 //grabs/throws
-vc_grabmiss1 = sfx_vc_sarina_grabmiss;
-vc_grabmiss2 = sfx_vc_sarina_grabmiss2;
-vc_uthrow = sfx_vc_sarina_attack1;
-vc_bthrow = sfx_vc_sarina_bthrow;
-vc_dthrow = sfx_vc_sarina_attack7;
-vc_fthrow = sfx_vc_sarina_action5;
+vc_grabmiss1 = sfx_nothing;
+vc_grabmiss2 = sfx_nothing;
+vc_uthrow = sfx_nothing;
+vc_bthrow = sfx_nothing;
+vc_dthrow = sfx_nothing;
+vc_fthrow = sfx_nothing;
 #endregion
 #region Voice actions - general
-vc_jump1 = sfx_vc_sarina_action1;
-vc_jump2 = sfx_vc_sarina_action1;
+vc_jump1 = sfx_nothing;
+vc_jump2 = sfx_nothing;
 vc_doublejump1 = sfx_nothing;
 vc_doublejump2 = sfx_nothing;
 vc_walljump1 = sfx_nothing;
@@ -235,28 +235,27 @@ vc_airdodge1 = sfx_nothing;
 vc_airdodge2 = sfx_nothing;
 #endregion
 #region Voice hurt - general
-vc_hurt_light1 = sfx_vc_sarina_hit1; //if damage is under 50%
-vc_hurt_light2 = sfx_vc_sarina_hit5; //if damage is under 50%
-vc_hurt_light3 = sfx_vc_sarina_hit6; //if damage is under 50%
-vc_hurt_light4 = sfx_vc_sarina_hit9; //if damage is under 50%
-vc_hurt_light5 = sfx_vc_sarina_hit11; //if damage is under 50%
-vc_hurt_light6 = sfx_vc_sarina_hit15; //if damage is under 50%
-vc_hurt_light7 = sfx_vc_sarina_hit16; //if damage is under 50%
-vc_hurt_med1 = sfx_vc_sarina_hit2; //if damage is over 50% but under 100%
-vc_hurt_med2 = sfx_vc_sarina_hit3; //if damage is over 50% but under 100%
-vc_hurt_med3 = sfx_vc_sarina_hit4; //if damage is over 50% but under 100%
-vc_hurt_med4 = sfx_vc_sarina_hit7; //if damage is over 50% but under 100%
-vc_hurt_med5 = sfx_vc_sarina_hit8; //if damage is over 50% but under 100%
-vc_hurt_med6 = sfx_vc_sarina_hit10; //if damage is over 50% but under 100%
-vc_hurt_hard1 = sfx_vc_sarina_hit12; //if damage is over 100%
-vc_hurt_hard2 = sfx_vc_sarina_hit13; //if damage is over 100%
-vc_hurt_hard3 = sfx_vc_sarina_hit14; //if damage is over 100%
-
+vc_hurt_light1 = sfx_nothing; //if damage is under 50%
+vc_hurt_light2 = sfx_nothing; //if damage is under 50%
+vc_hurt_light3 = sfx_nothing; //if damage is under 50%
+vc_hurt_light4 = sfx_nothing; //if damage is under 50%
+vc_hurt_light5 = sfx_nothing; //if damage is under 50%
+vc_hurt_light6 = sfx_nothing; //if damage is under 50%
+vc_hurt_light7 = sfx_nothing; //if damage is under 50%
+vc_hurt_med1 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_med2 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_med3 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_med4 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_med5 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_med6 = sfx_nothing; //if damage is over 50% but under 100%
+vc_hurt_hard1 = sfx_nothing; //if damage is over 100%
+vc_hurt_hard2 = sfx_nothing; //if damage is over 100%
+vc_hurt_hard3 = sfx_nothing; //if damage is over 100%
 vc_parried1 = sfx_nothing;
 vc_parried2 = sfx_nothing;
-vc_ko = sfx_vc_takia_ko1;
-vc_ko2 = sfx_vc_takia_ko1;
-vc_ko3 = sfx_vc_takia_ko1;
+vc_ko = sfx_nothing;
+vc_ko2 = sfx_nothing;
+vc_ko3 = sfx_nothing;
 #endregion
 #endregion
 

@@ -8,29 +8,29 @@ draw_set_alpha((100 - offset) / 100);
 	//shader_set_uniform_f_array(uni_r, palettes[color_index]);
 	
 	//render
-	//draw_sprite_ext(render, 0, -offset + (room_width / 1.5) -360, room_height / 2 - 273, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(render, 0, -offset + (room_width / 1.5) -360, room_height / 2 - 273, 1, 1, 0, c_white, 1);
 	
 	#region Sarina Dialouge
-	//pal_swap_set(winner.my_portrait_pal_sprite,winner.current_pal,false); //remove if new palette system is odd or doesnt work
-	draw_sprite_ext(render, 0, -offset + (room_width / 1.5) +360,20, -1, 1, 0, c_white, 1);
 	
-	if text = "hm, looks like you weren't as strong as I thought... I'm sorry I expected more of you."
-	{
-	draw_sprite_ext(spr_sarina_dialouge_eyes, 2, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	draw_sprite_ext(spr_sarina_dialouge_mouths, 0, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	}
+	//draw_sprite_ext(render, 0, -offset + (room_width / 1.5) +360,20, -1, 1, 0, c_white, 1);
 	
-	if text = "This is more than just fate, it's my destiny."
-	{
-	draw_sprite_ext(spr_sarina_dialouge_eyes, 0, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	draw_sprite_ext(spr_sarina_dialouge_mouths, 0, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	}
+	//if text = "hm, looks like you weren't as strong as I thought... I'm sorry I expected more of you."
+	//{
+	//draw_sprite_ext(spr_sarina_dialouge_eyes, 2, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//draw_sprite_ext(spr_sarina_dialouge_mouths, 0, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//}
 	
-	if text = "Looks like i win this fight. It was an honor."
-	{
-	draw_sprite_ext(spr_sarina_dialouge_eyes, 0, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	draw_sprite_ext(spr_sarina_dialouge_mouths, 3, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
-	}
+	//if text = "This is more than just fate, it's my destiny."
+	//{
+	//draw_sprite_ext(spr_sarina_dialouge_eyes, 0, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//draw_sprite_ext(spr_sarina_dialouge_mouths, 0, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//}
+	
+	//if text = "Looks like i win this fight. It was an honor."
+	//{
+	//draw_sprite_ext(spr_sarina_dialouge_eyes, 0, -sarina_eyes_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//draw_sprite_ext(spr_sarina_dialouge_mouths, 3, -sarina_mouth_x + (room_width / 1.5) +360,0, -1, 1, 0, c_white, 1);
+	//}
 	
 	#endregion
 	

@@ -19,6 +19,7 @@ if (run)
 			#region   Frame 1   
 		case PHASE.start:
 			{
+			sarina_ftilt_ex = false;
 			//Animation
 			anim_sprite= my_sprites[?"Ftilt"];
 			anim_speed=0;
@@ -729,14 +730,13 @@ if (run)
 			if (attack_frame==0)
 				{
 				//Animation
-				anim_frame=27;
-			
+				anim_frame=27;			
 				attack_phase++;
+				sarina_ftilt_ex = false;
 				#region whiff lag
 				if (attack_has_hit())   {attack_frame =2}
 				else   {attack_frame =6}
-				#endregion			
-				
+				#endregion						
 				#region Dash Cancel
 				if (attack_has_hit())   { if run && check_dash()    hurtbox.sprite_index =spr_sarina_hurtbox;   run=false; } //Dash cancel			
 				#endregion
@@ -805,6 +805,7 @@ if (run)
 				anim_frame=0;
 			if (attack_frame==0)
 				{
+				sarina_ftilt_ex = false;
 				attack_stop(PLAYER_STATE.idle);
 				run = false;
 				}

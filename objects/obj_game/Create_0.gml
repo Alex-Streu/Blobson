@@ -51,9 +51,22 @@ draw = true;
 
 //Cache some values
 number_of_players = instance_number(obj_player);
-status_bar_space =  - 96 + (camera_width div (number_of_players + 1));
-player_status_x = +48;
+status_bar_space =  - 128 + (camera_width div (number_of_players + 1));
+player_status_x = status_bar_space - 80;
 player_status_y = (camera_height - player_status_padding_bottom + 24);
+
+//EX meter stuff
+
+ex_meter_ui_x = 48;
+ex_meter_ui_y = 0;
+
+ex_meter_sprite_x = 47;
+ex_meter_sprite_y = 35;
+
+ex_level0_color = make_colour_hsv(0, 220, 255);//red
+ex_level1_color = make_colour_hsv(90, 220, 255);//green
+ex_level2_color = make_colour_hsv(150, 220, 255);//blue
+ex_level3_color = make_colour_hsv(180, 220, 255);//purple
 
 //Shader uniforms
 uni_s = shader_get_uniform(shd_palette, "sample");
@@ -75,18 +88,7 @@ countdown = count_time * 4;
 
 current_pal = 1;
 
-//EX meter stuff
 
-ex_meter_ui_x = 47;
-ex_meter_ui_y = 0;
-
-ex_meter_sprite_x = 47;
-ex_meter_sprite_y = 35;
-
-ex_level0_color = make_colour_hsv(0, 220, 255);//red
-ex_level1_color = make_colour_hsv(90, 220, 255);//green
-ex_level2_color = make_colour_hsv(150, 220, 255);//blue
-ex_level3_color = make_colour_hsv(180, 220, 255);//purple
 
 //portrait palettes
 
