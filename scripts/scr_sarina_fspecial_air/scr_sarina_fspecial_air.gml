@@ -9,6 +9,7 @@ allow_hitfall();
 aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
+if (check_wall_jump())
 
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 5;
@@ -318,7 +319,11 @@ if (run)
 				//Animation
 				anim_frame=6;				
 				attack_phase++;
-				attack_frame = 2
+
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = true    {attack_frame=1;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				#endregion
 				}
 			break;
 			}
@@ -331,7 +336,11 @@ if (run)
 				//Animation
 				anim_frame=7;				
 				attack_phase++;
-				attack_frame = 2;
+				if (attack_has_hit())   {attack_frame =1;}										
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
+				#endregion
 				}
 			break;
 			}
@@ -344,7 +353,11 @@ if (run)
 				//Animation
 				anim_frame=8;				
 				attack_phase++;
-				attack_frame = 2;
+				if (attack_has_hit())   {attack_frame =1;}		
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
+				#endregion
 				}
 			break;
 			}
@@ -357,7 +370,11 @@ if (run)
 				//Animation
 				anim_frame=9;				
 				attack_phase++;
-				attack_frame = 2;
+				if (attack_has_hit())   {attack_frame =1;}		
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
+				#endregion
 				}
 			break;
 			}
@@ -370,7 +387,11 @@ if (run)
 				//Animation
 				anim_frame=10;				
 				attack_phase++;
-				attack_frame = 2;
+				if (attack_has_hit())   {attack_frame =1;}		
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
+				#endregion
 				}
 			break;
 			}
@@ -383,7 +404,11 @@ if (run)
 				//Animation
 				anim_frame=11;				
 				attack_phase++;
-				attack_frame = 2;
+				if (attack_has_hit())   {attack_frame =1;}		
+				#region If EX version is activated, speed up attack endlag
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
+				#endregion
 				}
 			break;
 			}
@@ -396,9 +421,10 @@ if (run)
 				//Animation
 				anim_frame=12;				
 				attack_phase++;
+				if (attack_has_hit())   {attack_frame =1;}		
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;
@@ -412,9 +438,10 @@ if (run)
 				//Animation
 				anim_frame=13;				
 				attack_phase++;
+				if (attack_has_hit())   {attack_frame =1;}		
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;
@@ -428,9 +455,10 @@ if (run)
 				//Animation
 				anim_frame=14;				
 				attack_phase++;
+				if (attack_has_hit())   {attack_frame =1;}		
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;
@@ -443,13 +471,13 @@ if (run)
 				{
 				//Animation
 				anim_frame=15;				
-				attack_phase++;
+				attack_phase++;	
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				if sarina_fspecial_air_ex = true     
-				{landing_lag = 5; attack_stop(PLAYER_STATE.aerial);}
+				{landing_lag = 3; attack_stop(PLAYER_STATE.aerial);}
 				}
 			break;
 			}
@@ -463,8 +491,8 @@ if (run)
 				anim_frame=16;				
 				attack_phase++;
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;
@@ -478,9 +506,10 @@ if (run)
 				//Animation
 				anim_frame=17;				
 				attack_phase++;
+				if (attack_has_hit())   {attack_frame =1;}		
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;
@@ -495,8 +524,8 @@ if (run)
 				anim_frame=18;				
 				attack_phase++;
 				#region If EX version is activated, speed up attack endlag
-				if sarina_fspecial_air_ex = false    {attack_frame=1;}
-				if sarina_fspecial_air_ex = true    {attack_frame = 2;}
+				if sarina_fspecial_air_ex = false    {if (attack_has_hit())   {attack_frame =1;}    else {attack_frame = 2;}   }
+				if sarina_fspecial_air_ex = true    {attack_frame = 1;}
 				#endregion
 				}
 			break;

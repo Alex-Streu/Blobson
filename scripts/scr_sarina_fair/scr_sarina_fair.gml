@@ -7,13 +7,49 @@ friction_gravity(air_friction,grav,max_fall_speed);
 fastfall_attack_try();
 allow_hitfall();
 aerial_drift();
+
 //Canceling
 if run && cancel_ground_check() run=false;
+
+#region Turbo cancel
+if (attack_has_hit())   
+{
+	   destroy_all_attached_hitboxes(my_hitboxes);
+	   #region Air attack cancel
+	   if (button(INPUT.attack,buff))
+	   {
+	   if stick_tilted(Lstick,DIR.none)   {attack_start(my_attacks[?"Nair"]);}
+	   if stick_tilted(Lstick,DIR.down)   {attack_start(my_attacks[?"Dair"]);}
+	   if stick_tilted(Lstick,DIR.up)   {attack_start(my_attacks[?"Uair"]);}
+	   if stick_tilted(Lstick,DIR.right) and facing = -1   {attack_start(my_attacks[?"Bair"]);}
+       if stick_tilted(Lstick,DIR.left) and facing = 1   {attack_start(my_attacks[?"Bair"]);}	   
+	   }
+	   #endregion
+	   #region Special attack cancel
+	   if (button(INPUT.special,buff))
+	   {
+		   
+	   if stick_tilted(Lstick,DIR.none)   {attack_start(scr_sarina_nspecial);}
+	   if stick_tilted(Lstick,DIR.down)   {attack_start(scr_sarina_dspecial_air);}
+	   if stick_tilted(Lstick,DIR.up)   {attack_start(scr_sarina_uspecial_air);}
+	   if stick_tilted(Lstick,DIR.right)  {attack_start(scr_sarina_fspecial_air);}
+	   if stick_tilted(Lstick,DIR.left)   {attack_start(scr_sarina_fspecial_air);}
+
+
+	   }
+	   #endregion
+	   #region Jump cancelable
+	   if run && cancel_jump_check()	 run=false;
+	   #endregion	
+}
+#endregion
 
 #region landing lag change if hit
 				if (attack_has_hit())   {landing_lag = 3;}
 				else                              {landing_lag = 10;}
 				#endregion				
+
+
 
 //How much EX_meter is gained upon landing the attack.
 meter_gain = 7;

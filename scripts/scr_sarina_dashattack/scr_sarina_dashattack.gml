@@ -73,7 +73,7 @@ if (run)
 				anim_frame=3;
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion							
 				}
@@ -89,7 +89,7 @@ if (run)
 				anim_frame=4;
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 				}
@@ -105,7 +105,7 @@ if (run)
 				anim_frame=5;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 				
@@ -122,8 +122,8 @@ if (run)
 				anim_frame=6;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =4}
-				else                              {attack_frame =9}
+				if (attack_has_hit())   {attack_frame =2}
+				else                              {attack_frame =7}
 				#endregion				
 				
 				}
@@ -139,7 +139,7 @@ if (run)
 				anim_frame=7;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 				}
@@ -155,7 +155,7 @@ if (run)
 				anim_frame=8;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 
@@ -172,7 +172,7 @@ if (run)
 				anim_frame=9;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 
@@ -189,7 +189,7 @@ if (run)
 				anim_frame=10;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 
@@ -206,7 +206,7 @@ if (run)
 				anim_frame=11;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 
@@ -223,7 +223,7 @@ if (run)
 				anim_frame=12;			
 				attack_phase++;
 				#region whiff lag
-				if (attack_has_hit())   {attack_frame =2}
+				if (attack_has_hit())   {attack_frame =1}
 				else                              {attack_frame =3}
 				#endregion				
 

@@ -24,12 +24,12 @@
 #macro camera_enable_zoom false
 #macro camera_ratio (camera_width / camera_height)
 #macro camera_zoom_pad_scale 2
-#macro camera_zoom_pad_yscale 0.1
+#macro camera_zoom_pad_yscale 0.0
 #macro camera_zoom_pad_xscale 0.0
 #macro camera_max_width room_width
 #macro camera_max_height (room_width / camera_ratio)
-#macro camera_min_width 720
-#macro camera_min_height 405
+#macro camera_min_width 960
+#macro camera_min_height 540
 #macro camera_zoom_speed 0.03 //0.05
 
 //Finishing Blow Zoom

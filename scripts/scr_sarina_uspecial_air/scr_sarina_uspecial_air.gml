@@ -9,6 +9,7 @@ allow_hitfall();
 aerial_drift();
 //Canceling
 if run && cancel_ground_check() run=false;
+if (check_wall_jump())
 
 #region landing lag change if hit
 				if (attack_has_hit())   {landing_lag = 3;}
